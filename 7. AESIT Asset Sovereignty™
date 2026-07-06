@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page {
+        size: A4;
+        margin: 20mm 15mm;
+        background-color: #faf9f6;
+        @bottom-right { content: counter(page); font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+        @bottom-left { content: "AESIT Global Solutions Group | Asset Sovereignty™"; font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+    }
+    * { box-sizing: border-box; }
+    body { font-family: "Helvetica Neue", sans-serif; font-size: 10.5pt; line-height: 1.6; color: #27272a; margin: 0; background-color: #faf9f6; }
+    h1, h2 { font-family: "Georgia", serif; color: #0f172a; margin-top: 0; font-weight: normal; }
+    h1 { font-size: 24pt; line-height: 1.2; margin-bottom: 5px; }
+    .subtitle { font-family: "Helvetica Neue", sans-serif; font-size: 11pt; text-transform: uppercase; letter-spacing: 2px; color: #283593; margin-bottom: 25px; font-weight: 600; }
+    .meta-line { font-family: "Helvetica Neue", sans-serif; font-size: 9pt; color: #64748b; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 30px; }
+    h2 { font-size: 14pt; color: #1e293b; margin-top: 25px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #283593; page-break-after: avoid; }
+    p { margin-top: 0; margin-bottom: 12px; text-align: justify; }
+    .rule-card { background-color: #f8fafc; padding: 15px; border: 1px solid #e2e8f0; margin: 15px 0; }
+    .footer-note { margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 15px; font-size: 8.5pt; color: #64748b; text-align: center; }
+</style>
+<title>AESIT Asset Sovereignty™</title>
+</head>
+<body>
+    <h1>AESIT Asset Sovereignty™</h1>
+    <div class="subtitle">Data Independence & Physical Risk Isolation</div>
+    <div class="meta-line"><strong>Risk & Legal Policy</strong> | Operational Resilience Manual &bull; 2026</div>
+    
+    <h2>01 — The Threat of External Vendor Dependencies</h2>
+    <p>Modern properties are dangerously reliant on cloud-dependent prop-tech providers. When a third-party vendor experiences a service outage or shifts its subscription models, property owners lose access to historical telemetry and core system controls. Asset Sovereignty ensures that all data, network nodes, and operating platforms remain completely owned and hosted inside the physical property footprint.</p>
+    
+    <h2>02 — Structural Sovereignty Policies</h2>
+    <div class="rule-card">
+        <strong>1. Isolated Operations:</strong> Edge computing systems process critical HVAC, access controls, and power systems locally, running independently of external internet connections.
+    </div>
+    <div class="rule-card">
+        <strong>2. Unrestricted Telemetry Ownership:</strong> All sensor datasets are formatted into open, unalterable semantic profiles owned exclusively by the title holder.
+    </div>
+
+    <div class="footer-note">
+        &copy; 2026 AESIT Global Solutions Group &bull; Asset Sovereignty Division &bull; Class-A Infrastructure Standard
+    </div>
+</body>
+</html>
