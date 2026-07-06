@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page {
+        size: A4;
+        margin: 20mm 15mm;
+        background-color: #faf9f6;
+        @bottom-right { content: counter(page); font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+        @bottom-left { content: "AESIT Global Solutions Group | IDLF® Technical Specification"; font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+    }
+    * { box-sizing: border-box; }
+    body { font-family: "Helvetica Neue", sans-serif; font-size: 10.5pt; line-height: 1.6; color: #27272a; margin: 0; background-color: #faf9f6; }
+    h1, h2 { font-family: "Georgia", serif; color: #0f172a; margin-top: 0; font-weight: normal; }
+    h1 { font-size: 24pt; line-height: 1.2; margin-bottom: 5px; }
+    .subtitle { font-family: "Helvetica Neue", sans-serif; font-size: 11pt; text-transform: uppercase; letter-spacing: 2px; color: #BD8731; margin-bottom: 25px; font-weight: 600; }
+    .meta-line { font-family: "Helvetica Neue", sans-serif; font-size: 9pt; color: #64748b; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 30px; }
+    h2 { font-size: 14pt; color: #1e293b; margin-top: 25px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #BD8731; page-break-after: avoid; }
+    p { margin-top: 0; margin-bottom: 12px; text-align: justify; }
+    ol { margin-top: 0; margin-bottom: 15px; padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .footer-note { margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 15px; font-size: 8.5pt; color: #64748b; text-align: center; }
+</style>
+<title>AESIT IDLF Specs</title>
+</head>
+<body>
+    <h1>AESIT IDLF®</h1>
+    <div class="subtitle">Intelligent Design Lifecycle Framework Protocol Specification</div>
+    <div class="meta-line"><strong>Design Engineering Document</strong> | Global Engineering Board &bull; 2026</div>
+    
+    <h2>01 — Purpose & Modeling Scope</h2>
+    <p>The Intelligent Design Lifecycle Framework (IDLF®) standardizes the digital genesis of smart buildings. Traditional BIM designs are archived immediately after construction wraps up. The IDLF protocol ensures that the digital model operates as an active, queryable semantic digital twin linked directly to the physical asset during runtime.</p>
+    
+    <h2>02 — Core Engineering Milestones</h2>
+    <ol>
+        <li><strong>Semantic Tagging:</strong> Mapping all building systems (power distribution, hydronic systems, and building entry points) to standard unified naming rules.</li>
+        <li><strong>Sensor Array Placement:</strong> Integrating sensory paths into load-bearing assemblies, roofing setups, and core mechanical layouts prior to concrete placement.</li>
+        <li><strong>Lifecycle Pathing:</strong> Mapping predictable mechanical replacement windows directly into the spatial coordinates of the 3D model.</li>
+    </ol>
+
+    <div class="footer-note">
+        &copy; 2026 AESIT Global Solutions Group &bull; IDLF Engineering Standard v4.2
+    </div>
+</body>
+</html>
