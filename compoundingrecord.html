@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AESIT® — The Compounding Record | Built. Measured. Proven.</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --carbon:#000000;
+  --titanium:#888888;
+  --brushed:#A8A8A8;
+  --chrome:#C8C8C8;
+  --grid-white:#E8E8E8;
+  --race-red:#CC0000;
+  --race-red-2:#FF2020;
+  --gold:#D4AF37;
+  --col-design:#C48F1D;
+  --col-ops:#1C98A6;
+  --col-protect:#4070B8;
+  --grad-chrome:linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
+  --grad-chrome-bar:linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
+  --grad-steel:linear-gradient(180deg,#181818 0%,#111111 50%,#161616 100%);
+  --grad-red:linear-gradient(135deg,#CC0000 0%,#FF2020 40%,#AA0000 100%);
+  --grad-red-h:linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);
+  --grad-gold:linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);
+  --border:rgba(200,200,200,.10);
+  --border-mid:rgba(200,200,200,.20);
+  --border-bright:rgba(200,200,200,.35);
+  --text-secondary:#B0A898;
+  --text-muted:#888888;
+  --title-font:'League Spartan',sans-serif;
+  --body-font:'Barlow',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--carbon);font-family:var(--body-font);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2.5rem 1rem;color:var(--text-secondary);line-height:1.65}
+
+.card{width:100%;max-width:820px;border:1px solid var(--border-mid);border-radius:10px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.75),0 0 0 .5px rgba(204,0,0,.1)}
+
+/* Identity bar */
+.identity-bar{background:var(--grad-chrome-bar);padding:14px 20px;display:flex;align-items:center;gap:14px;position:relative}
+.identity-bar::after{content:'';position:absolute;bottom:0;left:0;width:100px;height:2px;background:var(--grad-red-h)}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--grad-red);display:flex;align-items:center;justify-content:center;font-family:var(--title-font);font-size:17px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.identity-text{flex:1}
+.identity-title{font-family:var(--title-font);font-size:18px;font-weight:800;letter-spacing:-.01em;color:#0A0A0A;text-shadow:0 1px 2px rgba(255,255,255,.5),0 -1px 1px rgba(0,0,0,.2);line-height:1}
+.identity-sub{font-family:var(--title-font);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#3a3a3a;margin-top:3px}
+.badge{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;background:var(--grad-red);color:#fff;border-radius:3px;flex-shrink:0;box-shadow:0 2px 8px rgba(204,0,0,.35)}
+
+/* Bridge */
+.bridge{background:var(--grad-steel);padding:20px 22px 18px 24px;border-bottom:1px solid var(--border-mid);position:relative}
+.bridge::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad-red)}
+.bridge-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;padding-left:6px}
+.bridge-headline{font-family:var(--title-font);font-size:22px;font-weight:800;letter-spacing:-.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin-bottom:10px;padding-left:6px}
+.bridge p{font-size:13px;font-weight:300;line-height:1.78;color:var(--text-secondary);padding-left:6px}
+.bridge p+p{margin-top:8px}
+.bridge strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
+
+/* Folder tabs zone */
+.folder-zone{background:#080808;padding:18px 0 0;position:relative}
+.folder-zone::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--border-mid);z-index:0}
+.folder-tabs{display:flex;align-items:flex-end;padding:0 16px;gap:4px;position:relative;z-index:2}
+
+.ftab{position:relative;padding:10px 20px 14px;cursor:pointer;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;user-select:none;border-radius:8px 8px 0 0;border:1px solid transparent;border-bottom:none;transition:transform .18s ease,opacity .18s ease,box-shadow .18s ease;min-width:120px;text-align:center;display:flex;align-items:center;justify-content:center;gap:7px;transform:translateY(4px);opacity:.72}
+.ftab-dot{display:inline-block;width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+#tab-design {z-index:14}
+#tab-ops    {z-index:13}
+#tab-protect{z-index:12}
+
+.ftab.t-design {background:linear-gradient(180deg,#2a1e06 0%,#1a1205 100%);border-color:rgba(196,143,29,.3);color:rgba(196,143,29,.7)}
+.ftab.t-ops    {background:linear-gradient(180deg,#061a1d 0%,#041216 100%);border-color:rgba(28,152,166,.3);color:rgba(28,152,166,.7)}
+.ftab.t-protect{background:linear-gradient(180deg,#0a1120 0%,#060c18 100%);border-color:rgba(64,112,184,.3);color:rgba(64,112,184,.7)}
+
+.ftab.active{transform:translateY(0)!important;opacity:1!important;font-weight:800;z-index:20!important;border-bottom:1px solid #181818;margin-bottom:-1px}
+.ftab.active.t-design {background:linear-gradient(180deg,#3a2810 0%,#251a08 50%,#1a1205 100%);border-color:rgba(196,143,29,.6);border-bottom-color:#181818;color:#C48F1D;box-shadow:0 -4px 18px rgba(196,143,29,.18),inset 0 1px 0 rgba(255,200,80,.25)}
+.ftab.active.t-ops    {background:linear-gradient(180deg,#0e2e34 0%,#091e24 50%,#061418 100%);border-color:rgba(28,152,166,.6);border-bottom-color:#181818;color:#1C98A6;box-shadow:0 -4px 18px rgba(28,152,166,.18),inset 0 1px 0 rgba(80,220,240,.2)}
+.ftab.active.t-protect{background:linear-gradient(180deg,#141e34 0%,#0d1628 50%,#080e1c 100%);border-color:rgba(64,112,184,.6);border-bottom-color:#181818;color:#4070B8;box-shadow:0 -4px 18px rgba(64,112,184,.18),inset 0 1px 0 rgba(120,170,255,.2)}
+.ftab:hover:not(.active){transform:translateY(2px)!important;opacity:.88!important}
+
+.ftab.active::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1.5px;border-radius:2px}
+.ftab.active.t-design::before {background:linear-gradient(90deg,transparent,rgba(255,200,80,.7),transparent)}
+.ftab.active.t-ops::before    {background:linear-gradient(90deg,transparent,rgba(80,230,245,.6),transparent)}
+.ftab.active.t-protect::before{background:linear-gradient(90deg,transparent,rgba(120,170,255,.6),transparent)}
+
+/* Content panels */
+.content-panel{display:none;padding:0;animation:fadeSlide .22s ease;position:relative;z-index:1;border-left:1.5px solid var(--border-mid);border-right:1.5px solid var(--border-mid);border-bottom:1.5px solid var(--border-mid)}
+#panel-design {background:var(--grad-steel);border-left-color:rgba(196,143,29,.45)}
+#panel-ops    {background:var(--grad-steel);border-left-color:rgba(28,152,166,.45)}
+#panel-protect{background:var(--grad-steel);border-left-color:rgba(64,112,184,.45)}
+.content-panel.active{display:block}
+
+@keyframes fadeSlide{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+/* Panel header */
+.panel-division-header{padding:18px 22px 14px}
+.panel-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px}
+.panel-title{font-family:var(--title-font);font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1.05;margin-bottom:8px}
+.panel-desc{font-size:13px;color:var(--text-secondary);line-height:1.72;font-weight:300}
+.panel-divider{height:1px;background:linear-gradient(90deg,var(--border-bright) 0%,var(--border) 60%,transparent 100%);margin:0 0 6px}
+
+/* Case study list */
+.case-list{padding:0 0 6px}
+
+/* Validates callout */
+.validates-bar{padding:8px 22px;display:flex;align-items:center;gap:10px;border-top:1px solid var(--border)}
+.validates-label{font-family:var(--title-font);font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;background:var(--grad-red-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
+.validates-text{font-family:var(--title-font);font-size:11px;font-weight:600;letter-spacing:.03em;color:var(--brushed)}
+
+/* Accordion */
+.category{border-top:1px solid var(--border);transition:background .15s}
+.category[open]{background:rgba(255,255,255,.015)}
+.category>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:stretch;user-select:none;transition:opacity .15s;background:rgba(255,255,255,.02)}
+.category>summary::-webkit-details-marker{display:none}
+.category>summary:hover{opacity:.88}
+.sum-label{flex:1;padding:12px 22px;font-family:var(--title-font);font-size:12.5px;font-weight:700;letter-spacing:.01em;color:var(--chrome);line-height:1.3;text-shadow:none}
+.chevron{width:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#fff;background:var(--grad-red);border-left:1px solid rgba(0,0,0,.25);transition:transform .25s ease}
+.category[open]>summary .chevron{transform:rotate(90deg)}
+
+.inner{padding:14px 22px 18px;border-top:1px solid var(--border)}
+
+/* Tags */
+.case-meta{display:flex;flex-wrap:wrap;gap:6px 8px;margin-bottom:12px;align-items:center}
+.tag{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+.tag-method{background:rgba(192,192,192,.1);border:1px solid rgba(192,192,192,.22);color:var(--chrome)}
+.tag-outcome{background:rgba(212,175,55,.10);border:1px solid rgba(212,175,55,.25);color:var(--gold)}
+.tag-era{background:rgba(136,136,136,.08);border:1px solid rgba(136,136,136,.18);color:var(--titanium)}
+.tag-design {background:rgba(196,143,29,.13);border:1px solid rgba(196,143,29,.30);color:var(--col-design)}
+.tag-ops    {background:rgba(28,152,166,.10);border:1px solid rgba(28,152,166,.25);color:var(--col-ops)}
+.tag-protect{background:rgba(64,112,184,.10);border:1px solid rgba(64,112,184,.25);color:var(--col-protect)}
+.tag-div{width:1px;height:13px;background:var(--border-mid);flex-shrink:0}
+
+/* Case body */
+.case-body{color:var(--text-secondary);font-size:13px;font-weight:300;line-height:1.75}
+.case-body p{margin-bottom:9px}
+.case-body p:last-child{margin-bottom:0}
+.case-body strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
+
+.case-findings{list-style:none;display:flex;flex-direction:column;gap:6px;margin:12px 0;padding:12px 14px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-left:2px solid rgba(200,200,200,.2);border-radius:0 5px 5px 0}
+.case-findings li{color:var(--text-secondary);font-size:12.5px;font-weight:300;padding-left:15px;position:relative;line-height:1.6}
+.case-findings li::before{content:'▸';position:absolute;left:0;color:var(--race-red-2);font-size:9px;top:4px}
+
+.idlf-connect{margin-top:12px;padding:9px 14px;background:rgba(212,175,55,.04);border:1px solid rgba(212,175,55,.14);border-left:2px solid var(--gold);border-radius:0 5px 5px 0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.idlf-phase{font-family:var(--title-font);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0;white-space:nowrap}
+.idlf-note{font-size:12px;font-weight:300;color:var(--text-muted);line-height:1.55}
+.idlf-note strong{color:var(--brushed);font-weight:500;-webkit-text-fill-color:var(--brushed)}
+
+.case-source{margin-top:12px;padding-top:9px;border-top:1px solid var(--border);font-size:10px;color:var(--text-muted);font-family:var(--title-font);letter-spacing:.05em}
+
+/* Footer */
+.card-footer{padding:11px 20px;background:var(--grad-chrome-bar);display:flex;align-items:center;justify-content:space-between;position:relative}
+.card-footer::before{content:'';position:absolute;top:0;left:0;width:60px;height:2px;background:var(--grad-red-h)}
+.footer-mark{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2a2a2a;text-shadow:0 1px 1px rgba(255,255,255,.4)}
+.footer-inf{font-family:var(--title-font);font-size:16px;font-weight:800;color:#2a2a2a;text-shadow:0 1px 1px rgba(255,255,255,.4);line-height:1}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Identity -->
+  <div class="identity-bar">
+    <div class="avatar">A</div>
+    <div class="identity-text">
+      <div class="identity-title">The Compounding Record</div>
+      <div class="identity-sub">AESIT® — S³ Labs® · Field Intelligence · Built. Measured. Proven.</div>
+    </div>
+    <div class="badge">Validated</div>
+  </div>
+
+  <!-- Bridge -->
+  <div class="bridge">
+    <div class="bridge-eyebrow">Lead Constructor · AEC Digital Lifecycle · IDLF</div>
+    <div class="bridge-headline">Nine studies. Three divisions.<br>One compounding record.</div>
+    <p>The machine has been introduced. What follows is the <strong>proving ground</strong> — nine independent industry studies that validate every performance claim AESIT® engineers into the <strong>Intelligent Design Lifecycle Framework.</strong> Intelligence is Only as Good as Its Evidence.</p>
+    <p>Each study maps to a specific IDLF phase, a specific division, and a specific metric. No projections. No ambition. <strong>Lap by lap, phase by phase, asset by asset.</strong></p>
+  </div>
+
+  <!-- Folder Tabs -->
+  <div class="folder-zone">
+    <div class="folder-tabs">
+      <div class="ftab t-design active" id="tab-design" onclick="switchTab('design')">
+        <span class="ftab-dot" style="background:var(--col-design);box-shadow:0 0 5px rgba(196,143,29,.6);"></span>Design
+      </div>
+      <div class="ftab t-ops" id="tab-ops" onclick="switchTab('ops')">
+        <span class="ftab-dot" style="background:var(--col-ops);box-shadow:0 0 5px rgba(28,152,166,.6);"></span>Operations
+      </div>
+      <div class="ftab t-protect" id="tab-protect" onclick="switchTab('protect')">
+        <span class="ftab-dot" style="background:var(--col-protect);box-shadow:0 0 5px rgba(64,112,184,.6);"></span>Protection
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ DESIGN PANEL ═══ -->
+  <div class="content-panel active" id="panel-design">
+    <div class="panel-division-header">
+      <div class="panel-eyebrow" style="color:var(--col-design);">S³ Labs® · Division 01</div>
+      <div class="panel-title" style="color:var(--col-design);">Regenerative Architecture.<br>Living Intelligence.</div>
+      <p class="panel-desc">Two foundational studies proving BIM and integrated delivery eliminate operational drag before groundbreaking — locking in the ~75% design-and-construction ROI tier upon which all lifecycle returns compound.</p>
+    </div>
+    <div class="panel-divider"></div>
+    <div class="case-list">
+
+      <!-- AUGU -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — BIM coordination eliminates operational drag before groundbreaking.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">AUGU — Benefits of BIM and VDC: A Contractor's View</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-design">Design</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">BIM</span>
+            <span class="tag tag-method">VDC</span>
+            <span class="tag tag-method">Digital Coordination</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">Cost Reduction</span>
+            <span class="tag tag-outcome">Schedule Performance</span>
+          </div>
+          <div class="case-body">
+            <p>This contractor-focused study examines the tangible benefits of BIM and VDC workflows from the perspective of general contractors and construction managers.</p>
+            <ul class="case-findings">
+              <li>Significant reduction in RFIs and change orders through clash detection prior to construction</li>
+              <li>Improved schedule reliability via 4D simulation and phasing analysis</li>
+              <li>Enhanced communication between design and trade teams — eliminating rework and operational drag</li>
+              <li>Faster project closeout via as-built BIM handover — the foundation of the Digital Twin</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Design → Build</span>
+            <span class="idlf-note">As-built BIM handover initiates <strong>Asset Sovereignty™</strong> — the moment the Thinking Environment begins to learn and compound.</span>
+          </div>
+          <div class="case-source">Source: AUGU — Benefits of BIM and VDC: A Contractor's View</div>
+        </div>
+      </details>
+
+      <!-- Dodge -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — ~75% ROI on BIM investment confirmed at institutional scale.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">Dodge Data &amp; Analytics — "The Business Value of BIM for Construction" (2014)</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-design">Design</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">BIM</span>
+            <span class="tag tag-method">Industry Research</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">ROI</span>
+            <span class="tag tag-outcome">Error Reduction</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-era">2014</span>
+          </div>
+          <div class="case-body">
+            <p>This landmark research report surveyed contractors across North America to quantify business value generated by BIM adoption at scale — one of the most cited benchmarks for BIM ROI in the industry.</p>
+            <ul class="case-findings">
+              <li>High BIM users reported average ROI of <strong>over 75%</strong> — directly validating AESIT's design-and-construction ROI tier</li>
+              <li>Reduction in errors and omissions cited as the top measurable benefit — calibrated execution before the first wheel turns</li>
+              <li>BIM adoption correlated directly with fewer cost overruns and schedule delays at scale</li>
+              <li>High adopters more likely to win repeat business through demonstrated, measurable performance</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Plan → Design</span>
+            <span class="idlf-note">Confirms the <strong>~75% design-and-construction ROI tier</strong> — the proving ground upon which 300%+ lifecycle returns are engineered.</span>
+          </div>
+          <div class="case-source">Source: Dodge Data &amp; Analytics, "The Business Value of BIM for Construction," 2014</div>
+        </div>
+      </details>
+
+      <!-- Mortenson -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — Lead Constructor model delivers cost certainty and compounding lifecycle returns.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">Mortenson — "Advancing Integrated Project Delivery" (2019)</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-design">Design</span>
+            <span class="tag tag-ops">Operations</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">IPD</span>
+            <span class="tag tag-method">Lean Construction</span>
+            <span class="tag tag-method">BIM</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">Cost Certainty</span>
+            <span class="tag tag-outcome">Schedule Performance</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-era">2019</span>
+          </div>
+          <div class="case-body">
+            <p>Mortenson's 2019 report shows how Integrated Project Delivery — combining BIM, collaborative contracting, and lean construction — transforms project outcomes across healthcare, higher education, and commercial sectors.</p>
+            <ul class="case-findings">
+              <li>IPD projects consistently delivered on or under budget — calibrated execution replacing fragmented consultant drag</li>
+              <li>Integrated teams using shared BIM models reduced coordination conflicts and RFIs significantly</li>
+              <li>Early contractor involvement eliminated constructability issues before they became costly</li>
+              <li>Owner satisfaction substantially higher on IPD-delivered projects — trust engineered in, not declared</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Lead Constructor Model</span>
+            <span class="idlf-note">Front-loading intelligence generates the <strong>~75% ROI foundation</strong> that SBLM compounds toward 300%+. One team. One Digital Thread. No fragmentation.</span>
+          </div>
+          <div class="case-source">Source: Mortenson, "Advancing Integrated Project Delivery," 2019</div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- ═══ OPERATIONS PANEL ═══ -->
+  <div class="content-panel" id="panel-ops">
+    <div class="panel-division-header">
+      <div class="panel-eyebrow" style="color:var(--col-ops);">S³ Labs® · Division 02</div>
+      <div class="panel-title" style="color:var(--col-ops);">Portfolio Clarity.<br>Measurable Performance.</div>
+      <p class="panel-desc">Three studies validating AESIT's 15–35% energy reduction target through Digital Twin and real-time predictive intelligence — from utility-scale research to named corporate deployments at portfolio scale.</p>
+    </div>
+    <div class="panel-divider"></div>
+    <div class="case-list">
+
+      <!-- EPRI -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — 15–35% energy reduction through Digital Twin and real-time predictive intelligence.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">Electric Power Research Institute (EPRI) — Digital Twins Energy Savings</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-ops">Operations</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">Digital Twin</span>
+            <span class="tag tag-method">IoT</span>
+            <span class="tag tag-method">Predictive Analytics</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">Energy Savings</span>
+            <span class="tag tag-outcome">Uptime</span>
+          </div>
+          <div class="case-body">
+            <p>EPRI's research into Digital Twin applications for energy infrastructure demonstrates how real-time virtual replicas of physical systems enable operators to optimize performance, reduce waste, and anticipate equipment failures before they occur.</p>
+            <p>Applied to building and campus-scale environments, these findings directly inform AESIT's Digital Twin and SBLM offerings — enabling continuous, compounding energy savings across every Thinking Environment.</p>
+            <ul class="case-findings">
+              <li>Real-time equipment monitoring enabled proactive interventions — a setback becomes telemetry, not a crisis</li>
+              <li>Predictive maintenance models reduced unplanned outages significantly across all study sites</li>
+              <li>Energy optimization algorithms, informed by live Digital Twin data, cut consumption across monitored systems</li>
+              <li>IoT sensor integration improved load forecasting accuracy across the full operational lifecycle</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Operate → Optimize</span>
+            <span class="idlf-note">Validates AESIT's <strong>15–35% energy reduction</strong> target — where Intelligence That Compounds becomes a measurable financial reality, billing cycle after billing cycle.</span>
+          </div>
+          <div class="case-source">Source: Electric Power Research Institute (EPRI) — Digital Twins Energy Savings Research</div>
+        </div>
+      </details>
+
+      <!-- JLL / P&G — NEW -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — Portfolio-scale smart building intelligence delivers energy savings with 3-month payback.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">JLL / Procter &amp; Gamble — IntelliCommand Smart Building Portfolio Deployment</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-ops">Operations</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">Smart Building</span>
+            <span class="tag tag-method">IoT</span>
+            <span class="tag tag-method">Remote Monitoring</span>
+            <span class="tag tag-method">Portfolio Management</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">Energy Savings</span>
+            <span class="tag tag-outcome">ROI</span>
+            <span class="tag tag-outcome">Portfolio Scale</span>
+          </div>
+          <div class="case-body">
+            <p>JLL deployed its IntelliCommand platform — a cloud-based integrated building management solution combining IoT sensors, real-time remote monitoring, and a dedicated engineering operations team — across Procter &amp; Gamble's corporate real estate portfolio. The pilot covered 12 buildings totaling 3.2 million square feet, including P&amp;G's global headquarters campus in Cincinnati, key laboratory facilities, and a major mixed-use complex.</p>
+            <p>The results validated the commercial case for intelligent building operations at portfolio scale — and earned JLL an Environmental Leader Product &amp; Project Award in 2014.</p>
+            <ul class="case-findings">
+              <li>Portfolio achieved <strong>10% energy savings within 11 months</strong> of deployment — with select properties reaching 16%</li>
+              <li>Full payback on P&amp;G's initial investment realized in just <strong>three months</strong> — intelligence paying for itself before the first year closed</li>
+              <li>24/7 real-time remote monitoring enabled issues to be resolved before occupants experienced disruption — a setback is telemetry, not a service failure</li>
+              <li>Program subsequently scaled to 120 buildings across 28 million square feet — proving replicability at institutional scope</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Operate → Optimize → Scale</span>
+            <span class="idlf-note">Named. Measured. Replicated at 28 million square feet. This is the <strong>portfolio-scale proof</strong> that AESIT's Intelligence That Compounds is not a projection — it is a billing-cycle reality.</span>
+          </div>
+          <div class="case-source">Source: JLL / Procter &amp; Gamble — IntelliCommand Smart Building Portfolio Deployment, Environmental Leader Product &amp; Project Award, 2014</div>
+        </div>
+      </details>
+
+      <!-- McKinsey Analytics-Based Maintenance — NEW (crossover Ops/Protection) -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — Analytics-driven operations deliver 18–25% maintenance cost reduction with measurable uptime gains.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">McKinsey &amp; Company — "Establishing the Right Analytics-Based Maintenance Strategy" (2021)</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-ops">Operations</span>
+            <span class="tag tag-protect">Protection</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">IoT Analytics</span>
+            <span class="tag tag-method">Condition-Based Maintenance</span>
+            <span class="tag tag-method">AI Diagnostics</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">Cost Reduction</span>
+            <span class="tag tag-outcome">Uptime</span>
+            <span class="tag tag-outcome">Occupant Experience</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-era">2021</span>
+          </div>
+          <div class="case-body">
+            <p>McKinsey's published research documents the deployment of an advanced IoT analytics and remote troubleshooting solution at a large medical-device manufacturer — a facility where equipment uptime directly affects both operational continuity and end-user experience. The organization had been absorbing high costs from unnecessary parts usage, excessive field-engineer dispatches, and extended labor hours driven by reactive maintenance protocols.</p>
+            <p>The solution architecture mirrors AESIT's SBLM model precisely: IoT sensor data combined with historical failure logs, AI-driven root-cause analysis, and a standardized escalation path from remote resolution to targeted field dispatch.</p>
+            <ul class="case-findings">
+              <li>Advanced analytics solution generated <strong>18–25% reduction in maintenance costs</strong> — measured against verified historical baseline data</li>
+              <li>Remote troubleshooting eliminated the majority of unnecessary field visits — operational drag replaced by data-informed action</li>
+              <li>Customer uptime improved significantly — end-user experience elevated directly by asset intelligence</li>
+              <li>Standardized resolution process replaced ad-hoc reactive repair — every intervention became a data event, not a crisis response</li>
+              <li>Complex issues requiring on-site visits resolved in a single appointment — first-time fix rates improved through pre-diagnosis</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Operate → Commission → Protect</span>
+            <span class="idlf-note">McKinsey's documented <strong>18–25% maintenance cost reduction</strong> independently validates the crossover between Operations and Protection — confirming that analytics-driven asset management compounds returns across both divisions simultaneously.</span>
+          </div>
+          <div class="case-source">Source: McKinsey &amp; Company, "Establishing the Right Analytics-Based Maintenance Strategy," 2021 — mckinsey.com/capabilities/operations</div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- ═══ PROTECTION PANEL ═══ -->
+  <div class="content-panel" id="panel-protect">
+    <div class="panel-division-header">
+      <div class="panel-eyebrow" style="color:var(--col-protect);">S³ Labs® · Division 03</div>
+      <div class="panel-title" style="color:var(--col-protect);">Engineered Resilience.<br>Trust at Every Layer.</div>
+      <p class="panel-desc">Three studies validating AESIT's 10–25% maintenance reduction through IoT predictive intelligence at scale — from a named global equipment deployment to McKinsey's industrial benchmark and a cross-industry institutional consensus confirming 7:1 ROI.</p>
+    </div>
+    <div class="panel-divider"></div>
+    <div class="case-list">
+
+      <!-- Schindler -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — 10–25% maintenance reduction through IoT predictive intelligence at scale.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">Schindler — Using IBM's IoT Platform for Predictive Maintenance</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-ops">Operations</span>
+            <span class="tag tag-protect">Protection</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">IoT</span>
+            <span class="tag tag-method">Predictive Maintenance</span>
+            <span class="tag tag-method">AI Analytics</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">Uptime</span>
+            <span class="tag tag-outcome">Cost Reduction</span>
+            <span class="tag tag-outcome">Occupant Experience</span>
+          </div>
+          <div class="case-body">
+            <p>Schindler Group partnered with IBM to deploy an IoT-powered predictive maintenance platform across its global installed base — transforming its service model from reactive repair to proactive performance management. The operational philosophy mirrors AESIT's SBLM offering exactly.</p>
+            <ul class="case-findings">
+              <li>Real-time IoT sensor data enabled predictive failure detection before breakdowns — a setback is telemetry, not a crisis</li>
+              <li>Mean time between failures improved significantly across all monitored equipment fleets</li>
+              <li>Field technician dispatches became targeted and data-informed — eliminating reactive operational drag</li>
+              <li>Customer uptime SLAs improved — directly enhancing the Thinking Environment for every occupant</li>
+              <li>Maintenance cost reduction aligned with AESIT's <strong>10–25% target range</strong> for smart-enabled asset management</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Commission → Operations &amp; Protect</span>
+            <span class="idlf-note">IoT-connected assets paired with AI analytics unlock the operational tier that drives returns <strong>beyond 300%</strong>. Resilience and performance don't compete — they compound.</span>
+          </div>
+          <div class="case-source">Source: Schindler Group — IBM IoT Platform Case Study</div>
+        </div>
+      </details>
+
+      <!-- McKinsey Prediction at Scale — NEW -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — Predictive intelligence at industrial scale cuts downtime by up to 50% and extends asset life by 20–40%.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">McKinsey &amp; Company — "Prediction at Scale: How Industry Can Get More Value Out of Maintenance" (2021)</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-protect">Protection</span>
+            <span class="tag tag-ops">Operations</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">Predictive Maintenance</span>
+            <span class="tag tag-method">IoT</span>
+            <span class="tag tag-method">Advanced Analytics</span>
+            <span class="tag tag-method">AI / ML</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">Downtime Reduction</span>
+            <span class="tag tag-outcome">Asset Life Extension</span>
+            <span class="tag tag-outcome">Cost Reduction</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-era">2021</span>
+          </div>
+          <div class="case-body">
+            <p>McKinsey's multi-sector study documents the deployment of advanced predictive maintenance programs across power generation, mining, oil and gas, and renewable energy — establishing quantified performance benchmarks across asset-intensive industries where equipment uptime is a direct revenue and safety variable.</p>
+            <p>The research draws on real deployments: a renewable-power company prioritizing gearbox monitoring across wind turbine fleets; an oil and gas operator in Asia targeting compressors, gas turbines, and critical rotating equipment; and mining companies instrumenting dump truck and excavator engines. Each deployment followed a structured IoT-to-analytics pipeline that maps directly onto AESIT's SBLM architecture.</p>
+            <ul class="case-findings">
+              <li>Predictive maintenance reduced machine downtime by <strong>up to 50%</strong> across all studied verticals — unplanned outages replaced by data-scheduled interventions</li>
+              <li>Asset operational lifespan extended by <strong>20–40%</strong> — the Digital Thread continues compounding long after commissioning</li>
+              <li>Maintenance costs reduced by <strong>18–25%</strong> across implementations with sufficient IoT data history — directly validating AESIT's protection tier targets</li>
+              <li>Renewable energy operators demonstrated that prioritizing critical sub-components — gearboxes, contactors — generated outsized ROI relative to broad-based sensor rollout</li>
+              <li>Successful deployments followed five structured rules: asset prioritization, data sufficiency, partner IP leverage, model iteration, and last-mile change management — the SBLM operating model in practice</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Commission → Operate → Protect</span>
+            <span class="idlf-note">McKinsey's cross-industry data confirms that <strong>IoT + AI = 20–40% longer asset life and up to 50% less downtime</strong> — the compounding Protection tier that transforms maintenance from a cost center into a performance engine.</span>
+          </div>
+          <div class="case-source">Source: McKinsey &amp; Company, "Prediction at Scale: How Industry Can Get More Value Out of Maintenance," 2021 — mckinsey.com/capabilities/operations</div>
+        </div>
+      </details>
+
+      <!-- PwC / McKinsey / Deloitte Benchmark Consensus — NEW -->
+      <div class="validates-bar">
+        <span class="validates-label">Validates</span>
+        <span class="validates-text">AESIT® IDLF — IoT-based predictive intelligence delivers 7:1 ROI and 30–50% downtime reduction — confirmed across three global institutions.</span>
+      </div>
+      <details class="category">
+        <summary>
+          <span class="sum-label">PwC / McKinsey / Deloitte — Cross-Institution Predictive Maintenance Benchmark Consensus</span>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="inner">
+          <div class="case-meta">
+            <span class="tag tag-protect">Protection</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-method">Industry Benchmark</span>
+            <span class="tag tag-method">IoT</span>
+            <span class="tag tag-method">Cross-Sector Research</span>
+            <span class="tag-div"></span>
+            <span class="tag tag-outcome">ROI</span>
+            <span class="tag tag-outcome">Cost Reduction</span>
+            <span class="tag tag-outcome">Downtime Reduction</span>
+            <span class="tag tag-outcome">Asset Life Extension</span>
+          </div>
+          <div class="case-body">
+            <p>Three of the world's foremost management and advisory institutions — PwC, McKinsey &amp; Company, and Deloitte — have each independently published research on the financial returns of IoT-enabled predictive maintenance. Their findings, drawn from separate methodologies and industry samples spanning manufacturing, energy, healthcare, and facilities management, converge on a consistent set of performance benchmarks. Taken together, they constitute an institutional consensus that directly anchors AESIT's Protection division performance claims.</p>
+            <ul class="case-findings">
+              <li><strong>PwC (2017):</strong> Companies adopting IoT-based predictive maintenance achieve ROI of up to <strong>$7 for every $1 invested</strong> — the 7:1 return ratio that defines the Protection tier's financial case</li>
+              <li><strong>McKinsey (2020):</strong> Predictive maintenance reduces overall maintenance costs by <strong>18–25%</strong> while cutting unplanned downtime by up to <strong>50%</strong> — benchmarks that span manufacturing, energy, and critical infrastructure sectors</li>
+              <li><strong>Deloitte (2021):</strong> Advanced analytics and machine learning for predictive maintenance reduce maintenance expenses by up to <strong>25%</strong> — validating the upper bound of AESIT's 10–25% target range</li>
+              <li>Across all three institutions: organizations that shift from reactive to predictive protocols report <strong>30–50% reduction in unplanned downtime</strong> and achieve full program payback within 12–18 months</li>
+              <li>Asset lifespan extension of <strong>20–40%</strong> reported consistently — confirming that Protection returns continue compounding well beyond the initial investment horizon</li>
+            </ul>
+          </div>
+          <div class="idlf-connect">
+            <span class="idlf-phase">IDLF · Protect → Compound</span>
+            <span class="idlf-note">When PwC, McKinsey, and Deloitte independently arrive at the same numbers, those numbers become the <strong>institutional floor</strong> — not a projection. AESIT's 10–25% maintenance reduction target sits inside a benchmark range confirmed by three of the most credentialed research organizations on earth.</span>
+          </div>
+          <div class="case-source">Sources: PwC, "The Business Value of Predictive Maintenance," 2017 · McKinsey &amp; Company, "Predictive Maintenance: Transforming Industrial Operations," 2020 · Deloitte, "Advanced Analytics and Machine Learning for Predictive Maintenance," 2021</div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="card-footer">
+    <div class="footer-mark">AESIT Global Solutions Group © 2026 — The Compounding Record · S³ Labs®</div>
+    <div class="footer-inf">∞</div>
+  </div>
+
+</div>
+
+<script>
+  const allTabs = ['design','ops','protect'];
+  function switchTab(key) {
+    allTabs.forEach(k => {
+      document.getElementById('tab-' + k).classList.remove('active');
+      document.getElementById('panel-' + k).classList.remove('active');
+      document.querySelectorAll('#panel-' + k + ' details.category').forEach(d => d.removeAttribute('open'));
+    });
+    document.getElementById('tab-' + key).classList.add('active');
+    document.getElementById('panel-' + key).classList.add('active');
+  }
+
+  allTabs.forEach(key => {
+    const panel = document.getElementById('panel-' + key);
+    panel.querySelectorAll('details.category').forEach(cat => {
+      cat.addEventListener('toggle', () => {
+        if (cat.open) {
+          panel.querySelectorAll('details.category').forEach(other => {
+            if (other !== cat) other.removeAttribute('open');
+          });
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
