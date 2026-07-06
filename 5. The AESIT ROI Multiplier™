@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page {
+        size: A4;
+        margin: 20mm 15mm;
+        background-color: #faf9f6;
+        @bottom-right { content: counter(page); font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+        @bottom-left { content: "AESIT Global Solutions Group | The ROI Multiplier™"; font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+    }
+    * { box-sizing: border-box; }
+    body { font-family: "Helvetica Neue", sans-serif; font-size: 10.5pt; line-height: 1.6; color: #27272a; margin: 0; background-color: #faf9f6; }
+    h1, h2, h3 { font-family: "Georgia", serif; color: #0f172a; margin-top: 0; font-weight: normal; }
+    h1 { font-size: 24pt; line-height: 1.2; margin-bottom: 5px; }
+    .subtitle { font-family: "Helvetica Neue", sans-serif; font-size: 11pt; text-transform: uppercase; letter-spacing: 2px; color: #BD8731; margin-bottom: 25px; font-weight: 600; }
+    .meta-line { font-family: "Helvetica Neue", sans-serif; font-size: 9pt; color: #64748b; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 30px; }
+    h2 { font-size: 14pt; color: #1e293b; margin-top: 25px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #BD8731; page-break-after: avoid; }
+    p { margin-top: 0; margin-bottom: 12px; text-align: justify; }
+    .highlight-box { background-color: #f1f5f9; padding: 15px; border-left: 4px solid #BD8731; margin: 20px 0; font-style: italic; }
+    ul { margin-top: 0; margin-bottom: 15px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .footer-note { margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 15px; font-size: 8.5pt; color: #64748b; text-align: center; }
+</style>
+<title>The AESIT ROI Multiplier™</title>
+</head>
+<body>
+    <h1>The AESIT ROI Multiplier™</h1>
+    <div class="subtitle">Financial Modeling for Intelligent Built Environments</div>
+    <div class="meta-line"><strong>Financial Strategy Paper</strong> | AESIT Corporate Intelligence &bull; 2026</div>
+    
+    <h2>01 — Beyond Traditional CapEx/OpEx Modeling</h2>
+    <p>The AESIT ROI Multiplier™ completely replaces standard property valuation methods. Traditional commercial real estate accounting treats technology as an upfront, depreciating capital expense. By contrast, our framework structures smart property systems as direct valuation assets that systematically build Net Operating Income (NOI).</p>
+    
+    <div class="highlight-box">
+        "Every dollar allocated to systemic lifecycle telemetry yields an exponential yield across asset appreciation, operational savings, and risk mitigation."
+    </div>
+
+    <h2>02 — Value Generation Mechanics</h2>
+    <ul>
+        <li><strong>Yield Compression:</strong> Integrating cyber-physical protections reduces overall property risk, yielding lower capital insurance costs and favorable financing terms.</li>
+        <li><strong>Predictive Lifecycle Tuning:</strong> Real-time operational data reduces structural decay, deferring major system replacements by up to 35 percent.</li>
+        <li><strong>Energy Cost Optimizations:</strong> On-site microgrid intelligence leverages variable utility pricing structures to arbitrage energy usage patterns.</li>
+    </ul>
+
+    <div class="footer-note">
+        &copy; 2026 AESIT Global Solutions Group &bull; aesit.net &bull; Confidential Executive Briefing
+    </div>
+</body>
+</html>
