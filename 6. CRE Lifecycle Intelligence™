@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page {
+        size: A4;
+        margin: 20mm 15mm;
+        background-color: #faf9f6;
+        @bottom-right { content: counter(page); font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+        @bottom-left { content: "AESIT Global Solutions Group | CRE Lifecycle Intelligence™"; font-family: "Helvetica Neue", sans-serif; font-size: 8pt; color: #71717a; }
+    }
+    * { box-sizing: border-box; }
+    body { font-family: "Helvetica Neue", sans-serif; font-size: 10.5pt; line-height: 1.6; color: #27272a; margin: 0; background-color: #faf9f6; }
+    h1, h2 { font-family: "Georgia", serif; color: #0f172a; margin-top: 0; font-weight: normal; }
+    h1 { font-size: 24pt; line-height: 1.2; margin-bottom: 5px; }
+    .subtitle { font-family: "Helvetica Neue", sans-serif; font-size: 11pt; text-transform: uppercase; letter-spacing: 2px; color: #0f172a; margin-bottom: 25px; font-weight: 600; }
+    .meta-line { font-family: "Helvetica Neue", sans-serif; font-size: 9pt; color: #64748b; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 30px; }
+    h2 { font-size: 14pt; color: #1e293b; margin-top: 25px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #0f172a; page-break-after: avoid; }
+    p { margin-top: 0; margin-bottom: 12px; text-align: justify; }
+    ul { margin-top: 0; margin-bottom: 15px; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .footer-note { margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 15px; font-size: 8.5pt; color: #64748b; text-align: center; }
+</style>
+<title>CRE Lifecycle Intelligence™</title>
+</head>
+<body>
+    <h1>CRE Lifecycle Intelligence™</h1>
+    <div class="subtitle">The Unified Framework for Modern Portfolios</div>
+    <div class="meta-line"><strong>Strategic Doctrine</strong> | CRE Core Management Standards &bull; 2026</div>
+    
+    <h2>01 — Unified Strategy Versus Disconnected Management</h2>
+    <p>Traditional Commercial Real Estate splits planning, operations, and security into disconnected silos. This division introduces hidden points of failure, drives up structural operating costs, and speeds up asset decline. CRE Lifecycle Intelligence™ treats properties as live, data-driven networks where physical design, ongoing usage telemetry, and site defense work together in a single loop.</p>
+    
+    <h2>02 — Operational Stages</h2>
+    <ul>
+        <li><strong>Inception:</strong> Generating semantic digital twins during initial development to form an unchangeable record of truth.</li>
+        <li><strong>Sustained Operations:</strong> Processing continuous sensory inputs to dynamic control layers to optimize ongoing building conditions.</li>
+        <li><strong>Hardened Defense:</strong> Deploying physical and network protective controls to defend structural performance against physical or cyber threats.</li>
+    </ul>
+
+    <div class="footer-note">
+        &copy; 2026 AESIT Global Solutions Group &bull; CRE Lifecycle Intelligence™ Core Corpus
+    </div>
+</body>
+</html>
