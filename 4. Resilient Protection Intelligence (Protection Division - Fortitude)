@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    @page {
+        size: A4;
+        margin: 20mm 15mm;
+        background-color: #faf9f6;
+        @bottom-right {
+            content: counter(page);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 8pt;
+            color: #71717a;
+        }
+        @bottom-left {
+            content: "AESIT Global Solutions Group | Resilient Protection Intelligence (Secure-by-Design)";
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 8pt;
+            color: #71717a;
+        }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.6;
+        color: #27272a;
+        margin: 0;
+        padding: 0;
+        background-color: #faf9f6;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: "Georgia", Georgia, serif;
+        color: #18181b;
+        margin-top: 0;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 24pt;
+        line-height: 1.2;
+        color: #0f172a;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 11pt;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #64748b;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+
+    .meta-line {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 9pt;
+        color: #64748b;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 14pt;
+        color: #1e293b;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #e2e8f0;
+        page-break-after: avoid;
+    }
+
+    h2.brand-accent {
+        color: #283593;
+        border-bottom: 1px solid #283593;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 12px;
+        text-align: justify;
+    }
+
+    .lead-paragraph {
+        font-size: 11.5pt;
+        color: #334155;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+
+    .highlight-banner {
+        background-color: #1e293b;
+        color: #f8fafc;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+        page-break-inside: avoid;
+    }
+
+    .loop-box {
+        background-color: #1e293b;
+        color: #f8fafc;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+        text-align: center;
+        font-family: "Georgia", serif;
+        font-size: 13pt;
+        letter-spacing: 0.5px;
+        page-break-inside: avoid;
+    }
+
+    .loop-box span.arrow {
+        color: #94a3b8;
+        margin: 0 12px;
+    }
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 6px;
+    }
+
+    .component-block {
+        margin-bottom: 18px;
+        page-break-inside: avoid;
+    }
+
+    .component-header {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 11pt;
+        font-weight: bold;
+        color: #283593;
+        margin-bottom: 4px;
+    }
+
+    .component-desc {
+        margin-left: 0;
+        color: #27272a;
+    }
+
+    blockquote {
+        margin: 20px 0;
+        padding: 10px 20px;
+        border-left: 4px solid #283593;
+        background-color: #f7f8fc;
+        font-style: italic;
+        color: #475569;
+    }
+
+    .footer-note {
+        margin-top: 40px;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 15px;
+        font-size: 8.5pt;
+        color: #64748b;
+        text-align: center;
+        line-height: 1.5;
+    }
+</style>
+<title>Resilient Protection Intelligence (Secure-by-Design)</title>
+</head>
+<body>
+
+    <h1>Resilient Protection Intelligence (Secure-by-Design)</h1>
+    <div class="subtitle">An AESIT® Division-Level Doctrine of Protection Intelligence in CRE Lifecycle Intelligence™</div>
+    
+    <div class="meta-line">
+        <strong>Protection Division Functional Doctrine</strong> | AESIT Intelligence Standards Corpus &bull; Published 2026
+    </div>
+
+    <h2>Executive Summary</h2>
+    <p class="lead-paragraph">
+        Resilient Protection Intelligence (Secure‑by‑Design) is the continuity and resilience doctrine of CRE Lifecycle Intelligence™. It is the discipline of engineering cyber‑physical protection as a sovereign, predictive, lifecycle‑integrated intelligence system — one that strengthens operational continuity, compresses cap rates, and increases long‑term asset valuation.
+    </p>
+    <p>
+        This doctrine operates within the tri‑pillar lifecycle architecture outlined in <em>Form. Flow. Fortitude. In Practice.</em> and functions alongside its sibling disciplines — Regenerative Design Intelligence and Adaptive Operational Intelligence — to form a unified, compounding intelligence ecosystem.
+    </p>
+
+    <blockquote>
+        Fortitude is not security.<br>
+        <strong>Fortitude is protection intelligence — the sovereign resilience layer that ensures the built environment remains stable, predictable, and financially advantaged across decades of operation.</strong>
+    </blockquote>
+
+    <h2 class="brand-accent">01 — The Role of Fortitude in CRE Lifecycle Intelligence™</h2>
+    <p>
+        Fortitude is the continuity intelligence layer of the lifecycle. It transforms protection from a reactive security posture into a predictive, sovereign, valuation‑strengthening discipline.
+    </p>
+    
+    <p>Fortitude establishes:</p>
+    <ul>
+        <li>The cyber‑physical resilience architecture</li>
+        <li>The predictive threat intelligence engine</li>
+        <li>The sovereign continuity record</li>
+        <li>The valuation multiplier</li>
+        <li>The resilience feedback loop</li>
+    </ul>
+
+    <blockquote>
+        Fortitude is not security.<br>
+        <strong>Fortitude is protection intelligence.</strong>
+    </blockquote>
+
+    <h2 class="brand-accent">02 — The Doctrine of Resilient Protection Intelligence (Secure‑by‑Design)</h2>
+    <p>
+        Resilient Protection Intelligence is governed by Secure‑by‑Design — AESIT’s proprietary protection doctrine that embeds resilience into the architectural, operational, and intelligence layers of the built environment.
+    </p>
+    
+    <p>Secure‑by‑Design ensures that protection:</p>
+    <ul>
+        <li>Begins at design</li>
+        <li>Operates continuously</li>
+        <li>Predicts threats before they materialize</li>
+        <li>Strengthens operational continuity</li>
+        <li>Generates sovereign protection records</li>
+        <li>Feeds intelligence back into design and operations</li>
+    </ul>
+
+    <div class="highlight-banner" style="text-align: center; font-family: 'Georgia', serif; font-size: 12pt;">
+        Secure‑by‑Design is the resilience engine of CRE Lifecycle Intelligence™.
+    </div>
+
+    <h2 class="brand-accent">03 — Key Components of Resilient Protection Intelligence</h2>
+    
+    <div class="component-block">
+        <div class="component-header">1. Secure‑by‑Design Architecture</div>
+        <div class="component-desc">
+            Protection embedded at the architectural level. Resilience becomes structural, not supplemental — inheriting intelligence from Regenerative Design Intelligence.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">2. Cyber‑Physical Threat Modeling</div>
+        <div class="component-desc">
+            Predictive analytics identify vulnerabilities before they materialize. Threat modeling strengthens continuity and reduces operational uncertainty — directly informing Adaptive Operational Intelligence.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">3. Continuity Intelligence</div>
+        <div class="component-desc">
+            Real‑time monitoring of mission‑critical stability. Continuity intelligence ensures operations remain stable under stress.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">4. Sovereign Protection Records</div>
+        <div class="component-desc">
+            All protection intelligence belongs to the owner. Sovereign records strengthen underwriting and valuation.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">5. Resilience Benchmarking</div>
+        <div class="component-desc">
+            Protection measured across lifecycle cycles. Benchmarking creates a compounding resilience record that informs future Form and Flow.
+        </div>
+    </div>
+
+    <h2 class="brand-accent">04 — Resilient Protection Intelligence in Action</h2>
+    
+    <div class="component-block">
+        <div class="component-header">1. Predictive Resilience</div>
+        <div class="component-desc">
+            Threats identified before they materialize. Predictive resilience eliminates reactive protection.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">2. Continuity Assurance</div>
+        <div class="component-desc">
+            Mission‑critical operations remain stable under stress. Continuity assurance strengthens operational confidence.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">3. Cap‑Rate Compression</div>
+        <div class="component-desc">
+            Resilience reduces perceived risk. Cap rates compress, strengthening valuation.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">4. Sovereign Continuity</div>
+        <div class="component-desc">
+            Protection intelligence becomes a balance‑sheet asset. Sovereign continuity increases long‑term asset competitiveness.
+        </div>
+    </div>
+
+    <div class="component-block">
+        <div class="component-header">5. Lifecycle Resilience</div>
+        <div class="component-desc">
+            Fortitude informs future Form and strengthens Flow. Resilience becomes a compounding lifecycle force.
+        </div>
+    </div>
+
+    <h2 class="brand-accent">05 — The Intelligence Loop: How Fortitude Multiplies Value</h2>
+    <p>
+        Fortitude powers the resilience feedback loop within the lifecycle:
+    </p>
+
+    <div class="loop-box">
+        <span style="color: #fff; font-weight: bold; background-color: #BD8731; padding: 2px 8px; border-radius: 3px;">Form (Design)</span> 
+        <span class="arrow">&rarr;</span> 
+        <span style="color: #fff; font-weight: bold; background-color: #146B75; padding: 2px 8px; border-radius: 3px;">Flow (Operations)</span> 
+        <span class="arrow">&rarr;</span> 
+        <span style="color: #fff; font-weight: bold; background-color: #283593; padding: 2px 8px; border-radius: 3px;">Fortitude (Protection)</span>
+    </div>
+
+    <ul>
+        <li>Protection intelligence feeds future design cycles.</li>
+        <li>Design intelligence strengthens future operational cycles.</li>
+        <li>Operational intelligence strengthens future protection cycles.</li>
+    </ul>
+    <p>
+        This loop is powered by <strong>Compounding Intelligence™</strong> — the mechanism through which intelligence increases in value every time the asset operates. Fortitude is the valuation multiplier of compounding intelligence.
+    </p>
+
+    <h2 class="brand-accent">06 — The Financial Impact of Resilient Protection Intelligence</h2>
+    <p>
+        Resilient Protection Intelligence strengthens the AESIT ROI Multiplier™ by:
+    </p>
+    <ul>
+        <li>Reducing operational uncertainty</li>
+        <li>Strengthening underwriting confidence</li>
+        <li>Compressing cap rates</li>
+        <li>Increasing valuation</li>
+        <li>Generating sovereign protection intelligence</li>
+        <li>Documenting resilience across cycles</li>
+    </ul>
+    <p style="font-weight: bold; text-align: center; color: #283593; font-family: 'Georgia', serif; font-size: 12pt; margin-top: 15px;">
+        Fortitude is the financial stabilizer of the lifecycle.
+    </p>
+
+    <h2 class="brand-accent">07 — Division‑Level Responsibilities (Protection Division)</h2>
+    <p>The Protection Division is responsible for:</p>
+    <ul>
+        <li>Engineering Secure‑by‑Design resilience</li>
+        <li>Generating predictive threat intelligence</li>
+        <li>Monitoring continuity in real time</li>
+        <li>Producing sovereign protection records</li>
+        <li>Strengthening lifecycle resilience</li>
+        <li>Ensuring protection intelligence across cycles</li>
+    </ul>
+
+    <blockquote>
+        The division’s output is not security.<br>
+        <strong>It is protection intelligence.</strong>
+    </blockquote>
+
+    <h2>Conclusion</h2>
+    <p>
+        Fortitude is the resilient force of CRE Lifecycle Intelligence™. It is the discipline that transforms protection into intelligence, intelligence into sovereignty, and sovereignty into compounding financial performance.
+    </p>
+    <p>
+        Resilient Protection Intelligence (Secure‑by‑Design) is the resilience doctrine of AESIT’s lifecycle ecosystem — the third force in the triad of <em>Form. Flow. Fortitude.</em>
+    </p>
+
+    <div class="highlight-banner" style="text-align: center; font-family: 'Georgia', serif; font-size: 11.5pt;">
+        Fortitude protects the lifecycle. &bull; Fortitude strengthens intelligence. &bull; Fortitude multiplies value.
+    </div>
+
+    <div class="footer-note">
+        <strong>AESIT Global Solutions Group | Protection Division | aesit.net</strong><br>
+        Resilient Protection Intelligence &bull; CRE Lifecycle Intelligence™ &bull; Secure-by-Design &bull; AESIT ROI Multiplier™<br>
+        Est. 1989 &bull; Lorton, Virginia &bull; &copy; 2026 AESIT Global Solutions Group. All rights reserved.
+    </div>
+
+</body>
+</html>
