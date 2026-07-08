@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AESIT® — Asset SovereigntyTM ROI Calculator | S3 Labs®</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--carbon:#000000;--titanium:#888888;--brushed:#A8A8A8;--chrome:#C8C8C8;--grid-white:#E8E8E8;--race-red:#CC0000;--race-red-2:#FF2020;--body-text:#B0A898;--success:#4CAF50;--gold:#D4AF37;--grad-chrome:linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);--grad-chrome-bar:linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);--grad-steel:linear-gradient(180deg,#181818 0%,#111111 50%,#161616 100%);--grad-red:linear-gradient(135deg,#CC0000 0%,#FF2020 40%,#AA0000 100%);--grad-red-h:linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);--grad-gold:linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);--border:rgba(200,200,200,.12);--border-mid:rgba(200,200,200,.2);--border-bright:rgba(200,200,200,.35);--title-font:'League Spartan',sans-serif;--body-font:'Helvetica Neue',Helvetica,Arial,sans-serif}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100vh;background:var(--carbon);color:var(--body-text);font-family:var(--body-font);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}.container{max-width:1140px;margin:0 auto;padding:52px 6%}.page-header{margin-bottom:36px;padding-bottom:26px;border-bottom:1px solid var(--border);position:relative}.page-header::after{content:'';position:absolute;bottom:-1px;left:0;width:120px;height:2px;background:var(--grad-red-h)}.eyebrow{font-family:var(--title-font);font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}.page-title{font-family:var(--title-font);font-size:30px;font-weight:800;letter-spacing:-0.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}.page-lead{color:var(--titanium);font-size:13.5px;max-width:720px;line-height:1.7}.panel{background:var(--grad-steel);border:1px solid var(--border-mid);border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.55);margin-bottom:20px}.panel-header{background:var(--grad-chrome-bar);padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:8px}.panel-header h2{font-family:var(--title-font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A;text-shadow:0 1px 2px rgba(255,255,255,0.6),0 -1px 1px rgba(0,0,0,.2)}.panel-tag{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--grad-red);color:#fff;padding:3px 8px;border-radius:3px}.panel-tag.gold{background:var(--grad-gold);color:#0A0A0A}.panel-body{padding:20px 20px 24px}.input-tab-bar{display:flex;border-bottom:1px solid var(--border-mid);margin-bottom:20px}.input-tab-btn{flex:1;padding:11px 16px;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:transparent;border:none;border-bottom:2px solid transparent;color:var(--titanium);cursor:pointer;transition:color .2s,border-color .2s;margin-bottom:-1px}.input-tab-btn.active{color:var(--grid-white);border-bottom-color:var(--race-red)}.input-tab-btn:hover:not(.active){color:var(--chrome)}.input-tab-pane{display:none}.input-tab-pane.active{display:block}.field-group{margin-bottom:16px}.field-group:last-child{margin-bottom:0}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}.field-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px}@media(max-width:600px){.field-row,.field-row-3{grid-template-columns:1fr}}.field-row .field-group,.field-row-3 .field-group{margin-bottom:0}label{display:block;font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}.field-optional{font-family:var(--title-font);font-size:9px;font-weight:600;color:var(--titanium);margin-left:4px;-webkit-text-fill-color:var(--titanium)}.req{-webkit-text-fill-color:var(--race-red-2)}select,input[type="number"],input[type="text"],input[type="email"],input[type="tel"],textarea{width:100%;padding:10px 13px;background:rgba(255,255,255,.04);border:1px solid var(--border-mid);border-radius:5px;color:var(--chrome);font-family:var(--body-font);font-size:13.5px;outline:none;transition:border-color .2s,box-shadow .2s}select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px;cursor:pointer}select option{background:#1a1a1a;color:var(--chrome)}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{-webkit-appearance:none}textarea{resize:vertical;min-height:80px;line-height:1.6}select:focus,input:focus,textarea:focus{border-color:var(--border-bright);box-shadow:0 0 0 2px rgba(200,200,200,.07)}.field-hint{font-size:11px;color:var(--titanium);margin-top:4px;line-height:1.5}.input-section-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--titanium);padding:10px 0 8px;border-top:1px solid var(--border);margin:16px 0 14px;display:flex;align-items:center;gap:10px}.input-section-label::after{content:'';flex:1;height:1px;background:var(--border)}.smart-default{display:inline-block;font-family:var(--title-font);font-size:8px;font-weight:700;letter-spacing:0.1em;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.3);color:#D4AF37;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle;-webkit-text-fill-color:#D4AF37}.maturity-wrap{margin-bottom:16px}.maturity-slider{width:100%;appearance:none;-webkit-appearance:none;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--race-red) 0%,#FF4040 100%);outline:none;cursor:pointer}.maturity-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--grad-chrome-bar);border:2px solid rgba(255,255,255,0.3);box-shadow:0 2px 8px rgba(0,0,0,.6);cursor:pointer}.maturity-labels{display:flex;justify-content:space-between;margin-top:7px}.maturity-labels span{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--titanium);text-align:center;flex:1}.maturity-labels span.active{color:var(--grid-white)}.maturity-display{font-family:var(--title-font);font-size:12px;font-weight:700;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-top:4px}.calc-btn{width:100%;padding:13px;background:var(--grad-red);border:none;border-radius:6px;color:#fff;font-family:var(--title-font);font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:opacity .15s,transform .1s,box-shadow .2s;box-shadow:0 2px 16px rgba(204,0,0,.3);margin-top:18px}.calc-btn:hover{opacity:0.9;box-shadow:0 4px 24px rgba(204,0,0,.45)}.calc-btn:active{transform:scale(0.99)}.output-toggle{display:flex;margin-bottom:20px;border-radius:6px;overflow:hidden;border:1px solid var(--border-mid);box-shadow:0 2px 12px rgba(0,0,0,.4)}.output-toggle-btn{flex:1;padding:14px 20px;font-family:var(--title-font);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border:none;cursor:pointer;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;gap:10px}.output-toggle-btn.basic-btn{background:var(--grad-chrome-bar);color:#0A0A0A;text-shadow:0 1px 1px rgba(255,255,255,0.5)}.output-toggle-btn.sovr-btn{background:var(--grad-steel);color:var(--titanium);border-left:1px solid var(--border-mid)}.output-toggle-btn.active.basic-btn{opacity:1}.output-toggle-btn.active.sovr-btn{background:var(--grad-gold);color:#0A0A0A;text-shadow:0 1px 1px rgba(255,255,255,0.4)}.output-toggle-btn:not(.active){opacity:0.55}.output-toggle-btn .toggle-indicator{width:8px;height:8px;border-radius:50%;background:var(--race-red);flex-shrink:0;display:none}.output-toggle-btn.calculated .toggle-indicator{display:block}.output-toggle-btn.active .toggle-indicator{background:var(--race-red)}.output-toggle-btn.active.sovr-btn .toggle-indicator{background:#0A0A0A}.output-section{display:none}.output-section.visible{display:block;animation:slideUp .3s ease forwards}@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}@media(max-width:560px){.tier-grid{grid-template-columns:1fr}}.tier-card{border-radius:6px;overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,.02);transition:border-color .2s,box-shadow .2s}.tier-card:hover{border-color:var(--border-bright)}.tier-card.highlight{border-color:rgba(204,0,0,.4);box-shadow:0 2px 20px rgba(204,0,0,0.15)}.tier-head{padding:9px 12px;font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-align:center}.tier-head.conservative{background:rgba(200,200,200,0.06);color:var(--titanium)}.tier-head.expected{background:var(--grad-red);color:#fff}.tier-head.optimized{background:var(--grad-chrome-bar);color:#0A0A0A;text-shadow:0 1px 1px rgba(255,255,255,0.5)}.tier-body{padding:14px 12px}.tier-metric{margin-bottom:10px}.tier-metric:last-child{margin-bottom:0}.tier-metric-label{font-family:var(--title-font);font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--titanium);margin-bottom:2px}.tier-metric-value{font-family:var(--title-font);font-size:18px;font-weight:800;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.01em}.tier-metric-value.red{background:var(--grad-red);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.tier-metric-sub{font-size:11px;color:var(--titanium);margin-top:1px}.ba-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}.ba-table th{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:9px 12px;border-bottom:1px solid var(--border-mid);text-align:left;color:var(--titanium)}.ba-table th.after-h{background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.ba-table th.delta-h{color:var(--race-red-2)}.ba-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--body-text);vertical-align:middle}.ba-table tr:last-child td{border-bottom:none}.ba-table td:first-child{font-family:var(--title-font);font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--titanium)}.ba-table td.after-val{font-family:var(--title-font);font-weight:700;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.ba-table td.delta-val{font-family:var(--title-font);font-weight:700;font-size:13px;color:#4CAF50}.payback-strip{display:flex;gap:10px;flex-wrap:wrap}.payback-card{flex:1;min-width:130px;padding:14px 16px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-left:3px solid var(--race-red);border-radius:0 5px 5px 0}.payback-card-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--titanium);margin-bottom:4px}.payback-card-value{font-family:var(--title-font);font-size:22px;font-weight:800;letter-spacing:-0.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.payback-card-sub{font-size:11px;color:var(--titanium);margin-top:2px}.output-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--titanium);margin-bottom:12px;display:block}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}.metric-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}.metric-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px}@media(max-width:640px){.metric-grid,.metric-grid-4{grid-template-columns:1fr 1fr}.metric-grid-2{grid-template-columns:1fr}}.metric-card{padding:14px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:6px;transition:border-color .2s}.metric-card:hover{border-color:var(--border-bright)}.metric-card.accent{border-left:3px solid var(--race-red);border-radius:0 6px 6px 0}.metric-card.gold-accent{border-left:3px solid var(--gold);border-radius:0 6px 6px 0}.metric-card.highlight{border-color:rgba(204,0,0,.4);box-shadow:0 2px 16px rgba(204,0,0,.12)}.metric-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--titanium);margin-bottom:4px}.metric-value{font-family:var(--title-font);font-size:22px;font-weight:800;letter-spacing:-0.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.metric-value.red{background:var(--grad-red);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.metric-value.gold{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.metric-value.green{-webkit-text-fill-color:#4CAF50}.metric-sub{font-size:11px;color:var(--titanium);margin-top:2px}.sens-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:20px}.sens-table th{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:9px 12px;border-bottom:1px solid var(--border-mid);text-align:left;color:var(--titanium)}.sens-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--body-text);vertical-align:middle}.sens-table tr:last-child td{border-bottom:none}.sens-table td.label-col{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.06em;color:var(--titanium)}.sens-table td.base-val{font-family:var(--title-font);font-weight:700;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.sens-table td.pos-val{color:#4CAF50;font-weight:700;font-family:var(--title-font)}.sens-table td.neg-val{color:#FF6060;font-weight:700;font-family:var(--title-font)}.sens-table tr.base-row{background:rgba(200,200,200,.03)}.idlf-bar-wrap{margin-bottom:20px}.idlf-row{display:flex;align-items:center;gap:14px;margin-bottom:10px}.idlf-row-label{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--titanium);width:140px;flex-shrink:0}.idlf-bar-track{flex:1;height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}.idlf-bar-fill{height:100%;border-radius:4px}.idlf-bar-fill.red{background:var(--grad-red)}.idlf-bar-fill.chrome{background:var(--grad-chrome)}.idlf-bar-val{font-family:var(--title-font);font-size:13px;font-weight:700;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;width:110px;text-align:right;flex-shrink:0}.disclaimer{margin-top:16px;padding:12px 14px;background:rgba(255,255,255,.015);border:1px solid var(--border);border-radius:5px;font-size:11px;color:var(--titanium);line-height:1.6}.disclaimer strong{color:var(--brushed)}.reset-row{display:flex;justify-content:flex-end;margin-top:10px}.reset-btn{background:none;border:none;font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--titanium);cursor:pointer;transition:color .15s;padding:4px 0}.reset-btn:hover{color:var(--chrome)}.lead-section{display:none;margin-top:28px}.lead-section.visible{display:block;animation:slideUp .4s ease forwards}.lead-divider{display:flex;align-items:center;gap:14px;margin-bottom:20px}.lead-divider::before,.lead-divider::after{content:'';flex:1;height:1px;background:var(--border-mid)}.lead-divider span{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--titanium);white-space:nowrap}.submit-btn{width:100%;padding:13px;background:var(--grad-red);border:none;border-radius:6px;color:#fff;font-family:var(--title-font);font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:opacity .15s,transform .1s,box-shadow .2s;box-shadow:0 2px 16px rgba(204,0,0,.3)}.submit-btn:hover{opacity:0.9}.submit-btn:disabled{opacity:0.5;cursor:not-allowed}.form-status{display:none;padding:13px 15px;border-radius:6px;font-family:var(--title-font);font-size:12px;font-weight:600;letter-spacing:0.04em;margin-bottom:14px}.form-status.success{display:block;background:rgba(76,175,80,.1);border:1px solid rgba(76,175,80,.35);color:#6FCF74}.form-status.error{display:block;background:rgba(204,0,0,.1);border:1px solid rgba(204,0,0,.35);color:#FF6060}.page-footer{margin-top:48px;text-align:center;font-size:12px;color:var(--titanium);font-family:var(--title-font);letter-spacing:0.04em}.page-footer::before{content:'';display:block;width:60px;height:2px;background:var(--grad-red-h);border-radius:1px;margin:0 auto 12px}.footer-brand{background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700}.mode-leads{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:0}.mode-lead{flex:1;min-width:240px;padding:12px 16px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:6px;display:flex;flex-direction:column;gap:4px;transition:opacity 0.2s}.mode-lead-label{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase}.mode-lead-formula{font-size:11px;letter-spacing:0.02em;line-height:1.5}.mode-lead-formula strong{font-weight:700}.mode-lead-text{font-size:12.5px;color:var(--titanium);line-height:1.65}.mode-lead.basic .mode-lead-label{color:var(--chrome);-webkit-text-fill-color:var(--chrome)}.mode-lead.sovr .mode-lead-label{color:var(--gold);-webkit-text-fill-color:var(--gold)}.mode-lead.sovr .mode-lead-formula{color:var(--gold);-webkit-text-fill-color:var(--gold)}.mode-lead.sovr .mode-lead-formula strong{-webkit-text-fill-color:var(--grid-white);color:var(--grid-white)}.folder-tab-bar{display:flex;align-items:flex-end;padding:18px 16px 0;gap:4px;position:relative;z-index:2;background:#080808}.folder-tab-bar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--border-mid);z-index:0}.ftab{position:relative;padding:10px 22px 14px;cursor:pointer;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border-radius:8px 8px 0 0;border:1px solid transparent;border-bottom:none;transition:transform .18s ease,opacity .18s ease,box-shadow .18s ease;min-width:130px;text-align:center;display:flex;align-items:center;justify-content:center;gap:7px;transform:translateY(4px);opacity:0.72;z-index:1}.ftab.basic-tab{background:linear-gradient(180deg,#1e1e1e 0%,#131313 100%);border-color:rgba(200,200,200,0.25);color:rgba(200,200,200,0.7)}.ftab.sovr-tab{background:linear-gradient(180deg,#1e1a06 0%,#141204 100%);border-color:rgba(212,175,55,.3);color:rgba(212,175,55,0.7)}.ftab.active{transform:translateY(0)!important;opacity:1!important;font-weight:800;z-index:20!important;border-bottom:1px solid #111111;margin-bottom:-1px}.ftab.active.basic-tab{background:linear-gradient(180deg,#2e2e2e 0%,#1e1e1e 50%,#141414 100%);border-color:rgba(200,200,200,0.5);border-bottom-color:#111111;color:var(--chrome);box-shadow:0 -4px 18px rgba(200,200,200,.1),inset 0 1px 0 rgba(255,255,255,.15)}.ftab.active.basic-tab::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1.5px;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(240,240,240,.6),transparent)}.ftab.active.sovr-tab{background:linear-gradient(180deg,#2e2610 0%,#1e1a08 50%,#141204 100%);border-color:rgba(212,175,55,0.6);border-bottom-color:#111111;color:var(--gold);box-shadow:0 -4px 18px rgba(212,175,55,.18),inset 0 1px 0 rgba(255,220,100,.25)}.ftab.active.sovr-tab::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1.5px;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(255,220,100,.7),transparent)}.ftab:hover:not(.active){transform:translateY(2px)!important;opacity:0.88!important}.ftab-dot{display:inline-block;width:6px;height:6px;border-radius:50%;flex-shrink:0}</style>
+</head>
+<body>
+<main class="container"><header class="page-header"><div class="eyebrow">AESIT® — S³ Labs® Intelligence Lifecycle Framework</div><h1 class="page-title">Asset ROI Calculator — Basic & Asset Sovereignty™ </h1><div class="mode-leads">
+<div class="mode-lead basic" id="lead-basic">
+<span class="mode-lead-label">Basic </span>
+<span class="mode-lead-text">Enter your portfolio data. Receive a calibrated savings projection across three performance tiers — built on AESIT's IDLF benchmarks and industry-validated multipliers. Precision begins here. </span>
+</div>
+<div class="mode-lead sovr" id="lead-sovr">
+<span class="mode-lead-label">Asset Sovereignty™ </span>
+<span class="mode-lead-formula">ROI = (Enhanced NOI + Resiliency Premium) ÷ Intelligence Lifecycle Cost </span>
+<span class="mode-lead-text">C-Suite executive analysis translating Digital
+Twin investment into NOI delta, cap rate compression, and investor returns. Built on AESIT's IDLF framework. This is what accountability looks like.  </span>
+</div>
+</div></header><!-- Input Panel --><div class="panel"><div class="panel-header"><h2>Portfolio &amp; Asset Inputs</h2><span class="panel-tag">Step 1</span></div><div class="panel-body"><div class="folder-tab-bar" id="u-input-tab-bar"><button class="ftab basic-tab active" data-tab="basic"><span class="ftab-dot" style="background:var(--chrome);box-shadow:0 0 5px rgba(200,200,200,.5);"></span>Basic</button><button class="ftab sovr-tab" data-tab="sovr"><span class="ftab-dot" style="background:var(--gold);box-shadow:0 0 5px rgba(212,175,55,.6);"></span>Asset Sovereignty™</button></div><div class="panel-body" style="border-top:1px solid var(--border-mid);padding-top:20px"><div id="u-input-tab-container"><div class="input-tab-pane active" id="u-tab-basic"><div class="field-row"><div class="field-group"><label for="u-portfolio-type">Portfolio Type</label><select id="u-portfolio-type"><option value="">— Select type —</option><option value="office">Commercial Office</option><option value="government">Government / Federal</option><option value="campus">Mixed-Use / Campus</option><option value="industrial">Industrial / Manufacturing</option><option value="datacenter">Data Center</option><option value="healthcare">Healthcare</option><option value="warehouse">Warehouse</option></select></div><div class="field-group"><label for="u-region">Region</label><select id="u-region"><option value="">— Select region —</option><option value="northeast">Northeast</option><option value="southeast">Southeast</option><option value="midwest">Midwest</option><option value="southwest">Southwest</option><option value="west">West</option><option value="pacific">Pacific</option></select></div></div><div class="field-row"><div class="field-group"><label for="u-num-facilities">No. of Facilities</label><input type="number" id="u-num-facilities" placeholder="e.g. 5" min="1" /></div><div class="field-group"><label for="u-sqft">Total Sq. Footage</label><input type="number" id="u-sqft" placeholder="e.g. 500000" min="1" /></div></div><div class="field-row"><div class="field-group"><label for="u-energy-spend">Annual Energy ($)</label><input type="number" id="u-energy-spend" placeholder="e.g. 1200000" min="0" /></div><div class="field-group"><label for="u-maint-budget">Annual Maintenance ($)</label><input type="number" id="u-maint-budget" placeholder="e.g. 800000" min="0" /></div></div><div class="maturity-wrap"><label>Technology Maturity</label><input type="range" class="maturity-slider" id="u-maturity" min="0" max="3" step="1" value="0" /><div class="maturity-labels"><span id="u-ml-0" class="active">None</span><span id="u-ml-1">Basic</span><span id="u-ml-2">Partial</span><span id="u-ml-3">Advanced</span></div><div class="maturity-display" id="u-maturity-desc">No automation  </div></div><button class="calc-btn" id="u-calc-basic">Calculate My ROI →</button></div><div class="input-tab-pane" id="u-tab-sovr"><div class="input-section-label">Cap Rate &amp; Valuation</div><div class="field-row"><div class="field-group"><label for="u-initial-price">Initial Purchase Price ($)</label><input type="number" id="u-initial-price" placeholder="e.g. 8000000" min="0" /><p class="field-hint">Cap rate baseline.</p></div><div class="field-group"><label for="u-market-value">Market Value ($)</label><input type="number" id="u-market-value" placeholder="e.g. 10000000" min="0" /><p class="field-hint">Appraised value.</p></div></div><div class="field-row"><div class="field-group"><label for="u-current-noi">Annual NOI ($)</label><input type="number" id="u-current-noi" placeholder="e.g. 600000" min="0" /><p class="field-hint">Pre-AESIT NOI.</p></div><div class="field-group"><label for="u-idlf-cost">IDLF Cost ($)</label><input type="number" id="u-idlf-cost" placeholder="e.g. 500000" min="0" /><p class="field-hint">Digital Thread cost.</p></div></div><div class="field-row"><div class="field-group"><label for="u-holding-period">Holding Period (Yrs)</label><input type="number" id="u-holding-period" placeholder="e.g. 7" max="30" /></div><div class="field-group"><label for="u-noi-growth">NOI Growth Rate (%) <span class="smart-default">2.5% Default</span></label><input type="number" id="u-noi-growth" placeholder="2.5" value="2.5" /></div></div><div class="field-group"><label for="u-treasury-rate">Treasury Rate (%) <span class="smart-default">4.25% Default</span></label><input type="number" id="u-treasury-rate" placeholder="4.25" value="4.25" /></div><div class="input-section-label">Debt Service <span class="field-optional">(Optional)</span></div><div class="field-row-3"><div class="field-group"><label for="u-loan-amount">Loan Amount ($) <span class="field-optional">optional</span></label><input type="number" id="u-loan-amount" placeholder="e.g. 6000000" min="0" /></div><div class="field-group"><label for="u-interest-rate">Interest Rate (%) <span class="field-optional">optional</span></label><input type="number" id="u-interest-rate" placeholder="e.g. 6.5" /></div><div class="field-group"><label for="u-amort-period">Amortization (Yrs) <span class="field-optional">optional</span></label><input type="number" id="u-amort-period" placeholder="e.g. 30" max="40" /></div></div><button class="calc-btn" id="u-calc-sovr">Calculate Asset Sovereignty™ ROI →</button></div></div></div></div><div class="output-toggle" id="u-output-toggle" style="display:none;"><button class="output-toggle-btn basic-btn active" id="u-toggle-basic"><span class="toggle-indicator"></span>
+ Basic ROI
+ </button><button class="output-toggle-btn sovr-btn" id="u-toggle-sovr"><span class="toggle-indicator"></span>
+ Asset Sovereignty™ ROI
+ </button></div><!-- Basic ROI Output --><div class="output-section" id="u-output-basic"><div class="panel"><div class="panel-header"><h2>Basic ROI Projection</h2><span class="panel-tag">Output</span></div><div class="panel-body"><div class="tier-grid" id="u-tier-grid"></div><table class="ba-table"><thead><tr><th>Metric</th><th>Before</th><th class="after-h">After (Expected)</th><th class="delta-h">Annual Δ</th></tr></thead><tbody id="u-ba-body"></tbody></table><div class="payback-strip" id="u-payback-strip"></div><div class="disclaimer"><strong>Disclosure:</strong> Gross estimates per AESIT IDLF benchmarks. Actual results vary. Not a formal proposal.</div><div class="reset-row"><button class="reset-btn" id="u-reset-basic">↺ Reset</button></div></div></div></div><!-- Asset Sovereignty™ Output --><div class="output-section" id="u-output-sovr"><div class="panel"><div class="panel-header"><h2>① Attribution</h2><span class="panel-tag gold">NOI · Market · Total</span></div><div class="panel-body"><span class="output-label">Value Breakdown</span><div class="metric-grid" id="u-appreciation-grid"></div><span class="output-label">Cap Rate Compression</span><div class="metric-grid" id="u-caprate-grid"></div></div></div><div class="panel"><div class="panel-header"><h2>② Cap Rate Sensitivity</h2><span class="panel-tag">What-If</span></div><div class="panel-body"><span class="output-label">5 Scenarios</span><table class="sens-table"><thead><tr><th>Scenario</th><th>Exit Cap</th><th>Exit Value</th><th>Value Delta</th><th>Total Return</th></tr></thead><tbody id="u-sens-body"></tbody></table></div></div><div class="panel"><div class="panel-header"><h2>③ Risk &amp; Performance</h2><span class="panel-tag">Yield · DSCR</span></div><div class="panel-body"><div class="metric-grid-4" id="u-risk-grid"></div></div></div><div class="panel"><div class="panel-header"><h2>④ Investor Returns</h2><span class="panel-tag gold">IRR · CoC</span></div><div class="panel-body"><span class="output-label">Holding Period</span><div class="metric-grid" id="u-investor-grid"></div></div></div><div class="panel"><div class="panel-header"><h2>⑤ IDLF Efficiency</h2><span class="panel-tag">Intelligence Lifecycle Cost</span></div><div class="panel-body"><span class="output-label">Digital Thread vs. Fragmented</span><div class="idlf-bar-wrap" id="u-idlf-bars"></div><div class="metric-grid-2" id="u-idlf-grid"></div></div></div><div class="panel"><div class="panel-header"><h2>Full Asset Sovereignty™ ROI</h2><span class="panel-tag gold">Target 300–450%</span></div><div class="panel-body"><div class="metric-grid" id="u-roi-grid"></div><div class="disclaimer"><strong>Disclosure:</strong> Gross estimates per AESIT IDLF framework. Modeled outputs not guaranteed. Not a formal proposal or financial advice.</div><div class="reset-row"><button class="reset-btn" id="u-reset-sovr">↺ Reset</button></div></div></div></div><div class="lead-section" id="u-lead-section"><div class="lead-divider"><span>Email Your ROI Summary</span></div><div class="panel"><div class="panel-header"><h2>Get Your ROI Summary</h2><span class="panel-tag">Step 2</span></div><div class="panel-body"><p style="color:var(--titanium);font-size:13px;margin-bottom:18px;line-height:1.7;">Your numbers are calculated. Your strategy
+starts now. Enter your details and an AESIT® Intelligence Partner™ will send your personalized ROI summary — with projections, benchmarks, and next steps calibrated to your portfolio.</p><div id="u-form-status" class="form-status"></div><div id="u-lead-form-wrap"><div class="field-row"><div class="field-group"><label for="u-lf-name">Full Name</label><input type="text" id="u-lf-name" placeholder="Jane Smith" /></div><div class="field-group"><label for="u-lf-company">Company / Organization</label><input type="text" id="u-lf-company" placeholder="ACME Corp" /></div></div><div class="field-row"><div class="field-group"><label for="u-lf-title">Job Title</label><input type="text" id="u-lf-title" placeholder="Director of Facilities" /></div><div class="field-group"><label for="u-lf-phone">Phone Number</label><input type="tel" id="u-lf-phone" placeholder="+1 (555) 000-0000" /></div></div><div class="field-group"><label for="u-lf-email">Email Address <span class="req">*</span></label><input type="email" id="u-lf-email" placeholder="jane@company.com" required /><p class="field-hint">Required — sent to this address.</p></div><div class="field-group"><label for="u-lf-notes">Message / Notes</label><textarea id="u-lf-notes" placeholder="Portfolio goals or questions…"></textarea></div><button class="submit-btn" id="u-submit-btn">Send My ROI Summary →</button></div></div></div></div><footer class="page-footer"><span class="footer-brand">AESIT® — S³ Labs® | Asset Sovereignty™ ROI
+Calculator | © 2026 AESIT Global Solutions Group. All rights reserved.
+ </footer></main>
+<script>document.addEventListener('DOMContentLoaded', function() {
+function ge(id){return document.getElementById(id)}
+function gu(id){return ge('u-'+id)}
+ var SCRIPT_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+ var TYPE_MULT = {
+ office:[0.15,0.225,0.30,0.10,0.16,0.22],
+ government:[0.18,0.25,0.32,0.15,0.20,0.25],
+ campus:[0.16,0.23,0.30,0.12,0.17,0.22],
+ industrial:[0.20,0.275,0.35,0.12,0.18,0.24],
+ datacenter:[0.25,0.30,0.35,0.10,0.15,0.20],
+ healthcare:[0.22,0.28,0.34,0.15,0.20,0.25],
+ warehouse:[0.15,0.215,0.28,0.10,0.15,0.20],
+ };
+ var REGION_MULT = {northeast:1.22,southeast:0.90,midwest:0.95,southwest:0.92,west:1.08,pacific:1.30};
+ var MAT_SHIFT = [0,0.33,0.66,1.0];
+ var MAT_DESC = [
+ 'No automation',
+ 'Basic BMS monitoring',
+ 'Partial integration',
+ 'Advanced integration',
+ ];
+ var RESILIENCY = {office:0.045,government:0.065,campus:0.050,industrial:0.040,datacenter:0.075,healthcare:0.070,warehouse:0.035};
+ var ROI_5YR = {conservative:0.75,expected:1.80,optimized:3.05};
+ var IDLF_MULT = 1.65;
+ var lastBasic = null;
+ var lastSovr = null;
+ var lastInputs = null;
+ var activeOutput = null;
+ var sl = gu('maturity');
+ sl.addEventListener('input', function() {
+ var v = parseInt(sl.value);
+ gu('maturity-desc').textContent = MAT_DESC[v];
+ [0,1,2,3].forEach(function(i){ document.getElementById('u-ml-'+i).classList.toggle('active',i===v); });
+ });
+ var inputBtns = document.querySelectorAll('#u-input-tab-bar .ftab');
+ inputBtns.forEach(function(btn) {
+ btn.addEventListener('click', function() {
+ inputBtns.forEach(function(b){ b.classList.remove('active'); });
+ document.querySelectorAll('#u-input-tab-container .input-tab-pane').forEach(function(p){ p.classList.remove('active'); });
+ btn.classList.add('active');
+ document.getElementById('u-tab-' + btn.getAttribute('data-tab')).classList.add('active');
+ });
+ });
+ gu('toggle-basic').addEventListener('click', function() { showOutput('basic'); });
+ gu('toggle-sovr').addEventListener('click', function() { showOutput('sovr'); });
+ function showOutput(mode) {
+ gu('toggle-basic').classList.toggle('active', mode==='basic');
+ gu('toggle-sovr').classList.toggle('active', mode==='sovr');
+ gu('output-basic').classList.toggle('visible', mode==='basic');
+ gu('output-sovr').classList.toggle('visible', mode==='sovr');
+ activeOutput = mode;
+ }
+ function fmt$(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+ function fmtMo(v){ return Math.round(v) + ' mo'; }
+ function fmtBps(v){ return (v>=0?'+':'')+Math.round(v*10000)+' bps'; }
+ function fmtX(v){ return v.toFixed(2)+'x'; }
+ function interp(low,mid,high,ms){ return ms<=0.5?low+(mid-low)*(ms/0.5):mid+(high-mid)*((ms-0.5)/0.5); }
+ function annualDS(loan,rate,years){
+ if(!loan||!rate||!years) return 0;
+ var r=(rate/100)/12,n=years*12;
+ return loan*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1)*12;
+ }
+ function remBal(loan,rate,totalYrs,elapsed){
+ if(!loan||!rate||!totalYrs) return 0;
+ var r=(rate/100)/12,n=totalYrs*12,p=elapsed*12;
+ return loan*(Math.pow(1+r,n)-Math.pow(1+r,p))/(Math.pow(1+r,n)-1);
+ }
+ function calcIRR(cfs){
+ var rate=0.1;
+ for(var i=0;i<200;i++){
+ var npv=0,dnpv=0;
+ cfs.forEach(function(cf,t){ var d=Math.pow(1+rate,t); if(d===0) return; npv+=cf/d; dnpv+=-t*cf/(d*(1+rate)); });
+ if(Math.abs(dnpv)<1e-12) break;
+ var nr=rate-npv/dnpv;
+ if(!isFinite(nr)||isNaN(nr)) break;
+ if(Math.abs(nr-rate)<1e-8){rate=nr;break;}
+ rate=nr;
+ }
+ return (isFinite(rate)&&!isNaN(rate))?rate:0;
+ }
+ function mCard(label,value,sub,cls,valCls){
+ return '<div class="metric-card'+(cls?' '+cls:'')+'"><div class="metric-label">'+label+'</div><div class="metric-value'+(valCls?' '+valCls:'')+'">'+value+'</div><div class="metric-sub">'+sub+'</div></div>';
+ }
+ function getBasicInputs() {
+ return {
+ type: gu('portfolio-type').value,
+ region: gu('region').value,
+ energy: parseFloat(gu('energy-spend').value)||0,
+ maint: parseFloat(gu('maint-budget').value)||0,
+ mat: parseInt(gu('maturity').value),
+ numFac: gu('num-facilities').value||'—',
+ sqft: gu('sqft').value||'—',
+ };
+ }
+ gu('calc-basic').addEventListener('click', function() {
+ try {
+ var b = getBasicInputs();
+ if(!b.type||!b.region||b.energy<=0||b.maint<=0){
+ alert('Please complete: Portfolio Type, Region, Energy Spend, and Maintenance Budget.');
+ return;
+ }
+ var m=TYPE_MULT[b.type], rm=REGION_MULT[b.region], ms=MAT_SHIFT[b.mat];
+ function calcTier(tier) {
+ var eMults={conservative:m[0],expected:interp(m[0],m[1],m[2],ms),optimized:m[2]};
+ var mMults={conservative:m[3],expected:interp(m[3],m[4],m[5],ms),optimized:m[5]};
+ var eS=b.energy*eMults[tier]*rm, mS=b.maint*mMults[tier], tot=eS+mS;
+ return {eSave:eS,mSave:mS,total:tot,roi5pct:ROI_5YR[tier]*100,paybackMo:(tot*1.5)/tot*12};
+ }
+ var cons=calcTier('conservative'), exp=calcTier('expected'), opt=calcTier('optimized');
+ lastBasic={cons,exp,opt};
+ lastInputs={
+ portfolioType:gu('portfolio-type').options[gu('portfolio-type').selectedIndex].text,
+ region:gu('region').options[gu('region').selectedIndex].text,
+ numFacilities:b.numFac, sqft:b.sqft,
+ energySpend:b.energy, maintBudget:b.maint,
+ maturityLevel:MAT_DESC[b.mat],
+ };
+ gu('tier-grid').innerHTML =
+ tCard('Conservative','conservative',cons,false)+
+ tCard('Expected','expected',exp,true)+
+ tCard('Optimized','optimized',opt,false);
+ gu('ba-body').innerHTML =
+ '<tr><td>Energy Spend</td><td>'+fmt$(b.energy)+'</td><td class="after-val">'+fmt$(b.energy-exp.eSave)+'</td><td class="delta-val">+'+fmt$(exp.eSave)+'</td></tr>'+
+ '<tr><td>Maintenance Budget</td><td>'+fmt$(b.maint)+'</td><td class="after-val">'+fmt$(b.maint-exp.mSave)+'</td><td class="delta-val">+'+fmt$(exp.mSave)+'</td></tr>'+
+ '<tr><td>Combined Annual Cost</td><td>'+fmt$(b.energy+b.maint)+'</td><td class="after-val">'+fmt$((b.energy+b.maint)-exp.total)+'</td><td class="delta-val">+'+fmt$(exp.total)+'</td></tr>';
+ gu('payback-strip').innerHTML =
+ pCard('Conservative',fmtMo(cons.paybackMo),'Break-even')+
+ pCard('Expected',fmtMo(exp.paybackMo),'Break-even')+
+ pCard('5-Yr ROI Expected','+'+exp.roi5pct.toFixed(0)+'%','Cumul. ROI')+
+ pCard('5-Yr ROI Optimized','+'+opt.roi5pct.toFixed(0)+'%','Full IDLF');
+ gu('output-toggle').style.display='flex';
+ gu('toggle-basic').classList.add('calculated');
+ gu('lead-section').classList.add('visible');
+ activeOutput = 'basic';
+ showOutput('basic');
+ setTimeout(function(){ gu('output-basic').scrollIntoView({behavior:'smooth',block:'start'}); },80);
+ } catch(err){ alert('Calculation error: '+err.message); }
+ });
+ function tCard(label,tier,data,highlight){
+ return '<div class="tier-card'+(highlight?' highlight':'')+'">'+
+ '<div class="tier-head '+tier+'">'+label+'</div>'+
+ '<div class="tier-body">'+
+ '<div class="tier-metric"><div class="tier-metric-label">Annual Savings</div><div class="tier-metric-value'+(highlight?' red':'')+'">'+fmt$(data.total)+'</div></div>'+
+ '<div class="tier-metric"><div class="tier-metric-label">Energy Saved</div><div class="tier-metric-value">'+fmt$(data.eSave)+'</div><div class="tier-metric-sub">incl. regional adj.</div></div>'+
+ '<div class="tier-metric"><div class="tier-metric-label">Maint. Saved</div><div class="tier-metric-value">'+fmt$(data.mSave)+'</div></div>'+
+ '<div class="tier-metric"><div class="tier-metric-label">5-Year ROI</div><div class="tier-metric-value">'+data.roi5pct.toFixed(0)+'%</div></div>'+
+ '</div></div>';
+ }
+ function pCard(label,value,sub){
+ return '<div class="payback-card"><div class="payback-card-label">'+label+'</div><div class="payback-card-value">'+value+'</div><div class="payback-card-sub">'+sub+'</div></div>';
+ }
+ gu('calc-sovr').addEventListener('click', function() {
+ try {
+ var b = getBasicInputs();
+ var initP = parseFloat(gu('initial-price').value)||0;
+ var mktV = parseFloat(gu('market-value').value)||0;
+ var noi = parseFloat(gu('current-noi').value)||0;
+ var idlf = parseFloat(gu('idlf-cost').value)||0;
+ var hold = parseFloat(gu('holding-period').value)||5;
+ var ng = (parseFloat(gu('noi-growth').value)||2.5)/100;
+ var tr = (parseFloat(gu('treasury-rate').value)||4.25)/100;
+ var loan = parseFloat(gu('loan-amount').value)||0;
+ var irate = parseFloat(gu('interest-rate').value)||0;
+ var amort = parseFloat(gu('amort-period').value)||0;
+ var hasD = loan>0&&irate>0&&amort>0;
+ if(!b.type||!b.region||b.energy<=0||b.maint<=0||noi<=0||idlf<=0||initP<=0||mktV<=0){
+ alert('Complete all required fields in both tabs.');
+ return;
+ }
+ var m=TYPE_MULT[b.type], rm=REGION_MULT[b.region], ms=MAT_SHIFT[b.mat];
+ var annOp=(b.energy*interp(m[0],m[1],m[2],ms)*rm)+(b.maint*interp(m[3],m[4],m[5],ms));
+ var initCap=noi/initP, curCap=noi/mktV;
+ var enhNOI=noi+annOp;
+ var rf=RESILIENCY[b.type]||0.05;
+ var capComp=curCap*rf*(0.5+ms*0.5);
+ var exitCap=curCap-capComp;
+ var enhAsset=enhNOI/exitCap;
+ var noiGain=(enhNOI-noi)/exitCap;
+ var mktGain=(noi/exitCap)-(noi/curCap);
+ var totalDelta=enhAsset-mktV;
+ var resPrem=totalDelta*rf;
+ var cumOp=0; for(var y=1;y<=5;y++) cumOp+=annOp*Math.pow(1+ng,y);
+ var frag=idlf*IDLF_MULT, idlfAdv=frag-idlf;
+ var totalRet=totalDelta+resPrem+cumOp;
+ var assetROI=(totalRet/idlf)*100;
+ var ds=hasD?annualDS(loan,irate,amort):0;
+ var dscr=hasD?enhNOI/ds:null;
+ var ySpread=curCap-tr;
+ var scenarios=[
+ {label:'Bear',delta:+0.005,cls:'neg-val'},{label:'Bear-Light',delta:+0.0025,cls:'neg-val'},
+ {label:'Base &#9733;',delta:0,cls:'base-val'},
+ {label:'Bull-Light',delta:-0.0025,cls:'pos-val'},{label:'Bull',delta:-0.005,cls:'pos-val'},
+ ];
+ var sensRows=scenarios.map(function(s){
+ var cap=exitCap+s.delta,ev=enhNOI/cap,dv=ev-mktV,cn=0;
+ for(var y=1;y<=hold;y++) cn+=enhNOI*Math.pow(1+ng,y)-(hasD?ds:0);
+ return Object.assign({},s,{cap:cap,exitVal:ev,delta:dv,totalRet:cn+dv});
+ });
+ var equity=hasD?(mktV-loan):mktV;
+ var cfs=[-equity];
+ for(var y=1;y<=hold;y++) cfs.push(enhNOI*Math.pow(1+ng,y)-(hasD?ds:0));
+ cfs[hold]+=(enhNOI*Math.pow(1+ng,hold)/exitCap)-(hasD?remBal(loan,irate,amort,hold):0);
+ var irr=calcIRR(cfs)*100;
+ var coc=((enhNOI*Math.pow(1+ng,1)-ds)/equity)*100;
+ var totCF=0; cfs.slice(1).forEach(function(c){totCF+=c;});
+ var eqMult=totCF/equity;
+ lastSovr={annOp,initCap,curCap,exitCap,capComp,enhNOI,totalDelta,noiGain,mktGain,resPrem,cumOp,totalRet,assetROI,idlf,frag,idlfAdv,dscr,ySpread,irr,coc,eqMult,equity,sensRows,hasD,ds,hold};
+ if(!lastInputs) lastInputs={
+ portfolioType:gu('portfolio-type').options[gu('portfolio-type').selectedIndex].text,
+ region:gu('region').options[gu('region').selectedIndex].text,
+ numFacilities:b.numFac,sqft:b.sqft,energySpend:b.energy,maintBudget:b.maint,maturityLevel:MAT_DESC[b.mat],
+ };
+ lastInputs.noi=noi; lastInputs.idlfCost=idlf; lastInputs.holdYears=hold;
+ lastInputs.initPrice=initP; lastInputs.mktValue=mktV;
+ renderSovr(lastSovr);
+ gu('output-toggle').style.display='flex';
+ gu('toggle-sovr').classList.add('calculated');
+ gu('lead-section').classList.add('visible');
+ activeOutput='sovr';
+ showOutput('sovr');
+ setTimeout(function(){ gu('output-sovr').scrollIntoView({behavior:'smooth',block:'start'}); },80);
+ } catch(err){ alert('Calculation error: '+err.message); }
+ });
+ function renderSovr(r){
+ gu('appreciation-grid').innerHTML=
+ mCard('NOI-Driven Gain',fmt$(r.noiGain),'Op. savings','accent','')+
+ mCard('Market / Cap Rate',fmt$(r.mktGain),'Risk compr.','accent','')+
+ mCard('Total Value Delta',fmt$(r.totalDelta),'Combined','highlight','gold');
+ var cg=gu('caprate-grid');
+ cg.style.gridTemplateColumns='repeat(4,1fr)';
+ cg.innerHTML=
+ mCard('Initial Cap Rate',(r.initCap*100).toFixed(2)+'%','At purchase','','')+
+ mCard('Current Cap Rate',(r.curCap*100).toFixed(2)+'%','Pre-AESIT','','')+
+ mCard('AESIT Exit Cap Rate',(r.exitCap*100).toFixed(2)+'%','Post-DT','accent','red')+
+ mCard('Cap Compression',fmtBps(r.capComp),'Bps compr.','gold-accent','gold');
+ gu('sens-body').innerHTML=r.sensRows.map(function(s,i){
+ return '<tr'+(i===2?' class="base-row"':'')+'><td class="label-col">'+s.label+'</td><td'+(i===2?' class="base-val"':'')+'>'+(s.cap*100).toFixed(2)+'%</td><td'+(i===2?' class="base-val"':'')+'>'+fmt$(s.exitVal)+'</td><td class="'+s.cls+'">'+(s.delta>=0?'+':'')+fmt$(s.delta)+'</td><td class="'+s.cls+'">'+(s.totalRet>=0?'+':'')+fmt$(s.totalRet)+'</td></tr>';
+ }).join('');
+ var dscrH=r.dscr!==null?mCard('DSCR',r.dscr.toFixed(2)+'x',r.dscr>=1.25?'✓ Above 1.25x':'⚠ Below 1.25x','accent',r.dscr>=1.25?'green':''):mCard('DSCR','N/A','Enter debt inputs','','');
+ gu('risk-grid').innerHTML=
+ mCard('Yield Spread',fmtBps(r.ySpread),'vs. Treasury','accent','')+
+ mCard('Current Cap Rate',(r.curCap*100).toFixed(2)+'%','Going-in','','')+
+ mCard('Exit Cap Rate',(r.exitCap*100).toFixed(2)+'%','AESIT exit','accent','red')+dscrH;
+ gu('investor-grid').innerHTML=
+ mCard('IRR',r.irr.toFixed(1)+'%',r.hold+'-year period','accent','gold')+
+ mCard('Cash-on-Cash',r.coc.toFixed(1)+'%','Yr 1 levered','accent','')+
+ mCard('Equity Multiple',fmtX(r.eqMult),'Total ÷ equity','accent','');
+ gu('idlf-bars').innerHTML=
+ '<div class="idlf-row"><div class="idlf-row-label">Fragmented</div><div class="idlf-bar-track"><div class="idlf-bar-fill red" style="width:100%"></div></div><div class="idlf-bar-val">'+fmt$(r.frag)+'</div></div>'+
+ '<div class="idlf-row"><div class="idlf-row-label">AESIT IDLF</div><div class="idlf-bar-track"><div class="idlf-bar-fill chrome" style="width:'+Math.round((r.idlf/r.frag)*100)+'%"></div></div><div class="idlf-bar-val">'+fmt$(r.idlf)+'</div></div>';
+ gu('idlf-grid').innerHTML=
+ mCard('IDLF Net Advantage',fmt$(r.idlfAdv),'vs. fragmented','accent','gold')+
+ mCard('Cost Efficiency Ratio',fmtX(IDLF_MULT),'Frag. ÷ IDLF','','');
+ gu('roi-grid').innerHTML=
+ mCard('Total Return',fmt$(r.totalRet),'Delta + resiliency + savings','highlight','red')+
+ mCard('Resiliency Premium',fmt$(r.resPrem),'Resiliency value','accent','')+
+ mCard('Asset Sovereignty™ ROI',Math.round(r.assetROI)+'%','Target: 300%–450%','highlight',r.assetROI>=300?'gold':'');
+ }
+ gu('submit-btn').addEventListener('click', function() {
+ var email=gu('lf-email').value.trim();
+ var sb=gu('submit-btn');
+ var fs=gu('form-status');
+ function showSt(type,msg){fs.className='form-status '+type;fs.textContent=msg;fs.style.display='block';}
+ if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showSt('error','A valid email is required.');return;}
+ if(!lastBasic&&!lastSovr){showSt('error','Please calculate ROI first.');return;}
+ sb.disabled=true; sb.textContent='Sending…';
+ var r=lastSovr||{};
+ var b=lastBasic||{};
+ var payload=Object.assign({},lastInputs,{
+ formType: lastSovr&&activeOutput==='sovr'?'asset-sovereignty':'basic-roi',
+ name:gu('lf-name').value.trim(),
+ company:gu('lf-company').value.trim(),
+ title:gu('lf-title').value.trim(),
+ phone:gu('lf-phone').value.trim(),
+ email:email,
+ notes:gu('lf-notes').value.trim(),
+ conservativeAnnual:b.cons?Math.round(b.cons.total):0,
+ expectedAnnual:b.exp?Math.round(b.exp.total):0,
+ optimizedAnnual:b.opt?Math.round(b.opt.total):0,
+ expectedRoi5yr:b.exp?b.exp.roi5pct.toFixed(0):'',
+ expectedPayback:b.exp?Math.round(b.exp.paybackMo):'',
+ assetROI:r.assetROI?Math.round(r.assetROI):0,
+ totalValueDelta:r.totalDelta?Math.round(r.totalDelta):0,
+ irr:r.irr?r.irr.toFixed(1):'N/A',
+ coc:r.coc?r.coc.toFixed(1):'N/A',
+ equityMultiple:r.eqMult?r.eqMult.toFixed(2):'N/A',
+ exitCapRate:r.exitCap?(r.exitCap*100).toFixed(2):'',
+ idlfAdvantage:r.idlfAdv?Math.round(r.idlfAdv):0,
+ timestamp:new Date().toISOString(),
+ });
+ var iframe=gu('gs-iframe');
+ if(!iframe){iframe=document.createElement('iframe');iframe.id='u-gs-iframe';iframe.name='u-gs-iframe';iframe.style.cssText='display:none;position:absolute;width:0;height:0;border:0;';document.body.appendChild(iframe);}
+ var form=document.createElement('form');
+ form.method='POST';form.action=SCRIPT_URL;form.target='u-gs-iframe';form.enctype='application/x-www-form-urlencoded';form.style.display='none';
+ Object.entries(payload).forEach(function(kv){var inp=document.createElement('input');inp.type='hidden';inp.name=kv[0];inp.value=String(kv[1]);form.appendChild(inp);});
+ document.body.appendChild(form);form.submit();document.body.removeChild(form);
+ setTimeout(function(){
+ showSt('success','✓ Transmission confirmed. Your ROI summary is en route. An AESIT® Intelligence Partner™ will be in contact shortly. The analysis is complete. The next move is precision-engineered for your portfolio specifically.');
+ gu('lead-form-wrap').style.opacity='0.4';
+ gu('lead-form-wrap').style.pointerEvents='none';
+ sb.textContent='Sent ✓';
+ },2000);
+ });
+ function doReset(){
+ ['u-portfolio-type','u-region','u-num-facilities','u-sqft','u-energy-spend','u-maint-budget',
+ 'u-initial-price','u-market-value','u-current-noi','u-idlf-cost','u-holding-period',
+ 'u-loan-amount','u-interest-rate','u-amort-period'].forEach(function(id){
+ var el=document.getElementById(id); if(el) el.value='';
+ });
+ gu('noi-growth').value='2.5';
+ gu('treasury-rate').value='4.25';
+ sl.value=0;
+ gu('maturity-desc').textContent=MAT_DESC[0];
+ [0,1,2,3].forEach(function(i){document.getElementById('u-ml-'+i).classList.toggle('active',i===0);});
+ gu('output-toggle').style.display='none';
+ gu('output-basic').classList.remove('visible');
+ gu('output-sovr').classList.remove('visible');
+ gu('lead-section').classList.remove('visible');
+ gu('form-status').style.display='none';
+ gu('lead-form-wrap').style.opacity='';
+ gu('lead-form-wrap').style.pointerEvents='';
+ var sb=gu('submit-btn'); sb.disabled=false; sb.textContent='Send My ROI Summary →';
+ gu('toggle-basic').classList.remove('calculated');
+ gu('toggle-sovr').classList.remove('calculated');
+ lastBasic=null; lastSovr=null; lastInputs=null; activeOutput=null;
+ window.scrollTo({top:0,behavior:'smooth'});
+ }
+ gu('reset-basic').addEventListener('click', doReset);
+ gu('reset-sovr').addEventListener('click', doReset);
+});</script>
+</body>
+</html>
