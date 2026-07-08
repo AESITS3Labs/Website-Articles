@@ -2,116 +2,171 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-    @page {
-        size: A4;
-        margin: 20mm 15mm;
-        background-color: #faf9f6;
-        @bottom-right {
-            content: counter(page);
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 8pt;
-            color: #71717a;
-        }
-        @bottom-left {
-            content: "AESIT Global Solutions Group | Lifecycle Doctrine: Form. Flow. Fortitude. In Practice.";
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 8pt;
-            color: #71717a;
-        }
+    :root {
+        --carbon: #000000;
+        --titanium: #888888;
+        --brushed: #A8A8A8;
+        --chrome: #C8C8C8;
+        --grid-white: #E8E8E8;
+        --race-red: #CC0000;
+        --race-red-2: #FF2020;
+        --gold: #D4AF37;
+        
+        --col-design: #C48F1D;
+        --col-ops: #1C98A6;
+        --col-protect: #4070B8;
+        
+        --grad-chrome: linear-gradient(135deg, #6A6A6A 0%, #D8D8D8 40%, #F0F0F0 55%, #A0A0A0 100%);
+        --grad-steel: linear-gradient(180deg, #232323 0%, #191919 50%, #202020 100%);
+        --grad-gold: linear-gradient(135deg, #B8922A 0%, #D4AF37 40%, #F0CC55 60%, #B8922A 100%);
+        --grad-design: linear-gradient(135deg, #8A6010 0%, #C48F1D 40%, #E0B040 60%, #A07015 100%);
+        --grad-ops: linear-gradient(135deg, #0E6070 0%, #1C98A6 40%, #30C0D0 60%, #0E7080 100%);
+        --grad-protect: linear-gradient(135deg, #244080 0%, #4070B8 40%, #6090D8 60%, #2A4890 100%);
+        
+        --border: rgba(200,200,200,0.10);
+        --border-mid: rgba(200,200,200,0.20);
+        --text-secondary: #B0A898;
+        --text-muted: #888888;
+        
+        --title-font: 'League Spartan', sans-serif;
+        --body-font: 'Barlow', sans-serif;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 10.5pt;
-        line-height: 1.6;
-        color: #27272a;
-        margin: 0;
-        padding: 0;
-        background-color: #faf9f6;
+        font-family: var(--body-font);
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        background-color: var(--carbon);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 52px 6%;
     }
 
     h1, h2, h3, h4 {
-        font-family: "Georgia", Georgia, serif;
-        color: #18181b;
+        font-family: var(--title-font);
+        color: var(--chrome);
+        font-weight: 800;
+        letter-spacing: -0.02em;
         margin-top: 0;
-        font-weight: normal;
     }
 
     h1 {
-        font-size: 24pt;
-        line-height: 1.2;
-        color: #0f172a;
-        margin-bottom: 5px;
+        font-size: clamp(26px, 4vw, 42px);
+        line-height: 1.0;
+        margin-bottom: 6px;
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .subtitle {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 11pt;
+        font-family: var(--title-font);
+        font-size: 12px;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #64748b;
-        margin-bottom: 25px;
+        letter-spacing: 0.06em;
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 14px;
         font-weight: 600;
+        opacity: 0.65;
     }
 
     .meta-line {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 9pt;
-        color: #64748b;
-        border-bottom: 1px solid #e2e8f0;
+        font-family: var(--title-font);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--titanium);
+        border-bottom: 1px solid var(--border-mid);
         padding-bottom: 15px;
         margin-bottom: 30px;
+        text-transform: uppercase;
     }
 
     h2 {
         font-size: 14pt;
-        color: #1e293b;
+        color: var(--chrome);
         margin-top: 25px;
         margin-bottom: 12px;
         padding-bottom: 6px;
-        border-bottom: 1px solid #e2e8f0;
+        border-bottom: 1px solid var(--border-mid);
         page-break-after: avoid;
     }
 
     h2.brand-accent {
-        color: #1e293b;
-        border-bottom: 2px solid #1e293b;
+        color: var(--chrome);
+        border-bottom: 1px solid var(--border-mid);
     }
 
     p {
         margin-top: 0;
         margin-bottom: 12px;
-        text-align: justify;
+        text-align: left;
+        color: var(--text-secondary);
     }
 
     .lead-paragraph {
-        font-size: 11.5pt;
-        color: #334155;
+        font-size: 13px;
+        color: var(--text-secondary);
         line-height: 1.7;
         margin-bottom: 20px;
         font-style: italic;
+        font-weight: 300;
     }
 
     .loop-box {
-        background-color: #1e293b;
+        background: var(--grad-steel);
         color: #f8fafc;
-        padding: 15px 20px;
+        padding: 20px;
         margin: 20px 0;
-        border-radius: 4px;
+        border-radius: 8px;
         text-align: center;
-        font-family: "Georgia", serif;
+        font-family: var(--title-font);
         font-size: 13pt;
         letter-spacing: 0.5px;
         page-break-inside: avoid;
+        border: 1px solid var(--border-mid);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .loop-box span {
+        color: #fff;
+        font-weight: bold;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
     }
 
     .loop-box span.arrow {
-        color: #94a3b8;
-        margin: 0 12px;
+        color: var(--titanium);
+        margin: 0 5px;
+        font-size: 16px;
     }
+
+    .loop-box .form { background: var(--grad-design); }
+    .loop-box .flow { background: var(--grad-ops); }
+    .loop-box .fortitude { background: var(--grad-protect); }
 
     ul {
         margin-top: 0;
@@ -121,72 +176,131 @@
 
     li {
         margin-bottom: 6px;
+        color: var(--text-secondary);
     }
 
     .pillar-section {
         margin-bottom: 20px;
-        padding: 15px;
-        background-color: #f8fafc;
-        border-left: 3px solid #64748b;
+        padding: 20px;
+        background: var(--grad-steel);
+        border: 1px solid var(--border-mid);
+        border-radius: 8px;
+        border-top: 3px solid var(--col-design);
         page-break-inside: avoid;
     }
 
-    .pillar-title {
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        font-weight: bold;
-        font-size: 11pt;
-        text-transform: uppercase;
-        margin-bottom: 5px;
+    .pillar-section.pillar-flow {
+        border-top-color: var(--col-ops);
     }
 
-    .title-form { color: #BD8731; }
-    .title-flow { color: #146B75; }
-    .title-fortitude { color: #283593; }
+    .pillar-section.pillar-fortitude {
+        border-top-color: var(--col-protect);
+    }
+
+    .pillar-title {
+        font-family: var(--title-font);
+        font-weight: 800;
+        font-size: 11pt;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        letter-spacing: 0.1em;
+    }
+
+    .pillar-title.title-form { 
+        background: var(--grad-design);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .pillar-title.title-flow { 
+        background: var(--grad-ops);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .pillar-title.title-fortitude { 
+        background: var(--grad-protect);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
     blockquote {
         margin: 20px 0;
-        padding: 10px 20px;
-        border-left: 4px solid #1e293b;
-        background-color: #f1f5f9;
+        padding: 15px 20px;
+        border-left: 3px solid var(--col-design);
+        background: rgba(0,0,0,0.35);
         font-style: italic;
-        color: #475569;
+        color: var(--text-secondary);
+        border-radius: 0 4px 4px 0;
+        font-weight: 300;
+        line-height: 1.7;
+    }
+
+    strong {
+        color: var(--chrome);
+        font-weight: 600;
     }
 
     .footer-note {
         margin-top: 40px;
-        border-top: 1px solid #e2e8f0;
-        padding-top: 15px;
-        font-size: 8.5pt;
-        color: #64748b;
+        border-top: 1px solid var(--border-mid);
+        padding-top: 20px;
+        font-size: 10px;
+        color: var(--titanium);
         text-align: center;
-        line-height: 1.5;
+        line-height: 1.6;
+        font-family: var(--title-font);
+        letter-spacing: 0.05em;
+    }
+
+    .footer-note::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, #CC0000 0%, #FF2020 50%, #991000 100%);
+        border-radius: 1px;
+        margin: 0 auto 14px;
+    }
+
+    .footer-brand {
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
     }
 </style>
 <title>Form. Flow. Fortitude. In Practice.</title>
 </head>
 <body>
 
+<main class="container">
+
     <h1>Form. Flow. Fortitude. In Practice.</h1>
     <div class="subtitle">The Core Architecture of CRE Lifecycle Intelligence™</div>
     
     <div class="meta-line">
-        <strong>Master Lifecycle Doctrine</strong> | AESIT Intelligence Standards Corpus &bull; Published 2026
+        <strong>Master Lifecycle Doctrine</strong> &bullet; AESIT Intelligence Standards Corpus &bullet; Published 2026
     </div>
 
     <h2>01 — Overview of the Lifecycle Doctrine</h2>
     <p class="lead-paragraph">
-        Commercial Real Estate (CRE) is traditionally managed through fragmented, disconnected operations. Design, building management, and security function as isolated cost centers. This friction creates systemic inefficiencies, accelerates asset depreciation, and degrades long-term equity value.
+        Commercial Real Estate (CRE) is traditionally managed through fragmented, disconnected operations. Design, building management, and security function as isolated cost centers. This friction creates technical debt, operational drag, and security vulnerabilities that compound over decades.
     </p>
     <p>
-        <strong>Form. Flow. Fortitude. In Practice.</strong> defines a unified, lifecycle-integrated alternative: **CRE Lifecycle Intelligence™**. By binding an asset’s physical structure, ongoing operational telemetry, and continuity defenses into a single closed loop, real estate transforms from a depreciating container into a sovereign, compounding economic instrument.
+        <strong>Form. Flow. Fortitude. In Practice.</strong> defines a unified, lifecycle-integrated alternative: <strong>CRE Lifecycle Intelligence™</strong>. By binding an asset's physical structure, operational telemetry, and security posture into a single feedback loop, this doctrine unlocks predictable value across capital, operational, and risk dimensions.
     </p>
 
     <div class="loop-box">
-        <span style="color: #fff; font-weight: bold; background-color: #BD8731; padding: 2px 8px; border-radius: 3px;">Form (Design)</span> 
-        <span class="arrow">&rarr;</span> 
-        <span style="color: #fff; font-weight: bold; background-color: #146B75; padding: 2px 8px; border-radius: 3px;">Flow (Operations)</span> 
-        <span class="arrow">&rarr;</span> 
-        <span style="color: #fff; font-weight: bold; background-color: #283593; padding: 2px 8px; border-radius: 3px;">Fortitude (Protection)</span>
+        <span class="form">Form (Design)</span> 
+        <span class="arrow">→</span> 
+        <span class="flow">Flow (Operations)</span> 
+        <span class="arrow">→</span> 
+        <span class="fortitude">Fortitude (Protection)</span>
     </div>
 
     <h2 class="brand-accent">02 — The Three Foundational Pillars</h2>
@@ -197,21 +311,21 @@
     <div class="pillar-section">
         <div class="pillar-title title-form">Pillar 1: Form (Regenerative Design Intelligence)</div>
         <p>
-            Governed by the **Intelligent Design Lifecycle Framework (IDLF®)**, Form handles the physical and programmatic genesis of the asset. It mandates the creation of data-rich sovereign Digital Twins and instrumented physical parameters at inception to remove future capital adjustments and accurately model 30+ year lifecycle operations.
+            Governed by the <strong>Intelligent Design Lifecycle Framework (IDLF®)</strong>, Form handles the physical and programmatic genesis of the asset. It mandates the creation of data-rich sovereign Digital Twins that encode material specifications, thermal properties, occupancy models, and security boundaries at the atomic level. Form is where intelligence is born.
         </p>
     </div>
 
-    <div class="pillar-section">
+    <div class="pillar-section pillar-flow">
         <div class="pillar-title title-flow">Pillar 2: Flow (Adaptive Operational Intelligence)</div>
         <p>
-            Managed via **S³ Labs®**, Flow acts as the operational, data-driven engine of the structure. It processes continuous subsystem telemetry to autonomously drive energy efficiency, minimize mechanical failures through prescriptive maintenance, and systematically build **Enhanced NOI**.
+            Managed via <strong>S³ Labs®</strong>, Flow acts as the operational, data-driven engine of the structure. It processes continuous subsystem telemetry to autonomously drive energy efficiency, minimize unplanned maintenance, and optimize occupancy-driven resource allocation. Flow is where intelligence compounds.
         </p>
     </div>
 
-    <div class="pillar-section">
+    <div class="pillar-section pillar-fortitude">
         <div class="pillar-title title-fortitude">Pillar 3: Fortitude (Resilient Protection Intelligence)</div>
         <p>
-            Executed using **Secure-by-Design** principles, Fortitude ensures cyber-physical asset continuity. Rather than relying on patch security systems, Fortitude treats protection as a foundational underwriting value that de-risks structural vulnerabilities and captures **The Resiliency Premium™** to compress asset cap rates.
+            Executed using <strong>Secure-by-Design</strong> principles, Fortitude ensures cyber-physical asset continuity. Rather than relying on patch security systems, Fortitude treats protection as a foundational architectural property. Every subsystem is intrinsically hardened, and every anomaly detected in Flow feeds automated threat response. Fortitude is where intelligence is defended.
         </p>
     </div>
 
@@ -235,20 +349,22 @@
     </p>
     <ul>
         <li><strong>CapEx Protection:</strong> Asset degradation is caught years before major failure, minimizing unexpected depreciation.</li>
-        <li><strong>Resource Arbitrage:</strong> Local microgrids and automated energy loops trade peak demand windows to cut operational expenses.</li>
+        <li><strong>Resource Arbitrage:</strong> Local microgrids and automated energy loops trade peak demand windows to cut operational expenses by 15–28%.</li>
         <li><strong>Premium Valuation:</strong> Institutional buyers value verifiable sovereign operational records as distinct balance-sheet assets, unlocking enhanced financing terms.</li>
     </ul>
 
     <h2>Conclusion</h2>
     <p>
-        When Form, Flow, and Fortitude are executed in practice, commercial real estate detaches from standard market volatility. The building becomes a self-defending, margin-expanding engine. This is the overarching operational philosophy of the AESIT® standards canon.
+        When Form, Flow, and Fortitude are executed in practice, commercial real estate detaches from standard market volatility. The building becomes a self-defending, margin-expanding engine. This is the doctrine. This is the architecture. This is how intelligence compounds.
     </p>
 
     <div class="footer-note">
-        <strong>AESIT Global Solutions Group | Master Corporate Doctrine | aesit.net</strong><br>
-        Form. Flow. Fortitude. In Practice. &bull; CRE Lifecycle Intelligence™ &bull; Lifecycle Canon v1.0<br>
-        Est. 1989 &bull; Lorton, Virginia &bull; &copy; 2026 AESIT Global Solutions Group. All rights reserved.
+        <span class="footer-brand">AESIT Global Solutions Group | Master Corporate Doctrine | aesit.net</span><br>
+        Form. Flow. Fortitude. In Practice. &bullet; CRE Lifecycle Intelligence™ &bullet; Lifecycle Canon v1.0<br>
+        Est. 1989 &bullet; Lorton, Virginia &bullet; © 2026 AESIT Global Solutions Group. All rights reserved.
     </div>
+
+</main>
 
 </body>
 </html>
