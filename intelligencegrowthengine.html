@@ -154,39 +154,6 @@ body {
 }
 
 /* ══════════════════════════════════════
-   TOGGLE BUTTON
-══════════════════════════════════════ */
-.toggle-button {
-  font-family: var(--title-font);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: var(--grad-red);
-  color: #0A0A0A;
-  padding: 3px 8px;
-  border-radius: 3px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: box-shadow 0.2s, transform 0.1s;
-  position: fixed;
-  top: 52px;
-  right: 6%;
-  z-index: 1000;
-}
-
-.toggle-button:hover {
-  box-shadow: 0 4px 12px rgba(204, 0, 0, 0.4);
-  transform: translateY(-1px);
-}
-
-.toggle-button:active {
-  transform: translateY(0);
-}
-
-/* ══════════════════════════════════════
    CONTROLS PANEL
 ══════════════════════════════════════ */
 .controls-panel {
@@ -965,8 +932,6 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
 </style>
 </head>
 <body>
-<a href="aesit3xroimultiplierdb.html" class="toggle-button">3x ROI FORMULA</a>
-
 <main class="container" role="main">
 
   <!-- ══ HEADER ══ -->
@@ -977,7 +942,7 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
     </h1>
     <p class="header-subtitle">How Precision, Performance, and Protection Each Accelerate Your Asset's Intelligence Curve</p>
     <p class="header-lead">
-      Every insight earned feeds the next iteration. Every iteration compounds the return. This is not a philosophy — it is an engineered system. <strong>AESIT® Intelligence Engine™</strong> applies strategic multipliers across three intelligence vectors — design, operations, and protection — to generate exponential asset value growth.
+      Every insight earned feeds the next iteration. Every iteration compounds the return. This is not a philosophy — it is an engineered system. <strong>AESIT® Intelligence Engine™</strong> compounds across three divisions: <strong>Design</strong> encodes precision at the foundation — the highest- leverage moment in any asset lifecycle. <strong>Operations</strong> continuously re-engineers performance, learning the building's metabolism with every data cycle. <strong>Protection</strong> secures the compounding gain — guaranteeing that every return earned remains yours. Adjust the levers below to model how each division's intelligence rate compounds across your asset lifecycle. 
     </p>
   </header>
 
@@ -1034,47 +999,42 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
             <span class="slider-name">Asset Lifecycle Horizon</span>
             <span class="slider-val sv-years" id="out-years">20 yrs</span>
           </div>
-          <input type="range" class="r-years" id="sl-years" min="5" max="40" step="1" value="20">
+          <input type="range" class="r-years" id="sl-years" min="1" max="50" step="1" value="20">
         </div>
       </div>
 
       <div class="mode-row">
-        <span class="mode-label">Compounding Mode:</span>
-        <button class="mode-btn active" data-mode="annual">Annual</button>
-        <button class="mode-btn" data-mode="quarterly">Quarterly</button>
-        <button class="mode-btn" data-mode="continuous">Continuous</button>
+        <span class="mode-label">Intelligence Compounding Cadence:</span>
+        <button class="mode-btn active" data-freq="1" onclick="setFreq(1,this)">Annual</button>
+        <button class="mode-btn" data-freq="4" onclick="setFreq(4,this)">Quarterly</button>
+        <button class="mode-btn" data-freq="12" onclick="setFreq(12,this)">Monthly</button>
+        <button class="mode-btn" data-freq="365" onclick="setFreq(365,this)">Continuous</button>
       </div>
+
     </div>
   </div>
 
-  <!-- ══ CHART PANEL ══ -->
+  <!-- ══ CHART ══ -->
   <div class="chart-panel">
     <div class="chart-header">
-      <div class="chart-header-title">Asset Intelligence Trajectory — Divisional Contribution</div>
+      <div class="chart-header-title">Intelligence Curve — Compounded Divisional Growth vs. Linear Baseline</div>
       <div class="legend-row">
-        <div class="leg-item">
-          <div class="leg-dot" style="background: var(--grad-design);"></div>
-          <span>Design</span>
-        </div>
-        <div class="leg-item">
-          <div class="leg-dot" style="background: var(--grad-ops);"></div>
-          <span>Operations</span>
-        </div>
-        <div class="leg-item">
-          <div class="leg-dot" style="background: var(--grad-protect);"></div>
-          <span>Protection</span>
-        </div>
+        <div class="leg-item"><div class="leg-dot" style="background:#C48F1D;"></div>Design</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#1C98A6;"></div>Operations</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#4070B8;"></div>Protection</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#D4AF37;border:1px solid #888;"></div>Combined</div>
+        <div class="leg-item"><div class="leg-dot" style="background:rgba(200,200,200,0.2);border:1px dashed rgba(200,200,200,0.4);"></div>Linear</div>
       </div>
     </div>
     <div class="chart-body">
       <div class="chart-wrap">
-        <canvas id="intell-chart"></canvas>
+        <canvas id="intel-chart"></canvas>
       </div>
     </div>
   </div>
 
-  <!-- ══ DIVISION BREAKDOWN ══ -->
-  <span class="section-label">Divisional Intelligence Engines — Precision · Performance · Protection</span>
+  <!-- ══ DIVISION COLUMNS ══ -->
+  <span class="section-label">Divisional Intelligence — Precision. Performance. Protection.</span>
 
   <div class="division-grid">
 
@@ -1082,45 +1042,36 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
     <div class="division-col d-design">
       <div class="col-header">
         <div class="col-division-badge">Division 01</div>
-        <div class="col-title">Design</div>
-        <div class="col-tagline">Engineered Smart · S³ Labs®</div>
+        <div class="col-title">Design Intelligence</div>
+        <div class="col-tagline">Precision-Encoded · S³ Labs®</div>
       </div>
       <div class="col-rate-bar">
         <div class="rate-bar-label">
-          <span>Intelligence Multiplier</span>
-          <span class="rate-pct">~8% / yr</span>
+          <span>Compounding Contribution</span>
+          <span class="rate-pct" id="bar-design-pct">8% / yr</span>
         </div>
         <div class="bar-track">
-          <div class="bar-fill" style="width:50%;"></div>
+          <div class="bar-fill" id="bar-design" style="width:35%;"></div>
         </div>
       </div>
       <div class="col-body">
         <div class="intel-contrib">
-          <div class="contrib-term">Encodes Intelligence Into Foundation</div>
-          <div class="contrib-desc">Design locks in precision from day 1. Every parameter is parametrized for future optimization — the Digital Twin foundation is built into the asset.</div>
+          <div class="contrib-term">Drives — Intelligence Foundation ↓</div>
+          <div class="contrib-desc">Design is where intelligence is encoded at the lowest cost. Every precision decision made in S³ Labs® eliminates downstream entropy — the highest-leverage compounding period in the lifecycle.</div>
         </div>
         <ul class="intel-list">
-          <li>
-            <span class="intel-name">Energy optimization potential</span>
-            <span class="intel-fig">15–35%</span>
-          </li>
-          <li>
-            <span class="intel-name">Digital Twin readiness</span>
-            <span class="intel-fig">Day 1</span>
-          </li>
-          <li>
-            <span class="intel-name">Future operations headroom</span>
-            <span class="intel-fig">Built-in</span>
-          </li>
-          <li>
-            <span class="intel-name">Compliance infrastructure</span>
-            <span class="intel-fig">Hardened</span>
-          </li>
+          <li><span class="intel-name">Data fidelity from day one (Digital Twin seed)</span><span class="intel-fig">High</span></li>
+          <li><span class="intel-name">Generative design iterations per engagement</span><span class="intel-fig">∞</span></li>
+          <li><span class="intel-name">ESG intelligence encoded at structure</span><span class="intel-fig">Built-in</span></li>
+          <li><span class="intel-name">Rework eliminated via clash-detection AI</span><span class="intel-fig">Significant</span></li>
+          <li><span class="intel-name">IDPD lifecycle record established</span><span class="intel-fig">Day 1</span></li>
         </ul>
         <div class="sys-row">
           <span class="sys-pill">S³ Labs®</span>
+          <span class="sys-pill">Generative AI</span>
           <span class="sys-pill">BIM/VDC</span>
-          <span class="sys-pill">Parametric Design</span>
+          <span class="sys-pill">EcoFlow®</span>
+          <span class="sys-pill">IDPD</span>
         </div>
       </div>
     </div>
@@ -1129,45 +1080,36 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
     <div class="division-col d-ops">
       <div class="col-header">
         <div class="col-division-badge">Division 02</div>
-        <div class="col-title">Operations</div>
-        <div class="col-tagline">Optimized-by-Data · SBLM</div>
+        <div class="col-title">Operations Intelligence</div>
+        <div class="col-tagline">Continuously Re-Engineering · SBLM · Digital Twin</div>
       </div>
       <div class="col-rate-bar">
         <div class="rate-bar-label">
-          <span>Intelligence Multiplier</span>
-          <span class="rate-pct">~12% / yr</span>
+          <span>Compounding Contribution</span>
+          <span class="rate-pct" id="bar-ops-pct">12% / yr</span>
         </div>
         <div class="bar-track">
-          <div class="bar-fill" style="width:70%;"></div>
+          <div class="bar-fill" id="bar-ops" style="width:55%;"></div>
         </div>
       </div>
       <div class="col-body">
         <div class="intel-contrib">
-          <div class="contrib-term">Harvests & Compounds Intelligence</div>
-          <div class="contrib-desc">Operations is the engine. SBLM continuously learns from the asset's behavior, feeding insights back into the system — compounding value year over year.</div>
+          <div class="contrib-term">Drives — Performance Intelligence ↑</div>
+          <div class="contrib-desc">Operations is the primary intelligence engine. Digital Twin telemetry and SBLM continuously re-learn the building's metabolism — each cycle sharper than the last, compounding insight into measured NOI gains.</div>
         </div>
         <ul class="intel-list">
-          <li>
-            <span class="intel-name">Predictive maintenance</span>
-            <span class="intel-fig">20–40%</span>
-          </li>
-          <li>
-            <span class="intel-name">Real-time optimization</span>
-            <span class="intel-fig">Continuous</span>
-          </li>
-          <li>
-            <span class="intel-name">Anomaly detection</span>
-            <span class="intel-fig">AI-driven</span>
-          </li>
-          <li>
-            <span class="intel-name">Lifecycle cost reduction</span>
-            <span class="intel-fig">15–35%</span>
-          </li>
+          <li><span class="intel-name">Digital Twin learning cycles per year</span><span class="intel-fig">Continuous</span></li>
+          <li><span class="intel-name">Predictive maintenance accuracy gain</span><span class="intel-fig">+20–40%</span></li>
+          <li><span class="intel-name">Energy optimization convergence</span><span class="intel-fig">15–35%</span></li>
+          <li><span class="intel-name">AI analytics throughput (signals/day)</span><span class="intel-fig">Millions</span></li>
+          <li><span class="intel-name">NOI improvement compounded lifecycle</span><span class="intel-fig">300%+</span></li>
         </ul>
         <div class="sys-row">
           <span class="sys-pill">Digital Twin</span>
           <span class="sys-pill">SBLM</span>
           <span class="sys-pill">AI Analytics</span>
+          <span class="sys-pill">IoT / GIS</span>
+          <span class="sys-pill">EAM / IWMS</span>
         </div>
       </div>
     </div>
@@ -1176,98 +1118,83 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
     <div class="division-col d-protect">
       <div class="col-header">
         <div class="col-division-badge">Division 03</div>
-        <div class="col-title">Protection</div>
+        <div class="col-title">Protection Intelligence</div>
         <div class="col-tagline">Secure-by-Design · Asset Sovereignty™</div>
       </div>
       <div class="col-rate-bar">
         <div class="rate-bar-label">
-          <span>Intelligence Multiplier</span>
-          <span class="rate-pct">~6% / yr</span>
+          <span>Compounding Contribution</span>
+          <span class="rate-pct" id="bar-protect-pct">6% / yr</span>
         </div>
         <div class="bar-track">
-          <div class="bar-fill" style="width:40%;"></div>
+          <div class="bar-fill" id="bar-protect" style="width:25%;"></div>
         </div>
       </div>
       <div class="col-body">
         <div class="intel-contrib">
-          <div class="contrib-term">Secures Intelligence & Authority</div>
-          <div class="contrib-desc">Protection ensures the asset remains your asset. Cyber-physical convergence locks in sovereignty — your data, your algorithms, your competitive advantage stays inside.</div>
+          <div class="contrib-term">Drives — Resiliency Intelligence ↑</div>
+          <div class="contrib-desc">Protection intelligence compounds through threat learning — each incident resolved sharpens the next posture. The Resiliency Premium is not static; it grows as the asset's defensive intelligence matures.</div>
         </div>
         <ul class="intel-list">
-          <li>
-            <span class="intel-name">Asset Sovereignty™</span>
-            <span class="intel-fig">Guaranteed</span>
-          </li>
-          <li>
-            <span class="intel-name">Cyber-physical security</span>
-            <span class="intel-fig">Unified</span>
-          </li>
-          <li>
-            <span class="intel-name">Threat continuity</span>
-            <span class="intel-fig">100%</span>
-          </li>
-          <li>
-            <span class="intel-name">Audit trail & compliance</span>
-            <span class="intel-fig">Immutable</span>
-          </li>
+          <li><span class="intel-name">Threat-pattern learning cadence</span><span class="intel-fig">Continuous</span></li>
+          <li><span class="intel-name">Cyber-physical convergence fidelity</span><span class="intel-fig">Unified</span></li>
+          <li><span class="intel-name">Mission-critical continuity assurance</span><span class="intel-fig">100%</span></li>
+          <li><span class="intel-name">Cap rate compression via risk intelligence</span><span class="intel-fig">Measurable</span></li>
+          <li><span class="intel-name">Asset Sovereignty™ — data ownership</span><span class="intel-fig">Guaranteed</span></li>
         </ul>
         <div class="sys-row">
-          <span class="sys-pill">IaC Framework</span>
-          <span class="sys-pill">Cyber-Physical Grid</span>
-          <span class="sys-pill">Sovereignty™</span>
+          <span class="sys-pill">Cyber-Physical</span>
+          <span class="sys-pill">Threat Intel</span>
+          <span class="sys-pill">Continuity</span>
+          <span class="sys-pill">Access Control</span>
+          <span class="sys-pill">Emergency Comms</span>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- ══ RULE OF 72 CALLOUT ══ -->
+  <!-- ══ RULE OF 72 ══ -->
   <div class="rule72-panel">
-    <div class="rule72-label">Rule of 72</div>
-    <div class="rule72-text">
-      Every percentage point of compounded intelligence growth matters. At 12% annual compounding (Ops Intelligence Rate), the doubling period is just 6 years. At 6%, it's 12 years. <strong>Every year you delay is a year of exponential returns you forfeit.</strong>
-    </div>
+    <span class="rule72-label">The Intelligence Rule of 72™</span>
+    <span class="rule72-text" id="rule72-text">At a combined rate of <strong>26%/yr</strong>, your asset's intelligence base doubles in roughly <strong>2.8 years</strong>. Every compounding period that passes without AESIT intelligence active is a doubling left on the table — and in CRE, time is the only input you cannot recover. ∞</span>
   </div>
 
-  <!-- ══ LIFECYCLE PHASES ══ -->
+  <!-- ══ PHASE BREAKDOWN ══ -->
   <div class="phase-panel">
     <div class="phase-header">
-      <div class="phase-header-title">Asset Intelligence Lifecycle — Phases of Compounding Value</div>
-      <div class="phase-header-tag">IDLF · Perpetual Optimization</div>
+      <div class="phase-header-title">The Intelligence Lifecycle — How Three
+Divisions Compound Into One Sovereign Platform</div>
+      <div class="phase-header-tag">IDLF · Full Lifecycle</div>
     </div>
     <div class="phase-body">
       <div class="stacked-bar-wrap">
         <div class="stacked-bar-label">
-          <span>Divisional Contribution Over Time</span>
-          <span>Design Heavy → Operations Heavy → Steady State</span>
+          <span>Divisional intelligence contribution to total lifecycle compounding</span>
+          <span style="background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:14px;font-weight:800;">Continuous. Perpetual. Yours.</span>
         </div>
         <div class="stacked-bar">
-          <div class="stack-seg seg-design">DESIGN</div>
-          <div class="stack-seg seg-ops">OPERATIONS</div>
-          <div class="stack-seg seg-protect">PROTECTION</div>
+          <div class="stack-seg seg-design">Design</div>
+          <div class="stack-seg seg-ops">Operations</div>
+          <div class="stack-seg seg-protect">Protection</div>
         </div>
       </div>
-
       <div class="phase-strip">
         <div class="phase-item">
-          <span class="phase-name">Discovery & Design</span>
-          <div class="phase-roi">Baseline</div>
-          <div class="phase-desc">Foundation precision, parametric readiness, Digital Twin blueprint established. Intelligence multiplier: locked in.</div>
+          <span class="phase-name">Phase 1 · Intelligence Encoding</span>
+          <div class="phase-roi">Foundation</div>
+          <div class="phase-desc">S³ Labs® and IDPD encode intelligence into the asset from Discovery — seeding the Digital Twin that every subsequent compounding cycle builds upon.</div>
         </div>
         <div class="phase-item">
-          <span class="phase-name">Construction & Deploy</span>
-          <div class="phase-roi">+Intelligence</div>
-          <div class="phase-desc">Design precision realized; ops intelligence begins harvesting; protection posture hardened. Compounding begins.</div>
-        </div>
-        <div class="phase-item">
-          <span class="phase-name">Year 1–3: Acceleration</span>
+          <span class="phase-name">Phase 2 · Intelligence Optimization</span>
           <div class="phase-roi">Compounding</div>
-          <div class="phase-desc">SBLM optimization engine scales. Each iteration feeds the next. Operations intelligence rate peaks. Doubling visible.</div>
+          <div class="phase-desc">Digital Twin, SBLM, and AI analytics re-learn the building's metabolism continuously — each cycle more precise, compounding operational intelligence into measurable NOI.</div>
         </div>
         <div class="phase-item">
-          <span class="phase-name">Steady State (Y4+)</span>
+          <span class="phase-name">Phase 3 · Intelligence Sovereignty</span>
           <div class="phase-roi">Perpetual</div>
-          <div class="phase-desc">System in equilibrium. Continuous compounding. Intelligence curve continues exponential. Asset value max.</div>
+          <div class="phase-desc">Protection intelligence matures with every threat resolved — securing the compounding gain, compressing
+institutional risk, and guaranteeing that all data, all telemetry, and all intelligence remains the asset owner's sovereign property. This is not a service. It is ownership. ∞</div>
         </div>
       </div>
     </div>
@@ -1275,147 +1202,148 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
 
   <!-- ══ SOVEREIGNTY CLOSE ══ -->
   <div class="sovereignty-close">
-    <div class="sovereignty-close-label">Compounding Intelligence™</div>
-    <div class="sovereignty-close-text">
-      The difference between a building and an intelligent asset is compounding. The first depreciates. The second appreciates — because it learns, optimizes, and compounds its own value year after year. <strong>AESIT® Compounding Intelligence™ is the engine that turns assets into appreciating instruments.</strong>
-    </div>
+    <span class="sovereignty-close-label">Asset Intelligence Sovereignty™</span>
+    <span class="sovereignty-close-text">Every insight, every learning cycle, and every compounding return belongs to you — not your vendor. <strong>You own the intelligence. You own the data. You own the advantage.</strong> AESIT® guarantees total sovereignty over your Digital Twin, telemetry, and operational intelligence from groundbreaking through perpetual optimization. Built. Measured. Proven. ∞</span>
   </div>
 
   <!-- ══ FOOTER ══ -->
   <footer class="page-footer">
-    <span class="footer-brand">AESIT® Global Solutions Group · S³ Labs®</span>
+    <span class="footer-brand">AESIT® — S3 Labs® | Compounding
+Intelligence™ · Asset Sovereignty™ | © 2026 AESIT Global Solutions Group. All rights reserved.
   </footer>
 
 </main>
 
 <script>
-// Slider bindings
-const sliders = {
-  design: document.getElementById('sl-design'),
-  ops: document.getElementById('sl-ops'),
-  protect: document.getElementById('sl-protect'),
-  years: document.getElementById('sl-years')
-};
+let freq = 1;
+let chart;
 
-const outputs = {
-  design: document.getElementById('out-design'),
-  ops: document.getElementById('out-ops'),
-  protect: document.getElementById('out-protect'),
-  years: document.getElementById('out-years')
-};
-
-let compoundingMode = 'annual';
-let chart = null;
-
-const modeBtns = document.querySelectorAll('.mode-btn');
-modeBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    modeBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    compoundingMode = btn.getAttribute('data-mode');
-    updateChart();
-  });
-});
-
-function updateSliderOutput(name, value) {
-  if (name === 'years') {
-    outputs[name].textContent = value + ' yrs';
-  } else {
-    outputs[name].textContent = value + '% / yr';
-  }
-  updateChart();
+function setFreq(f, btn) {
+  freq = f;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  update();
 }
 
-Object.keys(sliders).forEach(key => {
-  sliders[key].addEventListener('input', (e) => {
-    updateSliderOutput(key, e.target.value);
-  });
-});
-
-function calculateCompound(principal, rate, years, frequency = 'annual') {
-  rate = rate / 100;
-  let n = 1;
-  if (frequency === 'quarterly') n = 4;
-  if (frequency === 'continuous') return principal * Math.exp(rate * years);
-  return principal * Math.pow(1 + rate / n, n * years);
+function updateSliderFill(el, min, max) {
+  const pct = ((+el.value - min) / (max - min) * 100).toFixed(1) + '%';
+  el.style.setProperty('--pct', pct);
 }
 
-function updateChart() {
-  const designRate = parseFloat(sliders.design.value);
-  const opsRate = parseFloat(sliders.ops.value);
-  const protectRate = parseFloat(sliders.protect.value);
-  const years = parseInt(sliders.years.value);
+function compound(rate, years, n) {
+  return Math.pow(1 + rate / n, n * years);
+}
 
-  const designData = [];
-  const opsData = [];
-  const protectData = [];
+function update() {
+  const dRate   = +document.getElementById('sl-design').value / 100;
+  const oRate   = +document.getElementById('sl-ops').value / 100;
+  const pRate   = +document.getElementById('sl-protect').value / 100;
+  const years   = +document.getElementById('sl-years').value;
+
+  document.getElementById('out-design').textContent  = Math.round(dRate*100) + '% / yr';
+  document.getElementById('out-ops').textContent     = Math.round(oRate*100) + '% / yr';
+  document.getElementById('out-protect').textContent = Math.round(pRate*100) + '% / yr';
+  document.getElementById('out-years').textContent   = years + ' yrs';
+
+  updateSliderFill(document.getElementById('sl-design'),  1, 30);
+  updateSliderFill(document.getElementById('sl-ops'),     1, 30);
+  updateSliderFill(document.getElementById('sl-protect'), 1, 30);
+  updateSliderFill(document.getElementById('sl-years'),   1, 50);
+
+  const maxRate = Math.max(dRate, oRate, pRate);
+  const combinedRate = dRate + oRate + pRate;
+
+  const dFinal = compound(dRate, years, freq);
+  const oFinal = compound(oRate, years, freq);
+  const pFinal = compound(pRate, years, freq);
+  const cFinal = compound(combinedRate, years, freq);
+
+  document.getElementById('val-multiplier').textContent = cFinal.toFixed(1) + '×';
+  document.getElementById('val-gained').textContent     = (cFinal - 1).toFixed(1) + '×';
+  const doubling = (72 / (combinedRate * 100));
+  document.getElementById('val-double').textContent     = doubling.toFixed(1) + ' yrs';
+
+  document.getElementById('bar-design-pct').textContent  = Math.round(dRate*100) + '% / yr';
+  document.getElementById('bar-ops-pct').textContent     = Math.round(oRate*100) + '% / yr';
+  document.getElementById('bar-protect-pct').textContent = Math.round(pRate*100) + '% / yr';
+
+  document.getElementById('bar-design').style.width  = Math.min(100, Math.round(dRate*100/30*100)) + '%';
+  document.getElementById('bar-ops').style.width     = Math.min(100, Math.round(oRate*100/30*100)) + '%';
+  document.getElementById('bar-protect').style.width = Math.min(100, Math.round(pRate*100/30*100)) + '%';
+
+  const totalRate = Math.round(combinedRate * 100);
+  const doubYrs   = doubling.toFixed(1);
+  document.getElementById('rule72-text').innerHTML =
+    'At a combined rate of <strong>' + totalRate + '%/yr</strong>, your asset\'s intelligence base doubles in roughly <strong>' + doubYrs + ' years</strong>. Every compounding period that passes without AESIT intelligence active is a doubling left on the table. ∞';
+
   const labels = [];
+  const dData = [], oData = [], pData = [], cData = [], linData = [];
 
   for (let y = 0; y <= years; y++) {
-    labels.push('Y' + y);
-    designData.push(calculateCompound(100, designRate, y, compoundingMode) - 100);
-    opsData.push(calculateCompound(100, opsRate, y, compoundingMode) - 100);
-    protectData.push(calculateCompound(100, protectRate, y, compoundingMode) - 100);
+    labels.push(y === 0 ? 'Now' : 'Yr ' + y);
+    dData.push(+compound(dRate, y, freq).toFixed(3));
+    oData.push(+compound(oRate, y, freq).toFixed(3));
+    pData.push(+compound(pRate, y, freq).toFixed(3));
+    cData.push(+compound(combinedRate, y, freq).toFixed(3));
+    linData.push(+(1 + combinedRate * y).toFixed(3));
   }
 
-  const totalAtEnd = calculateCompound(100, (designRate + opsRate + protectRate) / 3, years, compoundingMode);
-  const gained = totalAtEnd - 100;
-  const doubleRate = (designRate + opsRate + protectRate) / 3;
-  const doublingPeriod = 72 / doubleRate;
-
-  document.getElementById('val-multiplier').textContent = totalAtEnd.toFixed(1) + '×';
-  document.getElementById('val-gained').textContent = gained.toFixed(1) + '×';
-  document.getElementById('val-double').textContent = doublingPeriod.toFixed(1) + ' yrs';
-
-  const ctx = document.getElementById('intell-chart').getContext('2d');
-
-  if (chart) {
-    chart.destroy();
-  }
-
-  chart = new Chart(ctx, {
+  if (chart) chart.destroy();
+  chart = new Chart(document.getElementById('intel-chart'), {
     type: 'line',
     data: {
-      labels: labels,
+      labels,
       datasets: [
         {
-          label: 'Design Intelligence',
-          data: designData,
-          borderColor: '#C48F1D',
-          backgroundColor: 'rgba(196, 143, 29, 0.1)',
-          borderWidth: 2,
+          label: 'Combined',
+          data: cData,
+          borderColor: '#D4AF37',
+          backgroundColor: 'rgba(212,175,55,0.08)',
+          fill: true,
           tension: 0.4,
-          fill: false,
-          pointRadius: 3,
-          pointBackgroundColor: '#C48F1D',
-          pointBorderColor: 'rgba(255,255,255,0.5)',
-          pointBorderWidth: 1
+          pointRadius: 0,
+          borderWidth: 2.5
         },
         {
-          label: 'Operations Intelligence',
-          data: opsData,
+          label: 'Operations',
+          data: oData,
           borderColor: '#1C98A6',
-          backgroundColor: 'rgba(28, 152, 166, 0.1)',
-          borderWidth: 2,
-          tension: 0.4,
+          backgroundColor: 'transparent',
           fill: false,
-          pointRadius: 3,
-          pointBackgroundColor: '#1C98A6',
-          pointBorderColor: 'rgba(255,255,255,0.5)',
-          pointBorderWidth: 1
+          tension: 0.4,
+          pointRadius: 0,
+          borderWidth: 1.5
         },
         {
-          label: 'Protection Intelligence',
-          data: protectData,
-          borderColor: '#4070B8',
-          backgroundColor: 'rgba(64, 112, 184, 0.1)',
-          borderWidth: 2,
-          tension: 0.4,
+          label: 'Design',
+          data: dData,
+          borderColor: '#C48F1D',
+          backgroundColor: 'transparent',
           fill: false,
-          pointRadius: 3,
-          pointBackgroundColor: '#4070B8',
-          pointBorderColor: 'rgba(255,255,255,0.5)',
-          pointBorderWidth: 1
+          tension: 0.4,
+          pointRadius: 0,
+          borderWidth: 1.5
+        },
+        {
+          label: 'Protection',
+          data: pData,
+          borderColor: '#4070B8',
+          backgroundColor: 'transparent',
+          fill: false,
+          tension: 0.4,
+          pointRadius: 0,
+          borderWidth: 1.5
+        },
+        {
+          label: 'Linear Baseline',
+          data: linData,
+          borderColor: 'rgba(200,200,200,0.25)',
+          backgroundColor: 'transparent',
+          fill: false,
+          tension: 0,
+          pointRadius: 0,
+          borderWidth: 1,
+          borderDash: [5, 4]
         }
       ]
     },
@@ -1423,26 +1351,36 @@ function updateChart() {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: {
-          display: false
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.dataset.label + ': ' + ctx.raw.toFixed(2) + '×'
+          }
         }
       },
       scales: {
-        y: {
-          beginAtZero: true,
-          grid: { color: 'rgba(200,200,200,0.1)' },
-          ticks: { color: '#B0A898' }
-        },
         x: {
-          grid: { display: false },
-          ticks: { color: '#B0A898' }
+          ticks: { color: '#666', font: { size: 11 }, autoSkip: true, maxTicksLimit: 11 },
+          grid: { display: false }
+        },
+        y: {
+          ticks: {
+            color: '#666',
+            font: { size: 11 },
+            callback: v => v.toFixed(1) + '×'
+          },
+          grid: { color: 'rgba(255,255,255,0.04)' }
         }
       }
     }
   });
 }
 
-updateChart();
+['sl-design','sl-ops','sl-protect','sl-years'].forEach(id => {
+  document.getElementById(id).addEventListener('input', update);
+});
+
+update();
 </script>
 </body>
 </html>
