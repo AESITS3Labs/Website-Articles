@@ -148,7 +148,8 @@
         flex-wrap: wrap;
     }
 
-    .loop-box span {
+    .loop-box span,
+    .loop-box button {
         color: #fff;
         font-weight: bold;
         padding: 6px 12px;
@@ -168,6 +169,22 @@
     .loop-box .flow { background: var(--grad-ops); }
     .loop-box .fortitude { background: var(--grad-protect); }
 
+    .loop-box button.form,
+    .loop-box button.flow,
+    .loop-box button.fortitude {
+        border: none;
+        font-family: var(--title-font);
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .loop-box button:hover,
+    .loop-box button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        outline: none;
+    }
+
     ul {
         margin-top: 0;
         margin-bottom: 15px;
@@ -179,7 +196,8 @@
         color: var(--text-secondary);
     }
 
-    .pillar-section {
+    /* Pillar sections are now interactive buttons */
+    button.pillar-section {
         margin-bottom: 20px;
         padding: 20px;
         background: var(--grad-steel);
@@ -187,14 +205,50 @@
         border-radius: 8px;
         border-top: 3px solid var(--col-design);
         page-break-inside: avoid;
+        width: 100%;
+        display: block;
+        text-align: left;
+        font-family: var(--body-font);
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+        position: relative;
     }
 
-    .pillar-section.pillar-flow {
-        border-top-color: var(--col-ops);
+    button.pillar-section:hover,
+    button.pillar-section:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+        outline: none;
     }
 
-    .pillar-section.pillar-fortitude {
-        border-top-color: var(--col-protect);
+    button.pillar-section.pillar-flow { border-top-color: var(--col-ops); }
+    button.pillar-section.pillar-fortitude { border-top-color: var(--col-protect); }
+
+    button.pillar-section:hover { border-color: var(--col-design); }
+    button.pillar-section.pillar-flow:hover { border-color: var(--col-ops); }
+    button.pillar-section.pillar-fortitude:hover { border-color: var(--col-protect); }
+
+    .pillar-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 10px;
+        font-family: var(--title-font);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--chrome);
+        opacity: 0.75;
+    }
+
+    button.pillar-section .pillar-cta::after {
+        content: '→';
+        transition: transform 0.15s ease;
+    }
+
+    button.pillar-section:hover .pillar-cta::after {
+        transform: translateX(4px);
     }
 
     .pillar-title {
@@ -273,12 +327,163 @@
         background-clip: text;
         font-weight: 800;
     }
+
+    /* View switching */
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        border: 1px solid var(--border-mid);
+        color: var(--chrome);
+        font-family: var(--title-font);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-bottom: 28px;
+        transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .back-btn:hover { transform: translateX(-3px); }
+    .back-btn::before { content: '←'; }
+
+    .back-btn.form:hover { border-color: var(--col-design); }
+    .back-btn.flow:hover { border-color: var(--col-ops); }
+    .back-btn.fortitude:hover { border-color: var(--col-protect); }
+
+    .detail-hero {
+        border-radius: 10px;
+        padding: 28px 26px;
+        margin-bottom: 28px;
+        border: 1px solid var(--border-mid);
+    }
+
+    .detail-hero.form { background: linear-gradient(135deg, rgba(196,143,29,0.16), rgba(0,0,0,0.4)); border-top: 3px solid var(--col-design); }
+    .detail-hero.flow { background: linear-gradient(135deg, rgba(28,152,166,0.16), rgba(0,0,0,0.4)); border-top: 3px solid var(--col-ops); }
+    .detail-hero.fortitude { background: linear-gradient(135deg, rgba(64,112,184,0.16), rgba(0,0,0,0.4)); border-top: 3px solid var(--col-protect); }
+
+    .detail-kicker {
+        font-family: var(--title-font);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        opacity: 0.85;
+    }
+
+    .detail-kicker.form { color: var(--col-design); }
+    .detail-kicker.flow { color: var(--col-ops); }
+    .detail-kicker.fortitude { color: var(--col-protect); }
+
+    .detail-hero h2 {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-top: 4px;
+        margin-bottom: 10px;
+        font-size: clamp(20px, 3vw, 28px);
+    }
+
+    .detail-hero p {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+
+    .brand-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .brand-card {
+        background: var(--grad-steel);
+        border: 1px solid var(--border-mid);
+        border-radius: 8px;
+        padding: 18px 20px;
+        border-left: 3px solid var(--col-design);
+    }
+
+    .brand-card.flow { border-left-color: var(--col-ops); }
+    .brand-card.fortitude { border-left-color: var(--col-protect); }
+
+    .brand-name {
+        font-family: var(--title-font);
+        font-weight: 700;
+        font-size: 12pt;
+        color: var(--chrome);
+        margin-bottom: 4px;
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .brand-role {
+        font-family: var(--title-font);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--titanium);
+    }
+
+    .brand-card p {
+        font-size: 13.5px;
+        margin-bottom: 0;
+    }
+
+    .stat-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin: 22px 0 6px;
+    }
+
+    .stat-chip {
+        flex: 1 1 150px;
+        background: rgba(0,0,0,0.35);
+        border: 1px solid var(--border-mid);
+        border-radius: 8px;
+        padding: 14px 16px;
+        text-align: center;
+    }
+
+    .stat-chip .stat-value {
+        font-family: var(--title-font);
+        font-weight: 800;
+        font-size: 16pt;
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .stat-chip.form .stat-value { color: var(--col-design); }
+    .stat-chip.flow .stat-value { color: var(--col-ops); }
+    .stat-chip.fortitude .stat-value { color: var(--col-protect); }
+
+    .stat-chip .stat-label {
+        font-family: var(--title-font);
+        font-size: 9px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--titanium);
+    }
 </style>
 <title>Form. Flow. Fortitude. In Practice.</title>
 </head>
 <body>
 
 <main class="container">
+
+  <!-- ============ MAIN VIEW ============ -->
+  <section id="view-main" class="view active">
 
     <h1>Form. Flow. Fortitude. In Practice.</h1>
     <div class="subtitle">The Core Architecture of CRE Lifecycle Intelligence™</div>
@@ -296,38 +501,41 @@
     </p>
 
     <div class="loop-box">
-        <span class="form">Form (Design)</span> 
+        <button type="button" class="form" onclick="showView('form')" aria-label="Open Form pillar details">Form (Design)</button>
         <span class="arrow">→</span> 
-        <span class="flow">Flow (Operations)</span> 
+        <button type="button" class="flow" onclick="showView('flow')" aria-label="Open Flow pillar details">Flow (Operations)</button>
         <span class="arrow">→</span> 
-        <span class="fortitude">Fortitude (Protection)</span>
+        <button type="button" class="fortitude" onclick="showView('fortitude')" aria-label="Open Fortitude pillar details">Fortitude (Protection)</button>
     </div>
 
     <h2 class="brand-accent">02 — The Three Foundational Pillars</h2>
     <p>
-        The corpus breaks down operational lifecycle management into three distinct, interconnected disciplines:
+        The corpus breaks down operational lifecycle management into three distinct, interconnected disciplines. Select a pillar to explore its practice, its brands, and how it compounds intelligence across the asset lifecycle.
     </p>
 
-    <div class="pillar-section">
+    <button type="button" class="pillar-section" onclick="showView('form')" aria-label="Open Form pillar details">
         <div class="pillar-title title-form">Pillar 1: Form (Regenerative Design Intelligence)</div>
         <p>
             Governed by the <strong>Intelligent Design Lifecycle Framework (IDLF®)</strong>, Form handles the physical and programmatic genesis of the asset. It mandates the creation of data-rich sovereign Digital Twins that encode material specifications, thermal properties, occupancy models, and security boundaries at the atomic level. Form is where intelligence is born.
         </p>
-    </div>
+        <span class="pillar-cta">Explore Form &amp; its brands</span>
+    </button>
 
-    <div class="pillar-section pillar-flow">
+    <button type="button" class="pillar-section pillar-flow" onclick="showView('flow')" aria-label="Open Flow pillar details">
         <div class="pillar-title title-flow">Pillar 2: Flow (Adaptive Operational Intelligence)</div>
         <p>
             Managed via <strong>S³ Labs®</strong>, Flow acts as the operational, data-driven engine of the structure. It processes continuous subsystem telemetry to autonomously drive energy efficiency, minimize unplanned maintenance, and optimize occupancy-driven resource allocation. Flow is where intelligence compounds.
         </p>
-    </div>
+        <span class="pillar-cta">Explore Flow &amp; its brands</span>
+    </button>
 
-    <div class="pillar-section pillar-fortitude">
+    <button type="button" class="pillar-section pillar-fortitude" onclick="showView('fortitude')" aria-label="Open Fortitude pillar details">
         <div class="pillar-title title-fortitude">Pillar 3: Fortitude (Resilient Protection Intelligence)</div>
         <p>
             Executed using <strong>Secure-by-Design</strong> principles, Fortitude ensures cyber-physical asset continuity. Rather than relying on patch security systems, Fortitude treats protection as a foundational architectural property. Every subsystem is intrinsically hardened, and every anomaly detected in Flow feeds automated threat response. Fortitude is where intelligence is defended.
         </p>
-    </div>
+        <span class="pillar-cta">Explore Fortitude &amp; its brands</span>
+    </button>
 
     <h2 class="brand-accent">03 — Execution Framework & Cross-Divisional Inputs</h2>
     <p>
@@ -364,7 +572,181 @@
         Est. 1989 &bullet; Lorton, Virginia &bullet; © 2026 AESIT Global Solutions Group. All rights reserved.
     </div>
 
+  </section>
+
+  <!-- ============ FORM DETAIL VIEW ============ -->
+  <section id="view-form" class="view">
+    <button type="button" class="back-btn form" onclick="showView('main')">Back to the Three Pillars</button>
+
+    <div class="detail-hero form">
+        <div class="detail-kicker form">Pillar 1 &bullet; Design</div>
+        <h2>Form — Regenerative Design Intelligence</h2>
+        <p>
+            Every space in this practice is engineered rather than simply built. Design work is treated as the origin point of an asset's intelligence: architecture, MEP systems, and structure are drawn up as adaptive, data-rich environments from the very first sketch, not retrofitted with sensors later.
+        </p>
+    </div>
+
+    <h2 class="brand-accent">The Framework</h2>
+    <p>
+        Form is governed by the <strong>Intelligent Design Lifecycle Framework (IDLF®)</strong>, a precision lifecycle model built to turn fragmented design data into a single, sovereign source of truth. Instead of drawings, specs, and models living in separate silos, IDLF® binds them into a data-rich Digital Twin that encodes material specifications, thermal properties, occupancy models, and security boundaries down to the atomic level — a baseline that every later operational and protection decision can be measured against.
+    </p>
+
+    <div class="stat-row">
+        <div class="stat-chip form"><span class="stat-value">Digital Twin</span><span class="stat-label">Sovereign design record</span></div>
+        <div class="stat-chip form"><span class="stat-value">Generative</span><span class="stat-label">AI-driven design process</span></div>
+        <div class="stat-chip form"><span class="stat-value">Up to 25%</span><span class="stat-label">Energy cost reduction target</span></div>
+    </div>
+
+    <h2 class="brand-accent">Brands & Practices Within Form</h2>
+    <div class="brand-grid">
+        <div class="brand-card">
+            <div class="brand-name">S³ Labs® <span class="brand-role">Architecture, Interior Design & Planning</span></div>
+            <p>
+                The multidisciplinary intelligence engine behind Form's spatial work. Environments are developed through generative design, digital prototyping, and nature-aligned modeling, so that spaces are engineered as adaptive, regenerative systems that continue to evolve alongside occupants, performance data, and changing conditions.
+            </p>
+        </div>
+        <div class="brand-card">
+            <div class="brand-name">EcoFlow® <span class="brand-role">MEP Engineering</span></div>
+            <p>
+                A smart, eco-centric systems platform used to future-proof mechanical, electrical, and plumbing (MEP) work. It integrates MEP systems tightly with the architectural design so buildings are positioned to lower energy costs, hold to compliance standards, and improve day-to-day occupant comfort.
+            </p>
+        </div>
+        <div class="brand-card">
+            <div class="brand-name">IronMind® <span class="brand-role">Structural Engineering</span></div>
+            <p>
+                Brings architecture, MEP, and site preparation together using Building Information Modeling (BIM) and advanced geotechnical engineering tools. The goal is faster delivery, lower cost, and structural resilience that's designed in from the foundation up rather than reinforced after the fact.
+            </p>
+        </div>
+    </div>
+
+    <blockquote>
+        Encoded precision at the input stage: generative design and integrated digital project delivery engineer compounding asset value from the very first decision.
+    </blockquote>
+
+    <button type="button" class="back-btn form" onclick="showView('main')">Back to the Three Pillars</button>
+  </section>
+
+  <!-- ============ FLOW DETAIL VIEW ============ -->
+  <section id="view-flow" class="view">
+    <button type="button" class="back-btn flow" onclick="showView('main')">Back to the Three Pillars</button>
+
+    <div class="detail-hero flow">
+        <div class="detail-kicker flow">Pillar 2 &bullet; Operations</div>
+        <h2>Flow — Adaptive Operational Intelligence</h2>
+        <p>
+            Fragmented workflows, reactive maintenance, and hidden inefficiencies quietly drain performance across a portfolio. Flow applies predictive intelligence to unify operations, get ahead of failures before they happen, and lift performance across every asset under management.
+        </p>
+    </div>
+
+    <h2 class="brand-accent">The Engine</h2>
+    <p>
+        Flow is managed via <strong>S³ Labs®</strong>, which continuously processes subsystem telemetry — mechanical, thermal, occupancy — to autonomously drive energy efficiency, cut unplanned maintenance, and route resources to where occupancy actually needs them. The Digital Twin established in Form becomes the live performance baseline that operational systems monitor against and improve upon.
+    </p>
+
+    <div class="stat-row">
+        <div class="stat-chip flow"><span class="stat-value">15–35%</span><span class="stat-label">Energy cost reduction</span></div>
+        <div class="stat-chip flow"><span class="stat-value">10–25%</span><span class="stat-label">Maintenance cost reduction</span></div>
+        <div class="stat-chip flow"><span class="stat-value">Predictive</span><span class="stat-label">Maintenance model</span></div>
+    </div>
+
+    <h2 class="brand-accent">Brands & Practices Within Flow</h2>
+    <div class="brand-grid">
+        <div class="brand-card flow">
+            <div class="brand-name">CitySense® <span class="brand-role">Integrated Urban Management System</span></div>
+            <p>
+                A smart city platform combining real-time data analytics with edge computing to help cities manage infrastructure, transportation, and services. It optimizes functions from traffic flow to public services while tying mobility and engagement systems together so cities can respond faster to residents.
+            </p>
+        </div>
+        <div class="brand-card flow">
+            <div class="brand-name">OptiWorks® <span class="brand-role">Integrated Workplace Management System</span></div>
+            <p>
+                An IWMS platform that turns complex facility data into actionable insight for real estate and facilities teams. It's built to reduce productivity disruptions and operating costs by helping organizations get more value out of their real estate and build more efficient workspaces.
+            </p>
+        </div>
+        <div class="brand-card flow">
+            <div class="brand-name">OptiManage® <span class="brand-role">Enterprise Asset Management System</span></div>
+            <p>
+                Provides end-to-end lifecycle management for physical assets, combining predictive maintenance, data-driven decision-making, risk and compliance tracking, and real-time performance metrics — aimed at cutting downtime and operating cost while keeping productivity and asset value high.
+            </p>
+        </div>
+    </div>
+
+    <blockquote>
+        High-velocity performance at the output stage: AI-driven digital twins and predictive intelligence converge to keep asset performance continuously optimized across a portfolio.
+    </blockquote>
+
+    <button type="button" class="back-btn flow" onclick="showView('main')">Back to the Three Pillars</button>
+  </section>
+
+  <!-- ============ FORTITUDE DETAIL VIEW ============ -->
+  <section id="view-fortitude" class="view">
+    <button type="button" class="back-btn fortitude" onclick="showView('main')">Back to the Three Pillars</button>
+
+    <div class="detail-hero fortitude">
+        <div class="detail-kicker fortitude">Pillar 3 &bullet; Protection</div>
+        <h2>Fortitude — Resilient Protection Intelligence</h2>
+        <p>
+            What can't be seen is what tends to cost the most. Fortitude converges physical security, cybersecurity, and emergency communications into one cyber-physical protection architecture, built to safeguard assets, people, and continuity of operations together rather than as separate systems.
+        </p>
+    </div>
+
+    <h2 class="brand-accent">The Approach</h2>
+    <p>
+        Fortitude is executed using <strong>Secure-by-Design</strong> principles rather than bolt-on patch security. Protection is treated as a foundational architectural property: every subsystem is hardened from the start, and anomalies surfaced during Flow's operational monitoring feed directly into automated threat response — closing the loop between operations and protection.
+    </p>
+
+    <div class="stat-row">
+        <div class="stat-chip fortitude"><span class="stat-value">Zero Trust</span><span class="stat-label">Security architecture</span></div>
+        <div class="stat-chip fortitude"><span class="stat-value">360°</span><span class="stat-label">Cyber-physical coverage</span></div>
+        <div class="stat-chip fortitude"><span class="stat-value">Predictive</span><span class="stat-label">Threat response</span></div>
+    </div>
+
+    <h2 class="brand-accent">Brands & Practices Within Fortitude</h2>
+    <div class="brand-grid">
+        <div class="brand-card fortitude">
+            <div class="brand-name">AuraShield-AI® <span class="brand-role">Cybersecurity</span></div>
+            <p>
+                Delivers the assurance an enterprise needs before a breach ever happens, so leadership can focus on growth knowing enterprise data is protected. Engineers deliver both off-the-shelf and bespoke solutions — from threat hunting to incident response — tailored to an asset's specific risk profile, reducing attack surface through proactive protection.
+            </p>
+        </div>
+        <div class="brand-card fortitude">
+            <div class="brand-name">Fortress 360°® <span class="brand-role">Integrated Security</span></div>
+            <p>
+                Combines cybersecurity, physical security, and emergency communication systems into one synchronized platform — access control, network authentication, smart sentry monitoring, and coordinated incident response, delivered through mobile apps for streamlined access, control, and communication.
+            </p>
+        </div>
+        <div class="brand-card fortitude">
+            <div class="brand-name">ApexShield-AI® <span class="brand-role">Physical Security</span></div>
+            <p>
+                Anticipates and prevents environmental and security risks with durable, weather-resistant, redundant equipment, minimizing downtime after a disaster or breach. Its open-platform, modular design integrates with legacy infrastructure already in place, making upgrades and expansion straightforward.
+            </p>
+        </div>
+    </div>
+
+    <blockquote>
+        Engineered protection at the shield stage: physical and information assurance converge at the source of the environment, anticipating risk before it becomes a record.
+    </blockquote>
+
+    <button type="button" class="back-btn fortitude" onclick="showView('main')">Back to the Three Pillars</button>
+  </section>
+
+  <div class="footer-note" id="global-footer" style="display:none;">
+    <span class="footer-brand">AESIT Global Solutions Group | Master Corporate Doctrine | aesit.net</span>
+  </div>
+
 </main>
+
+<script>
+function showView(name) {
+    var views = document.querySelectorAll('.view');
+    views.forEach(function(v) { v.classList.remove('active'); });
+    var target = document.getElementById('view-' + name);
+    if (target) {
+        target.classList.add('active');
+        target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
+}
+</script>
 
 </body>
 </html>
