@@ -153,6 +153,86 @@ body {
   -webkit-text-fill-color: var(--chrome);
 }
 
+.s3-banner {
+  margin-top: 16px;
+  padding: 10px 16px;
+  border: 1px solid rgba(212,175,55,0.3);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  background: rgba(212,175,55,0.06);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 820px;
+}
+
+.s3-banner strong {
+  color: var(--brushed);
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════
+   CRELI BASELINE PANEL
+══════════════════════════════════════ */
+.creli-panel {
+  margin-bottom: 28px;
+  border: 1px solid var(--border-mid);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--grad-steel);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.creli-header {
+  background: var(--grad-chrome-bar);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.creli-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 80px; height: 2px;
+  background: var(--grad-red-h);
+}
+
+.creli-header-title {
+  font-family: var(--title-font);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0A0A0A;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+}
+
+.creli-header-tag {
+  font-family: var(--title-font);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.25);
+  color: #0A0A0A;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.creli-body {
+  padding: 16px 22px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.creli-body strong { color: var(--brushed); font-weight: 500; }
+
 /* ══════════════════════════════════════
    CONTROLS PANEL
 ══════════════════════════════════════ */
@@ -375,6 +455,18 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
   border-color: rgba(212,175,55,0.4);
   color: var(--gold);
 }
+
+.methodology-note {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.methodology-note strong { color: var(--brushed); font-weight: 500; }
 
 /* ══════════════════════════════════════
    CHART PANEL
@@ -676,6 +768,12 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
 .d-ops     .sys-pill { background: rgba(28,152,166,0.1); color: var(--col-ops);     border-color: rgba(28,152,166,0.22); }
 .d-protect .sys-pill { background: rgba(64,112,184,0.1); color: var(--col-protect); border-color: rgba(64,112,184,0.22); }
 
+.sys-pill.s3 {
+  background: rgba(212,175,55,0.12) !important;
+  color: var(--gold) !important;
+  border-color: rgba(212,175,55,0.35) !important;
+}
+
 /* ══════════════════════════════════════
    RULE OF 72 CALLOUT
 ══════════════════════════════════════ */
@@ -689,7 +787,7 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
   border: 1px solid var(--border-mid);
   border-left: 3px solid var(--gold);
   border-radius: 0 8px 8px 0;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .rule72-label {
@@ -718,6 +816,20 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
   font-weight: 500;
   -webkit-text-fill-color: var(--brushed);
 }
+
+.methodology-disclosure {
+  margin-bottom: 28px;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+  border-left: 3px solid var(--border-bright);
+  border-radius: 0 6px 6px 0;
+  background: rgba(255,255,255,0.02);
+}
+
+.methodology-disclosure strong { color: var(--brushed); font-weight: 500; }
 
 /* ══════════════════════════════════════
    STACKED PHASE BAR
@@ -936,21 +1048,35 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
 
   <!-- ══ HEADER ══ -->
   <header class="page-header">
-    <div class="header-eyebrow">AESIT® — S³ Labs® Intelligence Lifecycle Framework™ · Compounding Intelligence™</div>
+    <div class="header-eyebrow">AESIT® — S³ Labs® Intelligence Lifecycle Framework™ · Form · Flow · Fortitude</div>
     <h1 class="header-title">
       <span class="title-main">AESIT® Compounding Intelligence™ —</span>&nbsp;<span class="title-accent">The Intelligence Growth Engine™</span>
     </h1>
     <p class="header-subtitle">How Precision, Performance, and Protection Each Accelerate Your Asset's Intelligence Curve</p>
     <p class="header-lead">
-      Every insight earned feeds the next iteration. Every iteration compounds the return. This is not a philosophy — it is an engineered system. <strong>AESIT® Intelligence Engine™</strong> compounds across three divisions: <strong>Design</strong> encodes precision at the foundation — the highest- leverage moment in any asset lifecycle. <strong>Operations</strong> continuously re-engineers performance, learning the building's metabolism with every data cycle. <strong>Protection</strong> secures the compounding gain — guaranteeing that every return earned remains yours. Adjust the levers below to model how each division's intelligence rate compounds across your asset lifecycle. 
+      Every insight earned feeds the next iteration. Every iteration compounds the return. This is not a philosophy — it is an engineered system. <strong>S³ Labs®</strong> is the intelligence engine of the AESIT® ecosystem: it originates in <strong>Design (Form)</strong>, encoding spatial, systemic, and strategic intelligence through the IDLF™ framework, and that intelligence persists across <strong>Operations (Flow)</strong> and <strong>Protection (Fortitude)</strong>, continuously compounding throughout the asset's lifecycle. Adjust the levers below to model how each division's intelligence rate compounds across your asset lifecycle.
+    </p>
+    <p class="s3-banner">
+      <strong>S³ Labs® Intelligence Layer:</strong> the rates below represent illustrative division-level intelligence growth. S³ Labs® regulates this intelligence layer across all three divisions — it does not operate only at Design. See the CRELI Index™ baseline panel below for how this model is intended to connect to a measured, evidence-based starting position.
     </p>
   </header>
+
+  <!-- ══ CRELI INDEX BASELINE (STATUS: PLANNED, NOT YET LIVE) ══ -->
+  <div class="creli-panel">
+    <div class="creli-header">
+      <div class="creli-header-title">CRELI Index™ Baseline — Planned Integration</div>
+      <div class="creli-header-tag">Not Yet Live</div>
+    </div>
+    <div class="creli-body">
+      The CRELI Index™, introduced by S³ Labs® to strengthen the AESIT® ecosystem, is designed so that its composite 0–100% intelligence score becomes the starting position for this simulator — replacing generic default rates with a real, evidence-based baseline for a specific asset. <strong>That connection is not yet built.</strong> The conversion function from a CRELI Index score to a division-level compounding rate has not been defined, and the sliders below remain illustrative until it is. This panel is here so that distinction stays visible rather than implied.
+    </div>
+  </div>
 
   <!-- ══ CONTROLS ══ -->
   <div class="controls-panel">
     <div class="controls-header">
       <div class="controls-header-title">Intelligence Compounding Simulator — Calibrate Division Rates & Lifecycle Horizon</div>
-      <div class="controls-header-tag">IDLF · Live Model</div>
+      <div class="controls-header-tag">IDLF · Illustrative Model</div>
     </div>
     <div class="controls-body">
 
@@ -975,21 +1101,21 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
       <div class="sliders-grid">
         <div class="slider-row">
           <div class="slider-top">
-            <span class="slider-name">Design Intelligence Rate — Precision Encoded</span>
+            <span class="slider-name">Design Intelligence Rate — Precision Encoded (Form)</span>
             <span class="slider-val sv-design" id="out-design">8% / yr</span>
           </div>
           <input type="range" class="r-design" id="sl-design" min="1" max="30" step="1" value="8">
         </div>
         <div class="slider-row">
           <div class="slider-top">
-            <span class="slider-name">Operations Intelligence Rate — Performance Compounding</span>
+            <span class="slider-name">Operations Intelligence Rate — Performance Compounding (Flow)</span>
             <span class="slider-val sv-ops" id="out-ops">12% / yr</span>
           </div>
           <input type="range" class="r-ops" id="sl-ops" min="1" max="30" step="1" value="12">
         </div>
         <div class="slider-row">
           <div class="slider-top">
-            <span class="slider-name">Protection Intelligence Rate — Resiliency Secured</span>
+            <span class="slider-name">Protection Intelligence Rate — Resiliency Secured (Fortitude)</span>
             <span class="slider-val sv-protect" id="out-protect">6% / yr</span>
           </div>
           <input type="range" class="r-protect" id="sl-protect" min="1" max="30" step="1" value="6">
@@ -1011,6 +1137,9 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
         <button class="mode-btn" data-freq="365" onclick="setFreq(365,this)">Continuous</button>
       </div>
 
+      <div class="methodology-note">
+        <strong>Methodology note:</strong> the "Combined" curve compounds the sum of the three division rates (Design + Operations + Protection), not the product of three independently compounding curves. This is a simplification chosen for a single illustrative curve, not a claim that the three divisions are additive in reality. Treat the three individual division curves (shown separately on the chart below) as the more defensible per-division view; treat "Combined" as an illustrative composite only.
+      </div>
     </div>
   </div>
 
@@ -1041,9 +1170,9 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
     <!-- DESIGN -->
     <div class="division-col d-design">
       <div class="col-header">
-        <div class="col-division-badge">Division 01</div>
+        <div class="col-division-badge">Division 01 · Form</div>
         <div class="col-title">Design Intelligence</div>
-        <div class="col-tagline">Precision-Encoded · S³ Labs®</div>
+        <div class="col-tagline">Precision-Encoded · S³ Labs® Origin</div>
       </div>
       <div class="col-rate-bar">
         <div class="rate-bar-label">
@@ -1067,7 +1196,7 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
           <li><span class="intel-name">IDPD lifecycle record established</span><span class="intel-fig">Day 1</span></li>
         </ul>
         <div class="sys-row">
-          <span class="sys-pill">S³ Labs®</span>
+          <span class="sys-pill s3">S³ Labs®</span>
           <span class="sys-pill">Generative AI</span>
           <span class="sys-pill">BIM/VDC</span>
           <span class="sys-pill">EcoFlow®</span>
@@ -1079,9 +1208,9 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
     <!-- OPERATIONS -->
     <div class="division-col d-ops">
       <div class="col-header">
-        <div class="col-division-badge">Division 02</div>
+        <div class="col-division-badge">Division 02 · Flow</div>
         <div class="col-title">Operations Intelligence</div>
-        <div class="col-tagline">Continuously Re-Engineering · SBLM · Digital Twin</div>
+        <div class="col-tagline">S³ Labs®-Regulated · Digital Twin</div>
       </div>
       <div class="col-rate-bar">
         <div class="rate-bar-label">
@@ -1095,7 +1224,7 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
       <div class="col-body">
         <div class="intel-contrib">
           <div class="contrib-term">Drives — Performance Intelligence ↑</div>
-          <div class="contrib-desc">Operations is the primary intelligence engine. Digital Twin telemetry and SBLM continuously re-learn the building's metabolism — each cycle sharper than the last, compounding insight into measured NOI gains.</div>
+          <div class="contrib-desc">Operations depends on intelligence, not guesswork. S³ Labs® regulates this intelligence layer, continuously re-learning the building's metabolism through Digital Twin telemetry — each cycle sharper than the last, compounding insight into measured NOI gains.</div>
         </div>
         <ul class="intel-list">
           <li><span class="intel-name">Digital Twin learning cycles per year</span><span class="intel-fig">Continuous</span></li>
@@ -1105,10 +1234,10 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
           <li><span class="intel-name">NOI improvement compounded lifecycle</span><span class="intel-fig">300%+</span></li>
         </ul>
         <div class="sys-row">
+          <span class="sys-pill s3">S³ Labs®</span>
           <span class="sys-pill">Digital Twin</span>
           <span class="sys-pill">SBLM</span>
           <span class="sys-pill">AI Analytics</span>
-          <span class="sys-pill">IoT / GIS</span>
           <span class="sys-pill">EAM / IWMS</span>
         </div>
       </div>
@@ -1117,9 +1246,9 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
     <!-- PROTECTION -->
     <div class="division-col d-protect">
       <div class="col-header">
-        <div class="col-division-badge">Division 03</div>
+        <div class="col-division-badge">Division 03 · Fortitude</div>
         <div class="col-title">Protection Intelligence</div>
-        <div class="col-tagline">Secure-by-Design · Asset Sovereignty™</div>
+        <div class="col-tagline">S³ Labs®-Regulated · Asset Sovereignty™</div>
       </div>
       <div class="col-rate-bar">
         <div class="rate-bar-label">
@@ -1133,7 +1262,7 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
       <div class="col-body">
         <div class="intel-contrib">
           <div class="contrib-term">Drives — Resiliency Intelligence ↑</div>
-          <div class="contrib-desc">Protection intelligence compounds through threat learning — each incident resolved sharpens the next posture. The Resiliency Premium is not static; it grows as the asset's defensive intelligence matures.</div>
+          <div class="contrib-desc">Protection intelligence compounds through threat learning, with S³ Labs® regulating this layer just as it does in Operations — each incident resolved sharpens the next posture. The Resiliency Premium grows as the asset's defensive intelligence matures.</div>
         </div>
         <ul class="intel-list">
           <li><span class="intel-name">Threat-pattern learning cadence</span><span class="intel-fig">Continuous</span></li>
@@ -1143,10 +1272,10 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
           <li><span class="intel-name">Asset Sovereignty™ — data ownership</span><span class="intel-fig">Guaranteed</span></li>
         </ul>
         <div class="sys-row">
+          <span class="sys-pill s3">S³ Labs®</span>
           <span class="sys-pill">Cyber-Physical</span>
           <span class="sys-pill">Threat Intel</span>
           <span class="sys-pill">Continuity</span>
-          <span class="sys-pill">Access Control</span>
           <span class="sys-pill">Emergency Comms</span>
         </div>
       </div>
@@ -1158,6 +1287,9 @@ input.r-years::-webkit-slider-thumb   { background: #A8A8A8; }
   <div class="rule72-panel">
     <span class="rule72-label">The Intelligence Rule of 72™</span>
     <span class="rule72-text" id="rule72-text">At a combined rate of <strong>26%/yr</strong>, your asset's intelligence base doubles in roughly <strong>2.8 years</strong>. Every compounding period that passes without AESIT intelligence active is a doubling left on the table — and in CRE, time is the only input you cannot recover. ∞</span>
+  </div>
+  <div class="methodology-disclosure">
+    The Rule of 72 approximation above is standard for any compounding-rate model — it is not unique to this framework, and its accuracy declines at combined rates above roughly 20%/yr. Treat the doubling-period figure as directional, not a guaranteed timeline.
   </div>
 
   <!-- ══ PHASE BREAKDOWN ══ -->
@@ -1188,7 +1320,7 @@ Divisions Compound Into One Sovereign Platform</div>
         <div class="phase-item">
           <span class="phase-name">Phase 2 · Intelligence Optimization</span>
           <div class="phase-roi">Compounding</div>
-          <div class="phase-desc">Digital Twin, SBLM, and AI analytics re-learn the building's metabolism continuously — each cycle more precise, compounding operational intelligence into measurable NOI.</div>
+          <div class="phase-desc">Digital Twin, SBLM, and AI analytics — regulated by S³ Labs® — re-learn the building's metabolism continuously, compounding operational intelligence into measurable NOI.</div>
         </div>
         <div class="phase-item">
           <span class="phase-name">Phase 3 · Intelligence Sovereignty</span>
