@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AESIT® Partner Program — Intelligence Without Disruption™</title>
+<meta name="description" content="The AESIT® Partnership Roadmap — a white-label path from first conversation to compounding intelligence, delivered under your brand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F1E6;
+    --cream-2:#EFE6D2;
+    --paper:#FBF8F1;
+    --ink:#1B1206;
+    --ink-soft:#5A4A36;
+    --ink-faint:#8A7A62;
+    --bronze:#9C6F3A;
+    --bronze-deep:#7A5527;
+    --bronze-light:#C99A5B;
+    --slate:#2B3730;
+    --slate-2:#212B25;
+    --line: rgba(27,18,6,0.14);
+    --line-strong: rgba(27,18,6,0.28);
+    --white:#FFFFFF;
+    --serif:'Fraunces', serif;
+    --sans:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+    --maxw: 1180px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--bronze-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--bronze);
+    display:inline-block;
+  }
+
+  h1,h2,h3,h4{
+    font-family:var(--serif);
+    font-weight:600;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  p{ margin:0; }
+
+  .btn{
+    font-family:var(--mono);
+    font-size:13.5px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 26px;
+    border-radius:2px;
+    border:1px solid var(--ink);
+    transition:background .2s ease, color .2s ease, transform .2s ease;
+    cursor:pointer;
+    background:transparent;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+    border-color:var(--ink);
+  }
+  .btn-primary:hover{ background:var(--bronze-deep); border-color:var(--bronze-deep); transform:translateY(-1px); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--line-strong);
+  }
+  .btn-ghost:hover{ border-color:var(--ink); transform:translateY(-1px); }
+  .btn-on-dark{
+    border-color:rgba(246,241,230,0.4);
+    color:var(--cream);
+  }
+  .btn-on-dark:hover{ background:rgba(246,241,230,0.1); border-color:var(--cream); }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,241,230,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .wordmark{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    display:flex; align-items:baseline; gap:8px;
+  }
+  .wordmark small{
+    font-family:var(--mono);
+    font-size:10.5px;
+    font-weight:400;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  nav.links{
+    display:flex; align-items:center; gap:28px;
+  }
+  nav.links a{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink-soft);
+    padding-bottom:3px;
+    border-bottom:1px solid transparent;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  nav.links a:hover{ color:var(--ink); border-color:var(--bronze); }
+  .nav-cta{ display:none; }
+  @media (min-width:900px){ .nav-cta{ display:inline-flex; } }
+  .nav-links-scroll{ display:none; }
+  @media (min-width:900px){ .nav-links-scroll{ display:flex; } }
+  .nav-toggle{ display:inline-flex; background:none; border:1px solid var(--line-strong); padding:9px 12px; font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; }
+  @media (min-width:900px){ .nav-toggle{ display:none; } }
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px; padding:8px 0 20px;
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{
+    padding:12px 0; font-family:var(--mono); font-size:13px; letter-spacing:.05em; text-transform:uppercase;
+    text-decoration:none; color:var(--ink-soft); border-bottom:1px solid var(--line);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:104px 0 88px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 60% 50% at 78% 20%, black, transparent 70%);
+    mask-image:radial-gradient(ellipse 60% 50% at 78% 20%, black, transparent 70%);
+    opacity:.6;
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; max-width:760px; }
+  .hero .eyebrow{ margin-bottom:26px; }
+  .hero h1{
+    font-size:clamp(38px, 5.4vw, 62px);
+    line-height:1.06;
+    margin-bottom:26px;
+  }
+  .hero h1 em{ font-style:italic; color:var(--bronze-deep); }
+  .hero .lede{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:600px;
+    margin-bottom:14px;
+  }
+  .hero .lede strong{ color:var(--ink); font-weight:600; }
+  .hero .sub-lede{
+    font-size:15.5px;
+    color:var(--ink-faint);
+    max-width:560px;
+    margin-bottom:40px;
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; }
+  .hero-foot{
+    margin-top:64px;
+    display:flex; gap:40px; flex-wrap:wrap;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .hero-foot-item{ max-width:220px; }
+  .hero-foot-item .num{ font-family:var(--mono); font-size:13px; color:var(--bronze-deep); letter-spacing:.04em; }
+  .hero-foot-item p{ font-size:13.5px; color:var(--ink-soft); margin-top:6px; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:96px 0; }
+  .section-head{ max-width:640px; margin-bottom:64px; }
+  .section-head .eyebrow{ margin-bottom:20px; }
+  .section-head h2{ font-size:clamp(30px,3.6vw,42px); line-height:1.12; margin-bottom:18px; }
+  .section-head p{ font-size:16.5px; color:var(--ink-soft); }
+  .on-dark .section-head h2{ color:var(--cream); }
+  .on-dark .section-head p{ color:rgba(246,241,230,0.7); }
+  .on-dark .eyebrow{ color:var(--bronze-light); }
+  .on-dark .eyebrow::before{ background:var(--bronze-light); }
+
+  /* ---------- ROADMAP / DIGITAL THREAD ---------- */
+  .roadmap{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .thread{ position:relative; max-width:920px; }
+  .thread::before{
+    content:"";
+    position:absolute;
+    left:23px; top:10px; bottom:10px;
+    width:1px;
+    background:linear-gradient(var(--line-strong), var(--line-strong) 85%, transparent);
+  }
+  .phase{
+    position:relative;
+    display:grid;
+    grid-template-columns:48px 1fr;
+    gap:28px;
+    padding-bottom:56px;
+    opacity:0; transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .phase.in-view{ opacity:1; transform:none; }
+  .phase:last-child{ padding-bottom:0; }
+  .phase-node{
+    position:relative; z-index:2;
+    width:48px; height:48px;
+    border-radius:50%;
+    background:var(--paper);
+    border:1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:14px; color:var(--bronze-deep);
+  }
+  .phase.in-view .phase-node{ border-color:var(--bronze); background:var(--cream); }
+  .phase-body{ padding-top:4px; }
+  .phase-label{
+    font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:6px; display:block;
+  }
+  .phase h3{ font-size:23px; margin-bottom:10px; }
+  .phase p{ color:var(--ink-soft); font-size:15.5px; max-width:600px; }
+  .thread-close{
+    position:relative;
+    display:grid; grid-template-columns:48px 1fr; gap:28px; align-items:center;
+    margin-top:8px;
+  }
+  .thread-close .infinity-node{
+    width:48px; height:48px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--ink); color:var(--cream); font-size:20px;
+    position:relative; z-index:2;
+  }
+  .thread-close p{ font-family:var(--serif); font-style:italic; font-size:19px; color:var(--ink); }
+
+  /* ---------- OUTCOMES ---------- */
+  .outcomes-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  @media (max-width:860px){ .outcomes-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .outcomes-grid{ grid-template-columns:1fr; } }
+  .outcome-card{
+    background:var(--cream);
+    padding:36px 28px;
+    min-height:170px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .outcome-card .oc-index{ font-family:var(--mono); font-size:12px; color:var(--bronze-deep); }
+  .outcome-card h4{ font-size:19px; margin-top:18px; line-height:1.25; }
+
+  /* ---------- PROOF ---------- */
+  .proof{ background:var(--slate); color:var(--cream); }
+  .stat-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:40px;
+    margin-bottom:56px;
+  }
+  @media (max-width:900px){ .stat-grid{ grid-template-columns:repeat(2,1fr); gap:36px; } }
+  @media (max-width:520px){ .stat-grid{ grid-template-columns:1fr; } }
+  .stat{ border-top:1px solid rgba(246,241,230,0.25); padding-top:18px; }
+  .stat .figure{ font-family:var(--serif); font-size:44px; color:var(--bronze-light); line-height:1; }
+  .stat .figure sup{ font-size:20px; top:-0.6em; }
+  .stat .cap{ font-size:13.5px; color:rgba(246,241,230,0.68); margin-top:10px; max-width:220px; }
+  .proof-source{
+    display:flex; align-items:flex-start; gap:16px;
+    border-top:1px solid rgba(246,241,230,0.2);
+    padding-top:28px;
+    font-size:13.5px; color:rgba(246,241,230,0.6);
+  }
+  .proof-source .mono-tag{ font-family:var(--mono); color:var(--bronze-light); white-space:nowrap; }
+  .proof-links{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+
+  /* ---------- TIERS ---------- */
+  .tiers-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  @media (max-width:900px){ .tiers-grid{ grid-template-columns:1fr; } }
+  .tier{
+    border:1px solid var(--line-strong);
+    background:var(--paper);
+    padding:36px 30px;
+    display:flex; flex-direction:column;
+  }
+  .tier.is-featured{
+    background:var(--ink); color:var(--cream); border-color:var(--ink);
+  }
+  .tier .tier-eyebrow{ font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze-deep); }
+  .tier.is-featured .tier-eyebrow{ color:var(--bronze-light); }
+  .tier h3{ font-size:25px; margin:14px 0 8px; }
+  .tier .tier-desc{ font-size:14.5px; color:var(--ink-soft); margin-bottom:24px; }
+  .tier.is-featured .tier-desc{ color:rgba(246,241,230,0.75); }
+  .tier ul{ list-style:none; margin:0 0 28px; padding:0; display:flex; flex-direction:column; gap:12px; flex:1; }
+  .tier li{ font-size:14px; padding-left:20px; position:relative; color:var(--ink-soft); }
+  .tier.is-featured li{ color:rgba(246,241,230,0.85); }
+  .tier li::before{ content:"—"; position:absolute; left:0; color:var(--bronze); }
+  .tier-note{ font-size:12px; color:var(--ink-faint); margin-top:auto; padding-top:16px; border-top:1px solid var(--line); }
+  .tier.is-featured .tier-note{ color:rgba(246,241,230,0.5); border-color:rgba(246,241,230,0.2); }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width:820px; }
+  details{
+    border-bottom:1px solid var(--line);
+    padding:26px 0;
+  }
+  details summary{
+    font-family:var(--serif); font-size:19px; font-weight:600;
+    cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:20px;
+  }
+  details summary::-webkit-details-marker{ display:none; }
+  details summary::after{
+    content:"+"; font-family:var(--mono); font-size:20px; color:var(--bronze-deep); flex-shrink:0;
+    transition:transform .2s ease;
+  }
+  details[open] summary::after{ content:"–"; }
+  details p{ margin-top:16px; color:var(--ink-soft); font-size:15px; max-width:640px; }
+
+  /* ---------- CTA / FORM ---------- */
+  .cta-section{ background:var(--cream-2); border-top:1px solid var(--line); }
+  .cta-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+  @media (max-width:900px){ .cta-grid{ grid-template-columns:1fr; gap:48px; } }
+  .cta-copy h2{ font-size:clamp(28px,3.4vw,38px); line-height:1.15; margin-bottom:20px; }
+  .cta-copy p{ font-size:16px; color:var(--ink-soft); margin-bottom:32px; max-width:440px; }
+  .cta-alt{
+    margin-top:36px; padding-top:28px; border-top:1px solid var(--line);
+  }
+  .cta-alt p{ font-size:13.5px; color:var(--ink-faint); margin-bottom:14px; }
+
+  form.partner-form{ display:flex; flex-direction:column; gap:18px; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:520px){ .form-row{ grid-template-columns:1fr; } }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field label{ font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .field input, .field textarea, .field select{
+    font-family:var(--sans); font-size:15px; color:var(--ink);
+    background:var(--paper);
+    border:1px solid var(--line-strong);
+    padding:13px 14px;
+    border-radius:2px;
+    outline:none;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{
+    border-color:var(--bronze); box-shadow:0 0 0 3px rgba(156,111,58,0.15);
+  }
+  .field textarea{ resize:vertical; min-height:96px; font-family:var(--sans); }
+  .form-note{ font-size:12px; color:var(--ink-faint); }
+  .form-status{ font-family:var(--mono); font-size:13px; color:var(--bronze-deep); min-height:18px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--ink); color:rgba(246,241,230,0.75); padding:64px 0 32px; }
+  .footer-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(246,241,230,0.15); }
+  .footer-brand h3{ color:var(--cream); font-size:22px; margin-bottom:10px; }
+  .footer-brand p{ font-size:14px; max-width:340px; }
+  .footer-links{ display:flex; gap:56px; flex-wrap:wrap; }
+  .footer-col h5{ font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze-light); margin:0 0 14px; }
+  .footer-col a{ display:block; text-decoration:none; color:rgba(246,241,230,0.7); font-size:13.5px; margin-bottom:10px; transition:color .2s ease; }
+  .footer-col a:hover{ color:var(--cream); }
+  .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding-top:26px; font-size:12.5px; color:rgba(246,241,230,0.45); }
+  .footer-bottom .mono-inf{ font-family:var(--mono); }
+
+  .fade-up{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+  .fade-up.in-view{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a href="https://aesit.net/home" class="wordmark">AESIT<small>Partner Program</small></a>
+    <nav class="links nav-links-scroll">
+      <a href="#roadmap">Roadmap</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#proof">Proof</a>
+      <a href="#tiers">Tiers</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#partner" class="btn btn-primary nav-cta">Start the Conversation →</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+  </div>
+  <div class="wrap mobile-menu" id="mobileMenu">
+    <a href="#roadmap">Roadmap</a>
+    <a href="#outcomes">Outcomes</a>
+    <a href="#proof">Proof</a>
+    <a href="#tiers">Tiers</a>
+    <a href="#faq">FAQ</a>
+    <a href="#partner">Start the Conversation →</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">AESIT® Partner Program</div>
+      <h1>Your brand leads. <em>Our intelligence compounds.</em></h1>
+      <p class="lede"><strong>One conversation calibrates the strategy. One partnership engineers the outcome</strong> — white‑labeled, under your brand, for your customer.</p>
+      <p class="sub-lede">Intelligence Without Disruption™ embeds AESIT's CRE Lifecycle Intelligence™ beneath the systems, providers, and relationships you've already built — not in place of them.</p>
+      <div class="hero-actions">
+        <a href="#partner" class="btn btn-primary">Start the Conversation →</a>
+        <a href="#roadmap" class="btn btn-ghost">See the Roadmap ↓</a>
+      </div>
+      <div class="hero-foot">
+        <div class="hero-foot-item">
+          <div class="num">Est. 1989</div>
+          <p>35 years at the intersection of design, operations, and protection intelligence.</p>
+        </div>
+        <div class="hero-foot-item">
+          <div class="num">6 Phases</div>
+          <p>A defined path from Discover to Lead — no ambiguity about what happens next.</p>
+        </div>
+        <div class="hero-foot-item">
+          <div class="num">0 Disruption</div>
+          <p>Your clients, your brand, your relationships — extended, never displaced.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROADMAP ============ -->
+  <section class="roadmap" id="roadmap">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The AESIT® Partnership Roadmap</div>
+        <h2>Initial conversation to full deployment.</h2>
+        <p>Six phases, one Digital Thread. Each stage is a distinct commitment — never a step you take blind.</p>
+      </div>
+
+      <div class="thread">
+        <div class="phase">
+          <div class="phase-node">01</div>
+          <div class="phase-body">
+            <span class="phase-label">Discover</span>
+            <h3>A single, well-calibrated conversation.</h3>
+            <p>Every successful partnership begins here. We invest time understanding your existing ecosystem — your clients, your systems, your relationships, and where market demand is pulling you next. No disruption. No obligation. Just clarity.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-node">02</div>
+          <div class="phase-body">
+            <span class="phase-label">Align</span>
+            <h3>A blueprint built around your position.</h3>
+            <p>We map AESIT's intelligence architecture to your existing business model — identifying where our capabilities extend your value without displacing anything already working. The result is a white-label deployment blueprint built entirely around your brand, your clients, and your market position.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-node">03</div>
+          <div class="phase-body">
+            <span class="phase-label">Configure</span>
+            <h3>Your intelligence layer, your brand.</h3>
+            <p>Your intelligence layer is configured, branded, and integrated into your existing technology ecosystem. Your clients see your brand. Your relationships stay intact. What changes is the depth of intelligence you're now able to deliver — and the conversations you're now positioned to lead.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-node">04</div>
+          <div class="phase-body">
+            <span class="phase-label">Deploy</span>
+            <h3>Intelligence Without Disruption™, live.</h3>
+            <p>AESIT's embedded architecture activates beneath your existing systems — extending visibility, optimizing performance, and initiating the Digital Twin and SBLM capabilities your clients are already asking for.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-node">05</div>
+          <div class="phase-body">
+            <span class="phase-label">Compound</span>
+            <h3>Value building on itself.</h3>
+            <p>The intelligence loop closes, and value begins building on itself. Every asset, every decision, and every engagement adds to the intelligence your clients carry forward — delivered under your brand, measured by your metrics, and compounding toward measurable outcomes.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-node">06</div>
+          <div class="phase-body">
+            <span class="phase-label">Lead</span>
+            <h3>Defined by the intelligence you deliver.</h3>
+            <p>Your market position is no longer defined by the services you provide. Smart Building and Smart City ready. CRE Lifecycle Intelligence™ fully operational. Your clients see you as the intelligence leader their portfolios depend on.</p>
+          </div>
+        </div>
+
+        <div class="thread-close">
+          <div class="infinity-node">∞</div>
+          <p>Your brand. Your customer. Our relationship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OUTCOMES ============ -->
+  <section id="outcomes">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Partner Outcomes</div>
+        <h2>Discover the opportunity. Own the answer.</h2>
+        <p>What changes on your side of the relationship once the intelligence layer is live.</p>
+      </div>
+      <div class="outcomes-grid fade-up" id="outcomesGrid">
+        <div class="outcome-card"><span class="oc-index">01</span><h4>Your Brand. Our Intelligence.</h4></div>
+        <div class="outcome-card"><span class="oc-index">02</span><h4>Expanded Capability with the Same Model</h4></div>
+        <div class="outcome-card"><span class="oc-index">03</span><h4>Increased Revenue Streams</h4></div>
+        <div class="outcome-card"><span class="oc-index">04</span><h4>Client Retention with Expanded Value</h4></div>
+        <div class="outcome-card"><span class="oc-index">05</span><h4>Intelligence Firm Market Leader</h4></div>
+        <div class="outcome-card"><span class="oc-index">06</span><h4>Smart Building &amp; Smart City Ready</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROOF ============ -->
+  <section class="proof" id="proof">
+    <div class="wrap on-dark">
+      <div class="section-head">
+        <div class="eyebrow">The Compounding Record</div>
+        <h2>Intelligence proven, not projected.</h2>
+        <p>The same lifecycle metrics AESIT delivers direct-to-owner are what your white-labeled deployment carries to your clients — validated across independent industry research, not internal projection.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="figure">75<sup>%</sup></div>
+          <p class="cap">ROI at the Design &amp; Construction phase (Dodge Data &amp; Analytics, 2014)</p>
+        </div>
+        <div class="stat">
+          <div class="figure">15–35<sup>%</sup></div>
+          <p class="cap">Energy cost reduction through Digital Twin optimization (EPRI)</p>
+        </div>
+        <div class="stat">
+          <div class="figure">10–25<sup>%</sup></div>
+          <p class="cap">Maintenance cost reduction via predictive intelligence (Schindler / IBM)</p>
+        </div>
+        <div class="stat">
+          <div class="figure">300–450<sup>%</sup></div>
+          <p class="cap">Target full-lifecycle ROI under the <a href="https://articles.aesit.net/aesit3xroimultiplierdb.html" style="color:var(--bronze-light); text-decoration:underline;">AESIT® 3x ROI Multiplier™</a></p>
+        </div>
+      </div>
+      <div class="proof-source">
+        <span class="mono-tag">Sourced —</span>
+        <span>Dodge Data &amp; Analytics, EPRI, Schindler Group / IBM, Mortenson Construction, and BOMA International, as compiled in the AESIT® <a href="https://articles.aesit.net/aesitwhitepaper_ci.html" style="color:var(--bronze-light);">Compounding Intelligence White Paper</a> and validated independently on SSRN.</span>
+      </div>
+      <div class="proof-links">
+        <a href="https://articles.aesit.net/roicalculator.html" class="btn btn-on-dark">ROI Calculator →</a>
+        <a href="https://articles.aesit.net/aesit3xroimultiplierdb.html" class="btn btn-on-dark">3x ROI Simulator →</a>
+        <a href="https://articles.aesit.net/compoundingrecord.html" class="btn btn-on-dark">The Compounding Record →</a>
+        <a href="https://articles.aesit.net/aesitwhitepaper_ci.html" class="btn btn-on-dark">Read the White Paper →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIERS ============ -->
+  <section id="tiers">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Partnership Depth</div>
+        <h2>Three ways to enter the relationship.</h2>
+        <p>The right depth depends on your ecosystem, not a fixed package — this is the structure the Align phase refines into your specific blueprint.</p>
+      </div>
+      <div class="tiers-grid">
+        <div class="tier">
+          <span class="tier-eyebrow">Entry</span>
+          <h3>Referral Partner</h3>
+          <p class="tier-desc">You recognize the opportunity in a client conversation and introduce AESIT. No integration, no rebuild — just a warm handoff into the Discover phase.</p>
+          <ul>
+            <li>Direct introduction into Discover</li>
+            <li>No technical integration required</li>
+            <li>Ongoing visibility into engagement status</li>
+          </ul>
+          <div class="tier-note">Best fit for brokers, advisors, and consultants adjacent to CRE decisions.</div>
+        </div>
+        <div class="tier is-featured">
+          <span class="tier-eyebrow">Core</span>
+          <h3>Certified Partner</h3>
+          <p class="tier-desc">The white-label model described in the roadmap above — AESIT's intelligence layer configured, branded, and delivered as your own.</p>
+          <ul>
+            <li>Fully white-labeled deployment blueprint</li>
+            <li>Configured intelligence layer under your brand</li>
+            <li>Client relationship and billing remain yours</li>
+            <li>Access to Digital Twin and SBLM capabilities</li>
+          </ul>
+          <div class="tier-note">Best fit for facilities management, IWMS/EAM providers, and CRE service firms.</div>
+        </div>
+        <div class="tier">
+          <span class="tier-eyebrow">Strategic</span>
+          <h3>Lead Constructor™ Partner</h3>
+          <p class="tier-desc">Deep integration across the full IDLF™ — joint go-to-market, dedicated enablement, and coordinated delivery across Design, Operations, and Protection.</p>
+          <ul>
+            <li>Joint go-to-market planning</li>
+            <li>Dedicated technical &amp; enablement support</li>
+            <li>Priority access to new intelligence modules</li>
+          </ul>
+          <div class="tier-note">Best fit for AEC firms, institutional owners, and government-facing primes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Before You Start the Conversation</div>
+        <h2>What partners ask first.</h2>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>Does this replace our platform or our client relationship?</summary>
+          <p>No. Intelligence Without Disruption™ is the operating principle, not a tagline — AESIT's architecture activates beneath your existing systems and relationships. Your clients continue to see your brand and work with your team.</p>
+        </details>
+        <details>
+          <summary>Whose brand appears in front of the client?</summary>
+          <p>Yours, at every touchpoint. The intelligence layer is configured and branded as an extension of your business during the Configure phase — clients experience it as your capability, not a co-branded or third-party tool.</p>
+        </details>
+        <details>
+          <summary>Who owns the data and intelligence generated?</summary>
+          <p>The asset owner — your client. This is Asset Sovereignty™: Digital Twin data, operational telemetry, and performance analytics belong to the client, in open and transferable formats, independent of any platform or vendor dependency.</p>
+        </details>
+        <details>
+          <summary>What does our team need to do technically?</summary>
+          <p>Integration points are scoped during Align to fit your existing technology ecosystem — this is not a rip-and-replace of your current stack. The Configure phase handles the technical build-out against that blueprint.</p>
+        </details>
+        <details>
+          <summary>How long does Discover to Deploy typically take?</summary>
+          <p>Timeline depends on the complexity of your existing ecosystem and the tier of engagement. Discover and Align are conversation- and mapping-driven; Configure and Deploy follow once the blueprint is set. This is scoped specifically for your business — not a fixed rollout calendar.</p>
+        </details>
+        <details>
+          <summary>What's the commercial structure?</summary>
+          <p>Commercial terms are matched to partnership depth — Referral, Certified, or Lead Constructor™ — and finalized during the Align phase once we understand your business model. Start the conversation below and we'll scope it directly.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA / FORM ============ -->
+  <section class="cta-section" id="partner">
+    <div class="wrap cta-grid">
+      <div class="cta-copy">
+        <div class="eyebrow">Be the Answer</div>
+        <h2>Discover the opportunity. Own the answer.</h2>
+        <p>Tell us about your ecosystem — your clients, your systems, your market position. We'll follow up to schedule the Discover conversation. No disruption. No obligation. Just clarity.</p>
+
+        <div class="cta-alt">
+          <p>Prefer to go straight to our main contact form?</p>
+          <a class="btn btn-ghost" href="https://aesit.net/home#3c81a0ce-b330-4951-b2b9-8a14a074f02c">Continue to aesit.net →</a>
+        </div>
+      </div>
+
+      <div>
+        <form class="partner-form" id="partnerForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="field">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="title">Professional Title</label>
+              <input type="text" id="title" name="title">
+            </div>
+            <div class="field">
+              <label for="institution">Institution *</label>
+              <input type="text" id="institution" name="institution" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Mobile Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ecosystem">Tell us about your ecosystem</label>
+            <textarea id="ecosystem" name="ecosystem" placeholder="Your clients, systems, and where you'd like the intelligence layer to extend your value."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center;">Start the Conversation →</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+          <p class="form-note">Submitting opens a prefilled email to AESIT from your own email client. This site is a static GitHub-hosted portal — swap in a form backend (e.g. Formspree or Netlify Forms) if you'd prefer inline submission without opening a mail client.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>AESIT®</h3>
+        <p>A CRE Lifecycle Intelligence™ firm. Designing, Operating, and Protecting What Matters™. North America | Washington DC—Baltimore.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Program</h5>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#outcomes">Outcomes</a>
+          <a href="#tiers">Tiers</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h5>AESIT</h5>
+          <a href="https://aesit.net/home">Home</a>
+          <a href="https://aesit.net/about-us">About Us</a>
+          <a href="https://aesit.net/services">Services</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="https://www.linkedin.com/company/aesit/">LinkedIn</a>
+          <a href="https://www.x.com/AESIT_Corp">X</a>
+          <a href="https://www.facebook.com/198463640363570">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AESIT® Global Solutions Group. All Rights Reserved.</span>
+      <span class="mono-inf">We Make the Best Even Better. ∞</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Scroll reveal
+  const revealTargets = document.querySelectorAll('.phase, .fade-up');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    revealTargets.forEach(t => io.observe(t));
+  } else {
+    revealTargets.forEach(t => t.classList.add('in-view'));
+  }
+
+  // Partner form -> mailto submission (static hosting friendly)
+  const form = document.getElementById('partnerForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(form);
+    const get = (k) => (data.get(k) || '').toString().trim();
+
+    const requiredOk = get('firstName') && get('lastName') && get('institution') && get('email') && get('phone');
+    if (!requiredOk) {
+      status.textContent = 'Please complete all required fields marked with *.';
+      return;
+    }
+
+    const subject = encodeURIComponent(`Partnership Inquiry — ${get('institution')}`);
+    const bodyLines = [
+      `First Name: ${get('firstName')}`,
+      `Last Name: ${get('lastName')}`,
+      `Title: ${get('title')}`,
+      `Institution: ${get('institution')}`,
+      `Email: ${get('email')}`,
+      `Mobile: ${get('phone')}`,
+      '',
+      'Ecosystem notes:',
+      get('ecosystem') || '(none provided)'
+    ];
+    const body = encodeURIComponent(bodyLines.join('\n'));
+
+    window.location.href = `mailto:info@aesit.net?subject=${subject}&body=${body}`;
+    status.textContent = 'Opening your email client to send this introduction…';
+  });
+</script>
+
+</body>
+</html>
