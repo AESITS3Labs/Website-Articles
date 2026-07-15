@@ -7,7 +7,7 @@
 <meta name="description" content="The AESIT® Partnership Roadmap — a white-label path from first conversation to compounding intelligence, delivered under your brand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#F6F1E6;
@@ -24,7 +24,7 @@
     --line: rgba(27,18,6,0.14);
     --line-strong: rgba(27,18,6,0.28);
     --white:#FFFFFF;
-    --serif:'Fraunces', serif;
+    --serif:'Playfair Display', serif;
     --sans:'Inter', sans-serif;
     --mono:'IBM Plex Mono', monospace;
     --maxw: 1180px;
@@ -401,7 +401,9 @@
   footer{ background:var(--ink); color:rgba(246,241,230,0.75); padding:64px 0 32px; }
   .footer-top{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(246,241,230,0.15); }
   .footer-brand h3{ color:var(--cream); font-size:22px; margin-bottom:10px; }
-  .footer-brand p{ font-size:14px; max-width:340px; }
+  .footer-brand p{ font-size:14px; max-width:340px; margin-bottom:8px; }
+  .footer-brand p:last-child{ margin-bottom:0; }
+  .footer-brand .footer-tagline{ font-family:var(--serif); font-style:italic; color:rgba(246,241,230,0.85); }
   .footer-links{ display:flex; gap:56px; flex-wrap:wrap; }
   .footer-col h5{ font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze-light); margin:0 0 14px; }
   .footer-col a{ display:block; text-decoration:none; color:rgba(246,241,230,0.7); font-size:13.5px; margin-bottom:10px; transition:color .2s ease; }
@@ -741,7 +743,8 @@
     <div class="footer-top">
       <div class="footer-brand">
         <h3>AESIT®</h3>
-        <p>A CRE Lifecycle Intelligence™ firm. Designing, Operating, and Protecting What Matters™. North America | Washington DC—Baltimore.</p>
+        <p>A CRE Lifecycle Intelligence™ Firm</p>
+        <p class="footer-tagline">A building's memory should outlast its builders.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
