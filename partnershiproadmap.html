@@ -331,6 +331,27 @@
     background:var(--paper);
     padding:36px 30px;
     display:flex; flex-direction:column;
+    cursor:pointer;
+    position:relative;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .tier:hover{ border-color:var(--ink-faint); }
+  .tier:focus-visible{ outline:2px solid var(--bronze); outline-offset:2px; }
+  .tier.selected{
+    border-color:var(--bronze);
+    box-shadow:0 0 0 1px var(--bronze);
+  }
+  .tier-check{
+    position:absolute; top:24px; right:24px;
+    width:22px; height:22px;
+    border-radius:50%;
+    border:1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; color:transparent;
+    transition:border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .tier.selected .tier-check{
+    border-color:var(--bronze); background:var(--bronze); color:var(--paper);
   }
   .tier .tier-eyebrow{ font-family:var(--sans); font-weight:600; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--bronze-deep); }
   .tier h3{ font-size:25px; margin:14px 0 8px; }
@@ -339,6 +360,7 @@
   .tier li{ font-size:14px; padding-left:20px; position:relative; color:var(--ink-soft); }
   .tier li::before{ content:"—"; position:absolute; left:0; color:var(--bronze); }
   .tier-note{ font-size:12px; color:var(--ink-faint); margin-top:auto; padding-top:16px; border-top:1px solid var(--line); }
+  .tiers-hint{ font-family:var(--sans); font-size:13px; color:var(--ink-faint); margin-top:24px; font-style:italic; }
 
   /* ---------- FAQ ---------- */
   .faq-list{ max-width:820px; }
@@ -595,8 +617,9 @@
         <h2>Three ways to enter the relationship.</h2>
         <p>The right depth depends on your ecosystem, not a fixed package — this is the structure the Align phase refines into your specific blueprint.</p>
       </div>
-      <div class="tiers-grid">
-        <div class="tier">
+      <div class="tiers-grid" id="tiersGrid">
+        <div class="tier" data-tier="Referral Partner" tabindex="0" role="button" aria-pressed="false">
+          <span class="tier-check">✔</span>
           <span class="tier-eyebrow">Entry</span>
           <h3>Referral Partner</h3>
           <p class="tier-desc">You recognize the opportunity in a client conversation and introduce AESIT. No integration, no rebuild — just a warm handoff into the Discover phase.</p>
@@ -607,7 +630,8 @@
           </ul>
           <div class="tier-note">Best fit for brokers, advisors, and consultants adjacent to CRE decisions.</div>
         </div>
-        <div class="tier">
+        <div class="tier" data-tier="Certified Partner" tabindex="0" role="button" aria-pressed="false">
+          <span class="tier-check">✔</span>
           <span class="tier-eyebrow">Core</span>
           <h3>Certified Partner</h3>
           <p class="tier-desc">The white-label model described in the roadmap above — AESIT's intelligence layer configured, branded, and delivered as your own.</p>
@@ -619,7 +643,8 @@
           </ul>
           <div class="tier-note">Best fit for facilities management, IWMS/EAM providers, and CRE service firms.</div>
         </div>
-        <div class="tier">
+        <div class="tier" data-tier="Lead Constructor™ Partner" tabindex="0" role="button" aria-pressed="false">
+          <span class="tier-check">✔</span>
           <span class="tier-eyebrow">Strategic</span>
           <h3>Lead Constructor™ Partner</h3>
           <p class="tier-desc">Deep integration across the full IDLF™ — joint go-to-market, dedicated enablement, and coordinated delivery across Design, Operations, and Protection.</p>
@@ -631,6 +656,7 @@
           <div class="tier-note">Best fit for AEC firms, institutional owners, and government-facing primes.</div>
         </div>
       </div>
+      <p class="tiers-hint" id="tiersHint">Select the tier closest to your model — it will carry through to the inquiry form below.</p>
     </div>
   </section>
 
@@ -695,6 +721,15 @@
               <label for="lastName">Last Name *</label>
               <input type="text" id="lastName" name="lastName" required>
             </div>
+          </div>
+          <div class="field">
+            <label for="partnershipInterest">Partnership Interest</label>
+            <select id="partnershipInterest" name="partnershipInterest">
+              <option value="">Select a tier (optional)</option>
+              <option value="Referral Partner">Referral Partner</option>
+              <option value="Certified Partner">Certified Partner</option>
+              <option value="Lead Constructor™ Partner">Lead Constructor™ Partner</option>
+            </select>
           </div>
           <div class="form-row">
             <div class="field">
@@ -799,6 +834,43 @@
   // Partner form -> mailto submission (static hosting friendly)
   const form = document.getElementById('partnerForm');
   const status = document.getElementById('formStatus');
+
+  // Selectable tier cards -> Partnership Interest field
+  const tierCards = document.querySelectorAll('.tier');
+  const interestSelect = document.getElementById('partnershipInterest');
+
+  function selectTier(card, { scrollToForm = true } = {}) {
+    tierCards.forEach(t => { t.classList.remove('selected'); t.setAttribute('aria-pressed', 'false'); });
+    card.classList.add('selected');
+    card.setAttribute('aria-pressed', 'true');
+    interestSelect.value = card.dataset.tier;
+    if (scrollToForm) {
+      document.getElementById('partner').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      interestSelect.closest('.field').style.transition = 'background-color .3s ease';
+      interestSelect.closest('.field').style.backgroundColor = 'rgba(156,111,58,0.08)';
+      setTimeout(() => { interestSelect.closest('.field').style.backgroundColor = ''; }, 900);
+    }
+  }
+
+  tierCards.forEach(card => {
+    card.addEventListener('click', () => selectTier(card));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectTier(card);
+      }
+    });
+  });
+
+  // Manual dropdown changes should also reflect back onto the cards
+  interestSelect.addEventListener('change', () => {
+    tierCards.forEach(t => {
+      const match = t.dataset.tier === interestSelect.value;
+      t.classList.toggle('selected', match);
+      t.setAttribute('aria-pressed', match ? 'true' : 'false');
+    });
+  });
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     const data = new FormData(form);
@@ -818,6 +890,7 @@
       `Institution: ${get('institution')}`,
       `Email: ${get('email')}`,
       `Mobile: ${get('phone')}`,
+      `Partnership Interest: ${get('partnershipInterest') || '(none selected)'}`,
       '',
       'Ecosystem notes:',
       get('ecosystem') || '(none provided)'
