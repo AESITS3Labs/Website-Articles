@@ -84,6 +84,9 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .subnav a{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--brushed);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
 .subnav a:hover{border-color:var(--border-bright);color:var(--chrome)}
 .subnav a .sb-dot{margin-right:0}
+.subnav-links{display:flex;gap:8px}
+.subnav a.top-link{margin-left:auto;color:var(--titanium)}
+.subnav a.top-link:hover{color:var(--gold);border-color:rgba(212,175,55,.4)}
 
 /* ═══ DIVISION SECTIONS ═══ */
 .division{padding:44px 0;border-bottom:1px solid var(--border)}
@@ -133,7 +136,8 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .cta-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
 .cta-title{font-family:var(--title-font);font-size:clamp(20px,3.4vw,28px);font-weight:800;letter-spacing:-.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:14px}
 .cta-sub{font-size:14px;font-weight:300;color:var(--text-secondary);line-height:1.7;margin-bottom:26px}
-.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-actions{display:flex;flex-direction:column;align-items:center;gap:14px}
+.cta-actions-secondary{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn{font-family:var(--title-font);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .15s}
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{background:var(--grad-red);color:#fff;box-shadow:0 4px 18px rgba(204,0,0,.3)}
@@ -158,6 +162,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 </style>
 </head>
 <body>
+<a id="top"></a>
 
 <!-- ═══ HERO ═══ -->
 <div class="hero">
@@ -264,9 +269,12 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 <!-- ═══ STICKY DIVISION NAV ═══ -->
 <div class="subnav">
   <div class="subnav-scroll">
-    <a href="#design"><span class="sb-dot" style="background:var(--col-design)"></span>Form</a>
-    <a href="#ops"><span class="sb-dot" style="background:var(--col-ops)"></span>Flow</a>
-    <a href="#protect"><span class="sb-dot" style="background:var(--col-protect)"></span>Fortitude</a>
+    <div class="subnav-links">
+      <a href="#design"><span class="sb-dot" style="background:var(--col-design)"></span>Form</a>
+      <a href="#ops"><span class="sb-dot" style="background:var(--col-ops)"></span>Flow</a>
+      <a href="#protect"><span class="sb-dot" style="background:var(--col-protect)"></span>Fortitude</a>
+    </div>
+    <a class="top-link" href="#top">↑ Top</a>
   </div>
 </div>
 
@@ -535,8 +543,10 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <p class="cta-sub">Bring your portfolio to a 30-minute Compounding Intelligence Assessment. We'll map your assets against the IDLF and show you, in numbers, where the compound already starts.</p>
       <div class="cta-actions">
         <a class="btn btn-primary" href="https://aesit.net/home#3c81a0ce-b330-4951-b2b9-8a14a074f02c">Book Your Assessment</a>
-        <a class="btn btn-secondary" href="https://articles.aesit.net/aesitwhitepaper_ci.html">Read the White Paper</a>
-        <a class="btn btn-secondary" href="https://articles.aesit.net/theintelligencecontinuum.html">Explore Continuum</a>
+        <div class="cta-actions-secondary">
+          <a class="btn btn-secondary" href="https://articles.aesit.net/aesitwhitepaper_ci.html">Read the White Paper</a>
+          <a class="btn btn-secondary" href="https://articles.aesit.net/theintelligencecontinuum.html">Explore Continuum</a>
+        </div>
       </div>
     </div>
   </div>
