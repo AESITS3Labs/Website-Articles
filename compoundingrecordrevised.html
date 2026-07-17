@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AESIT® — The Compounding Record | Nine Studies. Three Divisions. One Proof.</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --carbon:#000000;
+  --titanium:#888888;
+  --brushed:#A8A8A8;
+  --chrome:#C8C8C8;
+  --race-red:#CC0000;
+  --race-red-2:#FF2020;
+  --gold:#D4AF37;
+  --col-design:#C48F1D;
+  --col-ops:#1C98A6;
+  --col-protect:#4070B8;
+  --grad-chrome:linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
+  --grad-chrome-bar:linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
+  --grad-steel:linear-gradient(180deg,#181818 0%,#111111 50%,#161616 100%);
+  --grad-red:linear-gradient(135deg,#CC0000 0%,#FF2020 40%,#AA0000 100%);
+  --grad-red-h:linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);
+  --grad-gold:linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);
+  --border:rgba(200,200,200,.10);
+  --border-mid:rgba(200,200,200,.20);
+  --border-bright:rgba(200,200,200,.35);
+  --text-secondary:#B0A898;
+  --text-muted:#888888;
+  --title-font:'League Spartan',sans-serif;
+  --body-font:'Barlow',sans-serif;
+  --content-width: 900px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:var(--carbon);font-family:var(--body-font);color:var(--text-secondary);line-height:1.65}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation-duration:0.001ms !important;transition-duration:0.001ms !important} }
+
+.wrap{max-width:var(--content-width);margin:0 auto;padding:0 20px}
+
+/* ═══ HERO / COVER ═══ */
+.hero{background:var(--carbon);border-bottom:1px solid var(--border-mid);padding:56px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-red-h)}
+.hero-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::after{content:'';flex:1;max-width:60px;height:1px;background:linear-gradient(90deg,rgba(200,200,200,.35),transparent)}
+.hero-title{font-family:var(--title-font);font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.04;margin-bottom:14px}
+.hero-title .l1{background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.hero-title .l2{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.hero-sub{font-size:15px;font-weight:300;line-height:1.75;max-width:640px;color:var(--text-secondary);margin-bottom:22px}
+.hero-sub strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
+.hero-stats{display:flex;gap:0;border-top:1px solid var(--border-mid);border-bottom:1px solid var(--border-mid)}
+.hstat{flex:1;padding:16px 18px;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-num{font-family:var(--title-font);font-size:clamp(20px,3vw,28px);font-weight:800;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hstat-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--titanium);margin-top:6px}
+
+/* ═══ TOP NAV (legacy designations, static, sits above scoreboard) ═══ */
+.topnav{background:transparent;border-bottom:1px solid var(--border);padding:4px 0 18px}
+.topnav-scroll{display:flex;gap:8px;overflow-x:auto}
+.topnav a{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--brushed);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
+.topnav a:hover{border-color:var(--border-bright);color:var(--chrome)}
+
+/* ═══ SCOREBOARD (quick-scan table) ═══ */
+.scoreboard{background:var(--grad-steel);border-bottom:1px solid var(--border-mid);padding:34px 0 40px}
+.sb-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.sb-title{font-family:var(--title-font);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sb-note{font-size:12px;color:var(--text-muted);font-style:italic}
+.sb-scroll{overflow-x:auto;border:1px solid var(--border-mid);border-radius:8px}
+.sb-table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+.sb-table thead th{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;background:var(--grad-chrome-bar);color:#0A0A0A;text-align:left;white-space:nowrap}
+.sb-table tbody td{padding:11px 14px;border-top:1px solid var(--border);vertical-align:top;font-weight:300;line-height:1.5}
+.sb-table tbody tr:hover td{background:rgba(255,255,255,.025)}
+.sb-table tbody tr{cursor:pointer}
+.sb-source{font-family:var(--title-font);font-weight:700;font-size:12.5px;color:var(--chrome)}
+.sb-metric{font-family:var(--title-font);font-weight:800;font-size:12.5px}
+.sb-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;flex-shrink:0}
+.sb-divcell{display:flex;align-items:center;font-family:var(--title-font);font-size:10.5px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+
+/* ═══ STICKY DIVISION NAV ═══ */
+.subnav{position:sticky;top:0;z-index:40;background:rgba(8,8,8,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--border-mid)}
+.subnav-scroll{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:var(--content-width);margin:0 auto}
+.subnav a{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--brushed);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
+.subnav a:hover{border-color:var(--border-bright);color:var(--chrome)}
+.subnav a .sb-dot{margin-right:0}
+
+/* ═══ DIVISION SECTIONS ═══ */
+.division{padding:44px 0;border-bottom:1px solid var(--border)}
+.division:nth-child(odd){background:linear-gradient(180deg,#0b0b0b 0%,#070707 100%)}
+.div-head{margin-bottom:26px;padding-bottom:16px;border-bottom:1px solid var(--border-mid);position:relative}
+.div-head::after{content:'';position:absolute;bottom:-1px;left:0;width:56px;height:2px}
+#design .div-head::after{background:linear-gradient(90deg,var(--col-design),transparent)}
+#ops .div-head::after{background:linear-gradient(90deg,var(--col-ops),transparent)}
+#protect .div-head::after{background:linear-gradient(90deg,var(--col-protect),transparent)}
+.div-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+.div-title{font-family:var(--title-font);font-size:clamp(20px,3vw,27px);font-weight:800;letter-spacing:-.01em;line-height:1.08;margin-bottom:8px;color:var(--chrome)}
+.div-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.7;font-weight:300;max-width:640px}
+
+/* ═══ CASE CARD (always open — no accordion) ═══ */
+.case-card{border:1px solid var(--border-mid);border-radius:8px;margin-bottom:16px;overflow:hidden;background:rgba(255,255,255,.012)}
+.case-card:last-child{margin-bottom:0}
+.case-top{padding:16px 20px 14px;border-bottom:1px solid var(--border)}
+.case-name{font-family:var(--title-font);font-size:15px;font-weight:700;color:var(--chrome);line-height:1.3;margin-bottom:10px}
+.case-meta{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.tag{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:3px;white-space:nowrap}
+.tag-method{background:rgba(192,192,192,.1);border:1px solid rgba(192,192,192,.22);color:var(--chrome)}
+.tag-era{background:rgba(136,136,136,.08);border:1px solid rgba(136,136,136,.18);color:var(--titanium)}
+
+.case-stat-row{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--border)}
+.case-stat{flex:1;min-width:140px;padding:14px 20px;border-right:1px solid var(--border)}
+.case-stat:last-child{border-right:none}
+.case-stat-num{font-family:var(--title-font);font-size:20px;font-weight:800;line-height:1}
+.case-stat-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--titanium);margin-top:5px;line-height:1.4}
+
+.case-body{padding:16px 20px 18px}
+.case-body p{font-size:13.5px;font-weight:300;line-height:1.72;color:var(--text-secondary);margin-bottom:10px}
+.case-body p:last-child{margin-bottom:0}
+.case-body strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
+
+.case-findings{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.case-findings li{font-size:12.5px;font-weight:300;color:var(--text-secondary);padding-left:15px;position:relative;line-height:1.6}
+.case-findings li::before{content:'▸';position:absolute;left:0;color:var(--race-red-2);font-size:9px;top:4px}
+
+.case-foot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:10px 20px;border-top:1px solid var(--border);background:rgba(255,255,255,.015)}
+.case-phase{font-family:var(--title-font);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.case-source{font-family:var(--title-font);font-size:10px;color:var(--text-muted);letter-spacing:.03em}
+
+/* ═══ CTA BAND ═══ */
+.cta-band{padding:52px 0 56px;background:var(--grad-steel);position:relative;border-bottom:1px solid var(--border-mid)}
+.cta-band::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-red-h)}
+.cta-inner{text-align:center;max-width:640px;margin:0 auto}
+.cta-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.cta-title{font-family:var(--title-font);font-size:clamp(20px,3.4vw,28px);font-weight:800;letter-spacing:-.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:14px}
+.cta-sub{font-size:14px;font-weight:300;color:var(--text-secondary);line-height:1.7;margin-bottom:26px}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--title-font);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--grad-red);color:#fff;box-shadow:0 4px 18px rgba(204,0,0,.3)}
+.btn-primary:hover{box-shadow:0 6px 22px rgba(204,0,0,.42)}
+.btn-secondary{background:transparent;border:1px solid var(--border-bright);color:var(--chrome)}
+.btn-secondary:hover{border-color:var(--chrome)}
+
+/* ═══ FOOTER ═══ */
+.record-footer{padding:20px;background:var(--grad-chrome-bar);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
+.record-footer::before{content:'';position:absolute;top:0;left:0;width:70px;height:2px;background:var(--grad-red-h)}
+.footer-mark{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.06em;color:#1a1a1a}
+.footer-inf{font-family:var(--title-font);font-size:16px;font-weight:800;color:#2a2a2a}
+
+@media (max-width:640px){
+  .case-stat-row{flex-direction:column}
+  .case-stat{border-right:none;border-bottom:1px solid var(--border)}
+  .case-stat:last-child{border-bottom:none}
+  .hero-stats{flex-direction:column}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">S³ Labs® · Field Intelligence · AESIT Global Solutions Group</div>
+    <h1 class="hero-title">
+      <span class="l1">The Compounding Record</span>
+      <span class="l2">Nine studies. Three divisions. One proof.</span>
+    </h1>
+    <p class="hero-sub">Every performance figure behind the Intelligent Design Lifecycle Framework (IDLF) is backed by an independent, named source — not a projection. <strong>Scan the scoreboard below</strong> for the headline numbers, or jump into any division for the full study.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">9</div><div class="hstat-label">Independent Studies</div></div>
+      <div class="hstat"><div class="hstat-num">75%+</div><div class="hstat-label">Design ROI Validated</div></div>
+      <div class="hstat"><div class="hstat-num">50%</div><div class="hstat-label">Max Downtime Reduction</div></div>
+      <div class="hstat"><div class="hstat-num">7:1</div><div class="hstat-label">Predictive Maint. ROI</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOP NAV (legacy designations) ═══ -->
+<div class="topnav">
+  <div class="wrap">
+    <div class="topnav-scroll">
+      <a href="#design"><span class="sb-dot" style="background:var(--col-design)"></span>Design</a>
+      <a href="#ops"><span class="sb-dot" style="background:var(--col-ops)"></span>Operations</a>
+      <a href="#protect"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SCOREBOARD ═══ -->
+<div class="scoreboard">
+  <div class="wrap">
+    <div class="sb-head">
+      <div class="sb-title">Quick-Scan Scoreboard — All Nine Studies</div>
+      <div class="sb-note">Click any row to jump to the full study →</div>
+    </div>
+    <div class="sb-scroll">
+      <table class="sb-table">
+        <thead>
+          <tr><th>Source</th><th>Division</th><th>IDLF Phase</th><th>Key Metric</th></tr>
+        </thead>
+        <tbody>
+          <tr onclick="location.href='#c-augu'">
+            <td class="sb-source">AUGU — BIM &amp; VDC</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-design)"></span>Design</span></td>
+            <td>Design → Build</td>
+            <td class="sb-metric" style="color:var(--col-design)">Fewer RFIs &amp; change orders</td>
+          </tr>
+          <tr onclick="location.href='#c-dodge'">
+            <td class="sb-source">Dodge Data &amp; Analytics (2014)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-design)"></span>Design</span></td>
+            <td>Plan → Design</td>
+            <td class="sb-metric" style="color:var(--col-design)">75%+ BIM ROI</td>
+          </tr>
+          <tr onclick="location.href='#c-mortenson'">
+            <td class="sb-source">Mortenson — IPD (2019)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-design)"></span>Design</span></td>
+            <td>Lead Constructor</td>
+            <td class="sb-metric" style="color:var(--col-design)">On/under budget delivery</td>
+          </tr>
+          <tr onclick="location.href='#c-epri'">
+            <td class="sb-source">EPRI — Digital Twins</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-ops)"></span>Operations</span></td>
+            <td>Operate → Optimize</td>
+            <td class="sb-metric" style="color:var(--col-ops)">15–35% energy savings</td>
+          </tr>
+          <tr onclick="location.href='#c-jll'">
+            <td class="sb-source">JLL / P&amp;G — IntelliCommand</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-ops)"></span>Operations</span></td>
+            <td>Operate → Scale</td>
+            <td class="sb-metric" style="color:var(--col-ops)">3-month payback</td>
+          </tr>
+          <tr onclick="location.href='#c-mck-analytics'">
+            <td class="sb-source">McKinsey — Analytics Maintenance (2021)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-ops)"></span>Ops + Protect</span></td>
+            <td>Operate → Protect</td>
+            <td class="sb-metric" style="color:var(--col-ops)">18–25% cost reduction</td>
+          </tr>
+          <tr onclick="location.href='#c-schindler'">
+            <td class="sb-source">Schindler / IBM IoT</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</span></td>
+            <td>Commission → Protect</td>
+            <td class="sb-metric" style="color:var(--col-protect)">10–25% maint. reduction</td>
+          </tr>
+          <tr onclick="location.href='#c-mck-scale'">
+            <td class="sb-source">McKinsey — Prediction at Scale (2021)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</span></td>
+            <td>Commission → Protect</td>
+            <td class="sb-metric" style="color:var(--col-protect)">Up to 50% less downtime</td>
+          </tr>
+          <tr onclick="location.href='#c-consensus'">
+            <td class="sb-source">PwC / McKinsey / Deloitte Consensus</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</span></td>
+            <td>Protect → Compound</td>
+            <td class="sb-metric" style="color:var(--col-protect)">7:1 ROI</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STICKY DIVISION NAV ═══ -->
+<div class="subnav">
+  <div class="subnav-scroll">
+    <a href="#design"><span class="sb-dot" style="background:var(--col-design)"></span>Form</a>
+    <a href="#ops"><span class="sb-dot" style="background:var(--col-ops)"></span>Flow</a>
+    <a href="#protect"><span class="sb-dot" style="background:var(--col-protect)"></span>Fortitude</a>
+  </div>
+</div>
+
+<!-- ═══ DESIGN DIVISION ═══ -->
+<div class="division" id="design">
+  <div class="wrap">
+    <div class="div-head">
+      <div class="div-eyebrow" style="color:var(--col-design)">S³ Labs® · Division Design (Form)</div>
+      <div class="div-title">Regenerative Architecture. Living Intelligence.</div>
+      <p class="div-desc">Three studies confirming that BIM and integrated delivery eliminate operational drag before groundbreaking — locking in the ~75% design-and-construction ROI tier that every later lifecycle return compounds from.</p>
+    </div>
+
+    <div class="case-card" id="c-augu">
+      <div class="case-top">
+        <div class="case-name">AUGU — Benefits of BIM and VDC: A Contractor's View</div>
+        <div class="case-meta">
+          <span class="tag tag-method">BIM</span><span class="tag tag-method">VDC</span><span class="tag tag-method">Digital Coordination</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">↓ RFIs</div><div class="case-stat-label">Clash Detection Pre-Construction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">↑ Reliability</div><div class="case-stat-label">4D Schedule Simulation</div></div>
+      </div>
+      <div class="case-body">
+        <p>Examines BIM and VDC workflow benefits from the general contractor's perspective — where clash detection and coordinated models replace fragmented consultant drag.</p>
+        <ul class="case-findings">
+          <li>Fewer RFIs and change orders through clash detection prior to construction</li>
+          <li>Faster project closeout via as-built BIM handover — the foundation of the Digital Twin</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Design → Build</span>
+        <span class="case-source">Source: AUGU — Benefits of BIM and VDC: A Contractor's View</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-dodge">
+      <div class="case-top">
+        <div class="case-name">Dodge Data &amp; Analytics — "The Business Value of BIM for Construction" (2014)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">BIM</span><span class="tag tag-method">Industry Research</span><span class="tag tag-era">2014</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">75%+</div><div class="case-stat-label">Average ROI, High BIM Users</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">#1</div><div class="case-stat-label">Ranked Benefit: Fewer Errors</div></div>
+      </div>
+      <div class="case-body">
+        <p>North American benchmark study on BIM ROI at scale — one of the most cited references in the industry.</p>
+        <ul class="case-findings">
+          <li>High BIM users reported average ROI over 75% — directly validating AESIT's design-and-construction ROI tier</li>
+          <li>High adopters more likely to win repeat business through demonstrated, measurable performance</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Plan → Design</span>
+        <span class="case-source">Source: Dodge Data &amp; Analytics, 2014</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-mortenson">
+      <div class="case-top">
+        <div class="case-name">Mortenson — "Advancing Integrated Project Delivery" (2019)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">IPD</span><span class="tag tag-method">Lean Construction</span><span class="tag tag-method">BIM</span><span class="tag tag-era">2019</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">On/Under</div><div class="case-stat-label">Budget Delivery, Consistently</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">↑ Satisfaction</div><div class="case-stat-label">vs. Design-Bid-Build</div></div>
+      </div>
+      <div class="case-body">
+        <p>Shows how IPD — combining BIM, collaborative contracting, and lean construction — transforms outcomes across healthcare, higher education, and commercial sectors.</p>
+        <ul class="case-findings">
+          <li>Early contractor involvement eliminated constructability issues before they became costly</li>
+          <li>Owner satisfaction substantially higher on IPD-delivered projects — trust engineered in, not declared</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Lead Constructor Model</span>
+        <span class="case-source">Source: Mortenson, 2019</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ OPERATIONS DIVISION ═══ -->
+<div class="division" id="ops">
+  <div class="wrap">
+    <div class="div-head">
+      <div class="div-eyebrow" style="color:var(--col-ops)">S³ Labs® · Division Operations (Flow)</div>
+      <div class="div-title">Portfolio Clarity. Measurable Performance.</div>
+      <p class="div-desc">Three studies validating 15–35% energy reduction and 18–25% maintenance savings through Digital Twin and real-time predictive intelligence — from utility-scale research to named corporate deployments at 28M sq ft.</p>
+    </div>
+
+    <div class="case-card" id="c-epri">
+      <div class="case-top">
+        <div class="case-name">Electric Power Research Institute (EPRI) — Digital Twins Energy Savings</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Digital Twin</span><span class="tag tag-method">IoT</span><span class="tag tag-method">Predictive Analytics</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">15–35%</div><div class="case-stat-label">Energy Consumption Cut</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">↓ Outages</div><div class="case-stat-label">Via Predictive Maintenance</div></div>
+      </div>
+      <div class="case-body">
+        <p>Digital Twin applications for energy infrastructure show how real-time virtual replicas let operators optimize performance and anticipate failures before they occur.</p>
+        <ul class="case-findings">
+          <li>Real-time equipment monitoring enabled proactive intervention — a setback becomes telemetry, not a crisis</li>
+          <li>IoT sensor integration improved load forecasting accuracy across the full operational lifecycle</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Operate → Optimize</span>
+        <span class="case-source">Source: EPRI — Digital Twins Energy Savings Research</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-jll">
+      <div class="case-top">
+        <div class="case-name">JLL / Procter &amp; Gamble — IntelliCommand Smart Building Portfolio Deployment</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Smart Building</span><span class="tag tag-method">Portfolio Management</span><span class="tag tag-era">2014</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">10–16%</div><div class="case-stat-label">Energy Savings in 11 Months</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">3 Months</div><div class="case-stat-label">Full Payback</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">28M sq ft</div><div class="case-stat-label">Scaled Deployment</div></div>
+      </div>
+      <div class="case-body">
+        <p>JLL's IntelliCommand platform — IoT, remote monitoring, and a dedicated engineering team — was deployed across 12 P&amp;G buildings (3.2M sq ft), including the Cincinnati HQ campus. Result: an Environmental Leader Product &amp; Project Award, and a program later scaled to 120 buildings.</p>
+        <ul class="case-findings">
+          <li>24/7 remote monitoring resolved issues before occupants experienced disruption</li>
+          <li>Program subsequently scaled to 120 buildings across 28 million square feet — replicability proven at institutional scope</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Operate → Optimize → Scale</span>
+        <span class="case-source">Source: JLL / P&amp;G, Environmental Leader Award, 2014</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-mck-analytics">
+      <div class="case-top">
+        <div class="case-name">McKinsey &amp; Company — "Establishing the Right Analytics-Based Maintenance Strategy" (2021)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">IoT Analytics</span><span class="tag tag-method">AI Diagnostics</span><span class="tag tag-era">2021</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">18–25%</div><div class="case-stat-label">Maintenance Cost Reduction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">↑ Uptime</div><div class="case-stat-label">Fewer Field Dispatches</div></div>
+      </div>
+      <div class="case-body">
+        <p>Documents an IoT analytics and remote-troubleshooting deployment at a large medical-device manufacturer — an architecture that mirrors AESIT's SBLM model precisely.</p>
+        <ul class="case-findings">
+          <li>Remote troubleshooting eliminated the majority of unnecessary field visits</li>
+          <li>Standardized resolution replaced ad-hoc reactive repair — every intervention became a data event</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Operate → Commission → Protect</span>
+        <span class="case-source">Source: McKinsey &amp; Company, 2021 — mckinsey.com/capabilities/operations</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ PROTECTION DIVISION ═══ -->
+<div class="division" id="protect">
+  <div class="wrap">
+    <div class="div-head">
+      <div class="div-eyebrow" style="color:var(--col-protect)">S³ Labs® · Division Protection (Fortitude)</div>
+      <div class="div-title">Engineered Resilience. Trust at Every Layer.</div>
+      <p class="div-desc">Three studies confirming 10–25% maintenance reduction and 7:1 ROI through IoT predictive intelligence — from a named global deployment to a McKinsey industrial benchmark and a three-institution consensus.</p>
+    </div>
+
+    <div class="case-card" id="c-schindler">
+      <div class="case-top">
+        <div class="case-name">Schindler — Using IBM's IoT Platform for Predictive Maintenance</div>
+        <div class="case-meta">
+          <span class="tag tag-method">IoT</span><span class="tag tag-method">Predictive Maintenance</span><span class="tag tag-method">AI Analytics</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">10–25%</div><div class="case-stat-label">Maintenance Cost Reduction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">↑ MTBF</div><div class="case-stat-label">Mean Time Between Failures</div></div>
+      </div>
+      <div class="case-body">
+        <p>Schindler partnered with IBM to shift its global service model from reactive repair to proactive performance management.</p>
+        <ul class="case-findings">
+          <li>Real-time IoT data enabled predictive failure detection before breakdowns</li>
+          <li>Customer uptime SLAs improved — directly enhancing the occupant experience</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Commission → Operations &amp; Protect</span>
+        <span class="case-source">Source: Schindler Group — IBM IoT Platform Case Study</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-mck-scale">
+      <div class="case-top">
+        <div class="case-name">McKinsey &amp; Company — "Prediction at Scale: How Industry Can Get More Value Out of Maintenance" (2021)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Predictive Maintenance</span><span class="tag tag-method">AI / ML</span><span class="tag tag-era">2021</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">↓ 50%</div><div class="case-stat-label">Max Downtime Reduction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">20–40%</div><div class="case-stat-label">Asset Life Extension</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">18–25%</div><div class="case-stat-label">Maintenance Cost Reduction</div></div>
+      </div>
+      <div class="case-body">
+        <p>Multi-sector study across power generation, mining, oil &amp; gas, and renewables — real deployments spanning wind turbine gearboxes, compressors, and heavy equipment engines, each following an IoT-to-analytics pipeline that maps directly onto AESIT's SBLM architecture.</p>
+        <ul class="case-findings">
+          <li>Predictive maintenance reduced machine downtime by up to 50% across all studied verticals</li>
+          <li>Prioritizing critical sub-components generated outsized ROI relative to broad sensor rollout</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Commission → Operate → Protect</span>
+        <span class="case-source">Source: McKinsey &amp; Company, 2021</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-consensus">
+      <div class="case-top">
+        <div class="case-name">PwC / McKinsey / Deloitte — Cross-Institution Predictive Maintenance Benchmark Consensus</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Industry Benchmark</span><span class="tag tag-method">Cross-Sector Research</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">7 : 1</div><div class="case-stat-label">ROI — PwC, 2017</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">30–50%</div><div class="case-stat-label">Downtime Reduction, Consensus</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">12–18 mo</div><div class="case-stat-label">Typical Payback Window</div></div>
+      </div>
+      <div class="case-body">
+        <p>Three of the world's foremost advisory institutions independently converge on the same performance range for IoT-enabled predictive maintenance — across manufacturing, energy, healthcare, and facilities management.</p>
+        <ul class="case-findings">
+          <li><strong>PwC (2017):</strong> up to $7 return for every $1 invested</li>
+          <li><strong>McKinsey (2020):</strong> 18–25% lower maintenance cost, up to 50% less unplanned downtime</li>
+          <li><strong>Deloitte (2021):</strong> up to 25% reduction in maintenance expense — validating the upper bound of AESIT's target range</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Protect → Compound</span>
+        <span class="case-source">Sources: PwC 2017 · McKinsey 2020 · Deloitte 2021</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ CTA BAND ═══ -->
+<div class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-eyebrow">Ready to See This Compound on Your Portfolio</div>
+      <div class="cta-title">The record is independent. The next data point could be your asset.</div>
+      <p class="cta-sub">Bring your portfolio to a 30-minute Compounding Intelligence Assessment. We'll map your assets against the IDLF and show you, in numbers, where the compound already starts.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://aesit.net/home#3c81a0ce-b330-4951-b2b9-8a14a074f02c">Book Your Assessment</a>
+        <a class="btn btn-secondary" href="https://articles.aesit.net/aesitwhitepaper_ci.html">Read the White Paper</a>
+        <a class="btn btn-secondary" href="https://articles.aesit.net/theintelligencecontinuum.html">Explore Continuum</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="record-footer">
+  <div class="footer-mark">AESIT Global Solutions Group © 2026 — The Compounding Record · S³ Labs®</div>
+  <div class="footer-inf">∞</div>
+</div>
+
+</body>
+</html>
