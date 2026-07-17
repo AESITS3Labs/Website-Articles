@@ -1,93 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Experience the Intelligence Continuum</title>
-  <style>
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #0f172a; /* deep navy */
-      color: #f8fafc; /* light text */
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 40px;
-    }
-    h1, h2 {
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.5em;
-      color: #38bdf8; /* premium cyan accent */
-    }
-    h2 {
-      font-size: 1.5em;
-      color: #facc15; /* gold accent */
-    }
-    p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 30px;
-    }
-    .cta-buttons a {
-      flex: 1 1 45%;
-      text-align: center;
-      background-color: #1e293b;
-      color: #f8fafc;
-      padding: 15px 20px;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-    .cta-buttons a:hover {
-      background-color: #38bdf8;
-      color: #0f172a;
-    }
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #94a3b8;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AESIT® — Experience the Intelligence Continuum | Executive Framework</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --carbon:#000000;
+  --titanium:#888888;
+  --brushed:#A8A8A8;
+  --chrome:#C8C8C8;
+  --race-red:#CC0000;
+  --race-red-2:#FF2020;
+  --gold:#D4AF37;
+  --col-design:#C48F1D;
+  --col-ops:#1C98A6;
+  --col-protect:#4070B8;
+  --grad-chrome:linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
+  --grad-chrome-bar:linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
+  --grad-steel:linear-gradient(180deg,#181818 0%,#111111 50%,#161616 100%);
+  --grad-red:linear-gradient(135deg,#CC0000 0%,#FF2020 40%,#AA0000 100%);
+  --grad-red-h:linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);
+  --grad-gold:linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);
+  --border:rgba(200,200,200,.10);
+  --border-mid:rgba(200,200,200,.20);
+  --border-bright:rgba(200,200,200,.35);
+  --text-secondary:#B0A898;
+  --text-muted:#888888;
+  --title-font:'League Spartan',sans-serif;
+  --body-font:'Barlow',sans-serif;
+  --content-width: 900px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:var(--carbon);font-family:var(--body-font);color:var(--text-secondary);line-height:1.65}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation-duration:0.001ms !important;transition-duration:0.001ms !important} }
+
+.wrap{max-width:var(--content-width);margin:0 auto;padding:0 20px}
+
+/* ═══ HERO / COVER ═══ */
+.hero{background:var(--carbon);border-bottom:1px solid var(--border-mid);padding:56px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-red-h)}
+.hero-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::after{content:'';flex:1;max-width:60px;height:1px;background:linear-gradient(90deg,rgba(200,200,200,.35),transparent)}
+.hero-title{font-family:var(--title-font);font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.04;margin-bottom:14px}
+.hero-title .l1{background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.hero-title .l2{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.hero-sub{font-size:15px;font-weight:300;line-height:1.75;max-width:640px;color:var(--text-secondary);margin-bottom:22px}
+.hero-sub strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
+
+/* ═══ STICKY DIVISION NAV ═══ */
+.subnav{position:sticky;top:0;z-index:40;background:rgba(8,8,8,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--border-mid)}
+.subnav-scroll{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:var(--content-width);margin:0 auto}
+.subnav-links{display:flex;gap:8px}
+.subnav a{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--brushed);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
+.subnav a:hover{border-color:var(--border-bright);color:var(--chrome)}
+.sb-dot{display:inline-block;width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.subnav a.top-link{margin-left:auto;color:var(--titanium)}
+.subnav a.top-link:hover{color:var(--gold);border-color:rgba(212,175,55,.4)}
+
+/* ═══ CONTENT BODY SECTIONS ═══ */
+.division{padding:44px 0;border-bottom:1px solid var(--border)}
+.division:nth-child(odd){background:linear-gradient(180deg,#0b0b0b 0%,#070707 100%)}
+.div-head{margin-bottom:26px;padding-bottom:16px;border-bottom:1px solid var(--border-mid);position:relative}
+.div-head::after{content:'';position:absolute;bottom:-1px;left:0;width:56px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.div-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;color:var(--titanium)}
+.div-title{font-family:var(--title-font);font-size:clamp(20px,3vw,27px);font-weight:800;letter-spacing:-.01em;line-height:1.08;margin-bottom:8px;color:var(--chrome)}
+.div-desc{font-size:14.5px;color:var(--text-secondary);line-height:1.72;font-weight:300;max-width:720px;margin-bottom:16px}
+.div-desc strong{color:var(--chrome);font-weight:500}
+
+/* ═══ CTA BAND / SYSTEM BUTTONS ═══ */
+.cta-band{padding:52px 0 56px;background:var(--grad-steel);position:relative;border-bottom:1px solid var(--border-mid)}
+.cta-band::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-red-h)}
+.cta-inner{text-align:center;max-width:640px;margin:0 auto}
+.cta-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.cta-title{font-family:var(--title-font);font-size:clamp(20px,3.4vw,28px);font-weight:800;letter-spacing:-.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:14px}
+.cta-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:14px;margin-top:24px}
+.btn{font-family:var(--title-font);font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 20px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,box-shadow .15s, border-color .15s, color .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--grad-red);color:#fff;box-shadow:0 4px 18px rgba(204,0,0,.3)}
+.btn-primary:hover{box-shadow:0 6px 22px rgba(204,0,0,.42)}
+.btn-secondary{background:transparent;border:1px solid var(--border-bright);color:var(--chrome)}
+.btn-secondary:hover{border-color:var(--chrome);background:rgba(255,255,255,.02)}
+
+/* ═══ FOOTER ═══ */
+.record-footer{padding:20px;background:var(--grad-chrome-bar);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
+.record-footer::before{content:'';position:absolute;top:0;left:0;width:70px;height:2px;background:var(--grad-red-h)}
+.footer-mark{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.06em;color:#1a1a1a}
+.footer-inf{font-family:var(--title-font);font-size:16px;font-weight:800;color:#2a2a2a}
+
+@media (max-width:640px){
+  .cta-grid {grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Experience the Intelligence Continuum</h1>
-    <h2>From Creation to Command — Interactive Intelligence</h2>
-    <p>
-      Intelligence is not static — it moves through a continuum. This interactive experience reveals how 
-      <strong>Form</strong>, <strong>Flow</strong>, and <strong>Fortitude</strong> interlock to compound value across the lifecycle. 
-      Designed for the C‑Suite, it transforms doctrine into a navigable system: from encoding intelligence at creation, 
-      to governing behavior in operations, to fortifying resilience in defense.
-    </p>
-    <p>
-      Engage the continuum. Command the architecture. See how intelligence compounds.
-    </p>
+<a id="top"></a>
 
-    <div class="cta-buttons">
-      <a href="#engage">Engage AESIT</a>
-      <a href="#dialogue">Start Dialogue</a>
-      <a href="#contact">Initiate Contact</a>
-      <a href="#connect">Connect Now</a>
-      <a href="#partnership">Begin Partnership</a>
-      <a href="#command">Command Contact</a>
-    </div>
-
-    <footer>
-      © AESIT Intelligence Architecture™ — Executive Continuum
-    </footer>
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">AESIT Global Solutions Group · Executive Architecture</div>
+    <h1 class="hero-title">
+      <span class="l1">Experience the Intelligence Continuum</span>
+      <span class="l2">From Creation to Command — Interactive Intelligence</span>
+    </h1>
+    <p class="hero-sub">Intelligence is not static — it moves through a repeatable continuum. Designed for the C‑Suite, this architecture transforms foundational corporate doctrine into a high-performance, navigable system.</p>
   </div>
+</div>
+
+<!-- ═══ STICKY DIVISION NAV ═══ -->
+<div class="subnav">
+  <div class="subnav-scroll">
+    <div class="subnav-links">
+      <a href="#continuum"><span class="sb-dot" style="background:var(--col-design)"></span>Architecture</a>
+      <a href="#command"><span class="sb-dot" style="background:var(--col-protect)"></span>Command</a>
+    </div>
+    <a class="top-link" href="#top">↑ Top</a>
+  </div>
+</div>
+
+<!-- ═══ CORE ARCHITECTURE SECTION ═══ -->
+<div class="division" id="continuum">
+  <div class="wrap">
+    <div class="div-head">
+      <div class="div-eyebrow">System Framework</div>
+      <div class="div-title">The Three Pillars of Lifecycle Value</div>
+    </div>
+    <p class="div-desc">
+      This executive framework reveals how <strong>Form</strong>, <strong>Flow</strong>, and <strong>Fortitude</strong> interlock to continuously compound measurable value across your enterprise asset lifecycle.
+    </p>
+    <p class="div-desc">
+      By encoding structured intelligence directly at the point of **creation**, our framework seamlessly governs operational behavior during daily execution, establishing an unshakeable ecosystem capable of fortifying long-term strategic resilience.
+    </p>
+    <p class="div-desc">
+      Engage the continuum. Command the architecture. Discover how modern field intelligence compounds.
+    </p>
+  </div>
+</div>
+
+<!-- ═══ INTERACTIVE COMMAND / CTA BAND ═══ -->
+<div class="cta-band" id="command">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-eyebrow">Enterprise Access Portals</div>
+      <div class="cta-title">Initiate Protocol. Command the Architecture.</div>
+      <p class="cta-sub">Select an operational vector below to interface with the AESIT Intelligence Architecture group.</p>
+      
+      <div class="cta-grid">
+        <a class="btn btn-primary" href="#engage">Engage AESIT</a>
+        <a class="btn btn-secondary" href="#dialogue">Start Dialogue</a>
+        <a class="btn btn-secondary" href="#contact">Initiate Contact</a>
+        <a class="btn btn-secondary" href="#connect">Connect Now</a>
+        <a class="btn btn-secondary" href="#partnership">Begin Partnership</a>
+        <a class="btn btn-secondary" href="#command">Command Contact</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="record-footer">
+  <div class="footer-mark">© AESIT Intelligence Architecture™ — Executive Continuum</div>
+  <div class="footer-inf">∞</div>
+</div>
+
 </body>
 </html>
