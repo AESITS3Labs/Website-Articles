@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="AESIT® Asset Sovereignty Concept Brief — the formal definition of ownership over a built asset's digital intelligence, and the guarantees that make it real."/>
+<meta name="author" content="AESIT Global Solutions Group"/>
+<meta name="keywords" content="Asset Sovereignty™, Intelligence Engine™, Digital Twin, CRE Performance Engineering, AESIT"/>
+<meta property="og:title" content="Asset Sovereignty™: The Ownership Standard for Intelligent Buildings — AESIT®"/>
+<meta property="og:description" content="AESIT® defines Asset Sovereignty — the principle that all intelligence a building generates belongs to its owner, not its service provider."/>
+<title>Asset Sovereignty™: The Ownership Standard for Intelligent Buildings | AESIT®</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --carbon:       #000000;
+  --titanium:     #888888;
+  --brushed:      #A8A8A8;
+  --chrome:       #C8C8C8;
+  --grid-white:   #E8E8E8;
+  --race-red:     #CC0000;
+  --gold:         #D4AF37;
+  --col-design:   #C48F1D;
+  --col-ops:      #1C98A6;
+  --col-protect:  #4070B8;
+
+  --grad-chrome:     linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
+  --grad-chrome-bar: linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
+  --grad-steel:      linear-gradient(180deg,#232323 0%,#191919 50%,#202020 100%);
+  --grad-red-h:      linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);
+  --grad-gold:       linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);
+
+  --border:        rgba(200,200,200,0.10);
+  --border-mid:    rgba(200,200,200,0.20);
+  --border-bright: rgba(200,200,200,0.35);
+  --text-body:     #C0B8B0;
+  --text-muted:    #888888;
+
+  --title-font: 'League Spartan', sans-serif;
+  --body-font:  'Barlow', sans-serif;
+  --content-width: 820px;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--carbon);
+  color: var(--text-body);
+  font-family: var(--body-font);
+  font-size: 15.5px;
+  line-height: 1.78;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 960px; margin: 0 auto; padding: 0 5%; }
+.content-wrap { max-width: var(--content-width); margin: 0 auto; }
+
+/* ═══ COVER ═══ */
+.cover {
+  background: var(--carbon);
+  border-bottom: 1px solid var(--border-mid);
+  padding: 60px 5% 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad-red-h);
+}
+.cover-inner { max-width: var(--content-width); margin: 0 auto; }
+.cover-eyebrow {
+  font-family: var(--title-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cover-eyebrow::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200,200,200,0.35), transparent);
+}
+.cover-title {
+  font-family: var(--title-font);
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  margin-bottom: 10px;
+}
+.cover-title .t1 {
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.cover-title .t2 {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.cover-subtitle {
+  font-family: var(--title-font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.65;
+  margin-bottom: 28px;
+}
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-mid);
+  border-bottom: 1px solid var(--border-mid);
+  margin-bottom: 24px;
+}
+.meta-item { display: flex; flex-direction: column; gap: 3px; }
+.meta-label {
+  font-family: var(--title-font);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--titanium);
+}
+.meta-value {
+  font-family: var(--title-font);
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ip-declaration {
+  padding: 12px 16px;
+  background: rgba(212,175,55,0.05);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 5px 5px 0;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+.ip-declaration strong {
+  color: var(--brushed);
+  font-weight: 500;
+  -webkit-text-fill-color: var(--brushed);
+}
+
+/* ═══ TOC ═══ */
+.toc-section { background: var(--grad-steel); border-bottom: 1px solid var(--border-mid); padding: 36px 5%; }
+.toc-inner { max-width: var(--content-width); margin: 0 auto; }
+.toc-title {
+  font-family: var(--title-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.toc-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-mid), transparent); }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.toc-item {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 13px; font-weight: 300; color: var(--text-muted);
+  padding: 5px 0; border-bottom: 1px solid var(--border);
+  text-decoration: none; transition: color 0.15s;
+}
+.toc-item:hover { color: var(--chrome); }
+.toc-item:last-child { border-bottom: none; }
+.toc-num {
+  font-family: var(--title-font); font-size: 10px; font-weight: 800;
+  background: var(--grad-red-h); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; flex-shrink: 0; width: 24px;
+}
+.toc-dots { flex: 1; border-bottom: 1px dotted rgba(200,200,200,0.15); margin-bottom: 3px; }
+.toc-pg {
+  font-family: var(--title-font); font-size: 10px; font-weight: 700;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; flex-shrink: 0;
+}
+
+/* ═══ SECTIONS ═══ */
+.wp-section { padding: 52px 5%; border-bottom: 1px solid var(--border); }
+.wp-section:nth-child(even) { background: linear-gradient(180deg, #0d0d0d 0%, #080808 100%); }
+.wp-section:nth-child(odd)  { background: var(--carbon); }
+.section-inner { max-width: var(--content-width); margin: 0 auto; }
+.section-heading { margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border-mid); position: relative; }
+.section-heading::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 2px; background: var(--grad-red-h); }
+.section-num {
+  font-family: var(--title-font); font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+  background: var(--grad-red-h); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 6px; display: block;
+}
+.section-title {
+  font-family: var(--title-font); font-size: clamp(20px, 3vw, 28px); font-weight: 800; letter-spacing: -0.01em;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1.1;
+}
+.subsection-title {
+  font-family: var(--title-font); font-size: 16px; font-weight: 700; letter-spacing: 0.02em;
+  margin: 28px 0 12px; padding-left: 12px; border-left: 2px solid var(--race-red);
+}
+.subsection-title.gold { border-left-color: var(--gold); color: var(--gold); -webkit-text-fill-color: var(--gold); }
+.subsection-title.ops  { border-left-color: var(--col-ops); color: var(--col-ops); -webkit-text-fill-color: var(--col-ops); }
+
+.wp-p { margin-bottom: 18px; font-size: 15px; font-weight: 300; line-height: 1.82; color: var(--text-body); }
+.wp-p:last-child { margin-bottom: 0; }
+.wp-p strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); }
+.wp-p em { color: var(--brushed); font-style: italic; }
+
+.definition-box {
+  margin: 24px 0; padding: 18px 20px;
+  background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.18); border-left: 3px solid var(--gold);
+  border-radius: 0 7px 7px 0;
+}
+.def-term {
+  font-family: var(--title-font); font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--grad-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 8px; display: block;
+}
+.def-text { font-size: 14px; font-weight: 400; color: var(--text-body); line-height: 1.75; font-style: italic; }
+.def-text strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); font-style: normal; }
+
+.pull-quote { margin: 28px 0; padding: 20px 24px; border-left: 3px solid var(--race-red); background: rgba(204,0,0,0.04); border-radius: 0 7px 7px 0; }
+.pull-quote p {
+  font-family: var(--title-font); font-size: 17px; font-weight: 700; letter-spacing: -0.01em;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1.4;
+}
+
+.phase-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+.phase-table th {
+  font-family: var(--title-font); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 9px 12px; background: var(--grad-chrome-bar); color: #0A0A0A; text-align: left;
+}
+.phase-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-body); font-weight: 300; line-height: 1.5; vertical-align: top; }
+.phase-table tr:last-child td { border-bottom: none; }
+.phase-table .td-phase-name { font-family: var(--title-font); font-size: 11px; font-weight: 700; color: var(--gold); -webkit-text-fill-color: var(--gold); white-space: nowrap; }
+
+.wp-list { list-style: none; margin: 14px 0 18px 0; display: flex; flex-direction: column; gap: 8px; }
+.wp-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; font-weight: 300; color: var(--text-body); line-height: 1.7; padding-left: 4px; }
+.wp-list li::before { content: '▸'; color: var(--race-red); font-size: 9px; flex-shrink: 0; margin-top: 6px; }
+.wp-list li strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); }
+
+.citation { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 6px; padding-left: 14px; border-left: 1px solid var(--border-mid); }
+
+/* ═══ APPENDIX ═══ */
+.appendix-section { padding: 48px 5%; border-bottom: 1px solid var(--border); }
+.appendix-section:nth-child(even) { background: linear-gradient(180deg,#0d0d0d 0%,#080808 100%); }
+.appendix-section:nth-child(odd)  { background: var(--carbon); }
+.glossary-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.glossary-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.glossary-term {
+  font-family: var(--title-font); font-size: 13px; font-weight: 800;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 5px;
+}
+.glossary-def { font-size: 13.5px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+.glossary-def strong { color: var(--brushed); font-weight: 500; -webkit-text-fill-color: var(--brushed); }
+
+/* ═══ FOOTER ═══ */
+.wp-footer {
+  padding: 28px 5%; background: var(--grad-chrome-bar);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  position: relative;
+}
+.wp-footer::before { content: ''; position: absolute; top: 0; left: 0; width: 80px; height: 2px; background: var(--grad-red-h); }
+.footer-brand { font-family: var(--title-font); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1a1a1a; text-shadow: 0 1px 1px rgba(255,255,255,0.4); }
+.footer-copy { font-family: var(--title-font); font-size: 10px; font-weight: 600; letter-spacing: 0.06em; color: #3a3a3a; }
+.footer-inf { font-family: var(--title-font); font-size: 18px; font-weight: 800; color: #2a2a2a; }
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-eyebrow">AESIT Global Solutions Group — S³ Labs® · Concept Brief</div>
+    <h1 class="cover-title">
+      <span class="t1">Asset Sovereignty:</span>
+      <span class="t2">The Ownership Standard for Intelligent Buildings</span>
+    </h1>
+    <p class="cover-subtitle">Defining Ownership in the Age of Intelligent Buildings</p>
+    <div class="cover-meta">
+      <div class="meta-item"><span class="meta-label">Author</span><span class="meta-value">AESIT Global Solutions Group</span></div>
+      <div class="meta-item"><span class="meta-label">Division</span><span class="meta-value">S³ Labs® — Spatial · Systemic · Strategic Intelligence</span></div>
+      <div class="meta-item"><span class="meta-label">Version</span><span class="meta-value">1.0</span></div>
+      <div class="meta-item"><span class="meta-label">Publication Date</span><span class="meta-value">2026</span></div>
+      <div class="meta-item"><span class="meta-label">Classification</span><span class="meta-value">Public — For Distribution</span></div>
+      <div class="meta-item"><span class="meta-label">Headquarters</span><span class="meta-value">Lorton, Virginia, USA · Est. 1989</span></div>
+    </div>
+    <div class="ip-declaration">
+      <strong>Intellectual Property Notice:</strong> Asset Sovereignty™ and the Intelligence Engine™, along with their formal definitions, are the original work of AESIT Global Solutions Group. First publication: 2026. All rights reserved. © 2026 AESIT Global Solutions Group. Unauthorized reproduction of proprietary terminology without written attribution is prohibited.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOC ═══ -->
+<div class="toc-section">
+  <div class="toc-inner">
+    <div class="toc-title">Table of Contents</div>
+    <ul class="toc-list">
+      <li><a class="toc-item" href="#abstract"><span class="toc-num">—</span><span>Abstract</span><span class="toc-dots"></span><span class="toc-pg">Abstract</span></a></li>
+      <li><a class="toc-item" href="#s1"><span class="toc-num">01</span><span>The Problem Asset Sovereignty Solves</span><span class="toc-dots"></span><span class="toc-pg">§1</span></a></li>
+      <li><a class="toc-item" href="#s2"><span class="toc-num">02</span><span>Defining Asset Sovereignty</span><span class="toc-dots"></span><span class="toc-pg">§2</span></a></li>
+      <li><a class="toc-item" href="#s3"><span class="toc-num">03</span><span>The Three Guarantees</span><span class="toc-dots"></span><span class="toc-pg">§3</span></a></li>
+      <li><a class="toc-item" href="#s4"><span class="toc-num">04</span><span>What Asset Sovereignty Is Not</span><span class="toc-dots"></span><span class="toc-pg">§4</span></a></li>
+      <li><a class="toc-item" href="#s5"><span class="toc-num">05</span><span>Why It Matters to Asset Value</span><span class="toc-dots"></span><span class="toc-pg">§5</span></a></li>
+      <li><a class="toc-item" href="#conclusion"><span class="toc-num">—</span><span>Conclusion</span><span class="toc-dots"></span><span class="toc-pg">Conc.</span></a></li>
+      <li><a class="toc-item" href="#appendix-a"><span class="toc-num">A</span><span>Glossary of Related Terms</span><span class="toc-dots"></span><span class="toc-pg">App. A</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ ABSTRACT ═══ -->
+<div class="wp-section" id="abstract">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Abstract</span>
+      <h2 class="section-title">Ownership in the Age of Intelligent Buildings</h2>
+    </div>
+    <p class="wp-p">Every intelligent building now produces something no conventional asset ever did: a continuous record of its own behavior. Sensor telemetry, digital twin models, performance analytics, security logs — a built asset today generates an entire second layer of value that lives alongside its steel and concrete. The question the industry has not settled is simple to ask and consequential to answer: <em>who owns that layer?</em></p>
+    <p class="wp-p"><strong>Asset Sovereignty</strong> is AESIT Global Solutions Group's formal answer. It is the principle that everything an intelligent building learns about itself belongs to the owner of that building — not to the platform, contractor, or vendor that helped generate it. This brief defines the term precisely, explains the structural problem it resolves, and specifies the guarantees it makes in practice.</p>
+    <p class="wp-p">AESIT Global Solutions Group asserts origination of the Asset Sovereignty principle and its formal definition as set out herein. First publication date: 2026.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 1 ═══ -->
+<div class="wp-section" id="s1">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 01</span>
+      <h2 class="section-title">The Problem Asset Sovereignty Solves</h2>
+    </div>
+    <p class="wp-p">Smart building platforms, IoT sensor networks, and digital twin software have given asset owners more visibility into their buildings than ever before. But visibility is not the same as ownership. In the standard commercial arrangement, the data a building generates — its energy curves, its maintenance history, its occupancy patterns, the digital twin itself — is created, hosted, and controlled inside a vendor's platform. The owner sees it. The vendor keeps it.</p>
+    <p class="wp-p">That arrangement is easy to overlook when the relationship is working well. It becomes a serious problem the moment it isn't: at contract renewal, at vendor transition, at acquisition due diligence, or at the point an owner wants to switch operating partners. A digital twin that cannot leave the platform it was built on is not an asset on the owner's books — it is a subscription the owner has been paying to build for someone else.</p>
+
+    <div class="pull-quote">
+      <p>"A digital twin that cannot leave the platform it was built on is not an asset. It is a subscription."</p>
+    </div>
+
+    <p class="wp-p">This is the structural gap Asset Sovereignty closes. It treats the data and models a building generates as an inseparable extension of the physical asset itself, and it insists that ownership follow the same line the deed does.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 2 ═══ -->
+<div class="wp-section" id="s2">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 02</span>
+      <h2 class="section-title">Defining Asset Sovereignty</h2>
+    </div>
+
+    <div class="definition-box">
+      <span class="def-term">Formal Definition — AESIT® Origination · 2026</span>
+      <p class="def-text"><strong>Asset Sovereignty</strong> (n.): the principle that all intelligence generated by a built asset over its lifecycle — including digital twin models, operational telemetry, security analytics, and performance records — is the exclusive property of the asset owner, delivered in open and transferable form, independent of any single service provider or platform relationship. © 2026 AESIT Global Solutions Group. All rights reserved.</p>
+    </div>
+
+    <p class="wp-p">Two words in that definition carry the weight of the whole concept. <strong>Exclusive</strong> means the owner's claim isn't shared with, or contingent on, the provider that helped generate the data. <strong>Transferable</strong> means the claim is real in practice, not just on paper — the models and records have to move with the owner in a usable format, not stay locked inside a proprietary system the owner cannot take with them.</p>
+
+    <h3 class="subsection-title gold">The Intelligence Engine™</h3>
+    <p class="wp-p">The emergence of Digital Twin technology and IoT-connected building systems has created a new category of asset — the <strong>Intelligence Engine</strong>: the accumulated data, analytics, models, and performance records that represent the digital dimension of a built asset's value. In the conventional smart building market, this Intelligence Engine is typically owned and controlled by the service provider or platform vendor, not the asset owner. Asset Sovereignty is the mechanism that returns ownership of the Intelligence Engine to where the industry has assumed, without stating it, that it already belonged: the asset owner.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 3 ═══ -->
+<div class="wp-section" id="s3">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 03</span>
+      <h2 class="section-title">The Three Guarantees</h2>
+    </div>
+    <p class="wp-p">In practice, Asset Sovereignty is delivered as three concrete guarantees rather than a single abstract promise.</p>
+
+    <div style="overflow-x:auto;">
+    <table class="phase-table">
+      <thead>
+        <tr>
+          <th>Guarantee</th>
+          <th>What It Means</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="td-phase-name">Ownership</span></td>
+          <td>Title to the digital twin, telemetry, and analytics generated by the asset sits with the owner from the moment it is created — not on delivery, not on request, and not as a negotiated add-on.</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">Portability</span></td>
+          <td>Everything is delivered in open, non-proprietary formats an owner can move to another platform, another operator, or in-house infrastructure without a costly rebuild.</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">Continuity</span></td>
+          <td>Switching providers does not mean starting the intelligence record over. The asset's history stays intact and keeps compounding, regardless of who operates it next.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="pull-quote">
+      <p>"You own the car. You own the track. You own the win."</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 4 ═══ -->
+<div class="wp-section" id="s4">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 04</span>
+      <h2 class="section-title">What Asset Sovereignty Is Not</h2>
+    </div>
+    <p class="wp-p">Precision about a concept requires equal precision about its edges. Asset Sovereignty is often confused with adjacent ideas that address a related, but different, problem. It is not:</p>
+    <ul class="wp-list">
+      <li><strong>A data privacy policy</strong> — Privacy governs what may be collected about people; Asset Sovereignty governs who owns the intelligence a building generates about itself.</li>
+      <li><strong>A compliance checkbox</strong> — It isn't satisfied by a clause buried in a services contract; it has to be verifiable in the format the data actually arrives in.</li>
+      <li><strong>Vendor-dependent access</strong> — A dashboard login is not ownership. If the underlying models can't leave the platform, the owner never really held them.</li>
+      <li><strong>A one-time deliverable</strong> — Sovereignty has to hold every year the relationship continues, not just at project handover.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ SECTION 5 ═══ -->
+<div class="wp-section" id="s5">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 05</span>
+      <h2 class="section-title">Why It Matters to Asset Value</h2>
+    </div>
+    <p class="wp-p">The financial case for Asset Sovereignty is straightforward once the ownership question is framed correctly. A building with a complete, transferable performance record — years of digital twin data, maintenance history, and operational analytics that move with the asset — can present that record to a buyer, a lender, or an insurer as documented evidence of how well it has been run. A building whose equivalent history is locked inside a vendor's platform cannot make that case at all; the record effectively doesn't exist for underwriting purposes, no matter how good the building's real performance has been.</p>
+    <p class="wp-p">As institutional buyers increasingly expect documented operational history as part of due diligence, that difference stops being an IT detail and starts showing up in valuation. Asset Sovereignty is what keeps a building's accumulated intelligence on the owner's side of that ledger — a foundation AESIT positions as the <strong>Resiliency Premium</strong> within its broader Compounding Intelligence framework.</p>
+  </div>
+</div>
+
+<!-- ═══ CONCLUSION ═══ -->
+<div class="wp-section" id="conclusion">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Conclusion</span>
+      <h2 class="section-title">Intelligence That Stays Where It Belongs</h2>
+    </div>
+    <p class="wp-p">A building should not have to choose between getting smarter and staying independent. Asset Sovereignty is the guarantee that it never has to — the intelligence compounds, and it stays exactly where it belongs: with the owner.</p>
+    <p class="wp-p"><strong>Asset Sovereignty</strong> is the ownership dimension of AESIT's broader Compounding Intelligence framework, and it is asserted here as a formally defined, original principle of AESIT Global Solutions Group.</p>
+
+    <div class="pull-quote">
+      <p>"You own the car. You own the track. You own the win. Asset Sovereignty — By Design." — AESIT Global Solutions Group ∞</p>
+    </div>
+
+    <p class="wp-p" style="font-size:13px;color:var(--text-muted);margin-top:24px;">© 2026 AESIT Global Solutions Group. Asset Sovereignty™ and its formal definition are the original work of AESIT Global Solutions Group. Version 1.0. For permissions, citations, and licensing inquiries, contact AESIT Global Solutions Group, Lorton, Virginia, USA.</p>
+  </div>
+</div>
+
+<!-- ═══ APPENDIX A ═══ -->
+<div class="appendix-section" id="appendix-a">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Appendix A</span>
+      <h2 class="section-title">Glossary of Related Terms</h2>
+    </div>
+    <p class="wp-p" style="margin-bottom:24px;">The following terms are the original intellectual property of AESIT Global Solutions Group. All definitions are formally asserted as of first publication date: 2026. © 2026 AESIT Global Solutions Group. All rights reserved.</p>
+
+    <div class="glossary-item">
+      <div class="glossary-term">Asset Sovereignty™</div>
+      <div class="glossary-def">The principle that all intelligence generated by a built asset — digital twin data, telemetry, analytics, and performance records — is the exclusive, transferable property of the asset owner, independent of any single service provider or platform relationship. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Intelligence Engine™</div>
+      <div class="glossary-def">The accumulated body of data, models, and performance records that make up a building's digital dimension — the thing Asset Sovereignty determines ownership of. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Digital Twin</div>
+      <div class="glossary-def">A continuously updated operational model of a physical asset, used to monitor performance and inform decisions in real time.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Portability</div>
+      <div class="glossary-def">The practical ability to move an asset's intelligence record to a new platform or operator without loss of history or usability.</div>
+    </div>
+    <p class="citation">© 2026 AESIT Global Solutions Group. Reproduction for citation purposes permitted with attribution: "AESIT Global Solutions Group. (2026). Asset Sovereignty: The Ownership Standard for Intelligent Buildings. Lorton, VA: AESIT Global Solutions Group."</p>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="wp-footer">
+  <div class="footer-brand">AESIT Global Solutions Group · S³ Labs® · Asset Sovereignty Concept Brief · Version 1.0 · © 2026</div>
+  <div class="footer-copy">Lorton, Virginia, USA · aesit.net · All proprietary framework terminology protected. Est. 1989.</div>
+  <div class="footer-inf">∞</div>
+</div>
+
+</body>
+</html>
