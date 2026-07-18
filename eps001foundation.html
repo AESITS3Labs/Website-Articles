@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>EPS-001 | The Intelligence Continuum | AESIT® Executive Publications</title>
+
+<meta name="description" content="EPS-001 — The Intelligence Continuum. The inaugural publication of the AESIT Executive Publications series.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/*==============================================================
+ AESIT® EXECUTIVE PUBLICATIONS FRAMEWORK
+ EPS FOUNDATION v2.0
+==============================================================*/
+
+:root{
+
+--bg:#050505;
+
+--surface:#101010;
+
+--surface2:#171717;
+
+--line:#2b2b2b;
+
+--gold:#CF9F23;
+--gold-light:#EDD5A6;
+--gold-dark:#9B7720;
+
+--chrome1:#FFFFFF;
+--chrome2:#D8D8D8;
+--chrome3:#9C9C9C;
+--chrome4:#5D5D5D;
+
+--accent:#B71C1C;
+
+--body:#CFCFCF;
+
+--muted:#888;
+
+--max:1320px;
+
+--content:940px;
+
+--radius:18px;
+
+--shadow:
+0 20px 60px rgba(0,0,0,.45);
+
+}
+
+/*==============================================================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+
+color:var(--body);
+
+font-family:"Barlow",sans-serif;
+
+line-height:1.7;
+
+overflow-x:hidden;
+
+}
+
+/*==============================================================*/
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+section{
+
+padding:110px 8%;
+
+}
+
+/*==============================================================*/
+
+.container{
+
+max-width:var(--max);
+
+margin:auto;
+
+}
+
+.content{
+
+max-width:var(--content);
+
+margin:auto;
+
+}
+
+/*==============================================================*/
+
+h1,h2,h3,h4{
+
+font-family:"League Spartan",sans-serif;
+
+font-weight:700;
+
+letter-spacing:.02em;
+
+}
+
+h1{
+
+font-size:clamp(3.5rem,7vw,6.4rem);
+
+line-height:.95;
+
+margin-bottom:26px;
+
+}
+
+h2{
+
+font-size:clamp(2.5rem,5vw,4rem);
+
+margin-bottom:30px;
+
+}
+
+h3{
+
+font-size:1.5rem;
+
+margin-bottom:16px;
+
+}
+
+p{
+
+font-size:1.15rem;
+
+margin-bottom:22px;
+
+color:#C7C7C7;
+
+}
+
+/*==============================================================*/
+
+.chrome{
+
+background:linear-gradient(
+180deg,
+var(--chrome1),
+var(--chrome2),
+var(--chrome3),
+var(--chrome4)
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.gold{
+
+color:var(--gold);
+
+}
+
+.eyebrow{
+
+font-size:.9rem;
+
+letter-spacing:.35em;
+
+text-transform:uppercase;
+
+color:var(--gold);
+
+margin-bottom:28px;
+
+font-weight:600;
+
+}
+
+.divider{
+
+width:90px;
+
+height:4px;
+
+background:linear-gradient(
+90deg,
+var(--accent),
+transparent
+);
+
+margin:36px 0;
+
+}
+
+/*==============================================================*/
+/* Publication Header
+==============================================================*/
+
+.publication-header{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+background:rgba(5,5,5,.94);
+
+backdrop-filter:blur(14px);
+
+border-bottom:1px solid var(--line);
+
+}
+
+.publication-inner{
+
+max-width:var(--max);
+
+margin:auto;
+
+padding:20px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.brand{
+
+font-family:"League Spartan",sans-serif;
+
+font-size:1rem;
+
+font-weight:700;
+
+letter-spacing:.12em;
+
+text-transform:uppercase;
+
+}
+
+.brand span{
+
+color:var(--gold);
+
+}
+
+.publication-id{
+
+font-size:.9rem;
+
+color:#A0A0A0;
+
+letter-spacing:.18em;
+
+}
+
+/*==============================================================*/
+/* Reading Path
+==============================================================*/
+
+.reading-path{
+
+background:#0B0B0B;
+
+border-top:1px solid var(--line);
+
+border-bottom:1px solid var(--line);
+
+}
+
+.path{
+
+max-width:var(--max);
+
+margin:auto;
+
+padding:24px 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+}
+
+.path-item{
+
+flex:1;
+
+min-width:170px;
+
+padding-left:18px;
+
+border-left:3px solid #2A2A2A;
+
+}
+
+.path-item.active{
+
+border-color:var(--gold);
+
+}
+
+.path-item small{
+
+display:block;
+
+font-size:.75rem;
+
+letter-spacing:.2em;
+
+text-transform:uppercase;
+
+color:#777;
+
+margin-bottom:8px;
+
+}
+
+.path-item h4{
+
+font-size:1rem;
+
+color:#FFF;
+
+margin-bottom:5px;
+
+}
+
+.path-item span{
+
+font-size:.95rem;
+
+color:#999;
+
+}
+
+/*==============================================================*/
+/* Hero
+==============================================================*/
+
+.hero{
+
+padding-top:140px;
+
+padding-bottom:120px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero:before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(circle at top right,
+rgba(207,159,35,.08),
+transparent 55%);
+
+pointer-events:none;
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1.4fr .8fr;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.hero-sub{
+
+font-size:1.45rem;
+
+color:#E4E4E4;
+
+max-width:720px;
+
+margin-bottom:40px;
+
+}
+
+.metadata{
+
+background:linear-gradient(
+180deg,
+#141414,
+#0D0D0D
+);
+
+border:1px solid var(--line);
+
+border-radius:var(--radius);
+
+padding:34px;
+
+box-shadow:var(--shadow);
+
+}
+
+.meta-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:14px 0;
+
+border-bottom:1px solid #262626;
+
+}
+
+.meta-row:last-child{
+
+border:none;
+
+}
+
+.meta-row strong{
+
+color:#FFF;
+
+font-weight:600;
+
+}
+
+.meta-row span{
+
+color:#AFAFAF;
+
+}
+
+/*==============================================================*/
+/* Executive Summary
+==============================================================*/
+
+.summary{
+
+background:#0B0B0B;
+
+border-top:1px solid var(--line);
+
+border-bottom:1px solid var(--line);
+
+}
+
+.summary-card{
+
+background:linear-gradient(
+180deg,
+#151515,
+#0D0D0D
+);
+
+padding:70px;
+
+border-radius:20px;
+
+border:1px solid var(--line);
+
+box-shadow:var(--shadow);
+
+}
+
+/*==============================================================*/
+/* Continuum Introduction
+==============================================================*/
+
+.continuum{
+
+text-align:center;
+
+}
+
+.continuum-line{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:22px;
+
+flex-wrap:wrap;
+
+margin-top:80px;
+
+font-family:"League Spartan",sans-serif;
+
+font-size:1.3rem;
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+}
+
+.node{
+
+padding:18px 34px;
+
+border-radius:50px;
+
+background:#141414;
+
+border:1px solid #303030;
+
+transition:.35s;
+
+}
+
+.node.active{
+
+background:linear-gradient(
+180deg,
+rgba(207,159,35,.20),
+rgba(207,159,35,.06)
+);
+
+border-color:var(--gold);
+
+color:#FFF;
+
+}
+
+.arrow{
+
+font-size:1.5rem;
+
+color:#777;
+
+}
+
+/*==============================================================*/
+/* Responsive
+==============================================================*/
+
+@media(max-width:980px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.path{
+
+flex-direction:column;
+
+}
+
+.publication-inner{
+
+padding:18px 22px;
+
+}
+
+section{
+
+padding:80px 6%;
+
+}
+
+.summary-card{
+
+padding:40px;
+
+}
+
+}
+
+@media(max-width:640px){
+
+h1{
+
+font-size:3rem;
+
+}
+
+.hero-sub{
+
+font-size:1.15rem;
+
+}
+
+.meta-row{
+
+flex-direction:column;
+
+gap:6px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+Publication Header
+=========================================================== -->
+
+<header class="publication-header">
+
+<div class="publication-inner">
+
+<div class="brand">
+
+AESIT® <span>Executive Publications</span>
+
+</div>
+
+<div class="publication-id">
+
+EPS-001
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ==========================================================
+Executive Reading Path
+=========================================================== -->
+
+<nav class="reading-path">
+
+<div class="path">
+
+<div class="path-item active">
+
+<small>Architecture</small>
+
+<h4>EPS-001</h4>
+
+<span>The Intelligence Continuum</span>
+
+</div>
+
+<div class="path-item">
+
+<small>Evidence</small>
+
+<h4>EPS-002</h4>
+
+<span>The Compounding Record</span>
+
+</div>
+
+<div class="path-item">
+
+<small>Methodology</small>
+
+<h4>EPS-003</h4>
+
+<span>IDLF White Paper</span>
+
+</div>
+
+<div class="path-item">
+
+<small>Investment</small>
+
+<h4>EPS-004</h4>
+
+<span>Executive Brief</span>
+
+</div>
+
+<div class="path-item">
+
+<small>Vision</small>
+
+<h4>EPS-005</h4>
+
+<span>S³ Labs® Manifesto</span>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- ==========================================================
+Hero
+=========================================================== -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="eyebrow">
+
+AESIT® Executive Publications
+
+</div>
+
+<h1 class="chrome">
+
+The Intelligence<br>
+
+Continuum
+
+</h1>
+
+<p class="hero-sub">
+
+Architecture before technology.
+
+A unified framework demonstrating how intelligence compounds across Design, Operations, and Protection to create resilient enterprises, informed decisions, and enduring business value.
+
+</p>
+
+<div class="divider"></div>
+
+<p>
+
+Executive leaders are not challenged by a lack of technology—they are challenged by fragmented intelligence. The Intelligence Continuum introduces a disciplined architectural framework that transforms disconnected systems into a continuously learning enterprise capable of adapting, optimizing, and compounding value throughout the lifecycle of the built environment.
+
+</p>
+
+</div>
+
+<aside class="metadata">
+
+<div class="meta-row">
+
+<strong>Publication</strong>
+
+<span>EPS-001</span>
+
+</div>
+
+<div class="meta-row">
+
+<strong>Edition</strong>
+
+<span>Version 1.0</span>
+
+</div>
+
+<div class="meta-row">
+
+<strong>Category</strong>
+
+<span>Architecture</span>
+
+</div>
+
+<div class="meta-row">
+
+<strong>Audience</strong>
+
+<span>C-Suite • Boards • Investors</span>
+
+</div>
+
+<div class="meta-row">
+
+<strong>Reading Time</strong>
+
+<span>≈ 8 Minutes</span>
+
+</div>
+
+<div class="meta-row">
+
+<strong>Published</strong>
+
+<span>July 2026</span>
+
+</div>
+
+</aside>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+Executive Summary
+=========================================================== -->
+
+<section class="summary">
+
+<div class="container">
+
+<div class="summary-card content">
+
+<div class="eyebrow">
+
+Executive Summary
+
+</div>
+
+<h2 class="chrome">
+
+Complexity Organized Into Executive Clarity
+
+</h2>
+
+<p>
+
+Organizations continue to invest heavily in digital transformation, yet many struggle to realize meaningful enterprise value because design, operations, and protection remain fragmented disciplines. Information is generated continuously but rarely synthesized into actionable executive intelligence.
+
+</p>
+
+<p>
+
+The Intelligence Continuum introduces a unified architectural perspective that connects these traditionally isolated domains into a continuously learning ecosystem. Rather than viewing buildings, assets, infrastructure, cybersecurity, and operational performance as independent initiatives, the Continuum demonstrates how each becomes progressively more valuable when connected through intentional intelligence.
+
+</p>
+
+<p>
+
+This publication establishes the conceptual foundation for the AESIT methodology. Subsequent Executive Publications provide the supporting evidence, implementation methodology, investment rationale, and long-term strategic vision that collectively define the AESIT approach.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================================
+Beginning of the Continuum
+=========================================================== -->
+
+<section class="continuum">
+
+<div class="container content">
+
+<div class="eyebrow">
+
+The Continuum
+
+</div>
+
+<h2 class="chrome">
+
+How Intelligence Compounds
+
+</h2>
+
+<p>
+
+The Intelligence Continuum is not a linear process but a continuously evolving architecture in which every stage strengthens the next. As intelligence matures across the enterprise, informed decisions generate measurable operational improvements, creating a cycle of increasing resilience, performance, and long-term value.
+
+</p>
+
+<div class="continuum-line">
+
+<div class="node active">
+
+FORM
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="node">
+
+FLOW
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="node">
+
+FORTITUDE
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="node">
+
+INTELLIGENCE
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="node">
+
+VALUE
+
+</div>
+
+<div class="arrow">→</div>
+
+<div class="node">
+
+RESILIENCE
+
+div>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
