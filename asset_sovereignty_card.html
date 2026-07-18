@@ -1,520 +1,687 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="AESIT® Asset Sovereignty Concept Brief — the formal definition of ownership over a built asset's digital intelligence, and the guarantees that make it real."/>
-<meta name="author" content="AESIT Global Solutions Group"/>
-<meta name="keywords" content="Asset Sovereignty™, Intelligence Engine™, Digital Twin, CRE Performance Engineering, AESIT"/>
-<meta property="og:title" content="Asset Sovereignty™: The Ownership Standard for Intelligent Buildings — AESIT®"/>
-<meta property="og:description" content="AESIT® defines Asset Sovereignty — the principle that all intelligence a building generates belongs to its owner, not its service provider."/>
-<title>Asset Sovereignty™: The Ownership Standard for Intelligent Buildings | AESIT®</title>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AESIT® — The Compounding Record | Nine Studies. Three Divisions. One Proof.</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --carbon:       #000000;
-  --titanium:     #888888;
-  --brushed:      #A8A8A8;
-  --chrome:       #C8C8C8;
-  --grid-white:   #E8E8E8;
-  --race-red:     #CC0000;
-  --gold:         #D4AF37;
-  --col-design:   #C48F1D;
-  --col-ops:      #1C98A6;
-  --col-protect:  #4070B8;
+  --carbon:#000000;
+  --titanium:#888888;
+  --brushed:#A8A8A8;
+  --chrome:#C8C8C8;
+  --race-red:#CC0000;
+  --race-red-2:#FF2020;
+  --gold:#D4AF37;
+  --col-design:#C48F1D;
+  --col-ops:#1C98A6;
+  --col-protect:#4070B8;
+  --col-vision:#3E8E5B;
+  --col-invest:#CC7A2E;
+  --grad-chrome:linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
+  --grad-chrome-bar:linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
+  --grad-steel:linear-gradient(180deg,#181818 0%,#111111 50%,#161616 100%);
+  --grad-red:linear-gradient(135deg,#CC0000 0%,#FF2020 40%,#AA0000 100%);
+  --grad-red-h:linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);
+  --grad-gold:linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);
+  --border:rgba(200,200,200,.10);
+  --border-mid:rgba(200,200,200,.20);
+  --border-bright:rgba(200,200,200,.35);
+  --text-secondary:#B0A898;
+  --text-muted:#888888;
+  --title-font:'League Spartan',sans-serif;
+  --body-font:'Barlow',sans-serif;
+  --content-width: 900px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:var(--carbon);font-family:var(--body-font);color:var(--text-secondary);line-height:1.65}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation-duration:0.001ms !important;transition-duration:0.001ms !important} }
 
-  --grad-chrome:     linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
-  --grad-chrome-bar: linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
-  --grad-steel:      linear-gradient(180deg,#232323 0%,#191919 50%,#202020 100%);
-  --grad-red-h:      linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);
-  --grad-gold:       linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);
+.wrap{max-width:var(--content-width);margin:0 auto;padding:0 20px}
 
-  --border:        rgba(200,200,200,0.10);
-  --border-mid:    rgba(200,200,200,0.20);
-  --border-bright: rgba(200,200,200,0.35);
-  --text-body:     #C0B8B0;
-  --text-muted:    #888888;
+/* ═══ HERO / COVER ═══ */
+.hero{background:var(--carbon);border-bottom:1px solid var(--border-mid);padding:56px 0 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-red-h)}
+.hero-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::after{content:'';flex:1;max-width:60px;height:1px;background:linear-gradient(90deg,rgba(200,200,200,.35),transparent)}
+.hero-title{font-family:var(--title-font);font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.04;margin-bottom:14px}
+.hero-title .l1{background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.hero-title .l2{background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.hero-sub{font-size:15px;font-weight:300;line-height:1.75;max-width:640px;color:var(--text-secondary);margin-bottom:22px}
+.hero-sub strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
+.hero-stats{display:flex;gap:0;border-top:1px solid var(--border-mid);border-bottom:1px solid var(--border-mid)}
+.hstat{flex:1;padding:16px 18px;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-num{font-family:var(--title-font);font-size:clamp(20px,3vw,28px);font-weight:800;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hstat-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--titanium);margin-top:6px}
 
-  --title-font: 'League Spartan', sans-serif;
-  --body-font:  'Barlow', sans-serif;
-  --content-width: 820px;
-}
+/* ═══ TOP NAV (legacy designations, static, sits above scoreboard) ═══ */
+.topnav{background:transparent;border-bottom:1px solid var(--border);padding:4px 0 18px}
+.topnav-scroll{display:flex;gap:8px;overflow-x:auto}
+.topnav a{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--brushed);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
+.topnav a:hover{border-color:var(--border-bright);color:var(--chrome)}
 
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
+/* ═══ SCOREBOARD (quick-scan table) ═══ */
+.scoreboard{background:var(--grad-steel);border-bottom:1px solid var(--border-mid);padding:34px 0 40px}
+.sb-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.sb-title{font-family:var(--title-font);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sb-note{font-size:12px;color:var(--text-muted);font-style:italic}
+.sb-scroll{overflow-x:auto;border:1px solid var(--border-mid);border-radius:8px}
+.sb-table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+.sb-table thead th{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;background:var(--grad-chrome-bar);color:#0A0A0A;text-align:left;white-space:nowrap}
+.sb-table tbody td{padding:11px 14px;border-top:1px solid var(--border);vertical-align:top;font-weight:300;line-height:1.5}
+.sb-table tbody tr:hover td{background:rgba(255,255,255,.025)}
+.sb-table tbody tr{cursor:pointer}
+.sb-source{font-family:var(--title-font);font-weight:700;font-size:12.5px;color:var(--chrome)}
+.sb-metric{font-family:var(--title-font);font-weight:800;font-size:12.5px}
+.sb-dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;flex-shrink:0}
+.sb-divcell{display:flex;align-items:center;font-family:var(--title-font);font-size:10.5px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
 
-body {
-  background: var(--carbon);
-  color: var(--text-body);
-  font-family: var(--body-font);
-  font-size: 15.5px;
-  line-height: 1.78;
-  -webkit-font-smoothing: antialiased;
-}
+/* ═══ STICKY DIVISION NAV ═══ */
+.subnav{position:sticky;top:0;z-index:40;background:rgba(8,8,8,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--border-mid)}
+.subnav-scroll{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:var(--content-width);margin:0 auto}
+.subnav a{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--brushed);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
+.subnav a:hover{border-color:var(--border-bright);color:var(--chrome)}
+.subnav a .sb-dot{margin-right:0}
+.subnav-links{display:flex;gap:8px}
+.subnav a.util-link{color:var(--titanium)}
+.subnav a.util-link:hover{color:var(--gold);border-color:rgba(212,175,55,.4)}
+.subnav-utils{display:flex;gap:8px;margin-left:auto}
 
-.page-wrap { max-width: 960px; margin: 0 auto; padding: 0 5%; }
-.content-wrap { max-width: var(--content-width); margin: 0 auto; }
+/* ═══ DIVISION SECTIONS ═══ */
+.division{padding:44px 0;border-bottom:1px solid var(--border)}
+.division:nth-child(odd){background:linear-gradient(180deg,#0b0b0b 0%,#070707 100%)}
+.div-head{margin-bottom:26px;padding-bottom:16px;border-bottom:1px solid var(--border-mid);position:relative}
+.div-head::after{content:'';position:absolute;bottom:-1px;left:0;width:56px;height:2px}
+#design .div-head::after{background:linear-gradient(90deg,var(--col-design),transparent)}
+#ops .div-head::after{background:linear-gradient(90deg,var(--col-ops),transparent)}
+#protect .div-head::after{background:linear-gradient(90deg,var(--col-protect),transparent)}
+.div-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+.div-title{font-family:var(--title-font);font-size:clamp(20px,3vw,27px);font-weight:800;letter-spacing:-.01em;line-height:1.08;margin-bottom:8px;color:var(--chrome)}
+.div-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.7;font-weight:300;max-width:640px}
 
-/* ═══ COVER ═══ */
-.cover {
-  background: var(--carbon);
-  border-bottom: 1px solid var(--border-mid);
-  padding: 60px 5% 48px;
-  position: relative;
-  overflow: hidden;
-}
-.cover::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--grad-red-h);
-}
-.cover-inner { max-width: var(--content-width); margin: 0 auto; }
-.cover-eyebrow {
-  font-family: var(--title-font);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  background: var(--grad-chrome);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.cover-eyebrow::after {
-  content: '';
-  flex: 1;
-  max-width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(200,200,200,0.35), transparent);
-}
-.cover-title {
-  font-family: var(--title-font);
-  font-size: clamp(28px, 4.5vw, 48px);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.0;
-  margin-bottom: 10px;
-}
-.cover-title .t1 {
-  background: var(--grad-chrome);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-}
-.cover-title .t2 {
-  background: var(--grad-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-}
-.cover-subtitle {
-  font-family: var(--title-font);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  background: var(--grad-chrome);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0.65;
-  margin-bottom: 28px;
-}
-.cover-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 40px;
-  padding: 18px 0;
-  border-top: 1px solid var(--border-mid);
-  border-bottom: 1px solid var(--border-mid);
-  margin-bottom: 24px;
-}
-.meta-item { display: flex; flex-direction: column; gap: 3px; }
-.meta-label {
-  font-family: var(--title-font);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--titanium);
-}
-.meta-value {
-  font-family: var(--title-font);
-  font-size: 12px;
-  font-weight: 600;
-  background: var(--grad-chrome);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.ip-declaration {
-  padding: 12px 16px;
-  background: rgba(212,175,55,0.05);
-  border: 1px solid rgba(212,175,55,0.15);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 5px 5px 0;
-  font-size: 12px;
-  font-weight: 300;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
-.ip-declaration strong {
-  color: var(--brushed);
-  font-weight: 500;
-  -webkit-text-fill-color: var(--brushed);
-}
+/* ═══ CASE CARD (always open — no accordion) ═══ */
+.case-card{border:1px solid var(--border-mid);border-radius:8px;margin-bottom:16px;overflow:hidden;background:rgba(255,255,255,.012)}
+.case-card:last-child{margin-bottom:0}
+.case-top{padding:16px 20px 14px;border-bottom:1px solid var(--border)}
+.case-name{font-family:var(--title-font);font-size:15px;font-weight:700;color:var(--chrome);line-height:1.3;margin-bottom:10px}
+.case-meta{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.tag{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:3px;white-space:nowrap}
+.tag-method{background:rgba(192,192,192,.1);border:1px solid rgba(192,192,192,.22);color:var(--chrome)}
+.tag-era{background:rgba(136,136,136,.08);border:1px solid rgba(136,136,136,.18);color:var(--titanium)}
 
-/* ═══ TOC ═══ */
-.toc-section { background: var(--grad-steel); border-bottom: 1px solid var(--border-mid); padding: 36px 5%; }
-.toc-inner { max-width: var(--content-width); margin: 0 auto; }
-.toc-title {
-  font-family: var(--title-font);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  background: var(--grad-chrome);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.toc-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-mid), transparent); }
-.toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-.toc-item {
-  display: flex; align-items: baseline; gap: 8px;
-  font-size: 13px; font-weight: 300; color: var(--text-muted);
-  padding: 5px 0; border-bottom: 1px solid var(--border);
-  text-decoration: none; transition: color 0.15s;
-}
-.toc-item:hover { color: var(--chrome); }
-.toc-item:last-child { border-bottom: none; }
-.toc-num {
-  font-family: var(--title-font); font-size: 10px; font-weight: 800;
-  background: var(--grad-red-h); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; flex-shrink: 0; width: 24px;
-}
-.toc-dots { flex: 1; border-bottom: 1px dotted rgba(200,200,200,0.15); margin-bottom: 3px; }
-.toc-pg {
-  font-family: var(--title-font); font-size: 10px; font-weight: 700;
-  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; flex-shrink: 0;
+.case-stat-row{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--border)}
+.case-stat{flex:1;min-width:140px;padding:14px 20px;border-right:1px solid var(--border)}
+.case-stat:last-child{border-right:none}
+.case-stat-num{font-family:var(--title-font);font-size:20px;font-weight:800;line-height:1}
+.case-stat-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--titanium);margin-top:5px;line-height:1.4}
+
+.case-body{padding:16px 20px 18px}
+.case-body p{font-size:13.5px;font-weight:300;line-height:1.72;color:var(--text-secondary);margin-bottom:10px}
+.case-body p:last-child{margin-bottom:0}
+.case-body strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
+
+.case-findings{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.case-findings li{font-size:12.5px;font-weight:300;color:var(--text-secondary);padding-left:15px;position:relative;line-height:1.6}
+.case-findings li::before{content:'▸';position:absolute;left:0;color:var(--race-red-2);font-size:9px;top:4px}
+
+.case-foot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:10px 20px;border-top:1px solid var(--border);background:rgba(255,255,255,.015)}
+.case-phase{font-family:var(--title-font);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.case-source{font-family:var(--title-font);font-size:10px;color:var(--text-muted);letter-spacing:.03em}
+
+/* ═══ EXECUTIVE KNOWLEDGE JOURNEY ═══ */
+.journey-band{padding:48px 0 56px;background:var(--carbon);border-bottom:1px solid var(--border-mid)}
+.journey-head{text-align:center;max-width:640px;margin:0 auto 32px}
+.journey-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.journey-title{font-family:var(--title-font);font-size:clamp(19px,3vw,25px);font-weight:800;letter-spacing:-.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.journey-sub{font-size:13px;font-weight:300;color:var(--text-muted);line-height:1.6}
+
+.journey-track{display:flex;align-items:stretch;gap:0}
+.journey-connector{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:22px;color:var(--border-bright);font-size:14px;padding-top:52px}
+
+.journey-card{flex:1;min-width:0;border:1px solid var(--border-mid);border-radius:8px;background:rgba(255,255,255,.014);display:flex;flex-direction:column;overflow:hidden;position:relative;transition:border-color .15s,transform .15s;text-decoration:none;color:inherit}
+.journey-card.is-live:hover{transform:translateY(-2px);border-color:var(--border-bright)}
+.journey-card.is-current{cursor:default}
+.journey-card.is-soon{opacity:.5;cursor:not-allowed}
+
+.journey-stage{display:flex;align-items:center;gap:8px;padding:12px 14px 10px}
+.journey-num{font-family:var(--title-font);font-size:10px;font-weight:800;color:#0A0A0A;background:var(--grad-chrome-bar);width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.journey-role{font-family:var(--title-font);font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.journey-eps{margin-left:auto;font-family:var(--title-font);font-size:8.5px;font-weight:700;letter-spacing:.06em;color:var(--text-muted)}
+
+.journey-body{padding:2px 14px 14px;flex:1}
+.journey-name{font-family:var(--title-font);font-size:13.5px;font-weight:700;color:var(--chrome);line-height:1.3;margin-bottom:6px}
+.journey-question{font-size:11.5px;font-weight:300;font-style:italic;color:var(--text-muted);line-height:1.5}
+
+.journey-state{padding:9px 14px;border-top:1px solid var(--border);font-family:var(--title-font);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between}
+.journey-state .arrow{transition:transform .15s}
+.journey-card.is-live:hover .arrow{transform:translateX(3px)}
+
+@media (max-width:820px){
+  .journey-track{flex-direction:column;gap:10px}
+  .journey-connector{display:none}
 }
 
-/* ═══ SECTIONS ═══ */
-.wp-section { padding: 52px 5%; border-bottom: 1px solid var(--border); }
-.wp-section:nth-child(even) { background: linear-gradient(180deg, #0d0d0d 0%, #080808 100%); }
-.wp-section:nth-child(odd)  { background: var(--carbon); }
-.section-inner { max-width: var(--content-width); margin: 0 auto; }
-.section-heading { margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border-mid); position: relative; }
-.section-heading::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 2px; background: var(--grad-red-h); }
-.section-num {
-  font-family: var(--title-font); font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
-  background: var(--grad-red-h); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; margin-bottom: 6px; display: block;
-}
-.section-title {
-  font-family: var(--title-font); font-size: clamp(20px, 3vw, 28px); font-weight: 800; letter-spacing: -0.01em;
-  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; line-height: 1.1;
-}
-.subsection-title {
-  font-family: var(--title-font); font-size: 16px; font-weight: 700; letter-spacing: 0.02em;
-  margin: 28px 0 12px; padding-left: 12px; border-left: 2px solid var(--race-red);
-}
-.subsection-title.gold { border-left-color: var(--gold); color: var(--gold); -webkit-text-fill-color: var(--gold); }
-.subsection-title.ops  { border-left-color: var(--col-ops); color: var(--col-ops); -webkit-text-fill-color: var(--col-ops); }
-
-.wp-p { margin-bottom: 18px; font-size: 15px; font-weight: 300; line-height: 1.82; color: var(--text-body); }
-.wp-p:last-child { margin-bottom: 0; }
-.wp-p strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); }
-.wp-p em { color: var(--brushed); font-style: italic; }
-
-.definition-box {
-  margin: 24px 0; padding: 18px 20px;
-  background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.18); border-left: 3px solid var(--gold);
-  border-radius: 0 7px 7px 0;
-}
-.def-term {
-  font-family: var(--title-font); font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
-  background: var(--grad-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; margin-bottom: 8px; display: block;
-}
-.def-text { font-size: 14px; font-weight: 400; color: var(--text-body); line-height: 1.75; font-style: italic; }
-.def-text strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); font-style: normal; }
-
-.pull-quote { margin: 28px 0; padding: 20px 24px; border-left: 3px solid var(--race-red); background: rgba(204,0,0,0.04); border-radius: 0 7px 7px 0; }
-.pull-quote p {
-  font-family: var(--title-font); font-size: 17px; font-weight: 700; letter-spacing: -0.01em;
-  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; line-height: 1.4;
-}
-
-.phase-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
-.phase-table th {
-  font-family: var(--title-font); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 9px 12px; background: var(--grad-chrome-bar); color: #0A0A0A; text-align: left;
-}
-.phase-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-body); font-weight: 300; line-height: 1.5; vertical-align: top; }
-.phase-table tr:last-child td { border-bottom: none; }
-.phase-table .td-phase-name { font-family: var(--title-font); font-size: 11px; font-weight: 700; color: var(--gold); -webkit-text-fill-color: var(--gold); white-space: nowrap; }
-
-.wp-list { list-style: none; margin: 14px 0 18px 0; display: flex; flex-direction: column; gap: 8px; }
-.wp-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; font-weight: 300; color: var(--text-body); line-height: 1.7; padding-left: 4px; }
-.wp-list li::before { content: '▸'; color: var(--race-red); font-size: 9px; flex-shrink: 0; margin-top: 6px; }
-.wp-list li strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); }
-
-.citation { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 6px; padding-left: 14px; border-left: 1px solid var(--border-mid); }
-
-/* ═══ APPENDIX ═══ */
-.appendix-section { padding: 48px 5%; border-bottom: 1px solid var(--border); }
-.appendix-section:nth-child(even) { background: linear-gradient(180deg,#0d0d0d 0%,#080808 100%); }
-.appendix-section:nth-child(odd)  { background: var(--carbon); }
-.glossary-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-.glossary-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.glossary-term {
-  font-family: var(--title-font); font-size: 13px; font-weight: 800;
-  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; margin-bottom: 5px;
-}
-.glossary-def { font-size: 13.5px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
-.glossary-def strong { color: var(--brushed); font-weight: 500; -webkit-text-fill-color: var(--brushed); }
+/* ═══ CTA BAND ═══ */
+.cta-band{padding:52px 0 56px;background:var(--grad-steel);position:relative;border-bottom:1px solid var(--border-mid)}
+.cta-band::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-red-h)}
+.cta-inner{text-align:center;max-width:640px;margin:0 auto}
+.cta-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:var(--grad-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.cta-title{font-family:var(--title-font);font-size:clamp(20px,3.4vw,28px);font-weight:800;letter-spacing:-.01em;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:14px}
+.cta-sub{font-size:14px;font-weight:300;color:var(--text-secondary);line-height:1.7;margin-bottom:26px}
+.cta-actions{display:flex;flex-direction:column;align-items:center;gap:14px}
+.btn{font-family:var(--title-font);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--grad-red);color:#fff;box-shadow:0 4px 18px rgba(204,0,0,.3)}
+.btn-primary:hover{box-shadow:0 6px 22px rgba(204,0,0,.42)}
+.btn-secondary{background:transparent;border:1px solid var(--border-bright);color:var(--chrome)}
+.btn-secondary:hover{border-color:var(--chrome)}
 
 /* ═══ FOOTER ═══ */
-.wp-footer {
-  padding: 28px 5%; background: var(--grad-chrome-bar);
-  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
-  position: relative;
+.record-footer{padding:20px;background:var(--grad-chrome-bar);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
+.record-footer::before{content:'';position:absolute;top:0;left:0;width:70px;height:2px;background:var(--grad-red-h)}
+.footer-mark{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.06em;color:#1a1a1a}
+.footer-inf{font-family:var(--title-font);font-size:16px;font-weight:800;color:#2a2a2a}
+
+@media (max-width:640px){
+  .case-stat-row{flex-direction:column}
+  .case-stat{border-right:none;border-bottom:1px solid var(--border)}
+  .case-stat:last-child{border-bottom:none}
+  .hero-stats{flex-direction:column}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .hstat:last-child{border-bottom:none}
 }
-.wp-footer::before { content: ''; position: absolute; top: 0; left: 0; width: 80px; height: 2px; background: var(--grad-red-h); }
-.footer-brand { font-family: var(--title-font); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1a1a1a; text-shadow: 0 1px 1px rgba(255,255,255,0.4); }
-.footer-copy { font-family: var(--title-font); font-size: 10px; font-weight: 600; letter-spacing: 0.06em; color: #3a3a3a; }
-.footer-inf { font-family: var(--title-font); font-size: 18px; font-weight: 800; color: #2a2a2a; }
 </style>
 </head>
 <body>
+<a id="top"></a>
 
-<!-- ═══ COVER ═══ -->
-<div class="cover">
-  <div class="cover-inner">
-    <div class="cover-eyebrow">AESIT Global Solutions Group — S³ Labs® · Concept Brief</div>
-    <h1 class="cover-title">
-      <span class="t1">Asset Sovereignty:</span>
-      <span class="t2">The Ownership Standard for Intelligent Buildings</span>
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">S³ Labs® · Field Intelligence · AESIT Global Solutions Group</div>
+    <h1 class="hero-title">
+      <span class="l1">The Compounding Record</span>
+      <span class="l2">Nine studies. Three divisions. One proof.</span>
     </h1>
-    <p class="cover-subtitle">Defining Ownership in the Age of Intelligent Buildings</p>
-    <div class="cover-meta">
-      <div class="meta-item"><span class="meta-label">Author</span><span class="meta-value">AESIT Global Solutions Group</span></div>
-      <div class="meta-item"><span class="meta-label">Division</span><span class="meta-value">S³ Labs® — Spatial · Systemic · Strategic Intelligence</span></div>
-      <div class="meta-item"><span class="meta-label">Version</span><span class="meta-value">1.0</span></div>
-      <div class="meta-item"><span class="meta-label">Publication Date</span><span class="meta-value">2026</span></div>
-      <div class="meta-item"><span class="meta-label">Classification</span><span class="meta-value">Public — For Distribution</span></div>
-      <div class="meta-item"><span class="meta-label">Headquarters</span><span class="meta-value">Lorton, Virginia, USA · Est. 1989</span></div>
-    </div>
-    <div class="ip-declaration">
-      <strong>Intellectual Property Notice:</strong> Asset Sovereignty™ and the Intelligence Engine™, along with their formal definitions, are the original work of AESIT Global Solutions Group. First publication: 2026. All rights reserved. © 2026 AESIT Global Solutions Group. Unauthorized reproduction of proprietary terminology without written attribution is prohibited.
+    <p class="hero-sub">Every performance figure behind the Intelligent Design Lifecycle Framework (IDLF) is backed by an independent, named source — not a projection. <strong>Scan the scoreboard below</strong> for the headline numbers, or jump into any division for the full study.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">9</div><div class="hstat-label">Independent Studies</div></div>
+      <div class="hstat"><div class="hstat-num">75%+</div><div class="hstat-label">Design ROI Validated</div></div>
+      <div class="hstat"><div class="hstat-num">50%</div><div class="hstat-label">Max Downtime Reduction</div></div>
+      <div class="hstat"><div class="hstat-num">7:1</div><div class="hstat-label">Predictive Maint. ROI</div></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ TOC ═══ -->
-<div class="toc-section">
-  <div class="toc-inner">
-    <div class="toc-title">Table of Contents</div>
-    <ul class="toc-list">
-      <li><a class="toc-item" href="#abstract"><span class="toc-num">—</span><span>Abstract</span><span class="toc-dots"></span><span class="toc-pg">Abstract</span></a></li>
-      <li><a class="toc-item" href="#s1"><span class="toc-num">01</span><span>The Problem Asset Sovereignty Solves</span><span class="toc-dots"></span><span class="toc-pg">§1</span></a></li>
-      <li><a class="toc-item" href="#s2"><span class="toc-num">02</span><span>Defining Asset Sovereignty</span><span class="toc-dots"></span><span class="toc-pg">§2</span></a></li>
-      <li><a class="toc-item" href="#s3"><span class="toc-num">03</span><span>The Three Guarantees</span><span class="toc-dots"></span><span class="toc-pg">§3</span></a></li>
-      <li><a class="toc-item" href="#s4"><span class="toc-num">04</span><span>What Asset Sovereignty Is Not</span><span class="toc-dots"></span><span class="toc-pg">§4</span></a></li>
-      <li><a class="toc-item" href="#s5"><span class="toc-num">05</span><span>Why It Matters to Asset Value</span><span class="toc-dots"></span><span class="toc-pg">§5</span></a></li>
-      <li><a class="toc-item" href="#conclusion"><span class="toc-num">—</span><span>Conclusion</span><span class="toc-dots"></span><span class="toc-pg">Conc.</span></a></li>
-      <li><a class="toc-item" href="#appendix-a"><span class="toc-num">A</span><span>Glossary of Related Terms</span><span class="toc-dots"></span><span class="toc-pg">App. A</span></a></li>
-    </ul>
-  </div>
-</div>
-
-<!-- ═══ ABSTRACT ═══ -->
-<div class="wp-section" id="abstract">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Abstract</span>
-      <h2 class="section-title">Ownership in the Age of Intelligent Buildings</h2>
-    </div>
-    <p class="wp-p">Every intelligent building now produces something no conventional asset ever did: a continuous record of its own behavior. Sensor telemetry, digital twin models, performance analytics, security logs — a built asset today generates an entire second layer of value that lives alongside its steel and concrete. The question the industry has not settled is simple to ask and consequential to answer: <em>who owns that layer?</em></p>
-    <p class="wp-p"><strong>Asset Sovereignty</strong> is AESIT Global Solutions Group's formal answer. It is the principle that everything an intelligent building learns about itself belongs to the owner of that building — not to the platform, contractor, or vendor that helped generate it. This brief defines the term precisely, explains the structural problem it resolves, and specifies the guarantees it makes in practice.</p>
-    <p class="wp-p">AESIT Global Solutions Group asserts origination of the Asset Sovereignty principle and its formal definition as set out herein. First publication date: 2026.</p>
-  </div>
-</div>
-
-<!-- ═══ SECTION 1 ═══ -->
-<div class="wp-section" id="s1">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Section 01</span>
-      <h2 class="section-title">The Problem Asset Sovereignty Solves</h2>
-    </div>
-    <p class="wp-p">Smart building platforms, IoT sensor networks, and digital twin software have given asset owners more visibility into their buildings than ever before. But visibility is not the same as ownership. In the standard commercial arrangement, the data a building generates — its energy curves, its maintenance history, its occupancy patterns, the digital twin itself — is created, hosted, and controlled inside a vendor's platform. The owner sees it. The vendor keeps it.</p>
-    <p class="wp-p">That arrangement is easy to overlook when the relationship is working well. It becomes a serious problem the moment it isn't: at contract renewal, at vendor transition, at acquisition due diligence, or at the point an owner wants to switch operating partners. A digital twin that cannot leave the platform it was built on is not an asset on the owner's books — it is a subscription the owner has been paying to build for someone else.</p>
-
-    <div class="pull-quote">
-      <p>"A digital twin that cannot leave the platform it was built on is not an asset. It is a subscription."</p>
-    </div>
-
-    <p class="wp-p">This is the structural gap Asset Sovereignty closes. It treats the data and models a building generates as an inseparable extension of the physical asset itself, and it insists that ownership follow the same line the deed does.</p>
-  </div>
-</div>
-
-<!-- ═══ SECTION 2 ═══ -->
-<div class="wp-section" id="s2">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Section 02</span>
-      <h2 class="section-title">Defining Asset Sovereignty</h2>
-    </div>
-
-    <div class="definition-box">
-      <span class="def-term">Formal Definition — AESIT® Origination · 2026</span>
-      <p class="def-text"><strong>Asset Sovereignty</strong> (n.): the principle that all intelligence generated by a built asset over its lifecycle — including digital twin models, operational telemetry, security analytics, and performance records — is the exclusive property of the asset owner, delivered in open and transferable form, independent of any single service provider or platform relationship. © 2026 AESIT Global Solutions Group. All rights reserved.</p>
-    </div>
-
-    <p class="wp-p">Two words in that definition carry the weight of the whole concept. <strong>Exclusive</strong> means the owner's claim isn't shared with, or contingent on, the provider that helped generate the data. <strong>Transferable</strong> means the claim is real in practice, not just on paper — the models and records have to move with the owner in a usable format, not stay locked inside a proprietary system the owner cannot take with them.</p>
-
-    <h3 class="subsection-title gold">The Intelligence Engine™</h3>
-    <p class="wp-p">The emergence of Digital Twin technology and IoT-connected building systems has created a new category of asset — the <strong>Intelligence Engine</strong>: the accumulated data, analytics, models, and performance records that represent the digital dimension of a built asset's value. In the conventional smart building market, this Intelligence Engine is typically owned and controlled by the service provider or platform vendor, not the asset owner. Asset Sovereignty is the mechanism that returns ownership of the Intelligence Engine to where the industry has assumed, without stating it, that it already belonged: the asset owner.</p>
-  </div>
-</div>
-
-<!-- ═══ SECTION 3 ═══ -->
-<div class="wp-section" id="s3">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Section 03</span>
-      <h2 class="section-title">The Three Guarantees</h2>
-    </div>
-    <p class="wp-p">In practice, Asset Sovereignty is delivered as three concrete guarantees rather than a single abstract promise.</p>
-
-    <div style="overflow-x:auto;">
-    <table class="phase-table">
-      <thead>
-        <tr>
-          <th>Guarantee</th>
-          <th>What It Means</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="td-phase-name">Ownership</span></td>
-          <td>Title to the digital twin, telemetry, and analytics generated by the asset sits with the owner from the moment it is created — not on delivery, not on request, and not as a negotiated add-on.</td>
-        </tr>
-        <tr>
-          <td><span class="td-phase-name">Portability</span></td>
-          <td>Everything is delivered in open, non-proprietary formats an owner can move to another platform, another operator, or in-house infrastructure without a costly rebuild.</td>
-        </tr>
-        <tr>
-          <td><span class="td-phase-name">Continuity</span></td>
-          <td>Switching providers does not mean starting the intelligence record over. The asset's history stays intact and keeps compounding, regardless of who operates it next.</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-    <div class="pull-quote">
-      <p>"You own the car. You own the track. You own the win."</p>
+<!-- ═══ TOP NAV (legacy designations) ═══ -->
+<div class="topnav">
+  <div class="wrap">
+    <div class="topnav-scroll">
+      <a href="#design"><span class="sb-dot" style="background:var(--col-design)"></span>Design</a>
+      <a href="#ops"><span class="sb-dot" style="background:var(--col-ops)"></span>Operations</a>
+      <a href="#protect"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</a>
     </div>
   </div>
 </div>
 
-<!-- ═══ SECTION 4 ═══ -->
-<div class="wp-section" id="s4">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Section 04</span>
-      <h2 class="section-title">What Asset Sovereignty Is Not</h2>
+<!-- ═══ SCOREBOARD ═══ -->
+<div class="scoreboard">
+  <div class="wrap">
+    <div class="sb-head">
+      <div class="sb-title">Quick-Scan Scoreboard — All Nine Studies</div>
+      <div class="sb-note">Click any row to jump to the full study →</div>
     </div>
-    <p class="wp-p">Precision about a concept requires equal precision about its edges. Asset Sovereignty is often confused with adjacent ideas that address a related, but different, problem. It is not:</p>
-    <ul class="wp-list">
-      <li><strong>A data privacy policy</strong> — Privacy governs what may be collected about people; Asset Sovereignty governs who owns the intelligence a building generates about itself.</li>
-      <li><strong>A compliance checkbox</strong> — It isn't satisfied by a clause buried in a services contract; it has to be verifiable in the format the data actually arrives in.</li>
-      <li><strong>Vendor-dependent access</strong> — A dashboard login is not ownership. If the underlying models can't leave the platform, the owner never really held them.</li>
-      <li><strong>A one-time deliverable</strong> — Sovereignty has to hold every year the relationship continues, not just at project handover.</li>
-    </ul>
+    <div class="sb-scroll">
+      <table class="sb-table">
+        <thead>
+          <tr><th>Source</th><th>Division</th><th>IDLF Phase</th><th>Key Metric</th></tr>
+        </thead>
+        <tbody>
+          <tr onclick="location.href='#c-augu'">
+            <td class="sb-source">AUGU — BIM &amp; VDC</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-design)"></span>Design</span></td>
+            <td>Design → Build</td>
+            <td class="sb-metric" style="color:var(--col-design)">Fewer RFIs &amp; change orders</td>
+          </tr>
+          <tr onclick="location.href='#c-dodge'">
+            <td class="sb-source">Dodge Data &amp; Analytics (2014)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-design)"></span>Design</span></td>
+            <td>Plan → Design</td>
+            <td class="sb-metric" style="color:var(--col-design)">75%+ BIM ROI</td>
+          </tr>
+          <tr onclick="location.href='#c-mortenson'">
+            <td class="sb-source">Mortenson — IPD (2019)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-design)"></span>Design</span></td>
+            <td>Lead Constructor</td>
+            <td class="sb-metric" style="color:var(--col-design)">On/under budget delivery</td>
+          </tr>
+          <tr onclick="location.href='#c-epri'">
+            <td class="sb-source">EPRI — Digital Twins</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-ops)"></span>Operations</span></td>
+            <td>Operate → Optimize</td>
+            <td class="sb-metric" style="color:var(--col-ops)">15–35% energy savings</td>
+          </tr>
+          <tr onclick="location.href='#c-jll'">
+            <td class="sb-source">JLL / P&amp;G — IntelliCommand</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-ops)"></span>Operations</span></td>
+            <td>Operate → Scale</td>
+            <td class="sb-metric" style="color:var(--col-ops)">3-month payback</td>
+          </tr>
+          <tr onclick="location.href='#c-mck-analytics'">
+            <td class="sb-source">McKinsey — Analytics Maintenance (2021)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-ops)"></span>Ops + Protect</span></td>
+            <td>Operate → Protect</td>
+            <td class="sb-metric" style="color:var(--col-ops)">18–25% cost reduction</td>
+          </tr>
+          <tr onclick="location.href='#c-schindler'">
+            <td class="sb-source">Schindler / IBM IoT</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</span></td>
+            <td>Commission → Protect</td>
+            <td class="sb-metric" style="color:var(--col-protect)">10–25% maint. reduction</td>
+          </tr>
+          <tr onclick="location.href='#c-mck-scale'">
+            <td class="sb-source">McKinsey — Prediction at Scale (2021)</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</span></td>
+            <td>Commission → Protect</td>
+            <td class="sb-metric" style="color:var(--col-protect)">Up to 50% less downtime</td>
+          </tr>
+          <tr onclick="location.href='#c-consensus'">
+            <td class="sb-source">PwC / McKinsey / Deloitte Consensus</td>
+            <td><span class="sb-divcell"><span class="sb-dot" style="background:var(--col-protect)"></span>Protection</span></td>
+            <td>Protect → Compound</td>
+            <td class="sb-metric" style="color:var(--col-protect)">7:1 ROI</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
-<!-- ═══ SECTION 5 ═══ -->
-<div class="wp-section" id="s5">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Section 05</span>
-      <h2 class="section-title">Why It Matters to Asset Value</h2>
+<!-- ═══ STICKY DIVISION NAV ═══ -->
+<div class="subnav">
+  <div class="subnav-scroll">
+    <div class="subnav-links">
+      <a href="#design"><span class="sb-dot" style="background:var(--col-design)"></span>Form</a>
+      <a href="#ops"><span class="sb-dot" style="background:var(--col-ops)"></span>Flow</a>
+      <a href="#protect"><span class="sb-dot" style="background:var(--col-protect)"></span>Fortitude</a>
     </div>
-    <p class="wp-p">The financial case for Asset Sovereignty is straightforward once the ownership question is framed correctly. A building with a complete, transferable performance record — years of digital twin data, maintenance history, and operational analytics that move with the asset — can present that record to a buyer, a lender, or an insurer as documented evidence of how well it has been run. A building whose equivalent history is locked inside a vendor's platform cannot make that case at all; the record effectively doesn't exist for underwriting purposes, no matter how good the building's real performance has been.</p>
-    <p class="wp-p">As institutional buyers increasingly expect documented operational history as part of due diligence, that difference stops being an IT detail and starts showing up in valuation. Asset Sovereignty is what keeps a building's accumulated intelligence on the owner's side of that ledger — a foundation AESIT positions as the <strong>Resiliency Premium</strong> within its broader Compounding Intelligence framework.</p>
+    <div class="subnav-utils">
+      <a class="util-link" href="#cta-band">↓ Next Steps</a>
+      <a class="util-link" href="#top">↑ Top</a>
+    </div>
   </div>
 </div>
 
-<!-- ═══ CONCLUSION ═══ -->
-<div class="wp-section" id="conclusion">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Conclusion</span>
-      <h2 class="section-title">Intelligence That Stays Where It Belongs</h2>
-    </div>
-    <p class="wp-p">A building should not have to choose between getting smarter and staying independent. Asset Sovereignty is the guarantee that it never has to — the intelligence compounds, and it stays exactly where it belongs: with the owner.</p>
-    <p class="wp-p"><strong>Asset Sovereignty</strong> is the ownership dimension of AESIT's broader Compounding Intelligence framework, and it is asserted here as a formally defined, original principle of AESIT Global Solutions Group.</p>
-
-    <div class="pull-quote">
-      <p>"You own the car. You own the track. You own the win. Asset Sovereignty — By Design." — AESIT Global Solutions Group ∞</p>
+<!-- ═══ DESIGN DIVISION ═══ -->
+<div class="division" id="design">
+  <div class="wrap">
+    <div class="div-head">
+      <div class="div-eyebrow" style="color:var(--col-design)">S³ Labs® · Division Design (Form)</div>
+      <div class="div-title">Regenerative Architecture. Living Intelligence.</div>
+      <p class="div-desc">Three studies confirming that BIM and integrated delivery eliminate operational drag before groundbreaking — locking in the ~75% design-and-construction ROI tier that every later lifecycle return compounds from.</p>
     </div>
 
-    <p class="wp-p" style="font-size:13px;color:var(--text-muted);margin-top:24px;">© 2026 AESIT Global Solutions Group. Asset Sovereignty™ and its formal definition are the original work of AESIT Global Solutions Group. Version 1.0. For permissions, citations, and licensing inquiries, contact AESIT Global Solutions Group, Lorton, Virginia, USA.</p>
+    <div class="case-card" id="c-augu">
+      <div class="case-top">
+        <div class="case-name">AUGU — Benefits of BIM and VDC: A Contractor's View</div>
+        <div class="case-meta">
+          <span class="tag tag-method">BIM</span><span class="tag tag-method">VDC</span><span class="tag tag-method">Digital Coordination</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">↓ RFIs</div><div class="case-stat-label">Clash Detection Pre-Construction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">↑ Reliability</div><div class="case-stat-label">4D Schedule Simulation</div></div>
+      </div>
+      <div class="case-body">
+        <p>Examines BIM and VDC workflow benefits from the general contractor's perspective — where clash detection and coordinated models replace fragmented consultant drag.</p>
+        <ul class="case-findings">
+          <li>Fewer RFIs and change orders through clash detection prior to construction</li>
+          <li>Faster project closeout via as-built BIM handover — the foundation of the Digital Twin</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Design → Build</span>
+        <span class="case-source">Source: AUGU — Benefits of BIM and VDC: A Contractor's View</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-dodge">
+      <div class="case-top">
+        <div class="case-name">Dodge Data &amp; Analytics — "The Business Value of BIM for Construction" (2014)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">BIM</span><span class="tag tag-method">Industry Research</span><span class="tag tag-era">2014</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">75%+</div><div class="case-stat-label">Average ROI, High BIM Users</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">#1</div><div class="case-stat-label">Ranked Benefit: Fewer Errors</div></div>
+      </div>
+      <div class="case-body">
+        <p>North American benchmark study on BIM ROI at scale — one of the most cited references in the industry.</p>
+        <ul class="case-findings">
+          <li>High BIM users reported average ROI over 75% — directly validating AESIT's design-and-construction ROI tier</li>
+          <li>High adopters more likely to win repeat business through demonstrated, measurable performance</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Plan → Design</span>
+        <span class="case-source">Source: Dodge Data &amp; Analytics, 2014</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-mortenson">
+      <div class="case-top">
+        <div class="case-name">Mortenson — "Advancing Integrated Project Delivery" (2019)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">IPD</span><span class="tag tag-method">Lean Construction</span><span class="tag tag-method">BIM</span><span class="tag tag-era">2019</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">On/Under</div><div class="case-stat-label">Budget Delivery, Consistently</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-design)">↑ Satisfaction</div><div class="case-stat-label">vs. Design-Bid-Build</div></div>
+      </div>
+      <div class="case-body">
+        <p>Shows how IPD — combining BIM, collaborative contracting, and lean construction — transforms outcomes across healthcare, higher education, and commercial sectors.</p>
+        <ul class="case-findings">
+          <li>Early contractor involvement eliminated constructability issues before they became costly</li>
+          <li>Owner satisfaction substantially higher on IPD-delivered projects — trust engineered in, not declared</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Lead Constructor Model</span>
+        <span class="case-source">Source: Mortenson, 2019</span>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- ═══ APPENDIX A ═══ -->
-<div class="appendix-section" id="appendix-a">
-  <div class="section-inner">
-    <div class="section-heading">
-      <span class="section-num">Appendix A</span>
-      <h2 class="section-title">Glossary of Related Terms</h2>
+<!-- ═══ OPERATIONS DIVISION ═══ -->
+<div class="division" id="ops">
+  <div class="wrap">
+    <div class="div-head">
+      <div class="div-eyebrow" style="color:var(--col-ops)">S³ Labs® · Division Operations (Flow)</div>
+      <div class="div-title">Portfolio Clarity. Measurable Performance.</div>
+      <p class="div-desc">Three studies validating 15–35% energy reduction and 18–25% maintenance savings through Digital Twin and real-time predictive intelligence — from utility-scale research to named corporate deployments at 28M sq ft.</p>
     </div>
-    <p class="wp-p" style="margin-bottom:24px;">The following terms are the original intellectual property of AESIT Global Solutions Group. All definitions are formally asserted as of first publication date: 2026. © 2026 AESIT Global Solutions Group. All rights reserved.</p>
 
-    <div class="glossary-item">
-      <div class="glossary-term">Asset Sovereignty™</div>
-      <div class="glossary-def">The principle that all intelligence generated by a built asset — digital twin data, telemetry, analytics, and performance records — is the exclusive, transferable property of the asset owner, independent of any single service provider or platform relationship. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+    <div class="case-card" id="c-epri">
+      <div class="case-top">
+        <div class="case-name">Electric Power Research Institute (EPRI) — Digital Twins Energy Savings</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Digital Twin</span><span class="tag tag-method">IoT</span><span class="tag tag-method">Predictive Analytics</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">15–35%</div><div class="case-stat-label">Energy Consumption Cut</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">↓ Outages</div><div class="case-stat-label">Via Predictive Maintenance</div></div>
+      </div>
+      <div class="case-body">
+        <p>Digital Twin applications for energy infrastructure show how real-time virtual replicas let operators optimize performance and anticipate failures before they occur.</p>
+        <ul class="case-findings">
+          <li>Real-time equipment monitoring enabled proactive intervention — a setback becomes telemetry, not a crisis</li>
+          <li>IoT sensor integration improved load forecasting accuracy across the full operational lifecycle</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Operate → Optimize</span>
+        <span class="case-source">Source: EPRI — Digital Twins Energy Savings Research</span>
+      </div>
     </div>
-    <div class="glossary-item">
-      <div class="glossary-term">Intelligence Engine™</div>
-      <div class="glossary-def">The accumulated body of data, models, and performance records that make up a building's digital dimension — the thing Asset Sovereignty determines ownership of. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+
+    <div class="case-card" id="c-jll">
+      <div class="case-top">
+        <div class="case-name">JLL / Procter &amp; Gamble — IntelliCommand Smart Building Portfolio Deployment</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Smart Building</span><span class="tag tag-method">Portfolio Management</span><span class="tag tag-era">2014</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">10–16%</div><div class="case-stat-label">Energy Savings in 11 Months</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">3 Months</div><div class="case-stat-label">Full Payback</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">28M sq ft</div><div class="case-stat-label">Scaled Deployment</div></div>
+      </div>
+      <div class="case-body">
+        <p>JLL's IntelliCommand platform — IoT, remote monitoring, and a dedicated engineering team — was deployed across 12 P&amp;G buildings (3.2M sq ft), including the Cincinnati HQ campus. Result: an Environmental Leader Product &amp; Project Award, and a program later scaled to 120 buildings.</p>
+        <ul class="case-findings">
+          <li>24/7 remote monitoring resolved issues before occupants experienced disruption</li>
+          <li>Program subsequently scaled to 120 buildings across 28 million square feet — replicability proven at institutional scope</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Operate → Optimize → Scale</span>
+        <span class="case-source">Source: JLL / P&amp;G, Environmental Leader Award, 2014</span>
+      </div>
     </div>
-    <div class="glossary-item">
-      <div class="glossary-term">Digital Twin</div>
-      <div class="glossary-def">A continuously updated operational model of a physical asset, used to monitor performance and inform decisions in real time.</div>
+
+    <div class="case-card" id="c-mck-analytics">
+      <div class="case-top">
+        <div class="case-name">McKinsey &amp; Company — "Establishing the Right Analytics-Based Maintenance Strategy" (2021)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">IoT Analytics</span><span class="tag tag-method">AI Diagnostics</span><span class="tag tag-era">2021</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">18–25%</div><div class="case-stat-label">Maintenance Cost Reduction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-ops)">↑ Uptime</div><div class="case-stat-label">Fewer Field Dispatches</div></div>
+      </div>
+      <div class="case-body">
+        <p>Documents an IoT analytics and remote-troubleshooting deployment at a large medical-device manufacturer — an architecture that mirrors AESIT's SBLM model precisely.</p>
+        <ul class="case-findings">
+          <li>Remote troubleshooting eliminated the majority of unnecessary field visits</li>
+          <li>Standardized resolution replaced ad-hoc reactive repair — every intervention became a data event</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Operate → Commission → Protect</span>
+        <span class="case-source">Source: McKinsey &amp; Company, 2021 — mckinsey.com/capabilities/operations</span>
+      </div>
     </div>
-    <div class="glossary-item">
-      <div class="glossary-term">Portability</div>
-      <div class="glossary-def">The practical ability to move an asset's intelligence record to a new platform or operator without loss of history or usability.</div>
+
+  </div>
+</div>
+
+<!-- ═══ PROTECTION DIVISION ═══ -->
+<div class="division" id="protect">
+  <div class="wrap">
+    <div class="div-head">
+      <div class="div-eyebrow" style="color:var(--col-protect)">S³ Labs® · Division Protection (Fortitude)</div>
+      <div class="div-title">Engineered Resilience. Trust at Every Layer.</div>
+      <p class="div-desc">Three studies confirming 10–25% maintenance reduction and 7:1 ROI through IoT predictive intelligence — from a named global deployment to a McKinsey industrial benchmark and a three-institution consensus.</p>
     </div>
-    <p class="citation">© 2026 AESIT Global Solutions Group. Reproduction for citation purposes permitted with attribution: "AESIT Global Solutions Group. (2026). Asset Sovereignty: The Ownership Standard for Intelligent Buildings. Lorton, VA: AESIT Global Solutions Group."</p>
+
+    <div class="case-card" id="c-schindler">
+      <div class="case-top">
+        <div class="case-name">Schindler — Using IBM's IoT Platform for Predictive Maintenance</div>
+        <div class="case-meta">
+          <span class="tag tag-method">IoT</span><span class="tag tag-method">Predictive Maintenance</span><span class="tag tag-method">AI Analytics</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">10–25%</div><div class="case-stat-label">Maintenance Cost Reduction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">↑ MTBF</div><div class="case-stat-label">Mean Time Between Failures</div></div>
+      </div>
+      <div class="case-body">
+        <p>Schindler partnered with IBM to shift its global service model from reactive repair to proactive performance management.</p>
+        <ul class="case-findings">
+          <li>Real-time IoT data enabled predictive failure detection before breakdowns</li>
+          <li>Customer uptime SLAs improved — directly enhancing the occupant experience</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Commission → Operations &amp; Protect</span>
+        <span class="case-source">Source: Schindler Group — IBM IoT Platform Case Study</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-mck-scale">
+      <div class="case-top">
+        <div class="case-name">McKinsey &amp; Company — "Prediction at Scale: How Industry Can Get More Value Out of Maintenance" (2021)</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Predictive Maintenance</span><span class="tag tag-method">AI / ML</span><span class="tag tag-era">2021</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">↓ 50%</div><div class="case-stat-label">Max Downtime Reduction</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">20–40%</div><div class="case-stat-label">Asset Life Extension</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">18–25%</div><div class="case-stat-label">Maintenance Cost Reduction</div></div>
+      </div>
+      <div class="case-body">
+        <p>Multi-sector study across power generation, mining, oil &amp; gas, and renewables — real deployments spanning wind turbine gearboxes, compressors, and heavy equipment engines, each following an IoT-to-analytics pipeline that maps directly onto AESIT's SBLM architecture.</p>
+        <ul class="case-findings">
+          <li>Predictive maintenance reduced machine downtime by up to 50% across all studied verticals</li>
+          <li>Prioritizing critical sub-components generated outsized ROI relative to broad sensor rollout</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Commission → Operate → Protect</span>
+        <span class="case-source">Source: McKinsey &amp; Company, 2021</span>
+      </div>
+    </div>
+
+    <div class="case-card" id="c-consensus">
+      <div class="case-top">
+        <div class="case-name">PwC / McKinsey / Deloitte — Cross-Institution Predictive Maintenance Benchmark Consensus</div>
+        <div class="case-meta">
+          <span class="tag tag-method">Industry Benchmark</span><span class="tag tag-method">Cross-Sector Research</span>
+        </div>
+      </div>
+      <div class="case-stat-row">
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">7 : 1</div><div class="case-stat-label">ROI — PwC, 2017</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">30–50%</div><div class="case-stat-label">Downtime Reduction, Consensus</div></div>
+        <div class="case-stat"><div class="case-stat-num" style="color:var(--col-protect)">12–18 mo</div><div class="case-stat-label">Typical Payback Window</div></div>
+      </div>
+      <div class="case-body">
+        <p>Three of the world's foremost advisory institutions independently converge on the same performance range for IoT-enabled predictive maintenance — across manufacturing, energy, healthcare, and facilities management.</p>
+        <ul class="case-findings">
+          <li><strong>PwC (2017):</strong> up to $7 return for every $1 invested</li>
+          <li><strong>McKinsey (2020):</strong> 18–25% lower maintenance cost, up to 50% less unplanned downtime</li>
+          <li><strong>Deloitte (2021):</strong> up to 25% reduction in maintenance expense — validating the upper bound of AESIT's target range</li>
+        </ul>
+      </div>
+      <div class="case-foot">
+        <span class="case-phase">IDLF · Protect → Compound</span>
+        <span class="case-source">Sources: PwC 2017 · McKinsey 2020 · Deloitte 2021</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ CTA BAND ═══ -->
+<div class="cta-band" id="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-eyebrow">Ready to See This Compound on Your Portfolio</div>
+      <div class="cta-title">The record is independent. The next data point could be your asset.</div>
+      <p class="cta-sub">Bring your portfolio to a 30-minute Compounding Intelligence Assessment. We'll map your assets against the IDLF and show you, in numbers, where the compound already starts.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://aesit.net/home#3c81a0ce-b330-4951-b2b9-8a14a074f02c">Book Your Assessment</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ EXECUTIVE KNOWLEDGE JOURNEY ═══ -->
+<div class="journey-band">
+  <div class="wrap">
+    <div class="journey-head">
+      <div class="journey-eyebrow">AESIT® Executive Publications · EPS Series</div>
+      <div class="journey-title">The Executive Knowledge Journey</div>
+      <p class="journey-sub">Five publications, one compounding philosophy. This document is Stage 4 — here's where it fits in the larger story.</p>
+    </div>
+
+    <div class="journey-track">
+
+      <!-- Stage 1 — Vision — Coming Soon -->
+      <div class="journey-card is-soon">
+        <div class="journey-stage">
+          <span class="journey-num">1</span>
+          <span class="journey-role" style="color:var(--col-vision)">Vision</span>
+          <span class="journey-eps">EPS‑005</span>
+        </div>
+        <div class="journey-body">
+          <div class="journey-name">S³ Labs® Manifesto</div>
+          <div class="journey-question">"Where is the future going?"</div>
+        </div>
+        <div class="journey-state" style="color:var(--col-vision)"><span>Coming Soon</span></div>
+      </div>
+
+      <div class="journey-connector">›</div>
+
+      <!-- Stage 2 — Architecture — Live -->
+      <a class="journey-card is-live" href="https://articles.aesit.net/theintelligencecontinuum.html">
+        <div class="journey-stage">
+          <span class="journey-num">2</span>
+          <span class="journey-role" style="color:var(--gold)">Architecture</span>
+          <span class="journey-eps">EPS‑001</span>
+        </div>
+        <div class="journey-body">
+          <div class="journey-name">The Intelligence Continuum</div>
+          <div class="journey-question">"How does intelligence compound?"</div>
+        </div>
+        <div class="journey-state" style="color:var(--gold)"><span>Read the Flagship</span><span class="arrow">→</span></div>
+      </a>
+
+      <div class="journey-connector">›</div>
+
+      <!-- Stage 3 — Methodology — Coming Soon (dedicated IDLF page not yet built) -->
+      <div class="journey-card is-soon">
+        <div class="journey-stage">
+          <span class="journey-num">3</span>
+          <span class="journey-role" style="color:var(--col-protect)">Methodology</span>
+          <span class="journey-eps">EPS‑003</span>
+        </div>
+        <div class="journey-body">
+          <div class="journey-name">IDLF White Paper</div>
+          <div class="journey-question">"How is it implemented?"</div>
+        </div>
+        <div class="journey-state" style="color:var(--col-protect)"><span>Coming Soon</span></div>
+      </div>
+
+      <div class="journey-connector">›</div>
+
+      <!-- Stage 4 — Evidence — Current Page -->
+      <div class="journey-card is-current" style="border-color:rgba(204,0,0,.5);box-shadow:0 0 0 1px rgba(204,0,0,.15)">
+        <div class="journey-stage">
+          <span class="journey-num">4</span>
+          <span class="journey-role" style="color:var(--race-red-2)">Evidence</span>
+          <span class="journey-eps">EPS‑002</span>
+        </div>
+        <div class="journey-body">
+          <div class="journey-name">The Compounding Record</div>
+          <div class="journey-question">"Can you prove it?"</div>
+        </div>
+        <div class="journey-state" style="color:var(--race-red-2)"><span>You Are Here</span></div>
+      </div>
+
+      <div class="journey-connector">›</div>
+
+      <!-- Stage 5 — Investment — Coming Soon -->
+      <div class="journey-card is-soon">
+        <div class="journey-stage">
+          <span class="journey-num">5</span>
+          <span class="journey-role" style="color:var(--col-invest)">Investment</span>
+          <span class="journey-eps">EPS‑004</span>
+        </div>
+        <div class="journey-body">
+          <div class="journey-name">Executive Brief</div>
+          <div class="journey-question">"Why should I invest?"</div>
+        </div>
+        <div class="journey-state" style="color:var(--col-invest)"><span>Coming Soon</span></div>
+      </div>
+
+    </div>
   </div>
 </div>
 
 <!-- ═══ FOOTER ═══ -->
-<div class="wp-footer">
-  <div class="footer-brand">AESIT Global Solutions Group · S³ Labs® · Asset Sovereignty Concept Brief · Version 1.0 · © 2026</div>
-  <div class="footer-copy">Lorton, Virginia, USA · aesit.net · All proprietary framework terminology protected. Est. 1989.</div>
+<div class="record-footer">
+  <div class="footer-mark">AESIT Global Solutions Group © 2026 — The Compounding Record · S³ Labs®</div>
   <div class="footer-inf">∞</div>
 </div>
 
