@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --carbon: #000000;
+        --titanium: #888888;
+        --brushed: #A8A8A8;
+        --chrome: #C8C8C8;
+        --grid-white: #E8E8E8;
+        --race-red: #CC0000;
+        --race-red-2: #FF2020;
+        --gold: #D4AF37;
+
+        --col-design: #C48F1D;
+        --col-ops: #1C98A6;
+        --col-protect: #4070B8;
+
+        --grad-chrome: linear-gradient(135deg, #6A6A6A 0%, #D8D8D8 40%, #F0F0F0 55%, #A0A0A0 100%);
+        --grad-steel: linear-gradient(180deg, #232323 0%, #191919 50%, #202020 100%);
+        --grad-gold: linear-gradient(135deg, #B8922A 0%, #D4AF37 40%, #F0CC55 60%, #B8922A 100%);
+        --grad-design: linear-gradient(135deg, #8A6010 0%, #C48F1D 40%, #E0B040 60%, #A07015 100%);
+        --grad-ops: linear-gradient(135deg, #0E6070 0%, #1C98A6 40%, #30C0D0 60%, #0E7080 100%);
+        --grad-protect: linear-gradient(135deg, #244080 0%, #4070B8 40%, #6090D8 60%, #2A4890 100%);
+
+        --border: rgba(200,200,200,0.10);
+        --border-mid: rgba(200,200,200,0.20);
+        --text-secondary: #B0A898;
+        --text-muted: #888888;
+
+        --title-font: 'League Spartan', sans-serif;
+        --body-font: 'Barlow', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: var(--body-font);
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        background-color: var(--carbon);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 52px 6%;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: var(--title-font);
+        color: var(--chrome);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: clamp(26px, 4vw, 42px);
+        line-height: 1.0;
+        margin-bottom: 6px;
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .subtitle {
+        font-family: var(--title-font);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 14px;
+        font-weight: 600;
+        opacity: 0.65;
+    }
+
+    .meta-line {
+        font-family: var(--title-font);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--titanium);
+        border-bottom: 1px solid var(--border-mid);
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 14pt;
+        color: var(--chrome);
+        margin-top: 25px;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--border-mid);
+        page-break-after: avoid;
+    }
+
+    h2.brand-accent {
+        color: var(--chrome);
+        border-bottom: 1px solid var(--border-mid);
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 12px;
+        text-align: left;
+        color: var(--text-secondary);
+    }
+
+    .lead-paragraph {
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+        font-weight: 300;
+    }
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 6px;
+        color: var(--text-secondary);
+    }
+
+    strong {
+        color: var(--chrome);
+        font-weight: 600;
+    }
+
+    blockquote {
+        margin: 20px 0;
+        padding: 15px 20px;
+        border-left: 3px solid var(--gold);
+        background: rgba(0,0,0,0.35);
+        font-style: italic;
+        color: var(--text-secondary);
+        border-radius: 0 4px 4px 0;
+        font-weight: 300;
+        line-height: 1.7;
+    }
+
+    /* Ecosystem reference table (static — not linked to any other document) */
+    .eco-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin: 20px 0 8px;
+    }
+
+    .eco-col {
+        background: var(--grad-steel);
+        border: 1px solid var(--border-mid);
+        border-radius: 8px;
+        padding: 18px 20px;
+        border-top: 3px solid var(--col-design);
+    }
+
+    .eco-col.flow { border-top-color: var(--col-ops); }
+    .eco-col.fortitude { border-top-color: var(--col-protect); }
+
+    .eco-col-title {
+        font-family: var(--title-font);
+        font-weight: 800;
+        font-size: 11pt;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+    }
+
+    .eco-col-title.title-form {
+        background: var(--grad-design);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .eco-col-title.title-flow {
+        background: var(--grad-ops);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .eco-col-title.title-fortitude {
+        background: var(--grad-protect);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .eco-col-sub {
+        font-family: var(--title-font);
+        font-size: 9.5px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--titanium);
+        margin-bottom: 12px;
+    }
+
+    .eco-col ul { padding-left: 18px; margin-bottom: 0; }
+    .eco-col li { font-size: 13.5px; margin-bottom: 8px; }
+
+    .stat-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin: 18px 0 10px;
+    }
+
+    .stat-chip {
+        flex: 1 1 200px;
+        background: rgba(0,0,0,0.35);
+        border: 1px solid var(--border-mid);
+        border-radius: 8px;
+        padding: 16px 18px;
+        text-align: center;
+    }
+
+    .stat-chip .stat-value {
+        font-family: var(--title-font);
+        font-weight: 800;
+        font-size: 16pt;
+        display: block;
+        margin-bottom: 4px;
+        color: var(--gold);
+    }
+
+    .stat-chip .stat-label {
+        font-family: var(--title-font);
+        font-size: 9.5px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--titanium);
+        line-height: 1.5;
+    }
+
+    .thesis-box {
+        background: var(--grad-steel);
+        border: 1px solid var(--border-mid);
+        border-top: 3px solid var(--gold);
+        border-radius: 8px;
+        padding: 26px 28px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .thesis-box p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .thesis-box .closing-line {
+        font-family: var(--title-font);
+        font-weight: 700;
+        color: var(--chrome);
+        font-size: 13pt;
+        margin-bottom: 4px;
+    }
+
+    .footer-note {
+        margin-top: 40px;
+        border-top: 1px solid var(--border-mid);
+        padding-top: 20px;
+        font-size: 10px;
+        color: var(--titanium);
+        text-align: center;
+        line-height: 1.6;
+        font-family: var(--title-font);
+        letter-spacing: 0.05em;
+    }
+
+    .footer-note::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, #CC0000 0%, #FF2020 50%, #991000 100%);
+        border-radius: 1px;
+        margin: 0 auto 14px;
+    }
+
+    .footer-brand {
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+</style>
+<title>CRE Lifecycle Intelligence™ — An Industry Introduction & Definition</title>
+</head>
+<body>
+
+<main class="container">
+
+    <h1>CRE Lifecycle Intelligence™</h1>
+    <div class="subtitle">An Industry Introduction & Definition</div>
+
+    <div class="meta-line">
+        <strong>Industry Primer</strong> &bullet; AESIT Intelligence Standards Corpus &bullet; Published 2026
+    </div>
+
+    <h2>01 — The Name Behind the Name</h2>
+    <p class="lead-paragraph">
+        Every document AESIT® produces closes the same way: "A CRE Lifecycle Intelligence™ Firm." It appears in every footer, every signature block, every closing page — and until now, it has never been given a document of its own.
+    </p>
+    <p>
+        CRE Lifecycle Intelligence™ is not a tagline. It is the identity that everything else — IDLF®, S³ Labs®, Form → Flow → Fortitude, Compounding Intelligence™ — exists to deliver on. This document defines it on its own terms, for an industry audience encountering the term for the first time.
+    </p>
+    <blockquote>
+        AESIT® turns building complexity into smart bottom-line results.
+    </blockquote>
+
+    <h2 class="brand-accent">02 — What CRE Lifecycle Intelligence™ Means</h2>
+    <p>
+        Corporate real estate has traditionally been managed as three separate concerns — engineering, operations, and security — each with its own vendors, systems, and reporting lines. CRE Lifecycle Intelligence™ is intelligence embedded continuously across the entire building lifecycle: unifying data, optimizing cost, and strengthening resilience at every stage, so a portfolio delivers measurable returns instead of fragmented reports.
+    </p>
+    <ul>
+        <li><strong>Smarter</strong> — decisions grounded in data, not instinct or precedent.</li>
+        <li><strong>Safer</strong> — protection embedded across the lifecycle, not appended after an incident.</li>
+        <li><strong>More Sustainable</strong> — performance and resilience designed in from the outset.</li>
+    </ul>
+    <p>
+        The mechanism behind this integration is <strong>IDLF®</strong> — the Intelligent Design Lifecycle Framework, a precision lifecycle model that turns fragmented data into actionable intelligence. CRE Lifecycle Intelligence™ is the promise; IDLF® is how it's kept.
+    </p>
+
+    <h2 class="brand-accent">03 — The Operational Ecosystem</h2>
+    <p>
+        CRE Lifecycle Intelligence™ spans the full operational ecosystem an asset touches — eliminating the silos that traditionally separate Enterprise Asset Management (EAM), Integrated Workplace Management Systems (IWMS), and the engineering and protective disciplines layered on top of them.
+    </p>
+
+    <div class="eco-table">
+        <div class="eco-col">
+            <div class="eco-col-title title-form">Engineering</div>
+            <div class="eco-col-sub">Form Intelligence™</div>
+            <ul>
+                <li>S³ Labs®</li>
+                <li>EcoFlow®</li>
+                <li>IronMind®</li>
+                <li>SmartScapes®</li>
+            </ul>
+        </div>
+        <div class="eco-col flow">
+            <div class="eco-col-title title-flow">Operations</div>
+            <div class="eco-col-sub">Flow Intelligence™</div>
+            <ul>
+                <li>OptiManage®</li>
+                <li>OptiWorks®</li>
+                <li>CitySense®</li>
+                <li>EnvisionGeo®</li>
+            </ul>
+        </div>
+        <div class="eco-col fortitude">
+            <div class="eco-col-title title-fortitude">Security</div>
+            <div class="eco-col-sub">Fortitude Intelligence™</div>
+            <ul>
+                <li>Fortress 360°®</li>
+                <li>AuraShield-AI®</li>
+                <li>ApexShield-AI®</li>
+                <li>ResQComm®</li>
+            </ul>
+        </div>
+    </div>
+
+    <p>
+        No single division delivers CRE Lifecycle Intelligence™ on its own. It exists only where all three disciplines operate on the same lifecycle record — which is precisely what IDLF® was built to keep intact.
+    </p>
+
+    <h2 class="brand-accent">04 — Proof, Not Promise</h2>
+    <p>
+        CRE Lifecycle Intelligence™ is measured, not merely asserted. The same lifecycle metrics AESIT® delivers to owners are validated across independent industry research — not internal projection.
+    </p>
+
+    <div class="stat-row">
+        <div class="stat-chip"><span class="stat-value">~75%</span><span class="stat-label">ROI on design &amp; construction intelligence<br>(Dodge Data &amp; Analytics)</span></div>
+        <div class="stat-chip"><span class="stat-value">15–35%</span><span class="stat-label">Energy cost reduction through predictive Digital Twin operations<br>(EPRI)</span></div>
+        <div class="stat-chip"><span class="stat-value">10–25%</span><span class="stat-label">Maintenance cost reduction via IoT-driven predictive intelligence<br>(Schindler / IBM)</span></div>
+        <div class="stat-chip"><span class="stat-value">~7:1</span><span class="stat-label">Institutional research-validated ROI on predictive maintenance investment</span></div>
+    </div>
+
+    <blockquote>
+        By integrating engineering, operations, and security into one proven lifecycle framework, measurable returns replace fragmented reports.
+    </blockquote>
+
+    <h2 class="brand-accent">05 — The Central Thesis</h2>
+    <p>
+        CRE Lifecycle Intelligence™ is what AESIT® is, expressed as a promise an owner can hold the firm to: engineering, operations, and security, integrated across the full life of an asset, delivering results that are measured rather than merely described.
+    </p>
+
+    <div class="thesis-box">
+        <p class="closing-line">This is the identity behind every engagement.</p>
+        <p class="closing-line">This is CRE Lifecycle Intelligence™.</p>
+    </div>
+
+    <div class="footer-note">
+        <span class="footer-brand">AESIT Global Solutions Group | CRE Lifecycle Intelligence™ | aesit.net</span><br>
+        An Industry Introduction &amp; Definition &bullet; CRE Lifecycle Intelligence™, IDLF® (Intelligent Design Lifecycle Framework), and all associated marks are trademarks of AESIT Global Solutions Group.<br>
+        Est. 1989 &bullet; Lorton, Virginia &bullet; © 2026 AESIT Global Solutions Group. All rights reserved.
+    </div>
+
+</main>
+
+</body>
+</html>
