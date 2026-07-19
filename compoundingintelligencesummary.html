@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --carbon: #000000;
+        --titanium: #888888;
+        --brushed: #A8A8A8;
+        --chrome: #C8C8C8;
+        --race-red: #CC0000;
+        --race-red-2: #FF2020;
+        --gold: #D4AF37;
+
+        --col-design: #C48F1D;
+        --col-ops: #1C98A6;
+        --col-protect: #4070B8;
+
+        --grad-chrome: linear-gradient(135deg, #6A6A6A 0%, #D8D8D8 40%, #F0F0F0 55%, #A0A0A0 100%);
+        --grad-steel: linear-gradient(180deg, #232323 0%, #191919 50%, #202020 100%);
+        --grad-gold: linear-gradient(135deg, #B8922A 0%, #D4AF37 40%, #F0CC55 60%, #B8922A 100%);
+        --grad-red: linear-gradient(90deg, #CC0000 0%, #FF2020 50%, #991000 100%);
+
+        --border-mid: rgba(200,200,200,0.20);
+        --text-secondary: #B0A898;
+        --title-font: 'League Spartan', sans-serif;
+        --body-font: 'Barlow', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: var(--body-font);
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        background-color: var(--carbon);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: 100%; max-width: 860px; margin: 0 auto; padding: 52px 6%; }
+
+    h1, h2, h3 { font-family: var(--title-font); color: var(--chrome); font-weight: 800; letter-spacing: -0.02em; margin-top: 0; }
+
+    h1 {
+        font-size: clamp(26px, 4vw, 40px);
+        line-height: 1.05;
+        margin-bottom: 8px;
+        background: var(--grad-chrome);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .subtitle {
+        font-family: var(--title-font); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;
+        background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text; margin-bottom: 14px; font-weight: 600; opacity: 0.65;
+    }
+
+    .meta-line {
+        font-family: var(--title-font); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: var(--titanium);
+        border-bottom: 1px solid var(--border-mid); padding-bottom: 15px; margin-bottom: 28px; text-transform: uppercase;
+    }
+
+    h2 { font-size: 13.5pt; color: var(--chrome); margin-top: 26px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border-mid); }
+
+    p { margin-top: 0; margin-bottom: 12px; color: var(--text-secondary); }
+
+    .lead-paragraph { font-size: 13.5px; line-height: 1.75; margin-bottom: 22px; font-style: italic; font-weight: 300; color: var(--text-secondary); }
+
+    .definition-box {
+        margin: 22px 0; padding: 18px 20px; background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.18);
+        border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0;
+    }
+    .def-term {
+        font-family: var(--title-font); font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+        background: var(--grad-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        margin-bottom: 8px; display: block;
+    }
+    .def-text { font-size: 14px; font-style: italic; line-height: 1.7; color: var(--text-secondary); }
+    .def-text strong { color: var(--chrome); font-weight: 600; font-style: normal; }
+
+    .loop-box {
+        background: var(--grad-steel); color: #f8fafc; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center;
+        font-family: var(--title-font); font-size: 13pt; letter-spacing: 0.5px; border: 1px solid var(--border-mid);
+        display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;
+    }
+    .loop-box span,
+    .loop-box button {
+        color: #fff; font-weight: bold; padding: 6px 12px; border-radius: 4px; font-size: 12px;
+        letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .loop-box span.arrow { color: var(--titanium); margin: 0 5px; font-size: 16px; }
+    .loop-box .form { background: linear-gradient(135deg, #8A6010 0%, #C48F1D 40%, #E0B040 60%, #A07015 100%); }
+    .loop-box .flow { background: linear-gradient(135deg, #0E6070 0%, #1C98A6 40%, #30C0D0 60%, #0E7080 100%); }
+    .loop-box .fortitude { background: linear-gradient(135deg, #244080 0%, #4070B8 40%, #6090D8 60%, #2A4890 100%); }
+
+    .loop-box button.form,
+    .loop-box button.flow,
+    .loop-box button.fortitude {
+        border: none;
+        font-family: var(--title-font);
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .loop-box button:hover,
+    .loop-box button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        outline: none;
+    }
+
+    ul { margin-top: 0; margin-bottom: 15px; padding-left: 20px; }
+    li { margin-bottom: 7px; color: var(--text-secondary); }
+    li strong { color: var(--chrome); font-weight: 600; }
+
+    .layer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 18px 0 24px; }
+    .layer-card {
+        background: var(--grad-steel); border: 1px solid var(--border-mid); border-left: 3px solid var(--gold);
+        border-radius: 8px; padding: 14px 18px;
+    }
+    .layer-num {
+        font-family: var(--title-font); font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+        background: var(--grad-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        margin-bottom: 4px; display: block;
+    }
+    .layer-name { font-family: var(--title-font); font-weight: 700; font-size: 12.5pt; color: var(--chrome); margin-bottom: 4px; }
+    .layer-card p { font-size: 13.5px; margin-bottom: 0; }
+
+    .stat-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 22px 0 6px; }
+    .stat-chip {
+        flex: 1 1 150px; background: rgba(0,0,0,0.35); border: 1px solid var(--border-mid); border-radius: 8px;
+        padding: 14px 16px; text-align: center;
+    }
+    .stat-chip .stat-value { font-family: var(--title-font); font-weight: 800; font-size: 15.5pt; display: block; margin-bottom: 2px; color: var(--gold); }
+    .stat-chip .stat-label { font-family: var(--title-font); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--titanium); }
+
+    blockquote {
+        margin: 22px 0; padding: 15px 20px; border-left: 3px solid var(--race-red); background: rgba(204,0,0,0.04);
+        font-style: italic; color: var(--text-secondary); border-radius: 0 4px 4px 0; font-weight: 300; line-height: 1.7;
+    }
+
+    strong { color: var(--chrome); font-weight: 600; }
+
+    .wp-link-box {
+        margin: 30px 0 10px; padding: 22px 24px; background: var(--grad-steel); border: 1px solid var(--border-mid);
+        border-radius: 10px; text-align: center;
+    }
+    .wp-link-box .wp-kicker {
+        font-family: var(--title-font); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--titanium); margin-bottom: 8px;
+    }
+    .wp-link-box .wp-title { font-family: var(--title-font); font-weight: 800; font-size: 15pt; color: var(--chrome); margin-bottom: 14px; }
+    .wp-btn {
+        display: inline-flex; align-items: center; gap: 8px; background: var(--grad-gold); color: #1a1400;
+        font-family: var(--title-font); font-weight: 800; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+        padding: 12px 22px; border-radius: 6px; text-decoration: none;
+    }
+    .wp-btn::after { content: '→'; }
+
+    .footer-note {
+        margin-top: 40px; border-top: 1px solid var(--border-mid); padding-top: 20px; font-size: 10px; color: var(--titanium);
+        text-align: center; line-height: 1.6; font-family: var(--title-font); letter-spacing: 0.05em;
+    }
+    .footer-note::before { content: ''; display: block; width: 60px; height: 2px; background: var(--grad-red); border-radius: 1px; margin: 0 auto 14px; }
+    .footer-brand { background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800; }
+</style>
+<title>Compounding Intelligence™ — In Summary</title>
+</head>
+<body>
+
+<main class="container">
+
+    <h1>Compounding Intelligence™ — In Summary</h1>
+    <div class="subtitle">The Framework Behind CRE Lifecycle Intelligence™</div>
+
+    <div class="meta-line">
+        <strong>Executive Summary</strong> &bullet; AESIT Intelligence Standards Corpus &bullet; Published 2026
+    </div>
+
+    <p class="lead-paragraph">
+        Every decision makes the next one smarter. Compounding Intelligence is the framework that turns an asset's design, operations, and protection data into a single system where value builds on itself — across assets, and across time.
+    </p>
+
+    <h2>What It Means</h2>
+    <div class="definition-box">
+        <span class="def-term">Compounding Intelligence™</span>
+        <p class="def-text">
+            A proprietary framework in which the intelligence generated at each stage of a built asset's lifecycle — spatial data, operational telemetry, security analytics, financial performance — is captured, retained, and reinvested as a direct input into every subsequent stage, producing returns that are <strong>exponential rather than linear</strong>. The effect activates only when Design, Operations, and Protection run as one integrated system under the IDLF®.
+        </p>
+    </div>
+    <p>
+        It isn't a Digital Twin. It isn't BIM. It isn't a smart building platform. It's the framework that decides how the data those tools generate gets captured, unified, and reinvested — stage after stage, asset after asset.
+    </p>
+
+    <h2>The Three Pillars That Produce It</h2>
+    <div class="loop-box">
+        <button type="button" class="form" onclick="document.getElementById('mem-design').scrollIntoView({behavior:'smooth', block:'center'})" aria-label="Jump to Design Intelligence">Design (S³ Labs®)</button>
+        <span class="arrow">→</span>
+        <button type="button" class="flow" onclick="document.getElementById('mem-ops').scrollIntoView({behavior:'smooth', block:'center'})" aria-label="Jump to Operations Intelligence">Operations</button>
+        <span class="arrow">→</span>
+        <button type="button" class="fortitude" onclick="document.getElementById('mem-protect').scrollIntoView({behavior:'smooth', block:'center'})" aria-label="Jump to Protection Intelligence">Protection</button>
+    </div>
+    <ul>
+        <li id="mem-design"><strong>Design Intelligence</strong> — establishes the Intelligence Lifecycle Cost baseline and the Digital Twin foundation everything else builds on.</li>
+        <li id="mem-ops"><strong>Data-Driven Operations</strong> — the Enhanced NOI engine; Digital Twin telemetry and predictive analytics compound returns continuously.</li>
+        <li id="mem-protect"><strong>Secure-by-Design Protection</strong> — generates the Resiliency Premium and formally guarantees Asset Sovereignty™.</li>
+    </ul>
+    <p>
+        Remove any one pillar and the compounding mechanism breaks — performance reverts to linear improvement at best. It's the interaction of all three, sustained continuously, that produces the compound.
+    </p>
+
+    <h2>How It's Delivered</h2>
+    <p>The Intelligent Design Lifecycle Framework (IDLF®) runs the loop across six phases, feeding each one's intelligence into the next — and back into the first:</p>
+    <div class="layer-grid">
+        <div class="layer-card">
+            <span class="layer-num">Phase 1</span>
+            <div class="layer-name">Discovery → Plan</div>
+            <p>Stakeholder intelligence and performance baselines set the foundation.</p>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">Phase 2</span>
+            <div class="layer-name">Plan → Design</div>
+            <p>Generative design and AI-modeled outcomes feed the build phase.</p>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">Phase 3</span>
+            <div class="layer-name">Design → Build</div>
+            <p>Clash-free coordination and as-built documentation feed commissioning.</p>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">Phase 4</span>
+            <div class="layer-name">Build → Operate</div>
+            <p>Design-intent validation establishes operational baselines.</p>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">Phase 5</span>
+            <div class="layer-name">Commission → Operations</div>
+            <p>The Digital Twin comes online as a living operational blueprint.</p>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">Phase 6</span>
+            <div class="layer-name">Operate → Optimize ∞</div>
+            <p>Continuous analytics feed straight back into the next Discovery cycle.</p>
+        </div>
+    </div>
+
+    <h2>Why It Matters, Financially</h2>
+    <p>The compound is expressed through the AESIT® 3x ROI Multiplier™:</p>
+    <div class="stat-row">
+        <div class="stat-chip"><span class="stat-value">~75%</span><span class="stat-label">ROI at Design & Construction</span></div>
+        <div class="stat-chip"><span class="stat-value">15–35%</span><span class="stat-label">Energy reduction, Operations</span></div>
+        <div class="stat-chip"><span class="stat-value">300–450%</span><span class="stat-label">Target full-lifecycle ROI</span></div>
+    </div>
+    <p>
+        The gap between the ~75% design-phase return and the 300–450% full-lifecycle target isn't a projection — it's the documented multiplier effect of continuous Digital Twin optimization, predictive operations, and Resiliency Premium accumulation compounding on top of that initial foundation.
+    </p>
+
+    <blockquote>
+        "The built environment does not suffer from a lack of technology. It suffers from a lack of integrated intelligence — and the absence of a framework that compounds that intelligence over time."
+    </blockquote>
+
+    <h2>The Bottom Line</h2>
+    <ul>
+        <li><strong>Integrative</strong> — the compound only happens when Design, Operations, and Protection run as one system.</li>
+        <li><strong>Continuous</strong> — the loop never closes; each optimization cycle feeds the next engagement's Discovery phase.</li>
+        <li><strong>Owned</strong> — paired with Asset Sovereignty™, the intelligence stays on the owner's balance sheet, not the vendor's platform.</li>
+    </ul>
+
+    <div class="wp-link-box">
+        <div class="wp-kicker">Read the Full Framework</div>
+        <div class="wp-title">Compounding Intelligence™ White Paper</div>
+        <a class="wp-btn" href="https://articles.aesit.net/aesitwhitepaper_ci.html" target="_blank" rel="noopener">Open the White Paper</a>
+    </div>
+
+    <div class="footer-note">
+        <span class="footer-brand">AESIT Global Solutions Group | Compounding Intelligence Summary | aesit.net</span><br>
+        Compounding Intelligence™ &bullet; CRE Lifecycle Intelligence™ &bullet; Executive Summary v1.0<br>
+        Est. 1989 &bullet; Washington DC—Baltimore &bullet; © 2026 AESIT Global Solutions Group. All rights reserved.
+    </div>
+
+</main>
+
+</body>
+</html>
