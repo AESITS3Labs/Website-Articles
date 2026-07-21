@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AESIT® — Policies &amp; Statements</title>
+
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --carbon:       #000000;
+  --titanium:     #888888;
+  --brushed:      #A8A8A8;
+  --chrome:       #C8C8C8;
+  --grid-white:   #E8E8E8;
+  --race-red:     #CC0000;
+  --race-red-2:   #FF2020;
+  --gold:         #D4AF37;
+
+  --grad-chrome:     linear-gradient(135deg, #6A6A6A 0%, #D8D8D8 40%, #F0F0F0 55%, #A0A0A0 100%);
+  --grad-chrome-bar: linear-gradient(135deg, #6A6A6A 0%, #888888 15%, #D8D8D8 32%, #F0F0F0 44%, #CACACA 56%, #909090 70%, #707070 83%, #A0A0A0 100%);
+  --grad-steel:      linear-gradient(180deg, #242424 0%, #1A1A1A 50%, #222222 100%);
+  --grad-red:        linear-gradient(135deg, #CC0000 0%, #FF2020 40%, #AA0000 100%);
+  --grad-red-h:      linear-gradient(90deg, #CC0000 0%, #FF1A1A 50%, #991000 100%);
+
+  --border:        rgba(200,200,200,0.12);
+  --border-mid:    rgba(200,200,200,0.20);
+  --border-bright: rgba(200,200,200,0.35);
+
+  --text-secondary: var(--chrome);
+  --text-muted:     var(--titanium);
+  --text-body:      #B0A898;
+
+  --title-font: 'League Spartan', sans-serif;
+  --body-font:  'Barlow', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  background: var(--carbon);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(200,200,200,0.02) 39px, rgba(200,200,200,0.02) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(200,200,200,0.015) 39px, rgba(200,200,200,0.015) 40px);
+  color: var(--text-body);
+  font-family: var(--body-font);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Layout ── */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 6%;
+}
+@media (max-width: 480px) { .container { padding: 28px 5%; } }
+
+/* ── Skip link ── */
+.skip-link {
+  position: absolute; left: -999px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem; width: auto; height: auto;
+  padding: .5rem .75rem;
+  background: var(--chrome); color: var(--carbon);
+  border-radius: 4px; z-index: 9999;
+}
+
+/* ── Header ── */
+.page-header {
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 120px; height: 2px;
+  background: var(--grad-red-h);
+  border-radius: 1px;
+}
+
+.header-eyebrow {
+  font-family: var(--title-font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-family: var(--title-font);
+  font-size: clamp(22px, 5.5vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+p.lead {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  max-width: 780px;
+  line-height: 1.7;
+}
+
+/* ── Accordion (details) ── */
+details {
+  border: 1px solid rgba(200,200,200,0.22);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: var(--grad-steel);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+details[open] {
+  border-color: rgba(200,200,200,0.38);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.45);
+}
+
+/* ── Summary bar — gradient chrome ── */
+summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  user-select: none;
+  transition: opacity 0.15s;
+  background: var(--grad-chrome-bar);
+}
+summary::-webkit-details-marker { display: none; }
+summary:hover { opacity: 0.92; }
+
+.sum-label {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 20px;
+  font-family: var(--title-font);
+  font-size: clamp(14.5px, 3.6vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #0A0A0A;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.6), 0 -1px 1px rgba(0,0,0,0.25);
+  line-height: 1.3;
+}
+details[open] .sum-label {
+  color: #0A0A0A;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.7), 0 -1px 1px rgba(0,0,0,0.3);
+}
+
+.sum-chevron {
+  width: 48px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  color: #fff;
+  background: var(--grad-red);
+  border-left: 1px solid rgba(0,0,0,0.2);
+  transition: transform 0.25s ease;
+}
+details[open] .sum-chevron {
+  transform: rotate(90deg);
+}
+
+/* ── Panel ── */
+.panel {
+  padding: 24px 28px 32px;
+  animation: panelIn .28s ease;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 480px) { .panel { padding: 16px 16px 24px; } }
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Content typography ── */
+h2 {
+  font-family: var(--title-font);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 28px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-family: var(--title-font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--chrome);
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+p {
+  color: var(--text-body);
+  margin-bottom: 12px;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+p strong {
+  color: var(--chrome);
+  font-weight: 500;
+  -webkit-text-fill-color: var(--chrome);
+}
+
+ul {
+  margin-left: 0;
+  margin-bottom: 14px;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+ul li {
+  color: var(--text-body);
+  font-size: 13.5px;
+  font-weight: 300;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.65;
+}
+ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--race-red);
+  font-size: 9px;
+  top: 4px;
+}
+
+a {
+  color: var(--chrome);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s;
+  word-break: break-word;
+}
+a:hover, a:focus {
+  color: var(--grid-white);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ── Back / Top links ── */
+.back-top {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 20px;
+}
+.back-top a {
+  font-family: var(--title-font);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--titanium);
+  text-decoration: none;
+  transition: color 0.15s;
+  white-space: nowrap;
+}
+.back-top a:hover { color: var(--chrome); }
+
+/* ── Footer ── */
+.page-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 13px;
+  color: var(--titanium);
+  font-family: var(--title-font);
+  letter-spacing: 0.04em;
+  position: relative;
+}
+.page-footer::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 50%;
+  transform: translateX(-50%);
+  width: 80px; height: 1px;
+  background: var(--grad-red-h);
+}
+.footer-brand {
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .container { padding: 28px 5%; }
+  .sum-label  { padding: 14px 14px; }
+  .panel      { padding: 16px 16px 24px; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const allDetails = Array.from(document.querySelectorAll('details'));
+
+  allDetails.forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        allDetails.forEach(other => { if (other !== d && other.open) other.removeAttribute('open'); });
+        setTimeout(() => {
+          const panel = d.querySelector('.panel');
+          if (panel) { panel.setAttribute('tabindex', '-1'); panel.focus(); }
+        }, 10);
+      }
+    });
+  });
+
+  document.body.addEventListener('click', function (e) {
+    const tl = e.target.closest('[data-top-link]');
+    if (tl) {
+      e.preventDefault();
+      const open = document.querySelector('details[open]');
+      if (open) open.removeAttribute('open');
+      document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+      const firstSummary = document.querySelector('details summary');
+      if (firstSummary) firstSummary.focus();
+    }
+  });
+});
+</script>
+</head>
+<body>
+<a class="skip-link" href="#overview">Skip to Overview</a>
+
+<div class="container" id="overview" role="main" aria-labelledby="page-title">
+
+  <header class="page-header" role="banner">
+    <div class="header-eyebrow">AESIT® Global Solutions Group</div>
+    <h1 id="page-title">Policies &amp; Statements</h1>
+    <p class="lead">Accessibility Statement &bull; Site Terms &bull; Cookie Policy &bull; Privacy Policy — Use the headings below to expand each full document. Use "Back" to return to the top of each document and "Top of Page" to collapse and return to the overview.</p>
+  </header>
+
+  <!-- Accessibility Statement -->
+  <details id="acc-details" aria-label="Accessibility Statement">
+    <summary><span class="sum-label">Accessibility Statement</span><span class="sum-chevron">▸</span></summary>
+    <div class="panel" id="accessibility-top">
+      <p><strong>BACKGROUND</strong><br>We are committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply relevant accessibility standards to ensure equal access and opportunity for all users.</p>
+      <p><strong>CONTENTS:</strong><br>Our Commitment &bull; Accessibility Features &bull; Ongoing Improvement &bull; Feedback and Support &bull; Third-Party Content &bull; Technical Specifications</p>
+      <h2>1. Our Commitment</h2>
+      <p>We strive to ensure our website conforms to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, which establishes standards for creating content that is perceivable, operable, understandable, and robust for all users.</p>
+      <p>Our accessibility efforts also align with:<br>Americans with Disabilities Act (ADA)<br>Section 508 of the U.S. Rehabilitation Act</p>
+      <h2>2. Accessibility Features</h2>
+      <p>Our website incorporates accessibility features designed to support users with diverse needs:</p>
+      <ul>
+        <li>Assistive Technology Support: Compatibility with screen readers and other assistive devices</li>
+        <li>Image Accessibility: Alternative text descriptions for meaningful images</li>
+        <li>Navigation: Logical heading structures and ARIA landmarks for efficient navigation</li>
+        <li>Visual Design: High contrast ratios between text and background colors</li>
+        <li>Keyboard Navigation: Full keyboard accessibility for all interactive elements</li>
+        <li>Clear Communication: Descriptive link text and properly labeled form controls</li>
+      </ul>
+      <h2>3. Ongoing Improvement</h2>
+      <p>We recognize accessibility as an ongoing commitment. Our team regularly:</p>
+      <ul>
+        <li>Conducts accessibility audits and testing</li>
+        <li>Reviews and updates content for compliance</li>
+        <li>Implements user feedback and accessibility improvements</li>
+        <li>Provides staff training on accessibility best practices</li>
+      </ul>
+      <h2>4. Feedback and Support</h2>
+      <p>We welcome your feedback on the accessibility of our website. If you encounter accessibility barriers or need assistance accessing our content, please get in touch with us:</p>
+      <p>Email: <a href="mailto:info@aesit.net">info@aesit.net</a><br>Phone: <a href="tel:+15714801329">1-571-480-1329</a></p>
+      <p>We aim to respond to accessibility inquiries within five (5) business days.</p>
+      <h2>5. Third-Party Content</h2>
+      <p>Our website may link to third-party websites or services that are not under our control. We cannot guarantee the accessibility of external content, but encourage all partners and vendors to maintain accessible digital practices.</p>
+      <h2>6. Technical Specifications</h2>
+      <p>This website is being re-designed to be accessible across various technologies and platforms, including:</p>
+      <ul>
+        <li>Modern web browsers</li>
+        <li>Assistive technologies such as screen readers</li>
+        <li>Voice recognition software</li>
+        <li>Alternative input devices</li>
+      </ul>
+      <p>Revised: 08/2025<br>Document Version: 1.0<br>Statement Owner: AESIT Global Solutions Group - Legal/Compliance Department<br>Review Schedule: Annual or as needed based on legal/regulatory changes</p>
+      <div class="back-top">
+        <a href="#accessibility-top" data-back-to="accessibility-top">— Back —</a>
+        <a href="#" data-top-link>— Top of Page —</a>
+      </div>
+    </div>
+  </details>
+
+  <!-- Site Terms -->
+  <details id="terms-details" aria-label="Site Terms and Conditions">
+    <summary><span class="sum-label">Site Terms</span><span class="sum-chevron">▸</span></summary>
+    <div class="panel" id="terms-top">
+      <p><strong>TERMS AND CONDITIONS</strong><br>Please read these Terms and Conditions carefully before using Our Website. By using the Website, You accept and agree to abide by these Terms.</p>
+      <p><strong>CONTENTS:</strong><br>Interpretation and Definitions &bull; Acknowledgment &bull; Links to Third-Party Websites &bull; Termination &bull; Limitation of Liability &bull; Disclaimer &bull; Governing Law &bull; Dispute Resolution &bull; Compliance with U.S. Laws &bull; Severability and Waiver &bull; Changes to Terms &bull; Contact Us</p>
+      <h2>1. Interpretation and Definitions</h2>
+      <p><strong>Interpretation —</strong><br>Capitalized words have specific meanings as defined below. These definitions apply whether terms appear in singular or plural.</p>
+      <p><strong>Definitions —</strong><br>Affiliate: An entity controlling, controlled by, or under common control with a party ("control" means owning 50% or more of voting shares or authority).<br>Country: Virginia, United States<br>Company: AESIT®, Fairfax, VA 22079 ("We," "Us," "Our").<br>Device: Any device accessing Our Website (e.g., computer, cellphone, tablet).<br>Website: https://www.aesit.net/<br>Terms: This agreement governs the use of this Website.<br>Third-party Social Media Service: External websites or content displayed via our Website.<br>You: Any individual or entity accessing or using the Website.</p>
+      <h2>2. Acknowledgment</h2>
+      <p>These Terms govern the use of our Website and establish the agreement between You and the Company. By using the Website, You accept and agree to abide by these Terms. If You disagree, You must not use the Website.</p>
+      <p>You must be at least 18 years old. We do not permit individuals under 18 to use the Website.<br>Website use is also subject to our Privacy Policy, which outlines how we collect, use, and disclose personal data.</p>
+      <h2>3. Links to Third-Party Websites</h2>
+      <p>We are not responsible for third-party websites linked to our Website. We advise You to review their terms and privacy policies before using them.</p>
+      <h2>4. Termination</h2>
+      <p>We may suspend or terminate access to our Website without prior notice if You violate these Terms. Upon termination, Your right to use the Website ceases immediately.</p>
+      <h2>5. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by Law, our liability is limited to the amount paid by You through the Website or $100 if no purchase was made.</p>
+      <p>We are not liable for indirect, incidental, or consequential damages, including loss of profits, data, business interruption, or personal injury. Some jurisdictions may not allow such exclusions, in which case liability is limited to the fullest extent permitted by Law.</p>
+      <h2>6. Disclaimer</h2>
+      <p>The Website is provided "AS IS" and "AS AVAILABLE" without warranties of any kind. We do not guarantee uninterrupted, error-free service or compatibility with other software or devices. Some jurisdictions may not allow exclusions of warranties, so they apply only to the maximum extent permitted.</p>
+      <h2>7. Governing Law</h2>
+      <p>These Terms are governed by the laws of Virginia, USA, excluding conflict of law principles.</p>
+      <h2>8. Dispute Resolution</h2>
+      <p>If You have concerns, You agree to first attempt an informal resolution by contacting us.</p>
+      <h2>9. Compliance with U.S. Laws</h2>
+      <p>You confirm that You are not in a country subject to U.S. embargoes or listed as a restricted party.</p>
+      <h2>10. Severability and Waiver</h2>
+      <p>Severability: If any provision is unenforceable, it will be modified to reflect its intent while the rest remains in effect.<br>Waiver: Failure to enforce a right does not waive future enforcement.</p>
+      <h2>11. Changes to Terms</h2>
+      <p>We may modify these Terms at any time and our discretion. Continued use of the Website after changes means You accept these Terms.</p>
+      <h2>12. Contact Us</h2>
+      <p>For questions about these Terms, contact us:<br>Email: info@aesit.net<br>Website: Contact Page</p>
+      <p>Revised: 07/2025<br>Document Version: 2.0<br>Terms Owner: AESIT Global Solutions Group - Legal/Compliance Department<br>Review Schedule: Annual or as needed based on legal/regulatory changes</p>
+      <div class="back-top">
+        <a href="#terms-top" data-back-to="terms-top">— Back —</a>
+        <a href="#" data-top-link>— Top of Page —</a>
+      </div>
+    </div>
+  </details>
+
+  <!-- Cookie Policy -->
+  <details id="cookie-details" aria-label="Cookie Policy">
+    <summary><span class="sum-label">Cookie Policy</span><span class="sum-chevron">▸</span></summary>
+    <div class="panel" id="cookies-top">
+      <p><strong>BACKGROUND</strong><br>This Cookie Policy reflects our dedication to protecting your privacy while delivering exceptional user experiences on our website. We believe that informed consent is fundamental to building trust with our clients and visitors. This policy provides you with complete transparency about how we use cookies and similar technologies to enhance your browsing experience, improve our services, and better understand how our smart building solutions can serve your needs.</p>
+      <p>Our approach to cookies aligns with our core values of integrity, innovation, protection, and client-centricity. Just as we design intelligent building systems that put users in control, we ensure you have full control over your digital privacy preferences on our website.</p>
+      <p><strong>CONTENTS:</strong><br>Introduction &bull; What Are Cookies? &bull; How We Use Cookies &bull; Third-Party Cookies and Services &bull; Your Cookie Choices &bull; Data Collected Through Cookies &bull; How Long We Keep Cookie Data &bull; Data Security &bull; International Data Transfers &bull; Your Rights &bull; Children's Privacy &bull; Changes to This Cookie Policy &bull; Compliance and Legal Basis &bull; Contact Us &bull; Additional Information</p>
+      <h2>1. Introduction</h2>
+      <p>AESIT® ("we," "us," or "our") operates the website https://aesit.net/ (the "Site"). This Cookie Policy explains how we use cookies and similar tracking technologies when you visit our Site, what information we collect through these technologies, and how you can control their use. By using our Site, you acknowledge that you have read and understood this Cookie Policy. If you do not agree with our practices, please do not use our Site.</p>
+      <h2>2. What Are Cookies?</h2>
+      <p>Cookies are small text files that are placed on your device (computer, smartphone, tablet) when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners about user behavior and preferences.</p>
+      <p><strong>Cookies Can Be —</strong><br>Session cookies: Temporary cookies that are deleted when you close your browser<br>Persistent cookies: Cookies that remain on your device until they expire or are manually deleted<br>First-party cookies: Set directly by our website<br>Third-party cookies: Set by external services we use on our website</p>
+      <h2>3. How We Use Cookies</h2>
+      <p>We use cookies and similar technologies for the following purposes:</p>
+      <p><strong>Essential Cookies —</strong><br>These cookies are necessary for the basic functionality of our Site and cannot be disabled. They include:<br>Authentication and security cookies<br>Load balancing cookies<br>Cookies that remember your cookie preferences</p>
+      <p><strong>Analytics Cookies —</strong><br>When you Accept our cookie banner, we use analytics cookies to:<br>Understand how visitors interact with our Site<br>Track page visits and user behavior<br>Analyze website performance and user engagement<br>Generate reports on website usage statistics<br>Improve our services based on usage patterns</p>
+      <p><strong>Marketing and Advertising Cookies —</strong><br>With your consent (when you click Accept), we may use marketing cookies to:<br>Display relevant advertisements<br>Track the effectiveness of our marketing campaigns<br>Personalize content and advertisements<br>Retarget visitors with relevant content</p>
+      <p><strong>Functional Cookies —</strong><br>These cookies enhance your browsing experience by:<br>Remembering your preferences and settings<br>Providing personalized content<br>Enabling interactive features</p>
+      <h2>4. Third-Party Cookies and Services</h2>
+      <p>When you click Accept on our cookie banner, we may load and use the following third-party services that set their own cookies:</p>
+      <p><strong>Google Analytics —</strong><br>Purpose: Website analytics and performance tracking<br>Data Collected: Page views, session duration, bounce rates, user interactions<br>Privacy Policy: https://policies.google.com/privacy</p>
+      <p><strong>Google Tag Manager —</strong><br>Purpose: Managing and deploying marketing and analytics tags<br>Data Collected: User interactions, page views, conversion events<br>Privacy Policy: https://policies.google.com/privacy</p>
+      <p><strong>Facebook Pixel —</strong><br>Purpose: Advertising and retargeting campaigns<br>Data Collected: Page visits, user actions, conversion events<br>Privacy Policy: https://www.facebook.com/privacy/policy/</p>
+      <p><strong>LinkedIn Insights —</strong><br>Purpose: Professional network advertising and analytics<br>Data Collected: Page visits, user demographics, professional interests<br>Privacy Policy: https://www.linkedin.com/legal/privacy-policy</p>
+      <p><strong>Pinterest Analytics —</strong><br>Purpose: Social media marketing and content performance<br>Data Collected: Pin interactions, website visits from Pinterest<br>Privacy Policy: https://policy.pinterest.com/privacy-policy</p>
+      <div class="back-top"><a href="#cookies-top" data-back-to="cookies-top">— Back —</a></div>
+      <h2>5. Your Cookie Choices</h2>
+      <p><strong>Cookie Consent Banner —</strong><br>When you first visit our Site, you will see a cookie consent banner with the following options:<br>Accept: By clicking "Accept," you consent to the use of all cookies, including analytics, marketing, and third-party tracking cookies.<br>Decline: By clicking "Decline," clicking outside the banner, or closing the banner without accepting, you refuse consent for non-essential cookies.</p>
+      <p><strong>Managing Your Cookie Preferences:</strong></p>
+      <p><strong>Chrome:</strong> Go to Settings &gt; Privacy and security &gt; Cookies and other site data</p>
+      <p><strong>Firefox:</strong> Go to Preferences &gt; Privacy &amp; Security</p>
+      <p><strong>Safari:</strong> Go to Preferences &gt; Privacy</p>
+      <p><strong>Edge:</strong> Go to Settings &gt; Cookies and site permissions</p>
+      <p><strong>Opt-Out Tools —</strong><br>Google Analytics: https://tools.google.com/dlpage/gaoptout<br>Facebook: https://www.facebook.com/settings?tab=ads<br>LinkedIn: https://www.linkedin.com/psettings/advertising</p>
+      <h2>6. Data Collected Through Cookies</h2>
+      <p><strong>Technical Information —</strong><br>IP address &bull; Browser type and version &bull; Operating system &bull; Device type &bull; Screen resolution &bull; Language preferences</p>
+      <p><strong>Behavioral Data —</strong><br>Pages visited and time spent &bull; Click patterns and user interactions &bull; Referral sources &bull; Search terms &bull; Downloads and form submissions</p>
+      <p><strong>Marketing Data —</strong><br>Campaign performance metrics &bull; Conversion tracking &bull; Ad interaction data &bull; Social media engagement</p>
+      <h2>7. How Long We Keep Cookie Data</h2>
+      <p>Session cookies: Deleted when you close your browser<br>Persistent cookies: Vary by purpose, typically 1–24 months<br>Analytics data: Retained for up to 26 months<br>Marketing data: Retained according to campaign requirements, typically 12–24 months</p>
+      <h2>8. Data Security</h2>
+      <p>We implement appropriate technical and organizational measures to protect your data collected through cookies, including encryption of data in transit and at rest, regular security assessments, access controls and authentication measures, and secure data storage and processing.</p>
+      <h2>9. International Data Transfers</h2>
+      <p>Some of our third-party service providers may be located outside your country of residence. We ensure that appropriate safeguards are in place for international data transfers, including Standard Contractual Clauses (SCCs), adequacy decisions by relevant authorities, and other approved transfer mechanisms.</p>
+      <div class="back-top"><a href="#cookies-top" data-back-to="cookies-top">— Back —</a></div>
+      <h2>10. Your Rights</h2>
+      <p><strong>General Rights —</strong><br>Right to information &bull; Right of access &bull; Right to rectification &bull; Right to erasure &bull; Right to restrict processing &bull; Right to object</p>
+      <p><strong>Cookie-Specific Rights —</strong><br>Right to withdraw consent: Change your cookie preferences at any time<br>Right to opt-out: Disable specific tracking technologies</p>
+      <p>To exercise your rights, please contact us using the information provided in the "Contact Us" section below.</p>
+      <h2>11. Children's Privacy</h2>
+      <p>Our Site is not intended for children under 16 years of age. We do not knowingly collect personal data from children under 16 through cookies or any other means. If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately.</p>
+      <h2>12. Changes to This Cookie Policy</h2>
+      <p>We may update this Cookie Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will notify you of any material changes by posting the updated policy on our Site, updating the "Last Updated" date, and providing prominent notice on our Site for significant changes.</p>
+      <h2>13. Compliance and Legal Basis</h2>
+      <p>This Cookie Policy is designed to comply with applicable privacy laws, including GDPR, CCPA, ePrivacy Directive, and other applicable local privacy laws.</p>
+      <p>Our legal basis for processing your data through cookies includes consent for non-essential cookies, legitimate interests for analytics, legal obligation for compliance, and contract performance for essential functionality.</p>
+      <h2>14. Contact Us</h2>
+      <p>AESIT®<br>Email: <a href="mailto:info@aesit.net">info@aesit.net</a><br>Phone: 571-480-1329<br>Privacy inquiries: <a href="mailto:privacy@aesit.net">privacy@aesit.net</a> — Subject Line: "Cookie Policy Inquiry"</p>
+      <h2>15. Additional Information</h2>
+      <p>We regularly audit our cookie usage to ensure compliance and accuracy. We maintain appropriate data processing agreements with all third-party service providers. Our team receives regular training on privacy and cookie compliance.</p>
+      <p>Note: This Cookie Policy is part of our broader Privacy Policy. For information about how we collect, use, and protect your personal data beyond cookies, please refer to our full Privacy Policy.</p>
+      <p>Revised: 07/2025<br>Document Version: 1.0<br>Policy Owner: AESIT Global Solutions Group - Legal/Compliance Department<br>Review Schedule: Annual or as needed based on legal/regulatory changes</p>
+      <div class="back-top">
+        <a href="#cookies-top" data-back-to="cookies-top">— Back —</a>
+        <a href="#" data-top-link>— Top of Page —</a>
+      </div>
+    </div>
+  </details>
+
+  <!-- Privacy Policy -->
+  <details id="privacy-details" aria-label="Privacy Policy">
+    <summary><span class="sum-label">Privacy Policy</span><span class="sum-chevron">▸</span></summary>
+    <div class="panel" id="privacy-top">
+      <p><strong>BACKGROUND:</strong><br>This policy explains what information we collect when you visit our websites or contact AESIT directly. It also describes how we use that information and how you can control its disclosure.</p>
+      <p><strong>CONTENTS:</strong><br>Information Gathered and Tracked &bull; Personal Information &bull; Aggregated Tracking Information &bull; Our "Cookies" &bull; Links to Other Websites &bull; Notification of Changes &bull; Security/Data Integrity Protection Measures</p>
+      <h2>1. Information Gathered and Tracked</h2>
+      <p>We collect two kinds of information about visitors to our websites: information visitors provide when submitting requests or participating in program activities, and aggregated tracking information we collect when users interact with and navigate through our web pages.</p>
+      <h2>2. Personal Information</h2>
+      <p>We use the personal information you provide to us voluntarily to send information to you that you have requested and to acknowledge the contributions that you have made. The specific use of your personal information varies, depending on how you contact us and what you request.</p>
+      <p>When you sign up to receive newsletters and/or program and organisational news material online, you must provide your name, e-mail address, and mail address. We never sell, rent or trade your e-mail address to any third party.</p>
+      <p>We will attempt to fulfill your inquiries by e-mail as soon as possible and to the best of our ability. Your name and address may also be added to our US Mail list.</p>
+      <p>We may use third-party commercial vendors to perform activities on our behalf. These third parties are prohibited from using your information for any purpose other than the specific purposes for which they have been retained.</p>
+      <p>We reserve the right to disclose your personally identifiable information when we believe such disclosure is appropriate, necessary or required to comply with the law, a judicial proceeding, court order, or legal process served on us.</p>
+      <h2>3. Aggregated Tracking Information</h2>
+      <p>We may analyze visitors' use of our website by tracking information such as page views, traffic flow, search terms, and click-throughs. We will use this information to improve our website and to be more responsive to your informational needs.</p>
+      <p>As is true of most websites, we gather certain information automatically and store it in log files. This information includes internet protocol (IP) addresses, browser type, internet service provider (ISP), referring/exit pages, operating system, date/time stamp, and clickstream data.</p>
+      <h2>4. Our Cookies</h2>
+      <p>A cookie is a small data file that we transfer to your computer's hard drive through your web browser when you visit our site. Cookies enable our systems to recognize your computer so that we can provide you unique information and features. Refer to our Cookie Policy for more detailed information.</p>
+      <div class="back-top"><a href="#privacy-top" data-back-to="privacy-top">— Back —</a></div>
+      <h2>5. Links to Other Websites</h2>
+      <p>This site provides links to other websites that we think will be of interest to you. Some of these websites are operated in conjunction with us and some are operated solely by independent organisations.</p>
+      <h2>DISCLAIMER</h2>
+      <p>The content, tools, and services provided by AESIT on this website are for general informational and business purposes only. AESIT does not offer legal, financial, or investment advice through this platform. While we strive to provide accurate, up-to-date, and valuable information, we make no guarantees, express or implied, regarding the accuracy, completeness, reliability, or suitability of any content or data presented.</p>
+      <p>All third-party trademarks, logos, product names, and brand references are the property of their respective owners. Any mention or depiction of such brands does not imply affiliation, endorsement, or sponsorship by those trademark holders.</p>
+      <p>This site contains links to other websites. AESIT does not endorse these websites and does not necessarily accept or agree with their content. Users should take this into account and we accept no responsibility for their content.</p>
+      <h2>6. Notification of Changes</h2>
+      <p>We reserve the right to modify this privacy statement at any time, so please review it frequently. If we change our Privacy Policy, we will post those changes on this website and any other places we may deem appropriate.</p>
+      <p><strong>Contact Information:</strong> To change your address, suppress your name from our mailing list, or to opt-out of third-party mail, contact us at:</p>
+      <p>AESIT® | Protection, Integration &amp; Monitoring<br>Contact: Data Protection Officer (DPO)<br>Email: <a href="mailto:info@aesit.net">info@aesit.net</a><br>Website: Contact Page</p>
+      <h2>7. Security/Data Integrity Protection Measures</h2>
+      <p>The security of your personal information is important to us. When you enter sensitive information (such as credit card number), we encrypt that information using standard encryption technology. We follow generally accepted industry standards to protect the personal information submitted to us, both during transmission and after we receive it.</p>
+      <p>Confidentiality of sensitive information is preserved by complying with the accepted Standards and Operational Policies set forth by this organization. We protect user privacy by training all staff members on our Privacy Policy and limiting access to personal information on a "need-to-know" basis.</p>
+      <p>Note: All payments are processed securely through the AESIT® online payment portal in compliance with international banking standards.</p>
+      <p>Revised: 07/2025<br>Document Version: 3.0<br>Policy Owner: AESIT Global Solutions Group - Legal/Compliance Department<br>Review Schedule: Annual or as needed based on legal/regulatory changes</p>
+      <div class="back-top">
+        <a href="#privacy-top" data-back-to="privacy-top">— Back —</a>
+        <a href="#" data-top-link>— Top of Page —</a>
+      </div>
+    </div>
+  </details>
+
+  <footer class="page-footer">
+    <span class="footer-brand">AESIT® Global Solutions Group</span> © 2026 — Website Policies and Statements. All rights reserved.
+  </footer>
+
+</div>
+</body>
+</html>
