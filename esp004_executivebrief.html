@@ -39,9 +39,9 @@ html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
 body{background:var(--carbon);font-family:var(--body-font);color:var(--text-secondary);line-height:1.68}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation-duration:0.001ms !important;transition-duration:0.001ms !important} }
- 
+
 .wrap{max-width:var(--content-width);margin:0 auto;padding:0 20px}
- 
+
 /* ═══ HERO ═══ */
 .hero{background:var(--carbon);border-bottom:1px solid var(--border-mid);padding:56px 0 36px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--col-invest) 0%,#E8A050 50%,#9C5A1E 100%)}
@@ -55,7 +55,13 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .meta-item{display:flex;flex-direction:column;gap:3px}
 .meta-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--titanium)}
 .meta-value{font-family:var(--title-font);font-size:12px;font-weight:600;color:var(--chrome)}
- 
+
+/* ═══ UTILITY NAV (Top / Next Steps only) ═══ */
+.subnav{position:sticky;top:0;z-index:40;background:rgba(8,8,8,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--border-mid)}
+.subnav-scroll{display:flex;justify-content:flex-end;gap:8px;overflow-x:auto;padding:12px 20px;max-width:var(--content-width);margin:0 auto}
+.subnav a.util-link{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--titanium);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
+.subnav a.util-link:hover{color:var(--col-invest);border-color:rgba(204,122,46,.4)}
+
 /* ═══ SECTIONS ═══ */
 .ms-section{padding:48px 0;border-bottom:1px solid var(--border)}
 .ms-section:nth-child(odd){background:linear-gradient(180deg,#0b0b0b 0%,#070707 100%)}
@@ -65,14 +71,14 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .sec-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--col-invest);margin-bottom:6px}
 .sec-title{font-family:var(--title-font);font-size:clamp(20px,3vw,27px);font-weight:800;letter-spacing:-.01em;line-height:1.1;color:var(--chrome)}
 .sec-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.75;font-weight:300;max-width:660px;margin-top:10px}
- 
+
 .ms-p{font-size:14.5px;font-weight:300;line-height:1.8;color:var(--text-secondary);margin-bottom:14px;max-width:700px}
 .ms-p:last-of-type{margin-bottom:0}
 .ms-p strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
- 
+
 .pull-quote{margin:22px 0;padding:18px 22px;border-left:3px solid var(--col-invest);background:rgba(204,122,46,.05);border-radius:0 7px 7px 0;max-width:700px}
 .pull-quote p{font-family:var(--title-font);font-size:16px;font-weight:700;letter-spacing:-.01em;color:var(--chrome);line-height:1.45}
- 
+
 /* ═══ TRANSFORM LIST (problem → solution) ═══ */
 .transform-list{display:flex;flex-direction:column;max-width:760px;margin-top:22px;border-top:1px solid var(--border-mid)}
 .transform-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);flex-wrap:wrap}
@@ -80,7 +86,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .transform-problem{font-size:14px;font-style:italic;color:var(--text-muted)}
 .transform-arrow{color:var(--titanium);margin:0 4px}
 .transform-solution{font-size:14px;font-weight:600;color:var(--chrome)}
- 
+
 /* ═══ LENS / CASE GRID ═══ */
 .lens-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 @media (max-width:820px){.lens-grid{grid-template-columns:1fr}}
@@ -90,7 +96,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .lens-tag{font-size:11.5px;font-style:italic;font-weight:300;color:var(--text-muted);margin-bottom:12px;display:block}
 .lens-body{font-size:12.5px;font-weight:300;color:var(--text-secondary);line-height:1.65;margin-bottom:14px;flex:1}
 .lens-link{font-family:var(--title-font);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--col-invest);text-decoration:none;border-bottom:1px solid rgba(204,122,46,.5);padding-bottom:2px;align-self:flex-start}
- 
+
 /* ═══ STAT GRID ═══ */
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border-mid);border-radius:8px;overflow:hidden;margin-top:24px}
 @media (max-width:700px){.stat-grid{grid-template-columns:1fr 1fr}}
@@ -99,19 +105,19 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .stat-figure{font-family:var(--title-font);font-size:26px;font-weight:800;color:var(--col-invest);line-height:1}
 .stat-cap{font-size:11.5px;font-weight:300;color:var(--text-muted);line-height:1.5;margin-top:8px}
 .proof-note{font-size:12px;font-weight:300;font-style:italic;color:var(--text-muted);border-top:1px solid var(--border);padding-top:16px;margin-top:20px;max-width:700px}
- 
+
 /* ═══ BRIDGE CALLOUTS ═══ */
 .bridge-callout{margin-top:16px;padding:16px 20px;background:rgba(255,255,255,.02);border:1px solid var(--border-mid);border-left:3px solid var(--race-red-2);border-radius:0 7px 7px 0;max-width:700px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .bridge-label{font-family:var(--title-font);font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--race-red-2);white-space:nowrap}
 .bridge-text{font-size:13px;font-weight:300;color:var(--text-secondary);line-height:1.6}
 .bridge-text a{color:var(--chrome);font-weight:500;text-decoration:none;border-bottom:1px solid rgba(200,200,200,.4)}
- 
+
 /* ═══ IMPACT LIST ═══ */
 .impact-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 40px;max-width:760px;list-style:none;margin-top:22px}
 @media (max-width:640px){.impact-list{grid-template-columns:1fr}}
 .impact-list li{display:flex;align-items:baseline;gap:10px;font-family:var(--title-font);font-size:14.5px;font-weight:700;color:var(--chrome);padding-bottom:12px;border-bottom:1px solid var(--border)}
 .impact-check{color:var(--col-invest);font-size:12px;flex-shrink:0}
- 
+
 /* ═══ CLOSE BAND ═══ */
 .close-band{padding:52px 0 56px;background:var(--grad-steel);position:relative;border-bottom:1px solid var(--border-mid)}
 .close-band::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--col-invest) 0%,#E8A050 50%,#9C5A1E 100%)}
@@ -126,7 +132,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .btn-primary:hover{box-shadow:0 6px 22px rgba(204,0,0,.42)}
 .btn-secondary{background:transparent;border:1px solid var(--border-bright);color:var(--chrome)}
 .btn-secondary:hover{border-color:var(--chrome)}
- 
+
 /* ═══ EXECUTIVE KNOWLEDGE JOURNEY (shared component) ═══ */
 .journey-band{padding:48px 0 56px;background:var(--carbon);border-bottom:1px solid var(--border-mid)}
 .journey-head{text-align:center;max-width:640px;margin:0 auto 32px}
@@ -150,20 +156,20 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .journey-state .arrow{transition:transform .15s}
 .journey-card.is-live:hover .arrow{transform:translateX(3px)}
 @media (max-width:820px){.journey-track{flex-direction:column;gap:10px}.journey-connector{display:none}}
- 
+
 /* ═══ FOOTER ═══ */
 .doc-footer{padding:20px;background:var(--grad-chrome-bar);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
 .doc-footer::before{content:'';position:absolute;top:0;left:0;width:70px;height:2px;background:linear-gradient(90deg,var(--col-invest),#E8A050)}
 .footer-mark{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.06em;color:#1a1a1a}
 .footer-inf{font-family:var(--title-font);font-size:16px;font-weight:800;color:#2a2a2a}
- 
+
 @media (max-width:640px){ .hero-meta{flex-direction:column;gap:12px} }
 </style>
 </head>
 <body>
- 
+
 <a id="top"></a>
- 
+
 <!-- ═══ HERO ═══ -->
 <div class="hero">
   <div class="wrap">
@@ -179,7 +185,15 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
+<!-- ═══ UTILITY NAV ═══ -->
+<div class="subnav">
+  <div class="subnav-scroll">
+    <a class="util-link" href="#close">↓ Next Steps</a>
+    <a class="util-link" href="#top">↑ Top</a>
+  </div>
+</div>
+
 <!-- ═══ 01 — THE STRATEGIC PROBLEM ═══ -->
 <div class="ms-section" id="problem">
   <div class="wrap">
@@ -188,7 +202,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="sec-title">Fragmentation Has a Cost. It's Just Not on Your P&amp;L Yet.</div>
       <p class="sec-desc">Design decisions made without operational foresight. Operational systems deployed without protective alignment. Protective measures implemented without lifecycle context. Each gap compounds — quietly, until it doesn't.</p>
     </div>
- 
+
     <div class="transform-list">
       <div class="transform-row"><span class="transform-check">✔</span><span class="transform-problem">Portfolio Fragmented</span><span class="transform-arrow">→</span><span class="transform-solution">Portfolio Convergence</span></div>
       <div class="transform-row"><span class="transform-check">✔</span><span class="transform-problem">Data Silos</span><span class="transform-arrow">→</span><span class="transform-solution">A Single Source of Truth</span></div>
@@ -196,13 +210,13 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="transform-row"><span class="transform-check">✔</span><span class="transform-problem">Hidden Risk</span><span class="transform-arrow">→</span><span class="transform-solution">Embedded Resilience</span></div>
       <div class="transform-row"><span class="transform-check">✔</span><span class="transform-problem">Incumbent Pressure</span><span class="transform-arrow">→</span><span class="transform-solution">A Strategic Partner Platform</span></div>
     </div>
- 
+
     <div class="pull-quote">
       <p>AESIT® is not another platform. It is a lifecycle intelligence system that captures the memory of construction, the memory of behavior, and the memory of defense — a sovereign intelligence layer that compounds value over time.</p>
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 02 — THREE STRATEGIC LENSES ═══ -->
 <div class="ms-section on-dark" id="lenses">
   <div class="wrap">
@@ -211,7 +225,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="sec-title">The Fastest Way to Grasp What AESIT® Is.</div>
       <p class="sec-desc">Not a tool. Not a platform. An architecture for compounding intelligence — seen here through the three lenses that matter most at your level.</p>
     </div>
- 
+
     <div class="lens-grid">
       <div class="lens-card">
         <div class="lens-index">01 — Architecture</div>
@@ -232,12 +246,12 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         <h3>S³ Labs®</h3>
         <span class="lens-tag">The Engine of Intelligence</span>
         <p class="lens-body">Operationalizes intelligence at scale — encoding construction memory, synchronizing behavioral intelligence, and safeguarding defensive posture. This is why the model holds as a long-term advantage.</p>
-        <a class="lens-link" href="https://articles.aesit.net/esp005_s3labsmanifesto.html">Explore S³ Labs® →</a>
+        <a class="lens-link" href="https://articles.aesit.net/eps005_s3labsmanifesto.html">Explore S³ Labs® →</a>
       </div>
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 03 — PAST PERFORMANCE ═══ -->
 <div class="ms-section" id="performance">
   <div class="wrap">
@@ -246,7 +260,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="sec-title">Built. Measured. Proven.</div>
       <p class="sec-desc">Three engagements, one per pillar — a small sample of the record behind the framework.</p>
     </div>
- 
+
     <div class="lens-grid">
       <div class="lens-card">
         <div class="lens-index">Design — Precision Engineering</div>
@@ -272,7 +286,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 04 — EVIDENCE ═══ -->
 <div class="ms-section on-dark" id="evidence">
   <div class="wrap">
@@ -281,7 +295,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="sec-title">No Projections. Evidence.</div>
       <p class="sec-desc">Nine independent studies, three divisions, one record — each tied to a specific lifecycle phase and a measurable outcome. This is what your board will ask for first.</p>
     </div>
- 
+
     <div class="stat-grid">
       <div class="stat-cell"><div class="stat-figure">~75%</div><div class="stat-cap">ROI on design-and-construction intelligence — Form</div></div>
       <div class="stat-cell"><div class="stat-figure">15–35%</div><div class="stat-cap">Energy cost reduction via predictive, Digital Twin operations — Flow</div></div>
@@ -289,14 +303,14 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="stat-cell"><div class="stat-figure">~7:1</div><div class="stat-cap">Institutional research-validated ROI on predictive maintenance investment</div></div>
     </div>
     <p class="proof-note">At industrial scale, predictive intelligence has been shown to reduce downtime by up to 50% while extending asset life by 20–40% — sourced from Dodge Data &amp; Analytics, EPRI, Schindler Group / IBM, Mortenson Construction, and BOMA International.</p>
- 
+
     <div class="bridge-callout">
       <span class="bridge-label">See It Proven</span>
-      <span class="bridge-text">Every figure above is independently sourced and cited in full. <a href="https://articles.aesit.net/esp002_thecompoundingrecord.html">Read The Compounding Record →</a></span>
+      <span class="bridge-text">Every figure above is independently sourced and cited in full. <a href="https://articles.aesit.net/eps002_thecompoundingrecord.html">Read The Compounding Record →</a></span>
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 05 — WHAT CHANGES FOR YOU ═══ -->
 <div class="ms-section" id="impact">
   <div class="wrap">
@@ -304,7 +318,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="sec-eyebrow">05 — What Changes For You</div>
       <div class="sec-title">Outcomes You Can Put in Front of Your Board.</div>
     </div>
- 
+
     <ul class="impact-list">
       <li><span class="impact-check">✔</span>Lower energy costs, typically 15–35%</li>
       <li><span class="impact-check">✔</span>Lower maintenance costs, typically 10–25%</li>
@@ -313,13 +327,13 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <li><span class="impact-check">✔</span>ESG compliance built in</li>
       <li><span class="impact-check">✔</span>Asset Sovereignty™ preserved — your data, your control</li>
     </ul>
- 
+
     <div class="pull-quote">
       <p>Executives understand how AESIT® works, why it is defensible, and how it becomes a long-term strategic advantage.</p>
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ CLOSE ═══ -->
 <div class="close-band" id="close">
   <div class="wrap">
@@ -345,11 +359,11 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <p class="journey-sub">Reading Order: Vision → Architecture → Methodology → Evidence → Investment → Future</p>
       <p class="journey-sub">Numbering: EPS‑001 → EPS‑005</p>
     </div>
- 
+
     <div class="journey-track">
- 
+
       <!-- Stage 1 — Vision — Live -->
-      <a class="journey-card is-live" href="https://articles.aesit.net/esp005_s3labsmanifesto.html">
+      <a class="journey-card is-live" href="https://articles.aesit.net/eps005_s3labsmanifesto.html">
         <div class="journey-stage">
           <span class="journey-num">1</span>
           <span class="journey-role" style="color:var(--col-vision)">Vision</span>
@@ -360,9 +374,9 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         </div>
         <div class="journey-state" style="color:var(--col-vision)"><span>005-The Origin</span><span class="arrow">→</span></div>
       </a>
- 
+
       <div class="journey-connector">›</div>
- 
+
       <!-- Stage 2 — Architecture — Live -->
       <a class="journey-card is-live" href="https://articles.aesit.net/eps001_theintelligencecontinuum.html">
         <div class="journey-stage">
@@ -375,11 +389,11 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         </div>
         <div class="journey-state" style="color:var(--gold)"><span>001-The Flagship</span><span class="arrow">→</span></div>
       </a>
- 
+
       <div class="journey-connector">›</div>
- 
+
       <!-- Stage 3 — Methodology — Live -->
-      <a class="journey-card is-live" href="https://articles.aesit.net/esp003_idlfwhitepaper.html">
+      <a class="journey-card is-live" href="https://articles.aesit.net/eps003_idlfwhitepaper.html">
         <div class="journey-stage">
           <span class="journey-num">3</span>
           <span class="journey-role" style="color:var(--col-protect)">Methodology</span>
@@ -390,11 +404,11 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         </div>
         <div class="journey-state" style="color:var(--col-protect)"><span>003-The Mechanism</span><span class="arrow">→</span></div>
       </a>
- 
+
       <div class="journey-connector">›</div>
- 
+
       <!-- Stage 4 — Evidence — Live -->
-      <a class="journey-card is-live" href="https://articles.aesit.net/esp002_thecompoundingrecord.html">
+      <a class="journey-card is-live" href="https://articles.aesit.net/eps002_thecompoundingrecord.html">
         <div class="journey-stage">
           <span class="journey-num">4</span>
           <span class="journey-role" style="color:var(--race-red-2)">Evidence</span>
@@ -405,9 +419,9 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         </div>
         <div class="journey-state" style="color:var(--race-red-2)"><span>002-The Evidence</span><span class="arrow">→</span></div>
       </a>
- 
+
       <div class="journey-connector">›</div>
- 
+
       <!-- Stage 5 — Investment — Current -->
       <div class="journey-card is-current" style="border-color:rgba(204,122,46,.55);box-shadow:0 0 0 1px rgba(204,122,46,.16)">
         <div class="journey-stage">
@@ -420,16 +434,16 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         </div>
         <div class="journey-state" style="color:var(--col-invest)"><span>You Are Here</span></div>
       </div>
- 
+
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ FOOTER ═══ -->
 <div class="doc-footer">
   <div class="footer-mark">AESIT Global Solutions Group © 2026 — Executive Brief · EPS‑004</div>
   <div class="footer-inf">∞</div>
 </div>
- 
+
 </body>
 </html>
