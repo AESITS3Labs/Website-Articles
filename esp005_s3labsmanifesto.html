@@ -365,7 +365,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         <h3>The St. James</h3>
         <span class="proof-tag">450,000 sq. ft. premier sports complex</span>
         <p class="proof-body">MEP systems design and integration alongside HKS, LFJennings, and Hardesty Inc. — coordinating HVAC, ice rink refrigeration, and air handling across NHL rinks, an Olympic pool, and an indoor water park.</p>
-        <a class="proof-link" href="https://youtu.be/i1OQXv65_z8">View Facility →</a>
+        <a class="proof-link" href="https://youtu.be/i1OQXv65_z8" target="_blank" rel="noopener" onclick="return aesitOpenCleanVideo(event,'i1OQXv65_z8')">View Facility →</a>
       </div>
       <div class="proof-card">
         <div class="proof-index">International — Hong Kong</div>
@@ -379,12 +379,12 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         <h3>Architectural Graphic Standards</h3>
         <span class="proof-tag">American Institute of Architects (AIA)</span>
         <p class="proof-body">S³ Labs® work is referenced directly within the AIA's own Architectural Graphic Standards — the profession's definitive technical reference. A credential held by very few design practices, and fewer intelligence firms.</p>
-        <a class="proof-link" href="https://youtu.be/qeo9ZBfiD0Y">View AGS Online →</a>
+        <a class="proof-link" href="https://youtu.be/qeo9ZBfiD0Y" target="_blank" rel="noopener" onclick="return aesitOpenCleanVideo(event,'qeo9ZBfiD0Y')">View AGS Online →</a>
       </div>
     </div>
   </div>
 </div>
-
+ 
 <!-- ═══ 05 — COMPOUNDING INTELLIGENCE / CLOSE ═══ -->
 <div class="close-band" id="close">
   <div class="wrap">
@@ -496,6 +496,23 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
   <div class="footer-mark">AESIT Global Solutions Group © 2026 — S³ Labs® Manifesto · EPS‑005</div>
   <div class="footer-inf">∞</div>
 </div>
-
+ 
+<script>
+function aesitOpenCleanVideo(evt, videoId) {
+  if (evt && evt.preventDefault) evt.preventDefault();
+  var url = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+  var w = 960, h = 600;
+  var left = Math.max(0, Math.round((screen.width - w) / 2));
+  var top = Math.max(0, Math.round((screen.height - h) / 2));
+  var features = 'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top +
+    ',resizable=yes,scrollbars=no,status=no,toolbar=no,menubar=no,location=no,directories=no';
+  var win = window.open(url, 'aesitVideoPlayer', features);
+  if (win) { win.focus(); return false; }
+  // Popup blocked — fall back to a normal new tab with the clean embed URL
+  window.open(url, '_blank', 'noopener');
+  return false;
+}
+</script>
+ 
 </body>
 </html>
