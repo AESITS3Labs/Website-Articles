@@ -19,6 +19,7 @@
   --col-protect:#4070B8;
   --col-vision:#3E8E5B;
   --col-invest:#CC7A2E;
+  --col-foundation:#9AA5B1;
   --grad-chrome:linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
   --grad-chrome-bar:linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
   --grad-steel:linear-gradient(180deg,#181818 0%,#111111 50%,#161616 100%);
@@ -40,9 +41,9 @@ html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
 body{background:var(--carbon);font-family:var(--body-font);color:var(--text-secondary);line-height:1.68}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation-duration:0.001ms !important;transition-duration:0.001ms !important} }
- 
+
 .wrap{max-width:var(--content-width);margin:0 auto;padding:0 20px}
- 
+
 /* ═══ HERO ═══ */
 .hero{background:var(--carbon);border-bottom:1px solid var(--border-mid);padding:56px 0 36px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--col-vision) 0%,#5CB37D 50%,#2E6B45 100%)}
@@ -57,13 +58,13 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .meta-item{display:flex;flex-direction:column;gap:3px}
 .meta-label{font-family:var(--title-font);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--titanium)}
 .meta-value{font-family:var(--title-font);font-size:12px;font-weight:600;color:var(--chrome)}
- 
+
 /* ═══ UTILITY NAV (Top / Next Steps only) ═══ */
 .subnav{position:sticky;top:0;z-index:40;background:rgba(8,8,8,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--border-mid)}
 .subnav-scroll{display:flex;justify-content:flex-end;gap:8px;overflow-x:auto;padding:12px 20px;max-width:var(--content-width);margin:0 auto}
 .subnav a.util-link{flex-shrink:0;font-family:var(--title-font);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:20px;text-decoration:none;border:1px solid var(--border-mid);color:var(--titanium);display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
 .subnav a.util-link:hover{color:var(--col-vision);border-color:rgba(62,142,91,.4)}
- 
+
 /* ═══ VIDEO MODAL (in-page overlay — no separate window) ═══ */
 .video-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
 .video-modal.is-open{display:flex}
@@ -77,7 +78,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 @keyframes vmPop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
 @media (prefers-reduced-motion: reduce){.video-modal-backdrop,.video-modal-box{animation:none}}
 @media (max-width:640px){.video-modal-close{top:-38px;width:30px;height:30px;font-size:14px}}
- 
+
 /* ═══ SECTIONS ═══ */
 .ms-section{padding:48px 0;border-bottom:1px solid var(--border)}
 .ms-section:nth-child(odd){background:linear-gradient(180deg,#0b0b0b 0%,#070707 100%)}
@@ -87,14 +88,14 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .sec-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--col-vision);margin-bottom:6px}
 .sec-title{font-family:var(--title-font);font-size:clamp(20px,3vw,27px);font-weight:800;letter-spacing:-.01em;line-height:1.1;color:var(--chrome)}
 .sec-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.75;font-weight:300;max-width:660px;margin-top:10px}
- 
+
 .ms-p{font-size:14.5px;font-weight:300;line-height:1.8;color:var(--text-secondary);margin-bottom:14px;max-width:700px}
 .ms-p:last-of-type{margin-bottom:0}
 .ms-p strong{color:var(--chrome);font-weight:500;-webkit-text-fill-color:var(--chrome)}
- 
+
 .pull-quote{margin:22px 0;padding:18px 22px;border-left:3px solid var(--col-vision);background:rgba(62,142,91,.05);border-radius:0 7px 7px 0;max-width:700px}
 .pull-quote p{font-family:var(--title-font);font-size:16px;font-weight:700;letter-spacing:-.01em;color:var(--chrome);line-height:1.45}
- 
+
 /* ═══ DUALITY PANEL ═══ */
 .duality{margin-top:26px;border:1px solid var(--border-mid);border-radius:8px;background:rgba(255,255,255,.014);padding:24px 24px 20px;max-width:760px}
 .duality-kicker{font-family:var(--title-font);font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--col-vision);margin-bottom:16px;display:block}
@@ -106,7 +107,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .duality-divider{font-family:var(--title-font);font-size:20px;color:var(--col-vision);text-align:center}
 @media (max-width:600px){.duality-divider{display:none}}
 .duality-foot{font-size:12px;font-weight:300;font-style:italic;color:var(--text-muted);border-top:1px solid var(--border);padding-top:14px}
- 
+
 /* ═══ TRIAD DIAGRAM ═══ */
 .diagram-frame{background:rgba(0,0,0,.35);border:1px solid var(--border-mid);border-radius:8px;padding:20px 8px 8px;margin:24px 0 34px}
 .diagram-frame svg{width:100%;height:auto;display:block}
@@ -122,7 +123,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .triad-def.tl .t-feeds{color:var(--col-ops)}
 .triad-def.ts .t-feeds{color:var(--col-protect)}
 .triad-def p{font-size:12.5px;font-weight:300;color:var(--text-secondary);line-height:1.65}
- 
+
 /* ═══ PILLAR TABLE ═══ */
 .pillar-table{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border-mid);border-radius:8px;overflow:hidden;margin-top:28px}
 @media (max-width:700px){.pillar-table{grid-template-columns:1fr}}
@@ -135,7 +136,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .pillar-tag{font-family:var(--title-font);font-size:10.5px;font-style:italic;font-weight:400;color:var(--text-muted);margin-bottom:14px;display:block}
 .pillar-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .pillar-col li{font-size:12.5px;font-weight:300;color:var(--text-secondary)}
- 
+
 /* ═══ STUDIO ═══ */
 .studio-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start;margin-top:8px}
 @media (max-width:760px){.studio-grid{grid-template-columns:1fr;gap:24px}}
@@ -145,7 +146,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .studio-fact:first-child{padding-top:0}
 .fact-label{font-family:var(--title-font);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--col-vision);display:block;margin-bottom:5px}
 .fact-value{font-size:12.5px;font-weight:300;color:var(--chrome)}
- 
+
 /* ═══ PROOF CARDS ═══ */
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 @media (max-width:820px){.proof-grid{grid-template-columns:1fr}}
@@ -156,7 +157,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .proof-body{font-size:12.5px;font-weight:300;color:var(--text-secondary);line-height:1.65;margin-bottom:14px;flex:1}
 .proof-link{font-family:var(--title-font);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--col-vision);text-decoration:none;border-bottom:1px solid rgba(62,142,91,.5);padding-bottom:2px;align-self:flex-start}
 .proof-footnote{margin-top:22px;font-size:12px;font-weight:300;font-style:italic;color:var(--text-muted);border-top:1px solid var(--border);padding-top:16px;max-width:700px}
- 
+
 /* ═══ CLOSE BAND ═══ */
 .close-band{padding:52px 0 56px;background:var(--grad-steel);position:relative;border-bottom:1px solid var(--border-mid)}
 .close-band::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--col-vision) 0%,#5CB37D 50%,#2E6B45 100%)}
@@ -172,7 +173,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .btn-primary:hover{box-shadow:0 6px 22px rgba(204,0,0,.42)}
 .btn-secondary{background:transparent;border:1px solid var(--border-bright);color:var(--chrome)}
 .btn-secondary:hover{border-color:var(--chrome)}
- 
+
 /* ═══ EXECUTIVE KNOWLEDGE JOURNEY (shared component) ═══ */
 .journey-band{padding:48px 0 56px;background:var(--carbon);border-bottom:1px solid var(--border-mid)}
 .journey-head{text-align:center;max-width:640px;margin:0 auto 32px}
@@ -196,26 +197,26 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 .journey-state .arrow{transition:transform .15s}
 .journey-card.is-live:hover .arrow{transform:translateX(3px)}
 @media (max-width:820px){.journey-track{flex-direction:column;gap:10px}.journey-connector{display:none}}
- 
+
 /* ═══ FOOTER ═══ */
 .doc-footer{padding:20px;background:var(--grad-chrome-bar);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
 .doc-footer::before{content:'';position:absolute;top:0;left:0;width:70px;height:2px;background:linear-gradient(90deg,var(--col-vision),#5CB37D)}
 .footer-mark{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.06em;color:#1a1a1a}
 .footer-inf{font-family:var(--title-font);font-size:16px;font-weight:800;color:#2a2a2a}
- 
+
 @media (max-width:640px){
   .hero-meta{flex-direction:column;gap:12px}
 }
 </style>
 </head>
 <body>
- 
+
 <a id="top"></a>
- 
+
 <!-- ═══ HERO ═══ -->
 <div class="hero">
   <div class="wrap">
-    <div class="hero-eyebrow">EPS‑005 · Vision · S³ Labs® · AESIT® Executive Publications</div>
+    <div class="hero-eyebrow">EPS‑005 · The Source · Origin</div>
     <h1 class="hero-title">Where Intelligence Begins.</h1>
     <div class="hero-tagline">S³ Labs® — The Nucleus of AESIT®</div>
     <div class="hero-triad">Spatial → Systemic → Strategic</div>
@@ -228,7 +229,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ UTILITY NAV ═══ -->
 <div class="subnav">
   <div class="subnav-scroll">
@@ -236,7 +237,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     <a class="util-link" href="#top">↑ Top</a>
   </div>
 </div>
- 
+
 <!-- ═══ 01 — ORIGIN & IDENTITY ═══ -->
 <div class="ms-section" id="origin">
   <div class="wrap">
@@ -247,11 +248,11 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     <p class="ms-p">Every document AESIT® has produced to date — the Partnership Roadmap, the Executive Brief, the Intelligence Architecture™ narrative — describes what AESIT delivers. None of them describe what AESIT is built from. That omission ends here.</p>
     <p class="ms-p"><strong>S³ Labs® is not a service line beside EcoFlow® or OptiManage®.</strong> It is the source they are downstream of. Before there was a Partner Program, before there was a CRE Lifecycle Intelligence™ practice, there was S³ Labs® — the SmartSpaceStudio-Laboratory — authoring the intelligence architecture everything else would eventually be built on.</p>
     <p class="ms-p">It came first. It has simply never been documented as such — until now.</p>
- 
+
     <div class="pull-quote">
       <p>Every division brand AESIT® operates is a downstream expression of one origin.</p>
     </div>
- 
+
     <div class="duality">
       <span class="duality-kicker">One Origin, Two Expressions</span>
       <div class="duality-grid">
@@ -271,7 +272,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 02 — THE ENGINE ═══ -->
 <div class="ms-section on-dark" id="engine">
   <div class="wrap">
@@ -280,31 +281,31 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <div class="sec-title">Three Intelligences. One Nucleus.</div>
       <p class="sec-desc">S³ Labs® authored the IDLF™ by encoding three distinct forms of intelligence — Spatial, Systemic, and Strategic — each becoming the seed of one lifecycle pillar, and every division brand built beneath it.</p>
     </div>
- 
+
     <div class="diagram-frame">
       <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
         <line x1="450" y1="76" x2="170" y2="200" stroke="#D4AF37" stroke-width="1.5" opacity="0.55"/>
         <line x1="450" y1="76" x2="450" y2="200" stroke="#D4AF37" stroke-width="1.5" opacity="0.55"/>
         <line x1="450" y1="76" x2="730" y2="200" stroke="#D4AF37" stroke-width="1.5" opacity="0.55"/>
- 
+
         <circle cx="450" cy="56" r="44" fill="#0A0A0A" stroke="#D4AF37" stroke-width="1.5"/>
         <text x="450" y="52" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="16" fill="#E8E8E8" font-weight="800">S³ Labs</text>
         <text x="450" y="68" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="8.5" fill="#D4AF37" letter-spacing="1.5">THE NUCLEUS</text>
- 
+
         <circle cx="170" cy="222" r="52" fill="#141414" stroke="#C48F1D" stroke-width="1.5"/>
         <text x="170" y="216" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="14" fill="#E8E8E8" font-weight="700">Spatial</text>
         <text x="170" y="232" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="8.5" fill="#C48F1D" letter-spacing=".5">→ FORM</text>
- 
+
         <circle cx="450" cy="222" r="52" fill="#141414" stroke="#1C98A6" stroke-width="1.5"/>
         <text x="450" y="216" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="14" fill="#E8E8E8" font-weight="700">Systemic</text>
         <text x="450" y="232" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="8.5" fill="#1C98A6" letter-spacing=".5">→ FLOW</text>
- 
+
         <circle cx="730" cy="222" r="52" fill="#141414" stroke="#4070B8" stroke-width="1.5"/>
         <text x="730" y="216" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="14" fill="#E8E8E8" font-weight="700">Strategic</text>
         <text x="730" y="232" text-anchor="middle" font-family="League Spartan, sans-serif" font-size="8.5" fill="#4070B8" letter-spacing=".5">→ FORTITUDE</text>
       </svg>
     </div>
- 
+
     <div class="triad-defs">
       <div class="triad-def tf">
         <div class="t-name">Spatial Intelligence</div>
@@ -322,7 +323,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
         <p>How risk, defense, and long-range decisions are embedded and protected before they're ever tested — the record that holds under pressure.</p>
       </div>
     </div>
- 
+
     <div class="pillar-table">
       <div class="pillar-col pc-form">
         <h4>Form Intelligence™</h4>
@@ -342,7 +343,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 03 — THE STUDIO ═══ -->
 <div class="ms-section" id="studio">
   <div class="wrap">
@@ -365,7 +366,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 04 — PROOF IN THE WORK ═══ -->
 <div class="ms-section on-dark" id="proof">
   <div class="wrap">
@@ -398,7 +399,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
 <!-- ═══ 05 — COMPOUNDING INTELLIGENCE / CLOSE ═══ -->
 <div class="close-band" id="close">
   <div class="wrap">
@@ -408,7 +409,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
       <p class="close-sub">Spatial memory. Systemic memory. Strategic memory. S³ Labs® doesn't just author three intelligences — it makes sure they never stop compounding, in your name, under your sovereignty.</p>
       <p class="infinity-line">We remember. So it lasts. ∞</p>
       <div class="close-actions">
-        <a class="btn btn-primary" href="https://aesit.net/home#4a55923c-fe4d-4616-8a9d-b71b629d5ce9">Begin the Record →</a>
+        <a class="btn btn-primary" href="https://aesit.net/home#3c81a0ce-b330-4951-b2b9-8a14a074f02c">Begin the Record →</a>
         <a class="btn btn-secondary" href="https://aesit.net/services#c692ed73-b1a4-4ebc-8100-f808d2f2f0ad">Enter S³ Labs® →</a>
       </div>
     </div>
@@ -421,18 +422,33 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     <div class="journey-head">
       <div class="journey-eyebrow">AESIT® Executive Publications · EPS Series</div>
       <div class="journey-title">The Executive Knowledge Journey</div>
-      <p class="journey-sub">Five publications, one compounding philosophy. This document is Stage 4 — here's where it fits in the larger story.</p>
-     <p class="journey-sub">Reading Order: Vision → Architecture → Methodology → Evidence → Investment → Future</p>
-     <p class="journey-sub">Numbering: EPS‑001 → EPS‑005</p>
+      <p class="journey-sub">Six governing layers, one sovereign architecture. This document is The Source — here's where it fits in the canon.</p>
+      <p class="journey-sub">Reading Order: Anchor → Source → Axis → Blueprint → Ledger → Mandate</p>
+      <p class="journey-sub">Numbering: EPS‑000 (Anchor) · EPS‑001 → EPS‑005</p>
     </div>
 
     <div class="journey-track">
 
-      <!-- Stage 1 — Vision — Current -->
+      <!-- Anchor — Live -->
+      <a class="journey-card is-live" href="https://articles.aesit.net/eps000_thefoundation.html">
+        <div class="journey-stage">
+          <span class="journey-num">F</span>
+          <span class="journey-role" style="color:var(--col-foundation)">Anchor</span>
+        </div>
+        <div class="journey-body">
+          <div class="journey-name">CRE Lifecycle Intelligence™</div>
+          <div class="journey-question">"What is the identity behind everything?"</div>
+        </div>
+        <div class="journey-state" style="color:var(--col-foundation)"><span>Read →</span></div>
+      </a>
+
+      <div class="journey-connector">›</div>
+
+      <!-- Source — Current -->
       <div class="journey-card is-current" style="border-color:rgba(62,142,91,.55);box-shadow:0 0 0 1px rgba(62,142,91,.16)">
         <div class="journey-stage">
           <span class="journey-num">1</span>
-          <span class="journey-role" style="color:var(--col-vision)">Vision</span>
+          <span class="journey-role" style="color:var(--col-vision)">Source</span>
         </div>
         <div class="journey-body">
           <div class="journey-name">S³ Labs® Manifesto</div>
@@ -443,62 +459,62 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
 
       <div class="journey-connector">›</div>
 
-      <!-- Stage 2 — Architecture — Live -->
+      <!-- Axis — Live -->
       <a class="journey-card is-live" href="https://articles.aesit.net/eps001_theintelligencecontinuum.html">
         <div class="journey-stage">
           <span class="journey-num">2</span>
-          <span class="journey-role" style="color:var(--gold)">Architecture</span>
+          <span class="journey-role" style="color:var(--gold)">Axis</span>
         </div>
         <div class="journey-body">
           <div class="journey-name">The Intelligence Continuum</div>
           <div class="journey-question">"How does intelligence compound?"</div>
         </div>
-        <div class="journey-state" style="color:var(--gold)"><span>001-Architecture</span><span class="arrow">→</span></div>
+        <div class="journey-state" style="color:var(--gold)"><span>Read →</span></div>
       </a>
 
       <div class="journey-connector">›</div>
 
-      <!-- Stage 3 — Methodology — Live -->
-      <a class="journey-card is-live" href="https://articles.aesit.net/esp003_idlfwhitepaper.html">
+      <!-- Blueprint — Live -->
+      <a class="journey-card is-live" href="https://articles.aesit.net/eps003_idlfwhitepaper.html">
         <div class="journey-stage">
           <span class="journey-num">3</span>
-          <span class="journey-role" style="color:var(--col-protect)">Methodology</span>
+          <span class="journey-role" style="color:var(--col-protect)">Blueprint</span>
         </div>
         <div class="journey-body">
           <div class="journey-name">IDLF White Paper</div>
           <div class="journey-question">"How is it implemented?"</div>
         </div>
-        <div class="journey-state" style="color:var(--col-protect)"><span>003-The Mechanism</span><span class="arrow">→</span></div>
+        <div class="journey-state" style="color:var(--col-protect)"><span>Read →</span></div>
       </a>
 
       <div class="journey-connector">›</div>
 
-      <!-- Stage 4 — Evidence — Live -->
-      <a class="journey-card is-live" href="https://articles.aesit.net/esp002_thecompoundingrecord.html">
+      <!-- Ledger — Live -->
+      <a class="journey-card is-live" href="https://articles.aesit.net/eps002_thecompoundingrecord.html">
         <div class="journey-stage">
           <span class="journey-num">4</span>
-          <span class="journey-role" style="color:var(--race-red-2)">Evidence</span>
+          <span class="journey-role" style="color:var(--race-red-2)">Ledger</span>
         </div>
         <div class="journey-body">
           <div class="journey-name">The Compounding Record</div>
           <div class="journey-question">"Can you prove it?"</div>
         </div>
-        <div class="journey-state" style="color:var(--race-red-2)"><span>002-The Evidence</span><span class="arrow">→</span></div>
+        <div class="journey-state" style="color:var(--race-red-2)"><span>Read →</span></div>
       </a>
 
       <div class="journey-connector">›</div>
 
-      <!-- Stage 5 — Investment — Live -->
-      <a class="journey-card is-live" href="https://articles.aesit.net/esp004_executivebrief.html">
+      <!-- Mandate — Live -->
+      <a class="journey-card is-live" href="https://articles.aesit.net/eps004_executivebrief.html">
         <div class="journey-stage">
           <span class="journey-num">5</span>
-          <span class="journey-role" style="color:var(--col-invest)">Investment</span>
+          <span class="journey-role" style="color:var(--col-invest)">Mandate</span>
         </div>
         <div class="journey-body">
           <div class="journey-name">Executive Brief</div>
           <div class="journey-question">"Why should I invest?"</div>
         </div>
-        <div class="journey-state" style="color:var(--col-invest)"><span>004-Investment</span><span class="arrow">→</span></div>
+        <div class="journey-state" style="color:var(--col-invest)"><span>Read →</span></div>
       </a>
 
     </div>
@@ -510,7 +526,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
   <div class="footer-mark">AESIT Global Solutions Group © 2026 — S³ Labs® Manifesto · EPS‑005</div>
   <div class="footer-inf">∞</div>
 </div>
- 
+
 <!-- ═══ VIDEO MODAL ═══ -->
 <div class="video-modal" id="aesitVideoModal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="video-modal-backdrop" onclick="aesitCloseVideo()"></div>
@@ -521,7 +537,7 @@ body{background:var(--carbon);font-family:var(--body-font);color:var(--text-seco
     </div>
   </div>
 </div>
- 
+
 <script>
 function aesitOpenCleanVideo(evt, videoId) {
   if (evt && evt.preventDefault) evt.preventDefault();
@@ -547,6 +563,6 @@ function aesitVideoEscHandler(e) {
   if (e.key === 'Escape') aesitCloseVideo();
 }
 </script>
- 
+
 </body>
 </html>
