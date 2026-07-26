@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --carbon: #000000;
+        --titanium: #888888;
+        --brushed: #A8A8A8;
+        --chrome: #C8C8C8;
+        --grid-white: #E8E8E8;
+        --race-red: #CC0000;
+        --race-red-2: #FF2020;
+        --gold: #D4AF37;
+
+        --col-design: #C48F1D;
+        --col-ops: #1C98A6;
+        --col-protect: #4070B8;
+
+        --grad-chrome: linear-gradient(135deg, #6A6A6A 0%, #D8D8D8 40%, #F0F0F0 55%, #A0A0A0 100%);
+        --grad-steel: linear-gradient(180deg, #232323 0%, #191919 50%, #202020 100%);
+        --grad-gold: linear-gradient(135deg, #B8922A 0%, #D4AF37 40%, #F0CC55 60%, #B8922A 100%);
+        --grad-design: linear-gradient(135deg, #8A6010 0%, #C48F1D 40%, #E0B040 60%, #A07015 100%);
+        --grad-ops: linear-gradient(135deg, #0E6070 0%, #1C98A6 40%, #30C0D0 60%, #0E7080 100%);
+        --grad-protect: linear-gradient(135deg, #244080 0%, #4070B8 40%, #6090D8 60%, #2A4890 100%);
+
+        --border: rgba(200,200,200,0.10);
+        --border-mid: rgba(200,200,200,0.20);
+        --text-secondary: #B0A898;
+        --text-muted: #888888;
+
+        --title-font: 'League Spartan', sans-serif;
+        --body-font: 'Barlow', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: var(--body-font);
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        background-color: var(--carbon);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 52px 6%;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: var(--title-font);
+        color: var(--chrome);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: clamp(26px, 4vw, 42px);
+        line-height: 1.0;
+        margin-bottom: 6px;
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .subtitle {
+        font-family: var(--title-font);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 14px;
+        font-weight: 600;
+        opacity: 0.65;
+    }
+
+    .meta-line {
+        font-family: var(--title-font);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--titanium);
+        border-bottom: 1px solid var(--border-mid);
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 14pt;
+        color: var(--chrome);
+        margin-top: 25px;
+        margin-bottom: 12px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--border-mid);
+        page-break-after: avoid;
+    }
+
+    h2.brand-accent {
+        color: var(--chrome);
+        border-bottom: 1px solid var(--border-mid);
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 12px;
+        text-align: left;
+        color: var(--text-secondary);
+    }
+
+    .lead-paragraph {
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-style: italic;
+        font-weight: 300;
+    }
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 6px;
+        color: var(--text-secondary);
+    }
+
+    strong {
+        color: var(--chrome);
+        font-weight: 600;
+    }
+
+    blockquote {
+        margin: 20px 0;
+        padding: 15px 20px;
+        border-left: 3px solid var(--gold);
+        background: rgba(0,0,0,0.35);
+        font-style: italic;
+        color: var(--text-secondary);
+        border-radius: 0 4px 4px 0;
+        font-weight: 300;
+        line-height: 1.7;
+    }
+
+    /* Ecosystem / phase reference table */
+    .eco-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin: 20px 0 8px;
+    }
+
+    .eco-col {
+        background: var(--grad-steel);
+        border: 1px solid var(--border-mid);
+        border-radius: 8px;
+        padding: 18px 20px;
+        border-top: 3px solid var(--col-design);
+    }
+
+    .eco-col.flow { border-top-color: var(--col-ops); }
+    .eco-col.fortitude { border-top-color: var(--col-protect); }
+
+    .eco-col-title {
+        font-family: var(--title-font);
+        font-weight: 800;
+        font-size: 11pt;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+    }
+
+    .eco-col-title.title-form {
+        background: var(--grad-design);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .eco-col-title.title-flow {
+        background: var(--grad-ops);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .eco-col-title.title-fortitude {
+        background: var(--grad-protect);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .eco-col-sub {
+        font-family: var(--title-font);
+        font-size: 9.5px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--titanium);
+        margin-bottom: 12px;
+    }
+
+    .eco-col p.eco-col-body {
+        font-size: 13px;
+        color: var(--text-secondary);
+        margin-bottom: 0;
+    }
+
+    .eco-col ul { padding-left: 18px; margin-bottom: 0; }
+    .eco-col li { font-size: 13.5px; margin-bottom: 8px; }
+
+    .eco-col-roi {
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+        font-family: var(--title-font);
+        font-size: 10.5px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--gold);
+    }
+
+    /* Two-up comparison panel, reusing eco-col styling */
+    .duality-table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        margin: 20px 0 8px;
+    }
+
+    .stat-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin: 18px 0 10px;
+    }
+
+    .stat-chip {
+        flex: 1 1 200px;
+        background: rgba(0,0,0,0.35);
+        border: 1px solid var(--border-mid);
+        border-radius: 8px;
+        padding: 16px 18px;
+        text-align: center;
+    }
+
+    .stat-chip .stat-value {
+        font-family: var(--title-font);
+        font-weight: 800;
+        font-size: 16pt;
+        display: block;
+        margin-bottom: 4px;
+        color: var(--gold);
+    }
+
+    .stat-chip .stat-label {
+        font-family: var(--title-font);
+        font-size: 9.5px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--titanium);
+        line-height: 1.5;
+    }
+
+    .thesis-box {
+        background: var(--grad-steel);
+        border: 1px solid var(--border-mid);
+        border-top: 3px solid var(--gold);
+        border-radius: 8px;
+        padding: 26px 28px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .thesis-box p {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .thesis-box .closing-line {
+        font-family: var(--title-font);
+        font-weight: 700;
+        color: var(--chrome);
+        font-size: 13pt;
+        margin-bottom: 4px;
+    }
+
+    /* Publication series list */
+    .series-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 18px 0 8px;
+    }
+
+    .series-item {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding: 10px 14px;
+        border: 1px solid var(--border-mid);
+        border-radius: 6px;
+        background: rgba(0,0,0,0.25);
+        font-size: 13px;
+    }
+
+    .series-item.is-current {
+        border-color: rgba(64,112,184,0.55);
+        background: rgba(64,112,184,0.06);
+    }
+
+    .series-tag {
+        font-family: var(--title-font);
+        font-size: 9.5px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--titanium);
+        flex-shrink: 0;
+        width: 92px;
+    }
+
+    .series-item.is-current .series-tag { color: var(--col-protect); }
+
+    .series-name {
+        color: var(--chrome);
+        font-weight: 500;
+    }
+
+    .series-question {
+        color: var(--text-muted);
+        font-style: italic;
+        font-size: 12px;
+    }
+
+    .footer-note {
+        margin-top: 40px;
+        border-top: 1px solid var(--border-mid);
+        padding-top: 20px;
+        font-size: 10px;
+        color: var(--titanium);
+        text-align: center;
+        line-height: 1.6;
+        font-family: var(--title-font);
+        letter-spacing: 0.05em;
+    }
+
+    .footer-note::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, #CC0000 0%, #FF2020 50%, #991000 100%);
+        border-radius: 1px;
+        margin: 0 auto 14px;
+    }
+
+    .footer-brand {
+        background: var(--grad-chrome);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+    }
+</style>
+<title>The Intelligent Design Lifecycle Framework™ (IDLF™) — Methodology Brand Article</title>
+</head>
+<body>
+
+<main class="container">
+
+    <h1>The Intelligent Design Lifecycle Framework™ (IDLF™)</h1>
+    <div class="subtitle">The Methodology Behind the Compound</div>
+
+    <div class="meta-line">
+        <strong>EPS-003 &bullet; Blueprint &bullet; Structure</strong> &bullet; AESIT Executive Publications Series &bullet; Published July 2026
+    </div>
+
+    <h2>01 — Why Sequential Delivery Fails</h2>
+    <p class="lead-paragraph">
+        Every ROI figure in The Compounding Record and every principle in the Manifesto runs through one operating system. This is that system — six phases, one Digital Thread, and the mechanism by which intelligence generated at each phase becomes the input to every phase after it.
+    </p>
+    <p>
+        Most CRE assets are still delivered the same way they were forty years ago: design, then construction, then commissioning, then operations — each phase run as a separate engagement, with separate vendors, on separate platforms, sharing almost no data with the phase before or after it.
+    </p>
+    <p>
+        The cost of that fragmentation isn't abstract. It shows up as redundant fees paid to disconnected consultants, as-built conditions that drift from design intent, and operational systems commissioned without ever touching the design data that could have made them smarter from day one.
+    </p>
+    <blockquote>
+        The built environment does not suffer from a lack of technology. It suffers from a lack of integrated intelligence — and a framework that compounds it over time.
+    </blockquote>
+    <p>
+        The IDLF™ replaces that sequential, fragmented model with a single, concurrent, systems-driven methodology — one Digital Thread connecting every phase from initial Discovery through perpetual Optimization.
+    </p>
+
+    <h2 class="brand-accent">02 — Six Phases, One Digital Thread</h2>
+    <p>
+        The IDLF treats each lifecycle phase as both a value-generating event and an intelligence-capture opportunity. Discovery informs Design. Design is embedded in the Digital Twin at Commission. The Digital Twin feeds Operations analytics back into the next Discovery cycle. The loop never closes — the final phase carries the ∞ deliberately.
+    </p>
+
+    <div class="eco-table">
+        <div class="eco-col">
+            <div class="eco-col-title title-form">Discovery → Plan</div>
+            <div class="eco-col-sub">Spatial Intelligence &amp; Baselines</div>
+            <p class="eco-col-body">Stakeholder data, site conditions, and portfolio baselines become performance benchmarks and a project plan — the foundation for all compounding.</p>
+            <div class="eco-col-roi">Foundation for all compounding</div>
+        </div>
+        <div class="eco-col">
+            <div class="eco-col-title title-form">Plan → Design</div>
+            <div class="eco-col-sub">Generative Design</div>
+            <p class="eco-col-body">Discovery intelligence, performance targets, and ESG mandates are turned into generative design options and AI-modeled outcomes via S³ Labs®, BIM, and IDPD.</p>
+            <div class="eco-col-roi">~75% ROI at D&amp;C phase</div>
+        </div>
+        <div class="eco-col">
+            <div class="eco-col-title title-form">Design → Build</div>
+            <div class="eco-col-sub">Constructible Precision</div>
+            <p class="eco-col-body">Design intelligence and BIM models become clash-free as-builts and schedule data through VDC, AR/VR, and robotics.</p>
+            <div class="eco-col-roi">Cost certainty, schedule performance</div>
+        </div>
+        <div class="eco-col flow">
+            <div class="eco-col-title title-flow">Build → Operate</div>
+            <div class="eco-col-sub">Design Intent Validation</div>
+            <p class="eco-col-body">As-built BIM, commissioning data, and occupancy parameters validate design intent and establish system performance baselines.</p>
+            <div class="eco-col-roi">Digital Twin foundation established</div>
+        </div>
+        <div class="eco-col flow">
+            <div class="eco-col-title title-flow">Commission → Operations</div>
+            <div class="eco-col-sub">The Digital Twin</div>
+            <p class="eco-col-body">As-built intelligence and sensor data become the Digital Twin — a living operational blueprint running on IoT, SBLM, EAM, and IWMS.</p>
+            <div class="eco-col-roi">Operational intelligence baseline</div>
+        </div>
+        <div class="eco-col fortitude">
+            <div class="eco-col-title title-fortitude">Operate → Optimize ∞</div>
+            <div class="eco-col-sub">Predictive &amp; Protective Intelligence</div>
+            <p class="eco-col-body">Digital Twin telemetry and operational analytics generate predictive maintenance intelligence, NOI optimization data, and Resiliency Premium documentation.</p>
+            <div class="eco-col-roi">300–450% full lifecycle ROI</div>
+        </div>
+    </div>
+
+    <h2 class="brand-accent">03 — The Digital Thread: One Investment, Not Six Invoices</h2>
+    <p class="lead-paragraph">One Investment. Not Six Invoices.</p>
+    <p>
+        Traditional delivery fragments the cost of intelligence across multiple consultants, platforms, and engagements — each billing independently, none sharing data, none compounding across phases. The IDLF replaces that fragmented cost structure with a single Digital Thread: one unified investment covering all six phases, positioned as the denominator in the AESIT ROI formula against which every phase's compounding return is measured.
+    </p>
+
+    <p><strong>What Changes When the Thread Is Unified</strong></p>
+    <div class="duality-table">
+        <div class="eco-col">
+            <div class="eco-col-title title-form" style="color:var(--titanium); -webkit-text-fill-color:var(--titanium); background:none;">Fragmented Delivery</div>
+            <div class="eco-col-sub">The Default</div>
+            <ul>
+                <li>Separate vendors per phase, none sharing data</li>
+                <li>As-built conditions drift from design intent</li>
+                <li>Operational systems commissioned blind to design data</li>
+                <li>Redundant fees paid at every hand-off</li>
+                <li>Intelligence generated once, then lost</li>
+            </ul>
+        </div>
+        <div class="eco-col flow">
+            <div class="eco-col-title title-flow">IDLF Unified Delivery</div>
+            <div class="eco-col-sub">The Alternative</div>
+            <ul>
+                <li>One Digital Thread connects all six phases</li>
+                <li>Design precision becomes Digital Twin accuracy</li>
+                <li>Operational telemetry feeds the next Discovery cycle</li>
+                <li>Single Intelligence Lifecycle Cost, not six invoices</li>
+                <li>Every phase's intelligence compounds into the next</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="brand-accent">04 — Proof, Not Promise</h2>
+    <p>
+        Every phase of the IDLF is independently validated by named, third-party research — not projection. The same lifecycle metrics referenced above are documented in full in The Compounding Record.
+    </p>
+    <div class="stat-row">
+        <div class="stat-chip"><span class="stat-value">~75%</span><span class="stat-label">ROI at the Design &amp; Construction phase</span></div>
+        <div class="stat-chip"><span class="stat-value">15–35%</span><span class="stat-label">Energy cost reduction through Digital Twin operations</span></div>
+        <div class="stat-chip"><span class="stat-value">10–25%</span><span class="stat-label">Maintenance cost reduction via predictive intelligence</span></div>
+        <div class="stat-chip"><span class="stat-value">300–450%</span><span class="stat-label">Target full-lifecycle ROI under the unified Digital Thread</span></div>
+    </div>
+    <blockquote>
+        Six phases. One thread. Your asset already has both — they're just not connected yet.
+    </blockquote>
+
+    <div class="footer-note">
+        <span class="footer-brand">AESIT Global Solutions Group | The Intelligent Design Lifecycle Framework™ | aesit.net</span><br>
+        IDLF™ (Intelligent Design Lifecycle Framework), CRELI™ (CRE Lifecycle Intelligence™), and all associated marks are trademarks of AESIT Global Solutions Group.<br>
+        Est. 1989 &bullet; Lorton, Virginia &bullet; © 2026 AESIT Global Solutions Group. All rights reserved.
+    </div>
+
+</main>
+
+</body>
+</html>
