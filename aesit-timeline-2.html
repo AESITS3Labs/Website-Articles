@@ -1,0 +1,630 @@
+<!-- ============================================================
+     AESIT® — Revised Master Horizontal Timeline (1989 → 2026)
+     Paste this entire block into a GoDaddy "Embed / HTML" field.
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  #aesit-timeline-wrap {
+    --bg: #FFFFFF;
+    --text: #808080;
+    --highlight: #0C8791;
+    --line: #000000;
+
+    background: var(--bg);
+    color: var(--text);
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 12px 0 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #aesit-timeline-wrap * { box-sizing: border-box; }
+
+  #aesit-timeline-wrap .aesit-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  #aesit-timeline-wrap .aesit-disclaimer {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text);
+    font-style: italic;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 6px;
+    padding: 0 20px;
+  }
+
+  #aesit-timeline-wrap .aesit-scroll-hint {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    color: var(--highlight);
+    text-align: center;
+    margin: 0 auto 6px;
+    padding: 0 20px;
+  }
+
+  #aesit-timeline-wrap .aesit-framework-preview {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    color: var(--line);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 16px;
+    padding: 0 20px;
+  }
+
+  #aesit-timeline-wrap .aesit-framework-preview .aesit-highlight {
+    color: var(--highlight);
+  }
+
+  #aesit-timeline-wrap .aesit-closing {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--line);
+    text-align: center;
+    max-width: 900px;
+    margin: 28px auto 4px;
+    padding: 0 24px;
+  }
+
+  #aesit-timeline-wrap .aesit-closing .aesit-highlight {
+    color: var(--highlight);
+  }
+
+  #aesit-timeline-wrap .aesit-gov {
+    max-width: 1000px;
+    margin: 24px auto 8px;
+    padding: 0 20px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-title {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--line);
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-step {
+    flex: 1 1 0;
+    max-width: 260px;
+    text-align: center;
+    padding: 0 6px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-year {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--highlight);
+    margin-bottom: 4px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-label {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--line);
+    margin-bottom: 6px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-desc {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  #aesit-timeline-wrap .aesit-gov-arrow {
+    flex: 0 0 auto;
+    color: var(--line);
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 2px;
+  }
+
+  #aesit-timeline-wrap .aesit-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 24px 20px 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--highlight) #eeeeee;
+  }
+
+  #aesit-timeline-wrap .aesit-scroll:focus {
+    outline: 2px solid var(--highlight);
+    outline-offset: 2px;
+  }
+
+  #aesit-timeline-wrap .aesit-scroll::-webkit-scrollbar { height: 8px; }
+  #aesit-timeline-wrap .aesit-scroll::-webkit-scrollbar-track { background: #eeeeee; }
+  #aesit-timeline-wrap .aesit-scroll::-webkit-scrollbar-thumb { background: var(--highlight); border-radius: 4px; }
+
+  #aesit-timeline-wrap .aesit-track {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    min-width: max-content;
+    padding-top: 10px;
+  }
+
+  /* the continuous horizontal line running through all nodes */
+  #aesit-timeline-wrap .aesit-track::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    height: 2px;
+    background: var(--line);
+    z-index: 0;
+  }
+
+  #aesit-timeline-wrap .aesit-item {
+    position: relative;
+    z-index: 1;
+    width: 240px;
+    flex: 0 0 240px;
+    padding: 0 18px;
+    text-align: left;
+  }
+
+  #aesit-timeline-wrap .aesit-node {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--highlight);
+    border: 2px solid var(--bg);
+    outline: 2px solid var(--line);
+    margin: 43px auto 18px 18px;
+    position: relative;
+  }
+
+  #aesit-timeline-wrap .aesit-arrow {
+    position: absolute;
+    top: 42px;
+    right: -4px;
+    color: var(--line);
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 2;
+  }
+
+  #aesit-timeline-wrap .aesit-item:last-child .aesit-arrow { display: none; }
+
+  #aesit-timeline-wrap .aesit-year {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--highlight);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  #aesit-timeline-wrap .aesit-pillar {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--highlight);
+    margin-bottom: 6px;
+  }
+
+  #aesit-timeline-wrap .aesit-label {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    color: var(--line);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  #aesit-timeline-wrap .aesit-body p {
+    margin: 0 0 6px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text);
+  }
+
+  #aesit-timeline-wrap .aesit-body p.aesit-strong {
+    color: var(--line);
+    font-weight: bold;
+  }
+
+  #aesit-timeline-wrap .aesit-body p.aesit-note {
+    font-style: italic;
+    font-size: 12px;
+    color: var(--highlight);
+    margin-top: 8px;
+  }
+
+  #aesit-timeline-wrap .aesit-final {
+    width: 300px;
+    flex: 0 0 300px;
+  }
+
+  #aesit-timeline-wrap .aesit-wide {
+    width: 300px;
+    flex: 0 0 300px;
+  }
+
+  #aesit-timeline-wrap .aesit-final .aesit-flow {
+    margin-top: 12px;
+  }
+
+  #aesit-timeline-wrap .aesit-final .aesit-flow div {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: var(--line);
+    padding: 5px 0;
+  }
+
+  #aesit-timeline-wrap .aesit-final .aesit-flow .aesit-down {
+    color: var(--highlight);
+    font-size: 16px;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    #aesit-timeline-wrap .aesit-item { width: 200px; flex: 0 0 200px; }
+    #aesit-timeline-wrap .aesit-final { width: 240px; flex: 0 0 240px; }
+    #aesit-timeline-wrap .aesit-wide { width: 240px; flex: 0 0 240px; }
+    #aesit-timeline-wrap .aesit-final .aesit-flow div { font-size: 13px; }
+    #aesit-timeline-wrap .aesit-scroll-hint { font-size: 12px; }
+    #aesit-timeline-wrap .aesit-framework-preview { font-size: 12px; padding: 0 16px; }
+    #aesit-timeline-wrap .aesit-closing { font-size: 17px; padding: 0 16px; }
+    #aesit-timeline-wrap .aesit-gov-steps { flex-direction: column; align-items: center; gap: 4px; }
+    #aesit-timeline-wrap .aesit-gov-step { max-width: 100%; }
+    #aesit-timeline-wrap .aesit-gov-arrow { transform: rotate(90deg); padding: 4px 0; }
+  }
+</style>
+
+<section id="aesit-timeline-wrap" aria-labelledby="aesit-timeline-title">
+
+  <h2 id="aesit-timeline-title" class="aesit-sr-only">AESIT&reg; history, 1989 through 2026</h2>
+
+  <p class="aesit-disclaimer">
+    <strong>Capability Lineage:</strong> Historical work is described using current AESIT&reg; terminology to show capability lineage; project-era scopes and deliverables remain historically accurate.
+  </p>
+
+  <p class="aesit-scroll-hint">Explore AESIT&reg;'s history: scroll horizontally or swipe to move through the timeline &rarr;</p>
+
+  <p class="aesit-framework-preview">
+    Form &rarr; Flow &rarr; Fortitude &rarr; <span class="aesit-highlight">Compounding Intelligence&trade;</span> &rarr; Governance &rarr; <span class="aesit-highlight">Asset Sovereignty&trade;</span>
+  </p>
+
+
+  <div class="aesit-scroll" tabindex="0" role="region" aria-label="AESIT history timeline, 1989 through 2026">
+    <div class="aesit-track">
+
+      <!-- 1989 -->
+      <article class="aesit-item aesit-wide" aria-label="1989: AESIT Founded, Integrated AEC Practice">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">1989</div>
+        <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
+        <div class="aesit-label">AESIT&reg; Founded &mdash; Integrated AEC Practice</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">AEC Design &amp; Engineering</p>
+          <p>Architecture &bull; Civil &bull; Electrical &bull; Fire Protection &bull; Interiors &bull; Mechanical &bull; HVAC/Plumbing &bull; Structural</p>
+          <p>CAD + Data + Word Processing Integration</p>
+          <p>Integrated digital workflows increased design efficiency, coordination, documentation, and information continuity across commercial, residential, and highly secured federal environments.</p>
+        </div>
+      </article>
+
+      <!-- 1990-92 -->
+      <article class="aesit-item" aria-label="1990 to 1992: High-Security Environments">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">1990&ndash;92</div>
+        <div class="aesit-pillar">Form &amp; Fortitude Intelligence</div>
+        <div class="aesit-label">High-Security Environments</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Architecture &bull; Engineering &bull; Renovation</p>
+          <p>Emerging physical and cyber security environments</p>
+        </div>
+      </article>
+
+      <!-- 1993 -->
+      <article class="aesit-item" aria-label="1993: National Infrastructure">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">1993</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">National Infrastructure</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Ronald Reagan Washington National Airport &mdash; Washington, D.C.</p>
+          <p>Airport modernization &bull; 196-ft. air traffic control tower</p>
+          <p>AESIT supported the architectural engineering effort on this national infrastructure project.</p>
+        </div>
+      </article>
+
+      <!-- 1994 -->
+      <article class="aesit-item" aria-label="1994: International Scale">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">1994</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">International Scale</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Cheung Kong Centre &mdash; Hong Kong</p>
+          <p>Architectural Engineering &bull; Floor Design Criteria &bull; Egress &bull; Specifications</p>
+          <p>AESIT provided architectural engineering calculations for floor design criteria, gross/usable floor area, egress statistics, and required deductions for columns, lobbies, stairs, escalators, restrooms, and MEP spaces.</p>
+        </div>
+      </article>
+
+      <!-- 1995 -->
+      <article class="aesit-item" aria-label="1995: Initial Corporate Formation">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">1995</div>
+        <div class="aesit-label">Initial Corporate Formation</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">AESCT Corp. &bull; Columbia, Maryland</p>
+          <p>Federal &amp; Local Corrections &bull; Institutional Design</p>
+          <p>Architectural Graphic Standards, 9th Edition Standards Contributor</p>
+        </div>
+      </article>
+
+      <!-- 1996 -->
+      <article class="aesit-item" aria-label="1996: Regional Expansion">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">1996</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">Regional Expansion</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Opened Office in Atlanta, Georgia</p>
+          <p>Generative Design &bull; Architectural Engineering &bull; Hospitality &bull; Residential &bull; Sustainable Design</p>
+          <p>Autoclaved Aerated Concrete (AAC) &mdash; lightweight, fire-retardant, green construction materials</p>
+        </div>
+      </article>
+
+      <!-- 2002 -->
+      <article class="aesit-item" aria-label="2002: Residential Design Practice">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2002</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">Residential Design Practice</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Fairfax, Virginia</p>
+          <p>Luxury Custom Homes &bull; Neighborhood Planning</p>
+        </div>
+      </article>
+
+      <!-- 2002-03 -->
+      <article class="aesit-item" aria-label="2002 to 2003: Systems Integration">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2002&ndash;03</div>
+        <div class="aesit-pillar">Flow Intelligence</div>
+        <div class="aesit-label">Systems Integration</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Dulles Corridor Metrorail</p>
+          <p>DEIS &bull; Technical Project Management &bull; Engineering Integration</p>
+        </div>
+      </article>
+
+      <!-- 2003-2005 -->
+      <article class="aesit-item" aria-label="2003 to 2005: Military Infrastructure Portfolio">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2003&ndash;2005</div>
+        <div class="aesit-pillar">Fortitude Intelligence</div>
+        <div class="aesit-label">Military Infrastructure Portfolio</div>
+        <div class="aesit-body">
+          <p>Military &bull; NAVFAC &bull; NAVSTA &bull; Embassy Security &bull; Army National Guard &bull; Naval Installations</p>
+          <p>Physical Security &bull; Critical Infrastructure &bull; Sarbanes-Oxley Compliance</p>
+        </div>
+      </article>
+
+      <!-- 2005-2006 -->
+      <article class="aesit-item" aria-label="2005 to 2006: Treasury Modernization">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2005&ndash;2006</div>
+        <div class="aesit-pillar">Flow Intelligence</div>
+        <div class="aesit-label">Treasury Modernization</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Department of Treasury</p>
+          <p>CAFM &bull; Enterprise Architecture &bull; Physical Security &bull; Critical Infrastructure &bull; Desktop to SaaS Model</p>
+          <p>NIST/FISMA High-Baseline Compliance &bull; Disaster Recovery</p>
+        </div>
+      </article>
+
+      <!-- 2007-2012 -->
+      <article class="aesit-item" aria-label="2007 to 2012: Treasury Systems Expansion">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2007&ndash;2012</div>
+        <div class="aesit-pillar">Flow Intelligence</div>
+        <div class="aesit-label">Treasury Systems Expansion</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Department of Treasury</p>
+          <p>IWMS &bull; EAM &bull; Physical Security &bull; Enterprise Architecture &bull; Infrastructure Management</p>
+          <p>Critical Infrastructure &bull; NIST/FISMA High-Baseline Compliance</p>
+        </div>
+      </article>
+
+      <!-- 2013-2015 -->
+      <article class="aesit-item" aria-label="2013 to 2015: Public Sector Modernization">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2013&ndash;2015</div>
+        <div class="aesit-pillar">Flow Intelligence</div>
+        <div class="aesit-label">Public Sector Modernization</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Local Public Service Organization</p>
+          <p>EAM &bull; Enterprise Architecture &bull; Infrastructure Management</p>
+        </div>
+      </article>
+
+      <!-- 2016-18 -->
+      <article class="aesit-item" aria-label="2016 to 2018: Cyber Security and Network Modernization">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2016&ndash;18</div>
+        <div class="aesit-pillar">Flow &amp; Fortitude Intelligence</div>
+        <div class="aesit-label">Cyber Security &amp; Network Modernization</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Nationwide Public Service Organization</p>
+          <p>Cyber Security &bull; Disaster Recovery &bull; Enterprise Architecture</p>
+          <p>Network Administration &amp; Modernization &bull; Desktop to SaaS Model (Microsoft 365)</p>
+          <p>24/7 Perimeter Threat Protection</p>
+        </div>
+      </article>
+
+      <!-- 2017 Experiential Environment -->
+      <article class="aesit-item" aria-label="2017: Experiential Environment">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2017</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">Experiential Environment</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Luxury Automotive Immersion Center</p>
+          <p>Multi-sensory design + build</p>
+        </div>
+      </article>
+
+      <!-- 2017-18 St. James -->
+      <article class="aesit-item" aria-label="2017 to 2018: Mixed-Use Sports Complex, The St. James">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2017&ndash;18</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">Mixed-Use Sports Complex</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">The St. James &bull; Springfield, VA</p>
+          <p>450,000 SF &bull; MEP / HVAC Engineering &bull; Specialized Dehumidification + Ice-Rink Refrigeration</p>
+          <p>Summer 2017 &rarr; Spring 2018</p>
+        </div>
+      </article>
+
+      <!-- 2018 Fort Belvoir -->
+      <article class="aesit-item" aria-label="2018: Regenerative Design, Fort Belvoir">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2018</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">Regenerative Design</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Fort Belvoir Historic Warehouse</p>
+          <p>Historic Adaptive Reuse &bull; Regenerative Design</p>
+        </div>
+      </article>
+
+      <!-- 2019 -->
+      <article class="aesit-item" aria-label="2019: Regenerative Design, Old Town Alexandria">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2019</div>
+        <div class="aesit-pillar">Form Intelligence</div>
+        <div class="aesit-label">Regenerative Design</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Old Town Alexandria Historic Home</p>
+          <p>National Historic Landmark District &bull; Adaptive Reuse / Regenerative Design</p>
+        </div>
+      </article>
+
+      <!-- 2020s -->
+      <article class="aesit-item" aria-label="2020s: Framework Synthesis">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2020s</div>
+        <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
+        <div class="aesit-label">Framework Synthesis</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Form &rarr; Flow &rarr; Fortitude</p>
+          <p>Regenerative Design &bull; Adaptive Operations &bull; Resilient Protection</p>
+          <p>Decades of design, operations, protection, and governance practice formalized into one Lifecycle Intelligence architecture.</p>
+        </div>
+      </article>
+
+      <!-- 2026 CRELI -->
+      <article class="aesit-item aesit-final" aria-label="2026: CRELI, CRE Lifecycle Intelligence">
+        <div class="aesit-node"></div>
+        <div class="aesit-year">2026</div>
+        <div class="aesit-label">CRELI&trade;</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">CRE Lifecycle Intelligence&trade;</p>
+          <p>The sovereign intelligence governance discipline for the built environment.</p>
+          <div class="aesit-flow">
+            <div>Form &rarr; Flow &rarr; Fortitude</div>
+            <div class="aesit-down">&darr;</div>
+            <div>Compounding Intelligence&trade;</div>
+            <div class="aesit-down">&darr;</div>
+            <div>Governance</div>
+            <div class="aesit-down">&darr;</div>
+            <div>Asset Sovereignty&trade;</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <p class="aesit-closing">
+    AESIT&reg; did not invent <span class="aesit-highlight">CRELI&trade;</span> in 2026. AESIT finally gave a name and governance architecture to intelligence it had been accumulating since 1989.
+  </p>
+
+  <div class="aesit-gov">
+    <div class="aesit-gov-title">Governance, Then &amp; Now</div>
+    <div class="aesit-gov-steps">
+      <div class="aesit-gov-step">
+        <div class="aesit-gov-year">Pre-1989</div>
+        <div class="aesit-gov-label">Manual Reconciliation</div>
+        <div class="aesit-gov-desc">Documentation, blueprints, schedules, and specifications checked and reconciled by hand</div>
+      </div>
+      <div class="aesit-gov-arrow">&rarr;</div>
+      <div class="aesit-gov-step">
+        <div class="aesit-gov-year">1989&ndash;2020s</div>
+        <div class="aesit-gov-label">Digital Find &amp; Replace</div>
+        <div class="aesit-gov-desc">Reconciliation extended into databases, word processing documents, and CAD drawings</div>
+      </div>
+      <div class="aesit-gov-arrow">&rarr;</div>
+      <div class="aesit-gov-step">
+        <div class="aesit-gov-year">2026</div>
+        <div class="aesit-gov-label">Autonomous AI/ML Governance</div>
+        <div class="aesit-gov-desc">Analytical models continuously validate and reconcile project intelligence</div>
+      </div>
+    </div>
+  </div>
+
+</section>
