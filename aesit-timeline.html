@@ -4,7 +4,7 @@
      ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&amp;display=swap" rel="stylesheet">
 
 <style>
   #aesit-timeline-wrap {
@@ -55,6 +55,101 @@
     text-align: center;
     margin: 0 auto 6px;
     padding: 0 20px;
+  }
+
+  #aesit-timeline-wrap .aesit-framework-preview {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    color: var(--line);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 16px;
+    padding: 0 20px;
+  }
+
+  #aesit-timeline-wrap .aesit-framework-preview .aesit-highlight {
+    color: var(--highlight);
+  }
+
+  #aesit-timeline-wrap .aesit-closing {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--line);
+    text-align: center;
+    max-width: 900px;
+    margin: 28px auto 4px;
+    padding: 0 24px;
+  }
+
+  #aesit-timeline-wrap .aesit-closing .aesit-highlight {
+    color: var(--highlight);
+  }
+
+  #aesit-timeline-wrap .aesit-gov {
+    max-width: 1000px;
+    margin: 24px auto 8px;
+    padding: 0 20px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-title {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--line);
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-step {
+    flex: 1 1 0;
+    max-width: 260px;
+    text-align: center;
+    padding: 0 6px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-year {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--highlight);
+    margin-bottom: 4px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-label {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--line);
+    margin-bottom: 6px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-desc {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  #aesit-timeline-wrap .aesit-gov-arrow {
+    flex: 0 0 auto;
+    color: var(--line);
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 2px;
   }
 
   #aesit-timeline-wrap .aesit-scroll {
@@ -181,6 +276,11 @@
     flex: 0 0 300px;
   }
 
+  #aesit-timeline-wrap .aesit-wide {
+    width: 300px;
+    flex: 0 0 300px;
+  }
+
   #aesit-timeline-wrap .aesit-final .aesit-flow {
     margin-top: 12px;
   }
@@ -203,8 +303,14 @@
   @media (max-width: 640px) {
     #aesit-timeline-wrap .aesit-item { width: 200px; flex: 0 0 200px; }
     #aesit-timeline-wrap .aesit-final { width: 240px; flex: 0 0 240px; }
+    #aesit-timeline-wrap .aesit-wide { width: 240px; flex: 0 0 240px; }
     #aesit-timeline-wrap .aesit-final .aesit-flow div { font-size: 13px; }
     #aesit-timeline-wrap .aesit-scroll-hint { font-size: 12px; }
+    #aesit-timeline-wrap .aesit-framework-preview { font-size: 12px; padding: 0 16px; }
+    #aesit-timeline-wrap .aesit-closing { font-size: 17px; padding: 0 16px; }
+    #aesit-timeline-wrap .aesit-gov-steps { flex-direction: column; align-items: center; gap: 4px; }
+    #aesit-timeline-wrap .aesit-gov-step { max-width: 100%; }
+    #aesit-timeline-wrap .aesit-gov-arrow { transform: rotate(90deg); padding: 4px 0; }
   }
 </style>
 
@@ -218,114 +324,156 @@
 
   <p class="aesit-scroll-hint">Explore AESIT&reg;'s history: scroll horizontally or swipe to move through the timeline &rarr;</p>
 
+  <p class="aesit-framework-preview">
+    Form &rarr; Flow &rarr; Fortitude &rarr; <span class="aesit-highlight">Compounding Intelligence&trade;</span> &rarr; Governance &rarr; <span class="aesit-highlight">Asset Sovereignty&trade;</span>
+  </p>
+
+
   <div class="aesit-scroll" tabindex="0" role="region" aria-label="AESIT history timeline, 1989 through 2026">
     <div class="aesit-track">
 
       <!-- 1989 -->
-      <article class="aesit-item" aria-label="1989: Brand Conception">
+      <article class="aesit-item aesit-wide" aria-label="1989: AESIT Founded, Tysons Corner, Virginia">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">1989</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
-        <div class="aesit-label">Brand Conception</div>
+        <div class="aesit-label">AESIT&reg; Founded &mdash; Tysons Corner, Virginia</div>
         <div class="aesit-body">
-          <p class="aesit-strong">AESCT / AESIT&reg;</p>
-          <p>Full-service AEC support &mdash; Design, Operations &amp; Protection</p>
-          <p>CADD &bull; Digital Project Intelligence</p>
+          <p class="aesit-strong">AEC Design, CAD &amp; Systems Integration</p>
+          <p>Full-scope architectural design and drafting through the industry&rsquo;s migration from physical drafting tables to early CAD environments.</p>
+          <p>Accuracy, coordination fidelity, and design continuity across commercial, residential, and high-security federal facilities.</p>
+          <p>A systems-minded design practice built to bridge eras, technologies, and operational cultures.</p>
         </div>
       </article>
 
-      <!-- 1990-92 -->
-      <article class="aesit-item" aria-label="1990 to 1992: High-Security Environments">
+      <!-- 1989-1991 -->
+      <article class="aesit-item" aria-label="1989 to 1991: Resilient and Secure Design, Classified Federal Environment">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
-        <div class="aesit-year">1990&ndash;92</div>
-        <div class="aesit-pillar">Fortitude Intelligence</div>
-        <div class="aesit-label">High-Security Environments</div>
+        <div class="aesit-year">1989&ndash;91</div>
+        <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
+        <div class="aesit-label">Resilient + Secure Design</div>
         <div class="aesit-body">
-          <p class="aesit-strong">Architecture &bull; Engineering &bull; Renovation</p>
-          <p>Emerging physical and cyber security environments</p>
+          <p class="aesit-strong">Classified Federal Environment &mdash; United States</p>
+          <p>Multi-disciplinary architecture and engineering support for a high-consequence federal environment &mdash; structural hardening, complex telecommunications pathways, and early cyber security safeguards.</p>
+          <p>Proved that physical design, operational continuity, and secure protection must be co-engineered as one unified system.</p>
+        </div>
+      </article>
+
+      <!-- 1991-1993 -->
+      <article class="aesit-item" aria-label="1991 to 1993: Resilient and Secure Design, Federal Partner Agency">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">1991&ndash;93</div>
+        <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
+        <div class="aesit-label">Resilient + Secure Design</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Federal Partner Agency &mdash; United States</p>
+          <p>Multi-disciplinary architecture and engineering support integrating physical hardening, complex MEP infrastructure, telecommunications, and early cyber-physical security controls.</p>
+          <p>Laid the organic foundation for lifecycle intelligence &mdash; encoding resilience, operational continuity, and secure environment design into mission-critical federal assets from inception.</p>
         </div>
       </article>
 
       <!-- 1993 -->
-      <article class="aesit-item" aria-label="1993: National Infrastructure">
+      <article class="aesit-item" aria-label="1993: Biophilic and Sustainable Infrastructure, Ronald Reagan Washington National Airport">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">1993</div>
-        <div class="aesit-pillar">Form Intelligence</div>
-        <div class="aesit-label">National Infrastructure</div>
+        <div class="aesit-pillar">Form &amp; Flow Intelligence</div>
+        <div class="aesit-label">Biophilic + Sustainable Infrastructure</div>
         <div class="aesit-body">
           <p class="aesit-strong">Ronald Reagan Washington National Airport &mdash; Washington, D.C.</p>
-          <p>Airport modernization &bull; 196-ft. air traffic control tower</p>
-          <p>AESIT supported the architectural engineering effort on this national infrastructure project.</p>
+          <p>AESIT&reg; provided architectural engineering and design support for this national infrastructure project, designed around seamless connections to the Metrorail network.</p>
+          <p>Vaulted steel arches, domed oculi, and expansive glass sightlines bring natural light and views of the Potomac deep into the concourses &mdash; biophilic design that reduces stress and cognitive fatigue.</p>
+          <p>The design team received multiple national awards.</p>
         </div>
       </article>
 
       <!-- 1994 -->
-      <article class="aesit-item" aria-label="1994: International Scale">
+      <article class="aesit-item" aria-label="1994: Smart Building and Sustainable Infrastructure, Cheung Kong Centre">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">1994</div>
         <div class="aesit-pillar">Form Intelligence</div>
-        <div class="aesit-label">International Scale</div>
+        <div class="aesit-label">Smart Building + Sustainable Infrastructure</div>
         <div class="aesit-body">
           <p class="aesit-strong">Cheung Kong Centre &mdash; Hong Kong</p>
-          <p>Architectural Engineering &bull; Floor Design Criteria &bull; Egress &bull; Specifications</p>
-          <p>AESIT provided architectural engineering calculations for floor design criteria, gross/usable floor area, egress statistics, and required deductions for columns, lobbies, stairs, escalators, restrooms, and MEP spaces.</p>
+          <p>AESIT&reg; provided specialized engineering analysis in support of the project&rsquo;s world-class design team, applying engineered floor criteria to harmonize strict contractual requirements with high-performance design.</p>
+          <p>Dynamic vibration analysis and structural optimization achieved column-free floor plates supporting the building&rsquo;s pioneering fiber-optic facade, advanced egress modeling, and strategic MEP deductions.</p>
+          <p>An early application of Form Intelligence &mdash; encoding structural harmony and performance into the asset&rsquo;s foundation to establish a baseline of compounding lifecycle value.</p>
         </div>
       </article>
 
       <!-- 1995 -->
-      <article class="aesit-item" aria-label="1995: Initial Corporate Formation">
+      <article class="aesit-item" aria-label="1995: Entity Formation, AESCT Corp.">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">1995</div>
-        <div class="aesit-label">Initial Corporate Formation</div>
+        <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
+        <div class="aesit-label">Entity Formation</div>
         <div class="aesit-body">
-          <p class="aesit-strong">AESCT Corp. &bull; Columbia, Maryland</p>
-          <p>Federal &amp; Local Corrections &bull; Institutional Design</p>
+          <p class="aesit-strong">AESCT Corp. &mdash; Columbia, Maryland</p>
+          <p>Expanded into full-system deployment, user training, and CAD interface optimization &mdash; engineering custom macros and menu overlays that mapped multi-step commands to single-input actions, eliminating repetitive drafting sequences and increasing client productivity.</p>
+          <p>Marked AESIT&reg;&rsquo;s evolution from design practitioner to workflow architect &mdash; an early expression of the lifecycle-intelligence ethos.</p>
           <p>Architectural Graphic Standards, 9th Edition Standards Contributor</p>
         </div>
       </article>
 
       <!-- 1996 -->
-      <article class="aesit-item" aria-label="1996: Regional Expansion">
+      <article class="aesit-item" aria-label="1996: Sustainable and Resilient Design, Atlanta, Georgia">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">1996</div>
-        <div class="aesit-pillar">Form Intelligence</div>
-        <div class="aesit-label">Regional Expansion</div>
+        <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
+        <div class="aesit-label">Sustainable + Resilient Design</div>
         <div class="aesit-body">
-          <p class="aesit-strong">Opened Office in Atlanta, Georgia</p>
-          <p>Generative Design &bull; Architectural Engineering &bull; Hospitality &bull; Residential &bull; Sustainable Design</p>
-          <p>Autoclaved Aerated Concrete (AAC) &mdash; lightweight, fire-retardant, green construction materials</p>
+          <p class="aesit-strong">Autoclaved Aerated Concrete (AAC) Envelope System &mdash; Atlanta, Georgia</p>
+          <p>Engineered a lightweight, monolithic AAC envelope over steel and wood framing for residential and commercial structures.</p>
+          <p>An early example of operationalizing Form through passive, weight-reducing envelope design; Flow by curbing thermal bridging to cut energy consumption; and Fortitude through severe-climate defense and structural resilience.</p>
+        </div>
+      </article>
+
+      <!-- 2001 -->
+      <article class="aesit-item" aria-label="2001: Socially Resilient and Human-Centered Design, The World Bank">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2001</div>
+        <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
+        <div class="aesit-label">Socially Resilient + Human-Centered Design</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">The World Bank &mdash; Azerbaijan, Burkina Faso &amp; Ethiopia</p>
+          <p>Human-centered design and rehabilitation for public housing and informal settlements &mdash; climate-adaptive residential upgrades ranging from IDP collective-housing insulation to post-conflict structural repairs.</p>
+          <p>Advanced Form through localized retrofits and thermal envelope upgrades; Flow through communal sanitation, utilities, and drainage integration; and Fortitude by relocating residents from high-risk floodplains to secure long-term resilience.</p>
         </div>
       </article>
 
       <!-- 2002 -->
-      <article class="aesit-item" aria-label="2002: Residential Design Practice">
+      <article class="aesit-item aesit-wide" aria-label="2002: Custom Residential Portfolio, DMV Region">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">2002</div>
         <div class="aesit-pillar">Form Intelligence</div>
-        <div class="aesit-label">Residential Design Practice</div>
+        <div class="aesit-label">Custom Residential Portfolio</div>
         <div class="aesit-body">
-          <p class="aesit-strong">Fairfax, Virginia</p>
-          <p>Luxury Custom Homes &bull; Neighborhood Planning</p>
+          <p class="aesit-strong">DMV Region</p>
+          <p>AESIT&reg; served as Design Architect for luxury custom homes across the DC, Maryland &amp; Virginia region &mdash; in partnership with a civil/structural engineering collaborator &mdash; with additional work in neighborhood planning.</p>
+          <p>Homes ranged from 3,500 to 6,000 SF, with 5&ndash;8 bedrooms and 5&ndash;9 bathrooms, each finished with bespoke architectural detailing.</p>
+          <p>One residence featured a grand double staircase rising through the main foyer beneath a center chandelier, set above marble tile flooring.</p>
         </div>
       </article>
 
       <!-- 2002-03 -->
-      <article class="aesit-item" aria-label="2002 to 2003: Systems Integration">
+      <article class="aesit-item" aria-label="2002 to 2003: Sustainable Infrastructure and Transit-Oriented Development, Dulles Corridor Metrorail">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">2002&ndash;03</div>
         <div class="aesit-pillar">Flow Intelligence</div>
-        <div class="aesit-label">Systems Integration</div>
+        <div class="aesit-label">Sustainable Infrastructure + TOD</div>
         <div class="aesit-body">
-          <p class="aesit-strong">Dulles Corridor Metrorail</p>
-          <p>DEIS &bull; Technical Project Management &bull; Engineering Integration</p>
+          <p class="aesit-strong">Dulles Corridor Metrorail &mdash; Washington Metropolitan Area</p>
+          <p>Directed operational cadence across a multi-firm prime consultant team &mdash; managing GIS and CAD systems, AEC engineering applications, and mission-critical communications across 34 planned transit stations.</p>
+          <p>Unified cross-disciplinary digital operations, safeguarding data integrity and enabling delivery of the Draft Environmental Impact Statement (DEIS) ahead of schedule and under budget.</p>
         </div>
       </article>
 
@@ -365,7 +513,7 @@
         <div class="aesit-label">Treasury Systems Expansion</div>
         <div class="aesit-body">
           <p class="aesit-strong">Department of Treasury</p>
-          <p>IWMS &bull; EAM &bull; Physical Security &bull; Enterprise Architecture &bull; Intelligent Infrastructure</p>
+          <p>IWMS &bull; EAM &bull; Physical Security &bull; Enterprise Architecture &bull; Infrastructure Management</p>
           <p>Critical Infrastructure &bull; NIST/FISMA High-Baseline Compliance</p>
         </div>
       </article>
@@ -379,7 +527,7 @@
         <div class="aesit-label">Public Sector Modernization</div>
         <div class="aesit-body">
           <p class="aesit-strong">Local Public Service Organization</p>
-          <p>EAM &bull; Enterprise Architecture &bull; Intelligent Infrastructure</p>
+          <p>EAM &bull; Enterprise Architecture &bull; Infrastructure Management</p>
         </div>
       </article>
 
@@ -478,11 +626,40 @@
             <div class="aesit-down">&darr;</div>
             <div>Compounding Intelligence&trade;</div>
             <div class="aesit-down">&darr;</div>
+            <div>Governance</div>
+            <div class="aesit-down">&darr;</div>
             <div>Asset Sovereignty&trade;</div>
           </div>
         </div>
       </article>
 
+    </div>
+  </div>
+
+  <p class="aesit-closing">
+    AESIT&reg; did not invent <span class="aesit-highlight">CRELI&trade;</span> in 2026. AESIT finally gave a name and governance architecture to intelligence it had been accumulating since 1989.
+  </p>
+
+  <div class="aesit-gov">
+    <div class="aesit-gov-title">Governance, Then &amp; Now</div>
+    <div class="aesit-gov-steps">
+      <div class="aesit-gov-step">
+        <div class="aesit-gov-year">Pre-1989</div>
+        <div class="aesit-gov-label">Manual Reconciliation</div>
+        <div class="aesit-gov-desc">Documentation, blueprints, schedules, and specifications reconciled by hand &mdash; governance through human effort.</div>
+      </div>
+      <div class="aesit-gov-arrow">&rarr;</div>
+      <div class="aesit-gov-step">
+        <div class="aesit-gov-year">1989&ndash;2020s</div>
+        <div class="aesit-gov-label">Digital Reconciliation</div>
+        <div class="aesit-gov-desc">Governance extended into databases, CAD environments, and digital documentation &mdash; the era of networked digital systems.</div>
+      </div>
+      <div class="aesit-gov-arrow">&rarr;</div>
+      <div class="aesit-gov-step">
+        <div class="aesit-gov-year">2026</div>
+        <div class="aesit-gov-label">Autonomous Governance</div>
+        <div class="aesit-gov-desc">AI/ML analytical models continuously validate, reconcile, and enforce project intelligence &mdash; the emergence of BIM, Digital Twin, and sovereign autonomous governance.</div>
+      </div>
     </div>
   </div>
 
