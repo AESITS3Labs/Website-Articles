@@ -79,6 +79,21 @@
   }
   nav.links a:hover{ color:var(--ink); border-color:var(--bronze); }
 
+  /* ---- threshold ---- */
+  .threshold{ padding:100px 0 64px; background:var(--cream); }
+  .threshold .eyebrow{ margin-bottom:28px; }
+  .threshold h2{ font-size:clamp(30px,4.4vw,46px); line-height:1.15; max-width:680px; margin-bottom:28px; }
+  .threshold p.threshold-body{ font-family:var(--serif); font-size:19px; line-height:1.6; color:var(--ink-soft); max-width:620px; margin-bottom:40px; }
+  .threshold-cta{ display:flex; align-items:center; gap:14px; }
+  .threshold-cta a{
+    font-family:var(--mono); font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+    text-decoration:none; color:var(--bronze-deep); border-bottom:1px solid var(--bronze);
+    padding-bottom:3px;
+  }
+  .threshold-cta .chevron{ color:var(--bronze); font-family:var(--mono); font-size:16px; animation:nudge 2.4s ease-in-out infinite; }
+  @keyframes nudge{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(4px); } }
+  @media (prefers-reduced-motion: reduce){ .threshold-cta .chevron{ animation:none; } }
+
   /* ---- hero / manifesto lead ---- */
   .hero{ padding:88px 0 76px; border-bottom:1px solid var(--line); background:var(--paper); }
   .hero .eyebrow{ margin-bottom:30px; }
@@ -151,7 +166,7 @@
 <main>
 
   <!-- ============ HERO — FULL MANIFESTO ============ -->
-  <section class="hero">
+  <section class="hero" id="manifesto">
     <div class="wrap">
       <div class="eyebrow">The Manifesto</div>
       <div class="manifesto-block">
