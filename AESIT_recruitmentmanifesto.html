@@ -94,6 +94,9 @@
   @keyframes nudge{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(4px); } }
   @media (prefers-reduced-motion: reduce){ .threshold-cta .chevron{ animation:none; } }
 
+  /* ---- entry marker ---- */
+  .entry-marker{ height:3px; background:linear-gradient(90deg, transparent, #9C6F3A 18%, #C99A5B 50%, #9C6F3A 82%, transparent); }
+
   /* ---- hero / manifesto lead ---- */
   .hero{ padding:88px 0 76px; border-bottom:1px solid var(--line); background:var(--paper); }
   .hero .eyebrow{ margin-bottom:30px; }
@@ -103,6 +106,7 @@
   .manifesto-line.emphasis{ font-style:italic; color:var(--bronze-deep); border-left:3px solid var(--bronze); padding-left:24px; }
   .manifesto-line .lede-strong{ font-weight:600; color:var(--ink); }
   .manifesto-close{ font-family:var(--mono); font-size:14px; letter-spacing:.05em; color:var(--ink-faint); }
+  .manifesto-signature{ font-family:var(--mono); font-size:13px; letter-spacing:.04em; color:var(--ink-faint); margin-top:-6px; }
   .hero-cta{ margin-top:44px; }
 
   /* ---- section shell ---- */
@@ -163,6 +167,8 @@
   </div>
 </header>
 
+<div class="entry-marker" aria-hidden="true"></div>
+
 <main>
 
   <!-- ============ HERO — FULL MANIFESTO ============ -->
@@ -183,6 +189,8 @@
         <p class="manifesto-line">This is a place for those who refuse to dim their signal. A place for architects of the future, for those who see systems as canvases, for those who understand that intelligence is not an asset — it is a responsibility.</p>
 
         <p class="manifesto-close">Brilliant minds — a world awaits; your time is now. ∞</p>
+
+        <p class="manifesto-signature">— Kenton Wingfield, Founder</p>
       </div>
       <div class="hero-cta">
         <a href="https://aesit.net/home#4a55923c-fe4d-4616-8a9d-b71b629d5ce9" class="btn btn-primary">Stop Holding Back →</a>
