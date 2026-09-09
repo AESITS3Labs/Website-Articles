@@ -231,17 +231,17 @@
     margin-bottom: 6px;
     letter-spacing: 0.5px;
   }
-  /* Visible, center-justified title matching year height/color but less bold */
+ 
+/* Visible, center-justified title matching year height/color but less bold */
 #aesit-timeline-wrap .aesit-title {
   font-family: 'League Spartan', Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 26px;
+  font-weight: 600;           /* not as bold as .aesit-year (800) */
+  font-size: 26px;            /* same height as .aesit-year */
   color: var(--highlight);
   text-align: center;
-  margin: 24px auto 12px; /* <-- adds 24px space above the title */
+  margin: 26px auto 12px;     /* top margin = title height (26px) */
   max-width: 1200px;
 }
-     
   #aesit-timeline-wrap .aesit-pillar {
     font-family: 'League Spartan', Helvetica, Arial, sans-serif;
     font-weight: 700;
