@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AESIT — Community Database</title>
+<title>AESIT — Community Interest</title>
 <meta name="description" content="Submit your resume to the AESIT Community Database — for the minds building the future of Lifecycle Intelligence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,6 +85,7 @@
   .hero h1{ font-size:clamp(32px,5vw,52px); line-height:1.1; margin-bottom:22px; max-width:760px; }
   .hero .lede{ font-size:18px; color:var(--ink-soft); max-width:640px; margin-bottom:0; }
   .hero .lede strong{ color:var(--ink); font-weight:600; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
  
   /* ---- notice ---- */
   .notice{ background:var(--cream-2); border-bottom:1px solid var(--line); }
@@ -139,10 +140,19 @@
   }
   .roster-desc-inner p{ font-size:15px; line-height:1.65; color:var(--ink-soft); }
  
-  /* ---- signal ---- */
-  .signal{ background:var(--cream); }
-  .signal-quote{ max-width:700px; border-left:3px solid var(--bronze); padding-left:26px; }
-  .signal-quote p{ font-family:var(--serif); font-style:italic; font-size:19px; line-height:1.62; color:var(--ink); }
+  /* ---- the inner loop ---- */
+  .inner-loop{ background:var(--cream); }
+  .inner-loop-quote{ max-width:700px; border-left:3px solid var(--bronze); padding-left:26px; }
+  .inner-loop-quote p{ font-family:var(--serif); font-style:italic; font-size:19px; line-height:1.62; color:var(--ink); }
+  .inner-loop-name{
+    font-family:var(--serif); font-weight:600; font-style:normal; font-size:clamp(26px,3.4vw,34px);
+    line-height:1.2; color:var(--ink); margin:26px 0; letter-spacing:-0.01em;
+  }
+  .eyebrow.eyebrow-loop::before{
+    content:"∞"; width:auto; height:auto; background:none;
+    font-family:var(--mono); font-size:16px; color:var(--bronze); line-height:1;
+  }
+  .inner-loop-close{ font-family:var(--serif); font-style:italic; font-size:19.5px; line-height:1.55; color:var(--bronze-deep); max-width:640px; margin-top:24px; }
 
   /* ---- submission ---- */
   .submit-section{ background:var(--slate); color:var(--cream); }
@@ -170,7 +180,7 @@
     <a href="https://aesit.net/home" class="wordmark">AESIT<small>Community Interest</small></a>
     <nav class="links">
       <a href="#roster">Roster</a>
-      <a href="#signal">Signal</a>
+      <a href="#inner-loop">Inner Loop</a>
       <a href="#submit">Submit</a>
     </nav>
   </div>
@@ -181,9 +191,12 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap">
-      <div class="eyebrow">Built For The Minds Who See Beyond the Room</div>
+      <div class="eyebrow">For Those the Manifesto Was Written For</div>
       <h1>Welcome! Great choice.<br>This isn't employment.<br>It's entry into a community built for those who see differently.</h1>
       <p class="lede">The manifesto defined the mission. Now AESIT is assembling the minds who will carry Lifecycle Intelligence forward — across practices and the infrastructure that unifies them. <strong>Read the manifesto. See where your intelligence fits. Stake Your Claim.</strong></p>
+      <div class="hero-actions">
+        <a href="mailto:info@aesit.net?subject=AESIT%20Community%20Interest%20Submission" class="btn btn-primary">Submit Your Resume →</a>
+      </div>
     </div>
   </section>
  
@@ -207,16 +220,21 @@
     </div>
   </section>
  
-  <!-- ============ SIGNAL ============ -->
-  <section class="signal" id="signal">
+  <!-- ============ THE INNER LOOP ============ -->
+  <section class="inner-loop" id="inner-loop">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">A Small Sign</div>
+        <div class="eyebrow eyebrow-loop">The Inner Loop</div>
         <h2>You'll recognize it before anyone explains it.</h2>
       </div>
-      <div class="signal-quote">
-        <p>Look closely at any photo of AESIT's people — a race circuit, a boardroom, a hallway between meetings — and you'll find the same detail repeated without exception: arms crossed, the same way, every time. It isn't posture, and it isn't coincidence. It's the physical form of the ∞ that closes every page we write — our own way of tracing what we call the IDLF loop, without saying a word about what the letters stand for. No one hands you an explanation. You see it in the photographs, in the people who've been here longest, in a room the first week you're in it. And at some point, without being told to, you find your own arms crossing the same way. That's usually the moment you realize you didn't just accept an invitation. You stepped into something already in motion, long before you arrived.</p>
+      <div class="inner-loop-quote">
+        <p>Look closely at any photo of AESIT's people — a jobsite, a boardroom, a hallway between meetings — and you'll find the same detail repeated without exception: arms crossed, the same way, every time. It isn't posture, and it isn't coincidence. It's the physical form of the ∞ that closes every page we write.</p>
       </div>
+      <p class="inner-loop-name">We call it The Inner Loop.</p>
+      <div class="inner-loop-quote">
+        <p>The point where the outside stops and our process begins. Nobody explains it upfront. You simply notice the gesture in the photographs, in the people who've been here longest, long before anyone tells you what it means.</p>
+      </div>
+      <p class="inner-loop-close">And at some point, without being told to, your own arms cross the same way. That's usually the moment you realize you didn't just accept an invitation — you stepped into something already in motion, long before you arrived.</p>
     </div>
   </section>
 
@@ -229,7 +247,7 @@
         <p>Send us the work. We'll hold it until the mission calls for exactly what you carry.</p>
       </div>
       <div class="submit-actions">
-        <a href="mailto:info@aesit.net?subject=AESIT%20Candidate%20Interest%20Submission" class="btn btn-primary">Submit Your Resume →</a>
+        <a href="mailto:info@aesit.net?subject=AESIT%20Community%20Interest%20Submission" class="btn btn-primary">Submit Your Resume →</a>
         <a href="https://articles.aesit.net/AESIT_recruitmentmanifesto.html" class="btn btn-ghost">The Manifesto →</a>
       </div>
       <p class="submit-fineprint">By submitting, you consent to AESIT Global Solutions Group retaining your resume and contact information in the AESIT Community Database for future consideration. This is not an offer of employment, and submission does not guarantee an interview, a role, or a timeline. We contact candidates only when a genuine alignment exists between the mission and the mind.</p>
