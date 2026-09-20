@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AESIT — AESIT Community Database</title>
+<title>AESIT — Community Database</title>
 <meta name="description" content="Submit your resume to the AESIT Community Database — for the minds building the future of Lifecycle Intelligence.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,6 +102,12 @@
  
   /* ---- roster / directory ---- */
   .roster{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .roster-group{ margin-bottom:48px; }
+  .roster-group:last-child{ margin-bottom:0; }
+  .roster-group-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:4px;
+  }
+  .roster-group-head .eyebrow{ margin-bottom:0; }
   .roster-list{ display:flex; flex-direction:column; gap:0; max-width:820px; }
   .roster-item{ border-bottom:1px solid var(--line); }
   .roster-item:first-child{ border-top:1px solid var(--line); }
@@ -189,7 +195,7 @@
       <div class="section-head">
         <div class="eyebrow">A Partial Roster</div>
         <h2>Every Discipline, Represented</h2>
-        <p>Listed alphabetically. Select a title to read what the discipline demands of the person who holds it.</p>
+        <p>Grouped by discipline — Form, Flow, Fortitude, S³ Labs™, and the Administrative Support that holds them together — then alphabetized within each. Select a title to read what the discipline demands of the person who holds it.</p>
       </div>
       <div class="roster-list" id="rosterList"></div>
     </div>
@@ -234,119 +240,180 @@
     {
       title: "Asset Sovereignty Analyst",
       division: "Fortitude · Protection",
+      category: "Fortitude",
       body: "Safeguards the integrity of client data and system access across every AESIT-connected asset. You think like an adversary long enough to make sure one never gets the chance to act like one — while preserving the client's total ownership of their own intelligence."
     },
     {
       title: "Behavioral Intelligence Engineer",
       division: "Flow · Operations",
+      category: "Flow",
       body: "Builds the models that read how a building actually behaves once people are inside it — energy, occupancy, wear — and turns that behavior into decisions an owner can act on before a small inefficiency becomes an expensive one."
     },
     {
       title: "Business Development Director",
       division: "Growth · Overhead",
+      category: "Administrative Support",
       body: "Opens the room AESIT needs to be in. You don't sell a platform — you introduce owners, developers, and institutions to a category that didn't exist before we built it, and you know the difference between the two pitches."
+    },
+    {
+      title: "BIM & Virtual Design Coordinator",
+      division: "Form · Design",
+      category: "Form",
+      body: "Builds the digital model before the first beam goes up — coordinating architecture, structure, and MEP into one clash-free record. The discipline that keeps design intelligence accurate before it ever reaches the field."
     },
     {
       title: "Construction Intelligence Architect",
       division: "Form · Design",
+      category: "Form",
       body: "Encodes the memory of how a building was actually built — every design decision, every field change — into a record that outlives the drawings. This is the discipline that makes Form Intelligence real instead of aspirational."
     },
     {
       title: "Data Governance Counsel",
       division: "Legal · Overhead",
+      category: "Administrative Support",
       body: "Protects Asset Sovereignty™ as a legal fact, not just a brand promise. You write the agreements that guarantee a client's data remains theirs — structurally, contractually, permanently — no matter how the platform evolves around it."
     },
     {
       title: "Digital Twin Engineer",
       division: "Flow · Operations",
+      category: "Flow",
       body: "Builds and maintains the living digital replica of a physical asset — the layer that lets predictive maintenance, energy modeling, and lifecycle forecasting operate on real conditions instead of assumptions."
     },
     {
       title: "Financial Velocity Analyst",
       division: "Finance · Overhead",
+      category: "Administrative Support",
       body: "Translates operational intelligence into the language a CFO trusts — NOI, ROI, payback period. You are the reason 'Financial Velocity™' is a number on a balance sheet and not just a phrase in a deck."
     },
     {
       title: "Human Capital Architect",
       division: "People · Overhead",
+      category: "Administrative Support",
       body: "Builds the internal systems that let AESIT scale without diluting what makes it AESIT — recruiting, onboarding, and the structures that keep sharp, independent minds aligned without being managed into sameness."
     },
     {
       title: "Infrastructure Security Engineer",
       division: "Fortitude · Protection",
+      category: "Fortitude",
       body: "Defends the digital backbone that carries every lifecycle system — access control, network architecture, threat detection. If Fortitude Intelligence is the promise, this is the discipline that keeps the promise standing under pressure."
     },
     {
       title: "Intelligence Growth Strategist",
       division: "S³ Labs · Engine",
+      category: "S³ Labs",
       body: "Maps how Form, Flow, and Fortitude compound into long-term client value — the architecture behind the Intelligence Growth Engine™ itself. This role thinks in decades, not deliverables."
     },
     {
       title: "Lifecycle Operations Manager",
       division: "Flow · Operations",
+      category: "Flow",
       body: "Runs the day-to-day discipline that keeps a portfolio's Flow Intelligence honest — coordinating maintenance, energy performance, and system uptime across live assets, not slide decks."
     },
     {
       title: "Marketing & Brand Strategist",
       division: "Growth · Overhead",
+      category: "Administrative Support",
       body: "Carries the AESIT voice into the world with the same precision the platform demands of a building's systems. You understand that a category-defining firm cannot sound like the category it refused to join."
     },
     {
       title: "MEP Systems Engineer",
       division: "Form · Design",
+      category: "Form",
       body: "Designs and coordinates mechanical, electrical, and plumbing systems for complex builds — the discipline behind projects like The St. James, where HVAC, refrigeration, and air handling all have to work as one system, not three."
     },
     {
       title: "Perimeter & Access Systems Designer",
       division: "Fortitude · Protection",
+      category: "Fortitude",
       body: "Designs the physical layer of defense — access control, CCTV, perimeter intrusion detection — for facilities where the margin for error is measured in more than dollars."
     },
     {
       title: "Portfolio Intelligence Consultant",
       division: "Growth · Overhead",
+      category: "Administrative Support",
       body: "Sits across the table from CRE owners and C-suite executives and translates AESIT's architecture into their specific portfolio's numbers. Part translator, part strategist — you make the abstract concrete for the person holding the checkbook."
     },
     {
       title: "Predictive Maintenance Engineer",
       division: "Flow · Operations",
+      category: "Flow",
       body: "Builds the IoT-driven models that catch failure before it happens — the discipline behind the 10–25% maintenance cost reductions AESIT's record is built on."
     },
     {
       title: "Product Designer, S³ Labs",
       division: "S³ Labs · Engine",
+      category: "S³ Labs",
       body: "Shapes how AESIT's intelligence actually gets seen and used — dashboards, reports, interfaces. The architecture is only as good as the person who has to act on what it shows them, and that's your problem to solve."
     },
     {
       title: "Protective Systems Engineer",
       division: "Fortitude · Protection",
+      category: "Fortitude",
       body: "Designs the layered defense systems — access, surveillance, intrusion detection — that protect assets on the scale of a naval installation, and applies that same rigor to commercial real estate."
     },
     {
       title: "Research Analyst, S³ Labs",
       division: "S³ Labs · Engine",
+      category: "S³ Labs",
       body: "Validates the evidence behind AESIT's claims — ROI figures, energy savings, maintenance data — against independent sources. This is the discipline that keeps 'evidence, not projections' true."
     },
     {
       title: "Sales Engineer",
       division: "Growth · Overhead",
+      category: "Administrative Support",
       body: "Stands at the intersection of the technical architecture and the commercial conversation — able to answer the hard engineering question in the same meeting as the ROI question, without handing either one off."
+    },
+    {
+      title: "Structural Systems Engineer",
+      division: "Form · Design",
+      category: "Form",
+      body: "Designs the bones the rest of Form Intelligence stands on — load paths, seismic performance, material tolerances. If the structure is wrong, no downstream system corrects it."
     },
     {
       title: "Talent Acquisition Partner",
       division: "People · Overhead",
+      category: "Administrative Support",
       body: "Finds the minds this manifesto was written for. You read a resume the way AESIT reads a building — for what's actually there, not what's easiest to assume."
     },
     {
       title: "Technical Writer, Documentation Architect",
       division: "S³ Labs · Engine",
+      category: "S³ Labs",
       body: "Turns dense system architecture — Form, Flow, Fortitude, S³ Labs — into documentation a client, an engineer, or a new hire can actually use. Clarity is the deliverable."
     }
   ];
  
-  const list = document.getElementById('rosterList');
-  roster
-    .sort((a, b) => a.title.localeCompare(b.title))
-    .forEach((role, i) => {
+  const categoryOrder = ["Form", "Flow", "Fortitude", "S³ Labs", "Administrative Support"];
+  const categoryTag = {
+    "Form": "Form · Design",
+    "Flow": "Flow · Operations",
+    "Fortitude": "Fortitude · Protection",
+    "S³ Labs": "S³ Labs · Engine",
+    "Administrative Support": "Supportive Infrastructure"
+  };
+
+  const rosterContainer = document.getElementById('rosterList');
+  let descIndex = 0;
+
+  categoryOrder.forEach(category => {
+    const roles = roster
+      .filter(r => r.category === category)
+      .sort((a, b) => a.title.localeCompare(b.title));
+    if (!roles.length) return;
+
+    const group = document.createElement('div');
+    group.className = 'roster-group';
+    group.innerHTML = `
+      <div class="roster-group-head">
+        <div class="eyebrow">${category}</div>
+      </div>
+      <div class="roster-list"></div>
+    `;
+    rosterContainer.appendChild(group);
+    const list = group.querySelector('.roster-list');
+
+    roles.forEach(role => {
+      const i = descIndex++;
       const item = document.createElement('div');
       item.className = 'roster-item';
       item.innerHTML = `
@@ -363,7 +430,7 @@
         </div>
       `;
       list.appendChild(item);
- 
+
       const toggle = item.querySelector('.roster-toggle');
       toggle.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
@@ -377,6 +444,7 @@
         toggle.setAttribute('aria-expanded', String(!isOpen));
       });
     });
+  });
 </script>
  
 </body>
