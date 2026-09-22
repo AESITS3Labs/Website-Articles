@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AESIT — The Outcomes We Deliver</title>
+<meta name="description" content="The AESIT Outcomes Doctrine — the measurable returns a modern portfolio must deliver under CRE Lifecycle Intelligence™.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F1E6;
+    --cream-2:#EFE6D2;
+    --paper:#FBF8F1;
+    --ink:#1B1206;
+    --ink-soft:#5A4A36;
+    --ink-faint:#8A7A62;
+    --bronze:#9C6F3A;
+    --bronze-deep:#7A5527;
+    --bronze-light:#C99A5B;
+    --slate:#2B3730;
+    --line: rgba(27,18,6,0.14);
+    --line-strong: rgba(27,18,6,0.28);
+    --serif:'Playfair Display', serif;
+    --sans:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+    --maxw: 900px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+  h1,h2,h3{ font-family:var(--serif); font-weight:600; margin:0; color:var(--ink); letter-spacing:-0.01em; }
+  p{ margin:0; }
+
+  .eyebrow{
+    font-family:var(--sans); font-weight:600; font-size:13px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--bronze-deep);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:var(--bronze); display:inline-block; }
+  .on-dark .eyebrow{ color:var(--bronze-light); }
+  .on-dark .eyebrow::before{ background:var(--bronze-light); }
+
+  .btn{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.04em; text-transform:uppercase;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+    padding:14px 24px; border-radius:2px; border:1px solid var(--ink);
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+    background:transparent; cursor:pointer;
+  }
+  .btn-primary{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .btn-primary:hover{ background:var(--bronze-deep); border-color:var(--bronze-deep); }
+  .btn-ghost{ background:transparent; color:var(--ink); border-color:var(--line-strong); }
+  .btn-ghost:hover{ border-color:var(--ink); }
+
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,241,230,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .wordmark{ font-family:var(--serif); font-weight:700; font-size:19px; text-decoration:none; display:flex; align-items:baseline; gap:8px; }
+  .wordmark small{ font-family:var(--mono); font-size:10px; font-weight:400; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); }
+  nav.links{ display:flex; align-items:center; gap:26px; }
+  nav.links a{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase;
+    text-decoration:none; color:var(--ink-soft); padding-bottom:3px;
+    border-bottom:1px solid transparent; transition:color .2s ease, border-color .2s ease;
+  }
+  nav.links a:hover{ color:var(--ink); border-color:var(--bronze); }
+
+  /* ---- hero ---- */
+  .hero{ padding:88px 0 64px; border-bottom:1px solid var(--line); background:var(--paper); }
+  .hero .eyebrow{ margin-bottom:26px; }
+  .hero h1{ font-size:clamp(32px,5vw,52px); line-height:1.1; margin-bottom:22px; max-width:760px; }
+  .hero .lede{ font-size:18px; color:var(--ink-soft); max-width:640px; margin-bottom:0; }
+  .hero .lede strong{ color:var(--ink); font-weight:600; }
+
+  /* ---- notice ---- */
+  .notice{ background:var(--cream-2); border-bottom:1px solid var(--line); }
+  .notice-inner{ display:flex; gap:16px; align-items:flex-start; padding:22px 0; }
+  .notice-mark{ font-family:var(--mono); font-size:13px; color:var(--bronze-deep); flex-shrink:0; padding-top:2px; }
+  .notice p{ font-size:14.5px; color:var(--ink-soft); line-height:1.6; max-width:720px; }
+  .notice p strong{ color:var(--ink); font-weight:600; }
+
+  /* ---- section shell ---- */
+  section{ padding:64px 0; }
+  .section-head{ max-width:700px; margin-bottom:40px; }
+  .section-head .eyebrow{ margin-bottom:16px; }
+  .section-head h2{ font-size:clamp(26px,3.4vw,36px); line-height:1.15; margin-bottom:14px; }
+  .section-head p{ font-size:16px; color:var(--ink-soft); }
+
+  /* ---- outcomes accordion ---- */
+  .outcomes{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .outcome-list{ display:flex; flex-direction:column; gap:0; max-width:820px; }
+  .outcome-item{ border-bottom:1px solid var(--line); }
+  .outcome-item:first-child{ border-top:1px solid var(--line); }
+  .outcome-toggle{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    display:flex; align-items:baseline; justify-content:space-between; gap:20px;
+    padding:24px 4px; font-family:var(--serif); font-size:21px; color:var(--ink);
+    transition:color .2s ease;
+  }
+  .outcome-toggle .num{
+    font-family:var(--mono); font-size:12px; letter-spacing:.06em;
+    color:var(--ink-faint); white-space:nowrap; flex-shrink:0; padding-top:5px;
+  }
+  .outcome-toggle .title-block{ flex:1; }
+  .outcome-toggle .owed{
+    display:block; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--bronze-deep); margin-bottom:6px;
+  }
+  .outcome-toggle:hover{ color:var(--bronze-deep); }
+  .outcome-toggle .mark{
+    font-family:var(--mono); font-size:16px; color:var(--bronze); flex-shrink:0;
+    transition:transform .2s ease; padding-top:4px;
+  }
+  .outcome-item.open .outcome-toggle .mark{ transform:rotate(45deg); }
+  .outcome-item.open .outcome-toggle{ color:var(--bronze-deep); }
+  .outcome-desc{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+  }
+  .outcome-item.open .outcome-desc{ max-height:600px; }
+  .outcome-desc-inner{ padding:0 4px 28px; max-width:680px; }
+  .outcome-desc-inner p{ font-size:15px; line-height:1.65; color:var(--ink-soft); margin-bottom:16px; }
+  .outcome-desc-inner p:last-child{ margin-bottom:0; }
+  .outcome-desc-inner ul{ margin:0 0 16px; padding:0; list-style:none; }
+  .outcome-desc-inner li{
+    font-size:14.5px; color:var(--ink-soft); padding:8px 0 8px 20px; position:relative;
+    border-top:1px solid var(--line);
+  }
+  .outcome-desc-inner li:first-child{ border-top:none; padding-top:0; }
+  .outcome-desc-inner li::before{
+    content:"—"; position:absolute; left:0; color:var(--bronze);
+  }
+  .outcome-gain{
+    font-family:var(--serif); font-style:italic; font-size:16px; color:var(--bronze-deep);
+  }
+
+  /* ---- pillars ---- */
+  .pillars{ background:var(--cream); }
+  .pillar-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); max-width:820px; }
+  @media (max-width:760px){ .pillar-grid{ grid-template-columns:1fr; } }
+  .pillar{ background:var(--paper); padding:32px 28px; }
+  .pillar .eyebrow{ margin-bottom:18px; }
+  .pillar h3{ font-size:22px; margin-bottom:14px; }
+  .pillar .pillar-sub{ font-family:var(--serif); font-style:italic; font-size:14.5px; color:var(--ink-soft); margin-bottom:16px; display:block; }
+  .pillar ul{ margin:0; padding:0; list-style:none; }
+  .pillar li{ font-size:14px; color:var(--ink-soft); padding:8px 0; border-top:1px solid var(--line); }
+  .pillar li:first-child{ border-top:none; padding-top:0; }
+
+  /* ---- contract table ---- */
+  .contract{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .contract-table{ width:100%; max-width:820px; border-collapse:collapse; }
+  .contract-table th{
+    text-align:left; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink-faint); padding:0 16px 14px 0; border-bottom:1px solid var(--line-strong); font-weight:500;
+  }
+  .contract-table td{
+    padding:18px 16px 18px 0; border-bottom:1px solid var(--line); vertical-align:top; font-size:15px;
+  }
+  .contract-table td:first-child{ font-family:var(--serif); font-size:16px; color:var(--ink); width:30%; }
+  .contract-table td:nth-child(2){ color:var(--ink-soft); width:35%; }
+  .contract-table td:nth-child(3){ color:var(--bronze-deep); font-style:italic; font-family:var(--serif); }
+  .contract-table tr:last-child td{ border-bottom:none; }
+  @media (max-width:640px){
+    .contract-table, .contract-table thead, .contract-table tbody, .contract-table th, .contract-table td, .contract-table tr{ display:block; }
+    .contract-table thead{ display:none; }
+    .contract-table tr{ padding:18px 0; border-bottom:1px solid var(--line); }
+    .contract-table td{ border-bottom:none; padding:4px 0; width:auto !important; }
+    .contract-table td:first-child{ font-size:18px; margin-bottom:6px; }
+  }
+
+  /* ---- thesis banner ---- */
+  .thesis{ background:var(--slate); color:var(--cream); }
+  .thesis .wrap{ text-align:left; }
+  .thesis .eyebrow{ color:var(--bronze-light); margin-bottom:22px; }
+  .thesis .eyebrow::before{ background:var(--bronze-light); }
+  .thesis h2{ color:var(--cream); font-size:clamp(24px,3.6vw,34px); line-height:1.28; max-width:760px; }
+  .thesis p.support{ margin-top:20px; font-size:16px; color:rgba(246,241,230,0.75); max-width:640px; }
+
+  /* ---- practice / closing ---- */
+  .practice-section{ background:var(--paper); }
+  .practice-list{ display:flex; flex-direction:column; gap:0; max-width:680px; }
+  .practice-list li{
+    font-family:var(--serif); font-size:18px; color:var(--ink); padding:18px 0;
+    border-bottom:1px solid var(--line); list-style:none;
+  }
+  .practice-list li:first-child{ border-top:1px solid var(--line); }
+  .closing-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:36px; }
+
+  footer{ background:var(--ink); border-top:1px solid rgba(246,241,230,0.15); color:rgba(246,241,230,0.75); padding:40px 0 28px; }
+  .footer-inner{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; align-items:flex-end; }
+  .footer-brand h3{ color:var(--cream); font-size:19px; margin-bottom:8px; }
+  .footer-brand p{ font-size:13.5px; max-width:340px; margin-bottom:6px; }
+  .footer-brand .footer-tagline{ font-family:var(--serif); font-style:italic; color:rgba(246,241,230,0.85); }
+  .footer-bottom{ margin-top:26px; padding-top:20px; border-top:1px solid rgba(246,241,230,0.15); font-size:12px; color:rgba(246,241,230,0.45); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a href="https://aesit.net/home" class="wordmark">AESIT<small>Outcomes Doctrine</small></a>
+    <nav class="links">
+      <a href="#outcomes">The Outcomes</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#contract">The Contract</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">The AESIT Outcomes Doctrine</div>
+      <h1>The Outcomes We Deliver.<br>What a modern portfolio<br>should return — and rarely does.</h1>
+      <p class="lede">A high-performing portfolio is not an accident. It is the result of intelligence that compounds across design, operations, and protection. <strong>Eight outcomes define the minimum standard of a portfolio governed by CRE Lifecycle Intelligence™ — not as aspirations, but as obligations.</strong></p>
+    </div>
+  </section>
+
+  <!-- ============ NOTICE ============ -->
+  <section class="notice">
+    <div class="wrap notice-inner">
+      <span class="notice-mark">Note:</span>
+      <p>What follows is not a projection. It is the measurable return AESIT holds itself to on every portfolio it touches — <strong>the outcomes doctrine that sits alongside the Lifecycle Doctrine</strong> and turns its obligations into numbers a CFO can underwrite.</p>
+    </div>
+  </section>
+
+  <!-- ============ THE EIGHT OUTCOMES ============ -->
+  <section id="outcomes" class="outcomes">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Eight Outcomes, Eight Defaults</div>
+        <h2>The returns most portfolios miss —<br>and why they miss them.</h2>
+        <p>Each outcome below names what the portfolio owes its owner, why most portfolios fall short of it, and what closes the gap. Select an outcome to read the detail.</p>
+      </div>
+      <div class="outcome-list" id="outcomeList"></div>
+    </div>
+  </section>
+
+  <!-- ============ OUTCOMES ARCHITECTURE ============ -->
+  <section id="architecture" class="pillars">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How We Deliver Them</div>
+        <h2>The same tri-pillar system,<br>measured in returns.</h2>
+        <p>AESIT delivers these outcomes through the tri-pillar intelligence architecture that governs lifecycle performance — inception, operations, and protection, compounding with every cycle.</p>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar">
+          <div class="eyebrow">Form</div>
+          <h3>Regenerative Design</h3>
+          <span class="pillar-sub">Outcomes begin with inception intelligence.</span>
+          <ul>
+            <li>Digital Twin foundations</li>
+            <li>Predictive design baselines</li>
+            <li>Intelligent specification</li>
+            <li>Lifecycle-aligned architecture</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="eyebrow">Flow</div>
+          <h3>Adaptive Operations</h3>
+          <span class="pillar-sub">Outcomes scale through operational intelligence.</span>
+          <ul>
+            <li>Predictive maintenance</li>
+            <li>Energy optimization</li>
+            <li>Operational telemetry</li>
+            <li>Continuous learning loops</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="eyebrow">Fortitude</div>
+          <h3>Resilient Protection</h3>
+          <span class="pillar-sub">Outcomes endure through protection intelligence.</span>
+          <ul>
+            <li>Cyber-physical resilience</li>
+            <li>Continuity assurance</li>
+            <li>Threat modeling</li>
+            <li>Sovereign intelligence ownership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE OUTCOMES CONTRACT ============ -->
+  <section id="contract" class="contract">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The Outcomes Contract</div>
+        <h2>What the portfolio must deliver.<br>What the owner gains.</h2>
+        <p>The eight outcomes above, translated into the contract AESIT guarantees.</p>
+      </div>
+      <table class="contract-table">
+        <thead>
+          <tr>
+            <th>Outcome</th>
+            <th>What the portfolio must deliver</th>
+            <th>What the owner gains</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Lower Energy Costs</td><td>Operational efficiency</td><td>Reduced operating burden</td></tr>
+          <tr><td>Lower Maintenance Costs</td><td>Predictive stability</td><td>Lower lifecycle spend</td></tr>
+          <tr><td>Higher Asset Value</td><td>Verified performance</td><td>Increased NOI</td></tr>
+          <tr><td>Predictive Readiness</td><td>Foresight</td><td>Fewer failures</td></tr>
+          <tr><td>ESG Built In</td><td>Embedded alignment</td><td>Reduced risk exposure</td></tr>
+          <tr><td>Better Decisions</td><td>Compounding intelligence</td><td>Stronger assets</td></tr>
+          <tr><td>Intelligence Ownership</td><td>Sovereignty</td><td>Vendor independence</td></tr>
+          <tr><td>Portfolio Memory</td><td>Permanence</td><td>Long-term resilience</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ THESIS ============ -->
+  <section class="thesis">
+    <div class="wrap on-dark">
+      <div class="eyebrow">The Doctrine's Central Thesis</div>
+      <h2>A portfolio should not merely perform. It should compound.</h2>
+      <p class="support">Every decision, every operation, every insight should strengthen the portfolio's future — not just sustain its present. That is the standard every outcome above exists to meet.</p>
+    </div>
+  </section>
+
+  <!-- ============ DOCTRINE IN PRACTICE ============ -->
+  <section class="practice-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The Doctrine in Practice</div>
+        <h2>Not a projection alone.<br>A measurable operating system.</h2>
+        <p>The outcomes doctrine becomes real through five working disciplines, applied across every portfolio AESIT touches.</p>
+      </div>
+      <ul class="practice-list">
+        <li>Predictive operational intelligence</li>
+        <li>Unified lifecycle memory</li>
+        <li>Resilient protection systems</li>
+        <li>Portfolio-level convergence</li>
+        <li>Sovereign intelligence ownership</li>
+      </ul>
+      <div class="closing-actions">
+        <a href="https://aesit.net/home" class="btn btn-primary">Back to AESIT →</a>
+        <a href="https://claude.ai/artifact/GumWe2NPhL7AxoTe6in8Fz" class="btn btn-ghost">The Challenges →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <h3>AESIT</h3>
+      <p>A CRE Lifecycle Intelligence™ Firm</p>
+      <p class="footer-tagline">A building's memory should outlast its builders.</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 AESIT Global Solutions Group. All Rights Reserved.</span>
+    <span style="font-family:var(--mono);">We Make the Best Even Better. ∞</span>
+  </div>
+</footer>
+
+<script>
+  const outcomes = [
+    {
+      owed: "Efficiency — Not Waste",
+      title: "Lower Energy Costs (15–35%)",
+      problem: "Energy waste is a symptom of operational drift, fragmented systems, and missing intelligence. Left unmanaged, it becomes an unpredictable line item instead of a controlled one.",
+      delivers: [
+        "Real-time performance modeling",
+        "Predictive energy optimization",
+        "Intelligent operational baselines",
+        "Continuous efficiency loops"
+      ],
+      gain: "Energy becomes a managed asset, not an unpredictable expense."
+    },
+    {
+      owed: "Stability — Not Reactive Spending",
+      title: "Lower Maintenance Costs (10–25%)",
+      problem: "Maintenance costs rise when systems fail silently, records disappear, and interventions lack lifecycle context. AESIT reverses this pattern before it compounds.",
+      delivers: [
+        "Condition-based maintenance",
+        "Predictive failure modeling",
+        "Intelligent capital planning",
+        "Unified protection records"
+      ],
+      gain: "Maintenance becomes strategic, not chaotic."
+    },
+    {
+      owed: "Growth — Not Stagnation",
+      title: "Higher Asset Value and NOI",
+      problem: "Asset value increases when intelligence compounds. Without it, NOI stalls even as operating costs rise, because performance is never verified enough to price in.",
+      delivers: [
+        "Reduced operational burden",
+        "Improved tenant experience",
+        "Lifecycle-aligned capital deployment",
+        "Verified performance history"
+      ],
+      gain: "Value becomes a function of intelligence, not age."
+    },
+    {
+      owed: "Foresight — Not Surprises",
+      title: "Predictive Maintenance Readiness",
+      problem: "Predictive maintenance is not a feature; it is a lifecycle discipline. Most portfolios lack the unified telemetry to practice it at all.",
+      delivers: [
+        "Unified telemetry",
+        "Failure-pattern recognition",
+        "Intelligent alerting",
+        "Lifecycle-aligned interventions"
+      ],
+      gain: "Readiness is the foundation of resilience."
+    },
+    {
+      owed: "Alignment — Not Exposure",
+      title: "ESG Compliance Built In",
+      problem: "ESG compliance should not be a retrofit. Treated as one, it becomes a recurring cost and a recurring exposure instead of a built-in property of the asset.",
+      delivers: [
+        "Verified environmental performance",
+        "Operational transparency",
+        "Resilience and continuity intelligence",
+        "Governance through unified records"
+      ],
+      gain: "Compliance becomes automatic, not burdensome."
+    },
+    {
+      owed: "Compounding Intelligence — Not Static Performance",
+      title: "Better Assets With Every Decision",
+      problem: "Every decision should make the asset smarter, more efficient, and more resilient. Without lifecycle memory, each decision starts from zero instead of building on the last.",
+      delivers: [
+        "Decision lineage",
+        "Continuous learning loops",
+        "Operational intelligence modeling",
+        "Lifecycle memory integration"
+      ],
+      gain: "The portfolio improves itself over time."
+    },
+    {
+      owed: "Sovereignty — Not Dependency",
+      title: "Intelligence Ownership Preserved",
+      problem: "Intelligence must belong to the owner — not the vendor, not the platform, not the cloud. Dependency on any of the three puts the portfolio's future in someone else's hands.",
+      delivers: [
+        "Sovereign data structures",
+        "Owner-controlled telemetry",
+        "Vendor-independent protection records",
+        "Permanent lifecycle archives"
+      ],
+      gain: "Ownership is the foundation of trust."
+    },
+    {
+      owed: "Permanence — Not Institutional Amnesia",
+      title: "Portfolio Memory Protected",
+      problem: "When people leave or vendors change, the portfolio's intelligence must remain intact — not walk out the door with whoever held it last.",
+      delivers: [
+        "Design intent preserved",
+        "Operational history unified",
+        "Protection logic retained",
+        "Decision lineage safeguarded"
+      ],
+      gain: "Memory is the ultimate form of resilience."
+    }
+  ];
+
+  const list = document.getElementById('outcomeList');
+
+  outcomes.forEach((o, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    const item = document.createElement('div');
+    item.className = 'outcome-item';
+    const liItems = o.delivers.map(d => `<li>${d}</li>`).join('');
+    item.innerHTML = `
+      <button class="outcome-toggle" aria-expanded="false" aria-controls="odesc-${i}">
+        <span class="num">${num}</span>
+        <span class="title-block">
+          <span class="owed">${o.owed}</span>
+          <span>${o.title}</span>
+        </span>
+        <span class="mark">+</span>
+      </button>
+      <div class="outcome-desc" id="odesc-${i}">
+        <div class="outcome-desc-inner">
+          <p>${o.problem}</p>
+          <ul>${liItems}</ul>
+          <p class="outcome-gain">${o.gain}</p>
+        </div>
+      </div>
+    `;
+    list.appendChild(item);
+
+    const toggle = item.querySelector('.outcome-toggle');
+    toggle.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.outcome-item.open').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.outcome-toggle').setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('open', !isOpen);
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+</script>
+
+</body>
+</html>
