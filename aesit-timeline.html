@@ -1,6 +1,6 @@
 <!-- ============================================================
      AESIT — Revised Master Horizontal Timeline (1989 → 2026)
-     v2: six era bands (Foundation → Leadership)
+     v3: six era bands (Foundation → Leadership), review comments applied
      Paste this entire block into a GoDaddy "Embed / HTML" field.
      ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,7 +78,7 @@
   #aesit-timeline-wrap .aesit-closing {
     font-family: 'League Spartan', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.4;
     color: var(--line);
     text-align: center;
@@ -183,17 +183,28 @@
   #aesit-timeline-wrap .aesit-scroll::-webkit-scrollbar-thumb { background: var(--highlight); border-radius: 4px; }
 
   #aesit-timeline-wrap .aesit-track {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    grid-template-rows: auto 1fr;
     align-items: stretch;
     position: relative;
     min-width: max-content;
   }
 
   /* ---------- ERA BANDS ---------- */
+  /* each era spans the header row and the card row; subgrid keeps every
+     era header the same height so all nodes sit on one continuous line */
   #aesit-timeline-wrap .aesit-era {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: subgrid;
+    grid-row: 1 / span 2;
+  }
+
+  @supports not (grid-template-rows: subgrid) {
+    #aesit-timeline-wrap .aesit-era { align-content: start; }
+    #aesit-timeline-wrap .aesit-era-head { min-height: 175px; }
   }
 
   #aesit-timeline-wrap .aesit-era:nth-child(even) {
@@ -201,6 +212,8 @@
   }
 
   #aesit-timeline-wrap .aesit-era-head {
+    width: 0;
+    min-width: calc(100% - 16px);
     margin: 0 8px;
     padding: 12px 0 10px;
     border-bottom: 2px solid var(--highlight);
@@ -261,7 +274,6 @@
     align-items: flex-start;
     position: relative;
     padding-top: 10px;
-    flex: 1 1 auto;
   }
 
   /* the continuous horizontal line running through all nodes */
@@ -270,7 +282,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 50px;
+    top: 59px;
     height: 2px;
     background: var(--line);
     z-index: 0;
@@ -426,7 +438,7 @@
     #aesit-timeline-wrap .aesit-scroll-hint { font-size: 12px; }
     #aesit-timeline-wrap .aesit-pillar-secondary { font-size: 9px; }
     #aesit-timeline-wrap .aesit-framework-preview { font-size: 12px; padding: 0 16px; }
-    #aesit-timeline-wrap .aesit-closing { font-size: 17px; padding: 0 16px; }
+    #aesit-timeline-wrap .aesit-closing { font-size: 16px; padding: 0 16px; }
     #aesit-timeline-wrap .aesit-era-label { width: 260px; }
     #aesit-timeline-wrap .aesit-era-name { font-size: 17px; }
     #aesit-timeline-wrap .aesit-era-desc { font-size: 11.5px; }
@@ -438,14 +450,14 @@
 
 <section id="aesit-timeline-wrap" aria-labelledby="aesit-timeline-title">
 
-  <h2 id="aesit-timeline-title" class="aesit-sr-only">The Origins of a Discipline 1989-2026</h2>
+  <h2 id="aesit-timeline-title" class="aesit-sr-only">The Origins of a New Discipline 1989-2026</h2>
 
   <p class="aesit-disclaimer">
     <strong>Historical Capability Lineage.</strong> This timeline summarizes documented and corroborated work associated with AESIT, predecessor entities, affiliated organizations, personnel, and project partners. It is not a representation of uninterrupted operation by a single legal entity. Current AESIT terminology is used only to describe capability lineage and was not necessarily used during the referenced projects. Each entry is limited to AESIT&rsquo;s documented role and scope. References to agencies, institutions, clients, and other organizations are for factual identification only and do not imply endorsement, sponsorship, certification, affiliation, or direct contracting unless expressly stated and authorized.
   </p>
 
     <div style="height:24px" aria-hidden="true"></div>
-<h1 class="aesit-title">The Origins of a Discipline 1989-2026</h1>
+<h1 class="aesit-title">The Origins of a New Discipline 1989-2026</h1>
      
   <p class="aesit-scroll-hint">Tracing the evolution of experience, infrastructure, technology, and strategic insight that culminated in the development of Lifecycle Intelligence™.</p>
 
@@ -873,32 +885,46 @@
         <div class="aesit-body">
           <p class="aesit-strong">AESIT Business Plan &mdash; Organizational Practice</p>
           <p>Retrospective reviews of past work and organizational trajectory are performed in accordance with AESIT&rsquo;s business plan and its organic evolutions &mdash; annually, and at milestone Years 1, 3, 5, 10, 15, 20, 25, 30, and 35, continuing at regular intervals beyond.</p>
-          <p>These reviews surfaced lessons learned and revealed the gaps between assets, information, and decision-making across the lifecycle &mdash; the pattern behind Lifecycle Intelligence&trade;.</p>
+          <p>These reviews surfaced lessons learned and revealed the gaps between assets, information, and decision-making across the lifecycle.</p>
+          <p>The recurring pattern across decades of projects: assets, information, and decisions were governed independently, while lifecycle performance emerged from their interaction.</p>
+          <p class="aesit-note">The gap was not technological. It was architectural.</p>
+        </div>
+      </article>
+
+      <!-- The Thesis: recognition of the pattern -->
+      <article class="aesit-item" aria-label="Realization: Recognition of the Pattern, the thesis of Lifecycle Intelligence">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">Realization</div>
+        <div class="aesit-tagline">The Principle That Kept Emerging</div>
+        <div class="aesit-label">Recognition of the Pattern</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">Across decades of projects, technologies, and asset types, the same principle repeatedly emerged: long-term value was determined not by a single system, but by the quality of intelligence connecting form, flow, fortitude, and governance throughout the lifecycle.</p>
         </div>
       </article>
 
         </div><!-- /era-cards -->
       </div><!-- /era: Discovery -->
 
-      <!-- ====================== ERA 5: SYNTHESIS ====================== -->
+      <!-- ====================== ERA 5: FRAMEWORK SYNTHESIS ====================== -->
       <!-- NOTE: add the milestone marking the Synthesis -> Leadership handoff in 2026 (launch, filing, publication) when confirmed. -->
-      <div class="aesit-era" role="group" aria-label="Synthesis era, 2025 to 2026">
+      <div class="aesit-era" role="group" aria-label="Framework Synthesis era, 2025 to 2026">
         <div class="aesit-era-head">
           <div class="aesit-era-label">
-            <div class="aesit-era-name">Synthesis</div>
+            <div class="aesit-era-name">Framework Synthesis</div>
             <div class="aesit-era-dates">2025&ndash;2026</div>
-            <div class="aesit-era-desc">Defining Lifecycle Intelligence&trade; as a framework for understanding, measuring, and optimizing the complete asset lifecycle.</div>
+            <div class="aesit-era-desc">Formalizing Lifecycle Intelligence&trade; by synthesizing decades of experience into a unified framework for understanding, measuring, and optimizing asset performance across the lifecycle.</div>
           </div>
         </div>
         <div class="aesit-era-cards">
 
       <!-- 2025-2026 -->
-      <article class="aesit-item" aria-label="2025 to 2026: Framework Synthesis">
+      <article class="aesit-item" aria-label="2025 to 2026: Definition of the Framework">
         <div class="aesit-node"></div>
         <div class="aesit-arrow">&rarr;</div>
         <div class="aesit-year">2025&ndash;2026</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
-        <div class="aesit-label">Framework Synthesis</div>
+        <div class="aesit-label">Definition of the Framework</div>
         <div class="aesit-body">
           <p class="aesit-strong">Form &rarr; Flow &rarr; Fortitude</p>
           <p>Regenerative Design &bull; Adaptive Operations &bull; Resilient Protection</p>
@@ -907,7 +933,7 @@
       </article>
 
         </div><!-- /era-cards -->
-      </div><!-- /era: Synthesis -->
+      </div><!-- /era: Framework Synthesis -->
 
       <!-- ====================== ERA 6: LEADERSHIP ====================== -->
       <div class="aesit-era" role="group" aria-label="Leadership era, 2026 and beyond">
@@ -947,7 +973,7 @@
   </div>
 
   <p class="aesit-closing">
-    AESIT did not invent <span class="aesit-highlight">Lifecycle Intelligence&trade;</span> or <span class="aesit-highlight">CRELI&trade;</span> in 2026. Instead, we formalized and named the intelligence and governance architecture that has evolved since 1989.
+    <span class="aesit-highlight">Lifecycle Intelligence&trade;</span> was not invented in 2026. It was observed, refined, and ultimately formalized after decades of experience spanning infrastructure, operations, security, digital transformation, and governance. <span class="aesit-highlight">CRELI&trade;</span> provides the language, structure, and measurement architecture for what had been emerging since 1989.
   </p>
 
   <div class="aesit-gov">
@@ -968,7 +994,7 @@
       <div class="aesit-gov-arrow">&rarr;</div>
       <div class="aesit-gov-step">
         <div class="aesit-gov-year">2026</div>
-        <div class="aesit-gov-label">Autonomous Governance</div>
+        <div class="aesit-gov-label">Continuous Governance</div>
         <div class="aesit-gov-desc">AI/ML analytical models continuously validate, reconcile, and enforce project intelligence &mdash; the emergence of BIM and Digital Twin.</div>
       </div>
     </div>
