@@ -1,5 +1,6 @@
 <!-- ============================================================
      AESIT — Revised Master Horizontal Timeline (1989 → 2026)
+     v2: six era bands (Foundation → Leadership)
      Paste this entire block into a GoDaddy "Embed / HTML" field.
      ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +13,7 @@
     --text: #808080;
     --highlight: #0C8791;
     --line: #000000;
+    --tint: #F2F9F9;
 
     background: var(--bg);
     color: var(--text);
@@ -103,7 +105,17 @@
     text-transform: uppercase;
     color: var(--line);
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 4px;
+  }
+
+  #aesit-timeline-wrap .aesit-gov-sub {
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--text);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 18px;
   }
 
   #aesit-timeline-wrap .aesit-gov-steps {
@@ -172,14 +184,88 @@
 
   #aesit-timeline-wrap .aesit-track {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     position: relative;
     min-width: max-content;
+  }
+
+  /* ---------- ERA BANDS ---------- */
+  #aesit-timeline-wrap .aesit-era {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+  }
+
+  #aesit-timeline-wrap .aesit-era:nth-child(even) {
+    background: var(--tint);
+  }
+
+  #aesit-timeline-wrap .aesit-era-head {
+    margin: 0 8px;
+    padding: 12px 0 10px;
+    border-bottom: 2px solid var(--highlight);
+    position: relative;
+  }
+
+  /* bracket end-ticks */
+  #aesit-timeline-wrap .aesit-era-head::before,
+  #aesit-timeline-wrap .aesit-era-head::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    height: 10px;
+    background: var(--highlight);
+  }
+  #aesit-timeline-wrap .aesit-era-head::before { left: 0; }
+  #aesit-timeline-wrap .aesit-era-head::after { right: 0; }
+
+  /* sticky so the era name stays in view while scrolling through a wide era */
+  #aesit-timeline-wrap .aesit-era-label {
+    position: sticky;
+    left: 20px;
+    display: block;
+    width: 300px;
+    max-width: calc(100% - 20px);
+    padding-left: 10px;
+  }
+
+  #aesit-timeline-wrap .aesit-era-name {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--highlight);
+    line-height: 1.1;
+  }
+
+  #aesit-timeline-wrap .aesit-era-dates {
+    font-family: 'League Spartan', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    color: var(--text);
+    margin: 3px 0 5px;
+  }
+
+  #aesit-timeline-wrap .aesit-era-desc {
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  #aesit-timeline-wrap .aesit-era-cards {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
     padding-top: 10px;
+    flex: 1 1 auto;
   }
 
   /* the continuous horizontal line running through all nodes */
-  #aesit-timeline-wrap .aesit-track::before {
+  #aesit-timeline-wrap .aesit-era-cards::before {
     content: "";
     position: absolute;
     left: 0;
@@ -220,7 +306,8 @@
     z-index: 2;
   }
 
-  #aesit-timeline-wrap .aesit-item:last-child .aesit-arrow { display: none; }
+  /* no arrow after the very last card on the whole timeline */
+  #aesit-timeline-wrap .aesit-era:last-child .aesit-item:last-child .aesit-arrow { display: none; }
 
   #aesit-timeline-wrap .aesit-year {
     font-family: 'League Spartan', Helvetica, Arial, sans-serif;
@@ -231,7 +318,7 @@
     margin-bottom: 6px;
     letter-spacing: 0.5px;
   }
- 
+
 /* Visible, center-justified title matching year height/color but less bold */
 #aesit-timeline-wrap .aesit-title {
   font-family: 'League Spartan', Helvetica, Arial, sans-serif;
@@ -340,6 +427,9 @@
     #aesit-timeline-wrap .aesit-pillar-secondary { font-size: 9px; }
     #aesit-timeline-wrap .aesit-framework-preview { font-size: 12px; padding: 0 16px; }
     #aesit-timeline-wrap .aesit-closing { font-size: 17px; padding: 0 16px; }
+    #aesit-timeline-wrap .aesit-era-label { width: 260px; }
+    #aesit-timeline-wrap .aesit-era-name { font-size: 17px; }
+    #aesit-timeline-wrap .aesit-era-desc { font-size: 11.5px; }
     #aesit-timeline-wrap .aesit-gov-steps { flex-direction: column; align-items: center; gap: 4px; }
     #aesit-timeline-wrap .aesit-gov-step { max-width: 100%; }
     #aesit-timeline-wrap .aesit-gov-arrow { transform: rotate(90deg); padding: 4px 0; }
@@ -364,8 +454,19 @@
   </p>
 
 
-  <div class="aesit-scroll" tabindex="0" role="region" aria-label="AESIT history timeline, 1989 through 2026">
+  <div class="aesit-scroll" tabindex="0" role="region" aria-label="AESIT history timeline, 1989 through 2026, organized in six eras">
     <div class="aesit-track">
+
+      <!-- ====================== ERA 1: FOUNDATION ====================== -->
+      <div class="aesit-era" role="group" aria-label="Foundation era, 1989 to 1999">
+        <div class="aesit-era-head">
+          <div class="aesit-era-label">
+            <div class="aesit-era-name">Foundation</div>
+            <div class="aesit-era-dates">1989&ndash;1999</div>
+            <div class="aesit-era-desc">Building operational, technical, and infrastructure expertise.</div>
+          </div>
+        </div>
+        <div class="aesit-era-cards">
 
       <!-- 1989 -->
       <article class="aesit-item" aria-label="1989: The Origin of CRELI, Entity Founded, AESIT, Tysons Corner, Virginia">
@@ -491,6 +592,20 @@
         </div>
       </article>
 
+        </div><!-- /era-cards -->
+      </div><!-- /era: Foundation -->
+
+      <!-- ====================== ERA 2: CONVERGENCE ====================== -->
+      <div class="aesit-era" role="group" aria-label="Convergence era, 2000 to 2012">
+        <div class="aesit-era-head">
+          <div class="aesit-era-label">
+            <div class="aesit-era-name">Convergence</div>
+            <div class="aesit-era-dates">2000&ndash;2012</div>
+            <div class="aesit-era-desc">Increasingly integrating systems, data, technology, and enterprise transformation.</div>
+          </div>
+        </div>
+        <div class="aesit-era-cards">
+
       <!-- 2000-2001 -->
       <article class="aesit-item" aria-label="2000 to 2001: Higher Education Facilities Overhaul, High-Occupancy Athletic Structural Engineering, University of Maryland">
         <div class="aesit-node"></div>
@@ -605,6 +720,20 @@
         </div>
       </article>
 
+        </div><!-- /era-cards -->
+      </div><!-- /era: Convergence -->
+
+      <!-- ====================== ERA 3: TRANSFORMATION ====================== -->
+      <div class="aesit-era" role="group" aria-label="Transformation era, 2013 to 2019">
+        <div class="aesit-era-head">
+          <div class="aesit-era-label">
+            <div class="aesit-era-name">Transformation</div>
+            <div class="aesit-era-dates">2013&ndash;2019</div>
+            <div class="aesit-era-desc">Advancing digital modernization, intelligent infrastructure, and performance-driven outcomes.</div>
+          </div>
+        </div>
+        <div class="aesit-era-cards">
+
       <!-- 2013-2015 -->
       <article class="aesit-item" aria-label="2013 to 2015: Enterprise Modernization, Sustainable Resource Optimization, Public Service Organization">
         <div class="aesit-node"></div>
@@ -703,6 +832,20 @@
         </div>
       </article>
 
+        </div><!-- /era-cards -->
+      </div><!-- /era: Transformation -->
+
+      <!-- ====================== ERA 4: DISCOVERY ====================== -->
+      <div class="aesit-era" role="group" aria-label="Discovery era, 2020 to 2024">
+        <div class="aesit-era-head">
+          <div class="aesit-era-label">
+            <div class="aesit-era-name">Discovery</div>
+            <div class="aesit-era-dates">2020&ndash;2024</div>
+            <div class="aesit-era-desc">Periodic reviews of past work and organizational trajectory revealed the gaps between assets, information, and decision-making across the lifecycle.</div>
+          </div>
+        </div>
+        <div class="aesit-era-cards">
+
       <!-- 2020-2025 -->
       <article class="aesit-item" aria-label="2020 to 2025: Brands Built to Travel, Modular A/E Design, Trade Show Exhibits">
         <div class="aesit-node"></div>
@@ -719,6 +862,36 @@
         </div>
       </article>
 
+      <!-- 2021-2024: Retrospective Review -->
+      <article class="aesit-item" aria-label="2021 to 2024: Learning From the Record, Periodic Retrospective Review, AESIT Business Plan">
+        <div class="aesit-node"></div>
+        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-year">2021&ndash;2024</div>
+        <div class="aesit-pillar">Compounding Intelligence&trade;</div>
+        <div class="aesit-tagline">Learning From the Record</div>
+        <div class="aesit-label">Periodic Retrospective Review</div>
+        <div class="aesit-body">
+          <p class="aesit-strong">AESIT Business Plan &mdash; Organizational Practice</p>
+          <p>Retrospective reviews of past work and organizational trajectory are performed in accordance with AESIT&rsquo;s business plan and its organic evolutions &mdash; annually, and at milestone Years 1, 3, 5, 10, 15, 20, 25, 30, and 35, continuing at regular intervals beyond.</p>
+          <p>These reviews surfaced lessons learned and revealed the gaps between assets, information, and decision-making across the lifecycle &mdash; the pattern behind Lifecycle Intelligence&trade;.</p>
+        </div>
+      </article>
+
+        </div><!-- /era-cards -->
+      </div><!-- /era: Discovery -->
+
+      <!-- ====================== ERA 5: SYNTHESIS ====================== -->
+      <!-- NOTE: add the milestone marking the Synthesis -> Leadership handoff in 2026 (launch, filing, publication) when confirmed. -->
+      <div class="aesit-era" role="group" aria-label="Synthesis era, 2025 to 2026">
+        <div class="aesit-era-head">
+          <div class="aesit-era-label">
+            <div class="aesit-era-name">Synthesis</div>
+            <div class="aesit-era-dates">2025&ndash;2026</div>
+            <div class="aesit-era-desc">Defining Lifecycle Intelligence&trade; as a framework for understanding, measuring, and optimizing the complete asset lifecycle.</div>
+          </div>
+        </div>
+        <div class="aesit-era-cards">
+
       <!-- 2025-2026 -->
       <article class="aesit-item" aria-label="2025 to 2026: Framework Synthesis">
         <div class="aesit-node"></div>
@@ -732,6 +905,20 @@
           <p>Decades of design, operations, protection, and governance practice formalized into one Lifecycle Intelligence architecture.</p>
         </div>
       </article>
+
+        </div><!-- /era-cards -->
+      </div><!-- /era: Synthesis -->
+
+      <!-- ====================== ERA 6: LEADERSHIP ====================== -->
+      <div class="aesit-era" role="group" aria-label="Leadership era, 2026 and beyond">
+        <div class="aesit-era-head">
+          <div class="aesit-era-label">
+            <div class="aesit-era-name">Leadership</div>
+            <div class="aesit-era-dates">2026 and Beyond</div>
+            <div class="aesit-era-desc">Building toward the standards, methodologies, and certification ecosystem for Lifecycle Intelligence&trade;.</div>
+          </div>
+        </div>
+        <div class="aesit-era-cards">
 
       <!-- 2026 CRELI -->
       <article class="aesit-item aesit-final" aria-label="2026: CRELI, CRE Lifecycle Intelligence">
@@ -753,6 +940,9 @@
         </div>
       </article>
 
+        </div><!-- /era-cards -->
+      </div><!-- /era: Leadership -->
+
     </div>
   </div>
 
@@ -762,6 +952,7 @@
 
   <div class="aesit-gov">
     <div class="aesit-gov-title">Governance, Then &amp; Now</div>
+    <p class="aesit-gov-sub">A separate lens from the eras above: how project governance itself has evolved across the industry.</p>
     <div class="aesit-gov-steps">
       <div class="aesit-gov-step">
         <div class="aesit-gov-year">Pre-1989</div>
