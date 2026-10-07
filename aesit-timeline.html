@@ -1,6 +1,6 @@
 <!-- ============================================================
      AESIT — Revised Master Horizontal Timeline (1989 → 2026)
-     v4: six era bands (Foundation → Leadership), final text
+     v5: six era bands (Foundation → Leadership), smaller arrows, copyright
      Paste this entire block into a GoDaddy "Embed / HTML" field.
      ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,6 +89,17 @@
 
   #aesit-timeline-wrap .aesit-closing .aesit-highlight {
     color: var(--highlight);
+  }
+
+  #aesit-timeline-wrap .aesit-copyright {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text);
+    text-align: center;
+    margin: 28px auto 8px;
+    padding: 16px 20px 0;
+    max-width: 1000px;
+    border-top: 1px solid #dddddd;
   }
 
   #aesit-timeline-wrap .aesit-gov {
@@ -308,13 +319,17 @@
     position: relative;
   }
 
+  /* solid teal arrowhead sitting on the line, pointing to the next entry */
   #aesit-timeline-wrap .aesit-arrow {
     position: absolute;
-    top: 42px;
-    right: -4px;
-    color: var(--line);
-    font-size: 16px;
-    font-weight: bold;
+    top: 44px;
+    right: -5px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 9px solid var(--highlight);
+    filter: drop-shadow(0 0 0 var(--bg));
     z-index: 2;
   }
 
@@ -483,7 +498,7 @@
       <!-- 1989 -->
       <article class="aesit-item" aria-label="1989: The Origin of CRELI, Entity Founded, AESIT, Tysons Corner, Virginia">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1989</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
         <div class="aesit-tagline">The Origin of CRELI&trade;</div>
@@ -498,7 +513,7 @@
       <!-- 1989-1991 -->
       <article class="aesit-item" aria-label="1989 to 1991: Foundations of Trust, High-Consequence Federal Infrastructure, Classified Federal Environment">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1989&ndash;1991</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
         <div class="aesit-tagline">Foundations of Trust</div>
@@ -513,7 +528,7 @@
       <!-- 1991-1993 -->
       <article class="aesit-item" aria-label="1991 to 1993: The Lifecycle Intelligence Seed, Critical Infrastructure Hardening, Federal Partner Agency">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1991&ndash;1993</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
         <div class="aesit-tagline">The Lifecycle Intelligence Seed</div>
@@ -528,7 +543,7 @@
       <!-- 1993 -->
       <article class="aesit-item" aria-label="1993: National Landmark Reimagined, Biophilic Concourse Architecture, Ronald Reagan Washington National Airport">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1993</div>
         <div class="aesit-pillar">Form &amp; Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Fortitude</div>
@@ -545,7 +560,7 @@
       <!-- 1994 -->
       <article class="aesit-item" aria-label="1994: Premier Hong Kong Skyscraper, Smart Building + Fiber-Optic Facade, Cheung Kong Centre">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1994</div>
         <div class="aesit-pillar">Form Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Flow &bull; Fortitude</div>
@@ -561,7 +576,7 @@
       <!-- 1995 -->
       <article class="aesit-item" aria-label="1995: Initial Formation, Entity Incorporated, AESCT Corp.">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1995</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
         <div class="aesit-tagline">Initial Formation</div>
@@ -576,7 +591,7 @@
       <!-- 1995-1996 -->
       <article class="aesit-item" aria-label="1995 to 1996: Technical Standards Publication, Architectural Practice Standardization, AIA / John Wiley &amp; Sons">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1995&ndash;1996</div>
         <div class="aesit-pillar">Form &amp; Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Fortitude</div>
@@ -592,7 +607,7 @@
       <!-- 1996-1999 -->
       <article class="aesit-item" aria-label="1996 to 1999: Monolithic Sustainable Engineering, High-Performance Building Envelope, Atlanta, Georgia">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">1996&ndash;1999</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
         <div class="aesit-tagline">Monolithic Sustainable Engineering</div>
@@ -621,7 +636,7 @@
       <!-- 2000-2001 -->
       <article class="aesit-item" aria-label="2000 to 2001: Higher Education Facilities Overhaul, High-Occupancy Athletic Structural Engineering, University of Maryland">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2000&ndash;2001</div>
         <div class="aesit-pillar">Form &amp; Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Fortitude</div>
@@ -638,7 +653,7 @@
       <!-- 2001-2003 -->
       <article class="aesit-item" aria-label="2001 to 2003: Resilience Beyond Borders, Humanitarian Housing Upgrading, The World Bank">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2001&ndash;2003</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
         <div class="aesit-tagline">Resilience Beyond Borders</div>
@@ -654,7 +669,7 @@
       <!-- 2002 -->
       <article class="aesit-item" aria-label="2002: Custom Residential Portfolio, Bespoke Luxury Architecture + Integrated Delivery, Washington Metropolitan Area">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2002</div>
         <div class="aesit-pillar">Form Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Flow &bull; Fortitude</div>
@@ -669,7 +684,7 @@
       <!-- 2002-2003 -->
       <article class="aesit-item" aria-label="2002 to 2003: Transit-Oriented Development, Integrated Digital Delivery, Dulles Corridor Metrorail">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2002&ndash;2003</div>
         <div class="aesit-pillar">Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Form &bull; Fortitude</div>
@@ -686,7 +701,7 @@
       <!-- 2003-2005 -->
       <article class="aesit-item" aria-label="2003 to 2005: Defense in Every Dimension, Converged Physical-Cyber Security, Department of Defense">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2003&ndash;2005</div>
         <div class="aesit-pillar">Fortitude Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Flow</div>
@@ -702,7 +717,7 @@
       <!-- 2005-2009 -->
       <article class="aesit-item" aria-label="2005 to 2009: The First of Its Kind, Integrated Digital Delivery and Physical Security, Department of Treasury">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2005&ndash;2009</div>
         <div class="aesit-pillar">Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Form &bull; Fortitude</div>
@@ -719,7 +734,7 @@
       <!-- 2009-2012 -->
       <article class="aesit-item" aria-label="2009 to 2012: The Architecture of Continuity, Smart Building and Integrated Facility Architecture, Department of Treasury">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2009&ndash;2012</div>
         <div class="aesit-pillar">Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Form &bull; Fortitude</div>
@@ -749,7 +764,7 @@
       <!-- 2013-2015 -->
       <article class="aesit-item" aria-label="2013 to 2015: Enterprise Modernization, Sustainable Resource Optimization, Public Service Organization">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2013&ndash;2015</div>
         <div class="aesit-pillar">Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Form &bull; Fortitude</div>
@@ -765,7 +780,7 @@
       <!-- 2016-2018 -->
       <article class="aesit-item" aria-label="2016 to 2018: Zero-Trust Cyber Resilience and Cloud, Digital Transformation + Sustainable Optimization, Public Service Organization">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2016&ndash;2018</div>
         <div class="aesit-pillar">Flow &amp; Fortitude Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Form</div>
@@ -781,7 +796,7 @@
       <!-- 2017 -->
       <article class="aesit-item" aria-label="2017: Where Brand Becomes Experience, Generative Dynamic Ambient Design, Lamborghini">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2017</div>
         <div class="aesit-pillar">Form Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Flow</div>
@@ -798,7 +813,7 @@
       <!-- 2017-2018 -->
       <article class="aesit-item" aria-label="2017 to 2018: One Roof, Every Climate, Multi-Venue Microclimate MEP Engineering, The St. James">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2017&ndash;2018</div>
         <div class="aesit-pillar">Form &amp; Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Fortitude</div>
@@ -814,7 +829,7 @@
       <!-- 2018-2020 -->
       <article class="aesit-item" aria-label="2018 to 2020: History in Active Service, Historic Industrial Adaptation, Fort Belvoir">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2018&ndash;2020</div>
         <div class="aesit-pillar">Flow &amp; Fortitude Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Form</div>
@@ -830,7 +845,7 @@
       <!-- 2019 -->
       <article class="aesit-item" aria-label="2019: Old Walls, New Life, Regenerative Design and Adaptive Reuse, Old Town Alexandria">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2019</div>
         <div class="aesit-pillar">Form Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Flow &bull; Fortitude</div>
@@ -861,7 +876,7 @@
       <!-- 2020-2025 -->
       <article class="aesit-item" aria-label="2020 to 2025: Brands Built to Travel, Modular A/E Design, Trade Show Exhibits">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2020&ndash;2025</div>
         <div class="aesit-pillar">Form &amp; Flow Intelligence</div>
         <div class="aesit-pillar-secondary">Secondary: Fortitude</div>
@@ -877,7 +892,7 @@
       <!-- 2021-2024: Retrospective Review -->
       <article class="aesit-item" aria-label="2021 to 2024: Learning From the Record, Periodic Retrospective Review, AESIT Business Plan">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2021&ndash;2024</div>
         <div class="aesit-pillar">Compounding Intelligence&trade;</div>
         <div class="aesit-tagline">Learning From the Record</div>
@@ -892,7 +907,7 @@
       <!-- The Thesis: recognition of the pattern -->
       <article class="aesit-item" aria-label="Realization: Recognition of the Pattern, the thesis of Lifecycle Intelligence">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">Realization</div>
         <div class="aesit-tagline">The Principle That Kept Emerging</div>
         <div class="aesit-label">Recognition of the Pattern</div>
@@ -919,7 +934,7 @@
       <!-- 2025-2026 -->
       <article class="aesit-item" aria-label="2025 to 2026: Definition of the Framework">
         <div class="aesit-node"></div>
-        <div class="aesit-arrow">&rarr;</div>
+        <div class="aesit-arrow" aria-hidden="true"></div>
         <div class="aesit-year">2025&ndash;2026</div>
         <div class="aesit-pillar">Form &bull; Flow &bull; Fortitude</div>
         <div class="aesit-label">Definition of the Framework</div>
@@ -997,5 +1012,7 @@
       </div>
     </div>
   </div>
+
+  <p class="aesit-copyright">&copy; 2026 AESIT Global Solutions Group. All rights reserved.</p>
 
 </section>
