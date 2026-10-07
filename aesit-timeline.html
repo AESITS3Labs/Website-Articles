@@ -1,6 +1,6 @@
 <!-- ============================================================
      AESIT — Revised Master Horizontal Timeline (1989 → 2026)
-     v5: six era bands (Foundation → Leadership), smaller arrows, copyright
+     v5: six era bands (Foundation → Leadership), line starts at 1989, future arrow after 2026
      Paste this entire block into a GoDaddy "Embed / HTML" field.
      ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -297,6 +297,21 @@
     height: 2px;
     background: var(--line);
     z-index: 0;
+  }
+
+  /* the line begins at the 1989 origin node, with no tail before it */
+  #aesit-timeline-wrap .aesit-era:first-child .aesit-era-cards::before { left: 43px; }
+
+  /* the line ends in an arrowhead pointing to the future */
+  #aesit-timeline-wrap .aesit-era:last-child .aesit-era-cards::before { right: 9px; }
+  #aesit-timeline-wrap .aesit-era:last-child .aesit-era-cards::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 54px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 9px solid var(--highlight);
   }
 
   #aesit-timeline-wrap .aesit-item {
