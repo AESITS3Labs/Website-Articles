@@ -1,8 +1,588 @@
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&amp;display=swap" rel="stylesheet">
-<style>#ats{--bg:#FFFFFF;--text:#808080;--highlight:#0C8791;--line:#000000;--tint:#F2F9F9;background:var(--bg);color:var(--text);font-family:Helvetica,Arial,sans-serif;padding:12px 0 8px;width:100%;box-sizing:border-box}#ats *{box-sizing:border-box}#ats .a-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}#ats .a-disclaimer{font-size:12px;line-height:1.5;color:var(--text);font-style:italic;text-align:center;max-width:1200px;margin:0 auto 6px;padding:0 20px}#ats .a-scroll-hint{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:0.5px;color:var(--highlight);text-align:center;margin:0 auto 6px;padding:0 20px}#ats .a-framework-preview{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.4px;color:var(--line);text-align:center;max-width:900px;margin:0 auto 16px;padding:0 20px}#ats .a-framework-preview .a-highlight{color:var(--highlight)}#ats .a-closing{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.4;color:var(--line);text-align:center;max-width:900px;margin:28px auto 4px;padding:0 24px}#ats .a-closing .a-highlight{color:var(--highlight)}#ats .a-copyright{font-size:12px;line-height:1.5;color:var(--text);text-align:center;margin:28px auto 8px;padding:16px 20px 0;max-width:1000px;border-top:1px solid #dddddd}#ats .a-gov{max-width:1000px;margin:24px auto 8px;padding:0 20px}#ats .a-gov-title{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--line);text-align:center;margin-bottom:4px}#ats .a-gov-sub{font-size:12px;font-style:italic;line-height:1.4;color:var(--text);text-align:center;max-width:700px;margin:0 auto 18px}#ats .a-gov-steps{display:flex;align-items:flex-start;justify-content:center;gap:10px}#ats .a-gov-step{flex:1 1 0;max-width:260px;text-align:center;padding:0 6px}#ats .a-gov-year{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:800;font-size:15px;color:var(--highlight);margin-bottom:4px}#ats .a-gov-label{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.6px;text-transform:uppercase;color:var(--line);margin-bottom:6px}#ats .a-gov-desc{font-size:12px;line-height:1.4;color:var(--text)}#ats .a-gov-arrow{flex:0 0 auto;color:var(--line);font-size:18px;font-weight:bold;padding-top:2px}#ats .a-scroll{overflow-x:auto;overflow-y:hidden;padding:24px 20px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--highlight) #eeeeee}#ats .a-scroll:focus{outline:2px solid var(--highlight);outline-offset:2px}#ats .a-scroll::-webkit-scrollbar{height:8px}#ats .a-scroll::-webkit-scrollbar-track{background:#eeeeee}#ats .a-scroll::-webkit-scrollbar-thumb{background:var(--highlight);border-radius:4px}#ats .a-track{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;grid-template-rows:auto 1fr;align-items:stretch;position:relative;min-width:max-content}#ats .a-era{display:grid;grid-template-columns:auto;grid-template-rows:subgrid;grid-row:1 / span 2}@supports not (grid-template-rows:subgrid){#ats .a-era{align-content:start}#ats .a-era-head{min-height:175px}}#ats .a-era:nth-child(even){background:var(--tint)}#ats .a-era-head{width:0;min-width:calc(100% - 16px);margin:0 8px;padding:12px 0 10px;border-bottom:2px solid var(--highlight);position:relative}#ats .a-era-head::before,#ats .a-era-head::after{content:"";position:absolute;bottom:0;width:2px;height:10px;background:var(--highlight)}#ats .a-era-head::before{left:0}#ats .a-era-head::after{right:0}#ats .a-era-label{position:sticky;left:20px;display:block;width:420px;max-width:calc(100% - 20px);padding-left:10px}#ats .a-era-name{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;letter-spacing:1.5px;text-transform:uppercase;color:var(--highlight);line-height:1.1}#ats .a-era-dates{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.8px;color:var(--text);margin:3px 0 5px}#ats .a-era-desc{font-size:12px;font-style:italic;line-height:1.4;color:var(--text)}#ats .a-era-cards{display:flex;align-items:flex-start;position:relative;padding-top:10px}#ats .a-era-cards::before{content:"";position:absolute;left:0;right:0;top:59px;height:2px;background:var(--line);z-index:0}#ats .a-era:first-child .a-era-cards::before{left:43px}#ats .a-era:last-child .a-era-cards::before{right:9px}#ats .a-era:last-child .a-era-cards::after{content:"";position:absolute;right:0;top:54px;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:9px solid var(--highlight)}#ats .a-item{position:relative;z-index:1;width:270px;flex:0 0 270px;padding:0 18px;text-align:left}#ats .a-node{width:14px;height:14px;border-radius:50%;background:var(--highlight);border:2px solid var(--bg);outline:2px solid var(--line);margin:43px auto 18px 18px;position:relative}#ats .a-arrow{position:absolute;top:44px;right:-5px;width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:9px solid var(--highlight););z-index:2}#ats .a-era:last-child .a-item:last-child .a-arrow{display:none}#ats .a-year{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:800;font-size:26px;color:var(--highlight);line-height:1;margin-bottom:6px;letter-spacing:0.5px}#ats .a-title{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:600;font-size:26px;color:var(--highlight);text-align:center;margin:26px auto 12px;max-width:1200px}#ats .a-pillar{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--highlight);margin-bottom:3px}#ats .a-pillar-secondary{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:500;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text);margin-bottom:6px}#ats .a-tagline{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:500;font-style:italic;font-size:11.5px;letter-spacing:0.2px;color:var(--highlight);margin-bottom:3px}#ats .a-label{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.1px;color:var(--line);text-transform:uppercase;margin-bottom:8px;text-wrap:balance}#ats .a-body p{margin:0 0 6px;font-size:13px;line-height:1.45;color:var(--text)}#ats .a-body p.a-strong{color:var(--line);font-weight:bold}#ats .a-final{width:270px;flex:0 0 270px}#ats .a-final .a-flow{margin-top:12px}#ats .a-final .a-flow div{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;color:var(--line);padding:5px 0}#ats .a-final .a-flow .a-down{color:var(--highlight);font-size:16px;text-align:center}@media (max-width:640px){#ats .a-item{width:220px;flex:0 0 220px}#ats .a-final{width:220px;flex:0 0 220px}#ats .a-final .a-flow div{font-size:13px}#ats .a-scroll-hint{font-size:12px}#ats .a-pillar-secondary{font-size:9px}#ats .a-framework-preview{font-size:12px;padding:0 16px}#ats .a-closing{font-size:16px;padding:0 16px}#ats .a-era-label{width:260px}#ats .a-era-name{font-size:17px}#ats .a-era-desc{font-size:11.5px}#ats .a-gov-steps{flex-direction:column;align-items:center;gap:4px}#ats .a-gov-step{max-width:100%}#ats .a-gov-arrow{transform:rotate(90deg);padding:4px 0}}</style>
-<section id="ats" aria-labelledby="att"><h2 id="att" class="a-sr-only">The Origins of a Discipline 1989-2026</h2><p class="a-disclaimer"><strong>Historical Capability Lineage.</strong> This timeline summarizes documented and corroborated work associated with AESIT, predecessor entities, affiliated organizations, personnel, and project partners. It is not a representation of uninterrupted operation by a single legal entity. Current AESIT terminology is used only to describe capability lineage and was not necessarily used during the referenced projects. Each entry is limited to AESIT&rsquo;s documented role and scope. References to agencies, institutions, clients, and other organizations are for factual identification only and do not imply endorsement, sponsorship, certification, affiliation, or direct contracting unless expressly stated and authorized.
-</p><div style="height:24px" aria-hidden="true"></div><h1 class="a-title">The Origins of a Discipline 1989-2026</h1><p class="a-scroll-hint">Tracing the evolution of experience, infrastructure, technology, and strategic insight that culminated in the development of Lifecycle Intelligence™.</p><p class="a-framework-preview">
-Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding Intelligence&trade;</span> &rarr; Governance &rarr; <span class="a-highlight">Asset Sovereignty&trade;</span></p><div class="a-scroll" tabindex="0" role="region" aria-label="AESIT history timeline, 1989 through 2026, organized in six eras"><div class="a-track"><div class="a-era" role="group" aria-label="Foundation era, 1989 to 1999"><div class="a-era-head"><div class="a-era-label"><div class="a-era-name">Foundation</div><div class="a-era-dates">1989&ndash;1999</div><div class="a-era-desc">Building operational, technical, and infrastructure expertise. Learning to create, organize, connect, and govern the information systems that support design, delivery, and operations.</div></div></div><div class="a-era-cards"><article class="a-item" aria-label="1989: The Origin of CRELI, Entity Founded, AESIT, Tysons Corner, Virginia"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1989</div><div class="a-pillar">Form &bull; Flow &bull; Fortitude</div><div class="a-tagline">The Origin of CRELI&trade;</div><div class="a-label">Entity Founded</div><div class="a-body"><p class="a-strong">AESIT &mdash; Tysons Corner, Virginia</p><p>AESIT emerged at the hinge between eras &mdash; when coordination shifted from hand&#8209;aligned overlays to the first digital twin environments. Born in that metamorphosis, AESIT preserved the integrative discipline of manual craft and carried it forward into digital precision, operational clarity, and the earliest expressions of environmental intelligence. Its founding principle: environments must learn, evolve, and preserve asset value over time.</p><p>A practice built to bridge eras, technologies, and the cultures that shaped them &mdash; carrying each memory forward into more intelligent, more responsive futures.</p></div></article><article class="a-item" aria-label="1989 to 1991: Foundations of Trust, High-Consequence Federal Infrastructure, Classified Federal Environment"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1989&ndash;1991</div><div class="a-pillar">Form &bull; Flow &bull; Fortitude</div><div class="a-tagline">Foundations of Trust</div><div class="a-label">High-Consequence Federal Infrastructure</div><div class="a-body"><p class="a-strong">Classified Federal Environment &mdash; United States</p><p>Multi-disciplinary architecture and engineering support for a high-consequence federal environment &mdash; structural hardening, complex telecommunications pathways, and early cyber security safeguards.</p><p>Proved that physical design, operational continuity, and secure protection must be co-engineered as one unified system.</p></div></article><article class="a-item" aria-label="1991 to 1993: The Lifecycle Intelligence Seed, Critical Infrastructure Hardening, Federal Partner Agency"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1991&ndash;1993</div><div class="a-pillar">Form &bull; Flow &bull; Fortitude</div><div class="a-tagline">The Lifecycle Intelligence Seed</div><div class="a-label">Critical Infrastructure Hardening</div><div class="a-body"><p class="a-strong">Federal Partner Agency &mdash; United States</p><p>Multi-disciplinary architecture and engineering support integrating physical hardening, complex MEP infrastructure, telecommunications, and early cyber-physical security controls.</p><p>Laid the organic foundation for lifecycle intelligence &mdash; encoding resilience, operational continuity, and secure environment design into mission-critical federal assets from inception.</p></div></article><article class="a-item" aria-label="1993: National Landmark Reimagined, Biophilic Concourse Architecture, Ronald Reagan Washington National Airport"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1993</div><div class="a-pillar">Form &amp; Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Fortitude</div><div class="a-tagline">National Landmark, Reimagined</div><div class="a-label">Biophilic Concourse Architecture</div><div class="a-body"><p class="a-strong">Ronald Reagan Washington National Airport &mdash; Washington, D.C.</p><p>AESIT provided architectural engineering and design support for this national infrastructure project, designed around seamless connections to the Metrorail network.</p><p>Vaulted steel arches, domed oculi, and expansive glass sightlines bring natural light and views of the Potomac deep into the concourses &mdash; biophilic design that reduces stress and cognitive fatigue.</p><p>The design team received multiple national awards.</p></div></article><article class="a-item" aria-label="1994: Premier Hong Kong Skyscraper, Smart Building + Fiber-Optic Facade, Cheung Kong Centre"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1994</div><div class="a-pillar">Form Intelligence</div><div class="a-pillar-secondary">Secondary: Flow &bull; Fortitude</div><div class="a-tagline">Premier Hong Kong Skyscraper</div><div class="a-label">Smart Building + Fiber-Optic Facade</div><div class="a-body"><p class="a-strong">Cheung Kong Centre &mdash; Hong Kong, China</p><p>AESIT provided specialized engineering analysis in support of the project&rsquo;s world-class design team, applying engineered floor criteria to harmonize strict contractual requirements with high-performance design.</p><p>An early application of Form Intelligence &mdash; encoding structural harmony and performance into the asset&rsquo;s foundation to establish a baseline of compounding lifecycle value.</p></div></article><article class="a-item" aria-label="1995: Initial Formation, Entity Incorporated, AESCT Corp."><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1995</div><div class="a-pillar">Form &bull; Flow &bull; Fortitude</div><div class="a-tagline">Initial Formation</div><div class="a-label">Entity Incorporated</div><div class="a-body"><p class="a-strong">AESCT Corp. &mdash; Columbia, Maryland</p><p>AESIT expanded into full&#8209;system deployment, user training, and CAD interface optimization &mdash; turning design environments into digitally accelerated production ecosystems. By bridging digitizing boards with early workstations, AESIT built macros and simplified menus that collapsed multi&#8209;step commands into single actions, boosting speed and reducing cognitive load.</p><p>Began the shift from bridging eras to shaping the workflows that would define the ones ahead.</p></div></article><article class="a-item" aria-label="1995 to 1996: Technical Standards Publication, Architectural Practice Standardization, AIA / John Wiley &amp; Sons"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1995&ndash;1996</div><div class="a-pillar">Form &amp; Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Fortitude</div><div class="a-tagline">Technical Standards Publication</div><div class="a-label">Architectural Practice Standardization</div><div class="a-body"><p class="a-strong">AIA / John Wiley &amp; Sons &mdash; Washington, D.C.</p><p>AESIT served as one of two Technical Editor consultants on the five-person team behind the 9th Edition Supplement of Architectural Graphic Standards (AGS), focusing on standards illustration and technical writing for a document trusted across the AEC industry.</p><p>AESIT leads with Form by defining AGS; drives Flow by optimizing structures for design workflows; and reinforces Fortitude through enduring stewardship and high-integrity standards.</p></div></article><article class="a-item" aria-label="1996 to 1999: Monolithic Sustainable Engineering, High-Performance Building Envelope, Atlanta, Georgia"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">1996&ndash;1999</div><div class="a-pillar">Form &bull; Flow &bull; Fortitude</div><div class="a-tagline">Monolithic Sustainable Engineering</div><div class="a-label">High-Performance Building Envelope</div><div class="a-body"><p class="a-strong">Private Residential and Commercial Clients &mdash; Atlanta, Georgia</p><p>Engineered a lightweight, proprietary Autoclaved Aerated Concrete (AAC) Envelope System over steel and wood framing for residential and commercial structures.</p><p>An early example of operationalizing Form through passive, weight-reducing envelope design; Flow by curbing thermal bridging to cut energy consumption; and Fortitude through severe-climate defense and structural resilience.</p></div></article></div></div><div class="a-era" role="group" aria-label="Convergence era, 2000 to 2012"><div class="a-era-head"><div class="a-era-label"><div class="a-era-name">Convergence</div><div class="a-era-dates">2000&ndash;2012</div><div class="a-era-desc">Increasingly building datasets, integrating systems, information, protection, and enterprise transformation. Coordinating programs that connected design, operations, security, and asset management into more unified environments.</div></div></div><div class="a-era-cards"><article class="a-item" aria-label="2000 to 2001: Higher Education Facilities Overhaul, High-Occupancy Athletic Structural Engineering, University of Maryland"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2000&ndash;2001</div><div class="a-pillar">Form &amp; Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Fortitude</div><div class="a-tagline">Higher Education Facilities Overhaul</div><div class="a-label">High-Occupancy Athletic Structural Engineering</div><div class="a-body"><p class="a-strong">University of Maryland &mdash; College Park, Maryland</p><p>AESIT provided structural engineering, in collaboration with a local engineering firm, for a multi-facility overhaul of the university&rsquo;s flagship athletic and recreational infrastructure &mdash; with AESIT&rsquo;s scope focused on the Comcast Center.</p><p>Navigating strict procurement guidelines under the Maryland Department of General Services and Board of Public Works.</p><p>Strengthened Form through structural ceiling engineering and tailored athletic space fit-outs; Flow through precision climate control and microclimate HVAC distribution; and Fortitude through rigorous life-safety engineering and strict state compliance.</p></div></article><article class="a-item" aria-label="2001 to 2003: Resilience Beyond Borders, Humanitarian Housing Upgrading, The World Bank"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2001&ndash;2003</div><div class="a-pillar">Form &bull; Flow &bull; Fortitude</div><div class="a-tagline">Resilience Beyond Borders</div><div class="a-label">Humanitarian Housing Upgrading</div><div class="a-body"><p class="a-strong">The World Bank &mdash; International</p><p>AESIT executed human-centered design and rehabilitation for public housing and informal settlements across international development sectors &mdash; including work in Azerbaijan, Burkina Faso, and Addis Ababa, Ethiopia.</p><p>Climate-adaptive residential upgrades ranging from IDP collective-housing insulation to post-conflict structural repairs.</p><p>Advanced Form through localized retrofits and thermal envelope upgrades; Flow through communal sanitation, utilities, and drainage integration; and Fortitude by relocating residents from high-risk floodplains to secure long-term resilience.</p></div></article><article class="a-item" aria-label="2002: Custom Residential Portfolio, Bespoke Luxury Architecture + Integrated Delivery, Washington Metropolitan Area"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2002</div><div class="a-pillar">Form Intelligence</div><div class="a-pillar-secondary">Secondary: Flow &bull; Fortitude</div><div class="a-tagline">Custom Residential Portfolio</div><div class="a-label">Bespoke Luxury Architecture + Integrated Delivery</div><div class="a-body"><p class="a-strong">Private Residential Clients &mdash; Washington Metropolitan Area</p><p>AESIT served as Design Architect for luxury custom homes across the DC, Maryland &amp; Virginia region &mdash; in partnership with a civil/structural engineering collaborator &mdash; with additional work in neighborhood planning.</p></div></article><article class="a-item" aria-label="2002 to 2003: Transit-Oriented Development, Integrated Digital Delivery, Dulles Corridor Metrorail"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2002&ndash;2003</div><div class="a-pillar">Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div><div class="a-tagline">Transit-Oriented Development</div><div class="a-label">Integrated Digital Delivery (IDD)</div><div class="a-body"><p class="a-strong">Dulles Corridor Metrorail &mdash; Washington Metropolitan Area</p><p>Directed operational cadence across a multi-firm prime consultant team &mdash; managing GIS and CAD systems, AEC engineering applications, and mission-critical communications.</p><p>Unified cross-disciplinary digital operations, safeguarding data integrity and enabling delivery of the Draft Environmental Impact Statement (DEIS) ahead of schedule and under budget.</p><p>Received a Leadership Award for exceptional project impact and performance.</p></div></article><article class="a-item" aria-label="2003 to 2005: Defense in Every Dimension, Converged Physical-Cyber Security, Department of Defense"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2003&ndash;2005</div><div class="a-pillar">Fortitude Intelligence</div><div class="a-pillar-secondary">Secondary: Flow</div><div class="a-tagline">Defense in Every Dimension</div><div class="a-label">Converged Physical-Cyber Security</div><div class="a-body"><p class="a-strong">Department of Defense &mdash; International</p><p>AESIT delivered multi-disciplinary subcontracting support for high-consequence DoD and federal environments &mdash; military installations and embassies &mdash; coordinating physical security, perimeter intrusion detection, critical-infrastructure hardening, and Sarbanes-Oxley (SOX) compliance.</p><p>Strengthened Fortitude through perimeter defense and hardened facility envelopes; and Flow through cross-entity governance and multi-system coordination.</p></div></article><article class="a-item" aria-label="2005 to 2009: The First of Its Kind, Integrated Digital Delivery and Physical Security, Department of Treasury"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2005&ndash;2009</div><div class="a-pillar">Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div><div class="a-tagline">The First of Its Kind</div><div class="a-label">Integrated Digital Delivery (IDD) + Physical Security</div><div class="a-body"><p class="a-strong">Department of Treasury &mdash; Washington, D.C.</p><p>AESIT modernized the Bureau of Engraving and Printing&rsquo;s Configuration Management System, migrating legacy desktop tools into a centralized, server-based Oracle CAFM platform &mdash; the agency&rsquo;s first system to achieve FISMA high-baseline compliance.</p><p>Unified physical-security assets, spatial management, inventory tracking, and work-order workflows across high-security facilities.</p><p>Strengthened Flow through unified digital workflows; Fortitude through high-baseline cyber security and disaster-recovery readiness; and Form through precise spatial standardization.</p></div></article><article class="a-item" aria-label="2009 to 2012: The Architecture of Continuity, Smart Building and Integrated Facility Architecture, Department of Treasury"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2009&ndash;2012</div><div class="a-pillar">Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div><div class="a-tagline">The Architecture of Continuity</div><div class="a-label">Smart Building + Integrated Facility Architecture</div><div class="a-body"><p class="a-strong">Department of Treasury &mdash; Washington, D.C.</p><p>AESIT served as Technical Project Lead modernizing facility management, physical security, and IT operations across the Bureau of Engraving and Printing&rsquo;s high-security facilities, spearheading the integration of an Integrated Workplace Management System (IWMS) with an Enterprise Asset Management (EAM) platform into one unified enterprise system.</p><p>Strengthened Flow through data-driven operational alignment; Form through standardized spatial parameters and asset positioning; and Fortitude through secure physical and cyber continuity across currency-production sites.</p></div></article></div></div><div class="a-era" role="group" aria-label="Transformation era, 2013 to 2019"><div class="a-era-head"><div class="a-era-label"><div class="a-era-name">Transformation</div><div class="a-era-dates">2013&ndash;2019</div><div class="a-era-desc">Advancing digital modernization, intelligent infrastructure, and performance-driven outcomes. Integrating business and technology environments, connecting client development, project delivery, workplace and asset management, communications, and inventory.</div></div></div><div class="a-era-cards"><article class="a-item" aria-label="2013 to 2015: Enterprise Modernization, Sustainable Resource Optimization, Public Service Organization"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2013&ndash;2015</div><div class="a-pillar">Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div><div class="a-tagline">Enterprise Modernization</div><div class="a-label">Sustainable Resource Optimization</div><div class="a-body"><p class="a-strong">Public Service Organization &mdash; Manassas, Virginia</p><p>AESIT delivered enterprise administration across CRM, EAM, network, website, and warehouse systems &mdash; streamlining constituent-service workflows, digitizing inventory processes, and bolstering infrastructure stability.</p><p>Strengthened Flow by unifying constituent data pipelines; Fortitude through network stabilization and mission-critical system reliability; and Form through structured digital inventory schemas.</p></div></article><article class="a-item" aria-label="2016 to 2018: Zero-Trust Cyber Resilience and Cloud, Digital Transformation + Sustainable Optimization, Public Service Organization"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2016&ndash;2018</div><div class="a-pillar">Flow &amp; Fortitude Intelligence</div><div class="a-pillar-secondary">Secondary: Form</div><div class="a-tagline">Zero-Trust Cyber Resilience + Cloud</div><div class="a-label">Digital Transformation + Sustainable Optimization</div><div class="a-body"><p class="a-strong">Public Service Organization &mdash; United States</p><p>AESIT delivered enterprise cybersecurity and cloud administration across a global enterprise and a national public service organization &mdash; executing a zero-downtime, overnight Microsoft 365 migration with Defense-in-Depth strategies, OSI-layer protections, and hardware lifecycle controls to protect mission-critical assets against ransomware and breaches.</p><p>Strengthened Fortitude through multi-layered cybersecurity and infrastructure defense; Flow through seamless cloud migration and unified data ecosystems; and Form through standardized cloud architectures and enterprise licensing structures.</p></div></article><article class="a-item" aria-label="2017: Where Brand Becomes Experience, Generative Dynamic Ambient Design, Lamborghini"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2017</div><div class="a-pillar">Form Intelligence</div><div class="a-pillar-secondary">Secondary: Flow</div><div class="a-tagline">Where Brand Becomes Experience</div><div class="a-label">Generative Dynamic Ambient Design</div><div class="a-body"><p class="a-strong">Lamborghini &mdash; Italy</p><p>AESIT delivered experiential design and build services for the official reveal of the Lamborghini Urus, constructing a multi-sensory immersion exhibit with leading design partners.</p><p>Furnished an illuminated raised platform integrated with fabric, vinyl, synchronized motion graphics, dynamic lighting, and acoustics to create a high-impact brand environment.</p><p>Strengthened Form through precision spatial geometry, staging, and custom fabrication; and Flow through synchronized multimedia orchestration and seamless cross-partner execution.</p></div></article><article class="a-item" aria-label="2017 to 2018: One Roof, Every Climate, Multi-Venue Microclimate MEP Engineering, The St. James"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2017&ndash;2018</div><div class="a-pillar">Form &amp; Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Fortitude</div><div class="a-tagline">One Roof, Every Climate</div><div class="a-label">Multi-Venue Microclimate MEP Engineering</div><div class="a-body"><p class="a-strong">The St. James &mdash; Springfield, Virginia</p><p>AESIT provided specialized MEP/HVAC engineering, assembly, and commissioning support for a 450,000 SF sports and entertainment complex with NHL ice rinks, an Olympic pool, water park, fieldhouse, and health club.</p><p>Strengthened Flow through multi-zone thermal and humidity orchestration; Form through integration of heavy mechanical systems into generative architecture; and Fortitude through rigorous commissioning under extreme environmental loads.</p></div></article><article class="a-item" aria-label="2018 to 2020: History in Active Service, Historic Industrial Adaptation, Fort Belvoir"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2018&ndash;2020</div><div class="a-pillar">Flow &amp; Fortitude Intelligence</div><div class="a-pillar-secondary">Secondary: Form</div><div class="a-tagline">History in Active Service</div><div class="a-label">Historic Industrial Adaptation</div><div class="a-body"><p class="a-strong">Department of Defense &mdash; Fort Belvoir, Virginia</p><p>AESIT delivered design-build rehabilitation of the installation&rsquo;s primary industrial maintenance and vehicle-repair warehouse, supporting the Army Field Support Brigade&rsquo;s heavy mobile equipment and tactical fleet divisions. A U.S. Army Corps of Engineers (USACE) project.</p><p>Strengthened Fortitude through force-protection security and life-safety upgrades; Form through preservation of historic masonry and re-engineering of structural frames; and Flow through zero-disruption construction logistics.</p></div></article><article class="a-item" aria-label="2019: Old Walls, New Life, Regenerative Design and Adaptive Reuse, Old Town Alexandria"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2019</div><div class="a-pillar">Form Intelligence</div><div class="a-pillar-secondary">Secondary: Flow &bull; Fortitude</div><div class="a-tagline">Old Walls, New Life</div><div class="a-label">Regenerative Design + Adaptive Reuse</div><div class="a-body"><p class="a-strong">Old Town Alexandria, Virginia</p><p>AESIT collaborated on the full remodel of a townhome within the National Historic Landmark District &mdash; removing a 1960s addition to expand the first- and second-level footprints into an open, modernized plan.</p><p>Balanced 18th- and 19th-century architectural integrity with modern construction standards under strict historic preservation mandates.</p><p>Strengthened Form through precision spatial reconstruction and custom architectural geometry; Flow through constrained urban logistics and permitting workflows; and Fortitude through regulatory compliance and structural preservation.</p></div></article></div></div><div class="a-era" role="group" aria-label="Discovery era, 2020 to 2024"><div class="a-era-head"><div class="a-era-label"><div class="a-era-name">Discovery</div><div class="a-era-dates">2020&ndash;2024</div><div class="a-era-desc">Periodic reviews of past work and organizational trajectory revealed gaps across the lifecycle in assets, information, and decision-making. Improving data quality and integration enabled more reliable analytics, organizational learning, and forward planning.</div></div></div><div class="a-era-cards"><article class="a-item" aria-label="2020 to 2025: Brands Built to Travel, Modular A/E Design, Trade Show Exhibits"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2020&ndash;2025</div><div class="a-pillar">Form &amp; Flow Intelligence</div><div class="a-pillar-secondary">Secondary: Fortitude</div><div class="a-tagline">Brands Built to Travel</div><div class="a-label">Modular A/E Design + Sustainable Event Logistics</div><div class="a-body"><p class="a-strong">Trade Show Exhibits &mdash; United States</p><p>AESIT provided turnkey design, build, and take-down services for nationwide trade-show exhibits &mdash; from portable promotional assets to fully immersive, custom-built exhibition environments with integrated video displays for clients across diverse industries.</p><p>Strengthened Form through precision exhibit design and custom fabrication; Flow through seamless operational workflows and nationwide logistics; and Fortitude through structural safety compliance in high-consequence venues.</p></div></article><article class="a-item" aria-label="2021 to 2024: Learning From the Record, Periodic Retrospective Review, AESIT Business Plan"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2021&ndash;2024</div><div class="a-pillar">Compounding Intelligence&trade;</div><div class="a-tagline">Learning From the Record</div><div class="a-label">Periodic Retrospective Review</div><div class="a-body"><p class="a-strong">AESIT Business Plan &mdash; Organizational Practice</p><p>Periodic assessments of prior work and organizational trajectory revealed recurring patterns across projects, assets, and information systems that were not apparent at the individual project level.</p><p>These reviews revealed a recurring pattern across decades of projects: assets, information, and decisions were governed independently, while lifecycle performance emerged from their interaction. The gap was not technological. It was architectural.</p></div></article><article class="a-item" aria-label="Pattern: Recognition of the Pattern, the thesis of Lifecycle Intelligence"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">Pattern</div><div class="a-tagline">The Principle That Kept Emerging</div><div class="a-label">Recognition of the Pattern</div><div class="a-body"><p class="a-strong">Across decades of projects, technologies, and asset types, the same principle repeatedly emerged: long-term value was determined not by a single system, but by the quality of intelligence connecting form, flow, fortitude, and governance throughout the lifecycle.</p></div></article></div></div><div class="a-era" role="group" aria-label="Framework Synthesis era, 2025 to 2026"><div class="a-era-head"><div class="a-era-label"><div class="a-era-name">Framework Synthesis</div><div class="a-era-dates">2025&ndash;2026</div><div class="a-era-desc">Formalizing Lifecycle Intelligence&trade; by synthesizing decades of experience into a unified framework to understand, measure, and optimize lifecycle performance.</div></div></div><div class="a-era-cards"><article class="a-item" aria-label="2025 to 2026: Definition of the Framework"><div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div><div class="a-year">2025&ndash;2026</div><div class="a-pillar">Form &bull; Flow &bull; Fortitude</div><div class="a-label">Definition of the Framework</div><div class="a-body"><p class="a-strong">Form &rarr; Flow &rarr; Fortitude</p><p>Regenerative Design &bull; Adaptive Operations &bull; Resilient Protection</p><p>Decades of design, operations, protection, and governance practice formalized into one Lifecycle Intelligence architecture.</p></div></article></div></div><div class="a-era" role="group" aria-label="Leadership era, 2026 and beyond"><div class="a-era-head"><div class="a-era-label"><div class="a-era-name">Leadership</div><div class="a-era-dates">2026 and Beyond</div><div class="a-era-desc">Building the standards, methodologies, and certification ecosystem for Lifecycle Intelligence&trade;.</div></div></div><div class="a-era-cards"><article class="a-item a-final" aria-label="2026: CRELI, CRE Lifecycle Intelligence"><div class="a-node"></div><div class="a-year">2026</div><div class="a-label">CRELI&trade;</div><div class="a-body"><p class="a-strong">CRE Lifecycle Intelligence&trade;</p><p>The sovereign intelligence governance discipline for the built environment.</p><div class="a-flow"><div>Form &rarr; Flow &rarr; Fortitude</div><div class="a-down">&darr;</div><div>Compounding Intelligence&trade;</div><div class="a-down">&darr;</div><div>Governance</div><div class="a-down">&darr;</div><div>Asset Sovereignty&trade;</div></div></div></article></div></div></div></div><p class="a-closing" style="font-weight: 400;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&amp;display=swap" rel="stylesheet">
+
+<style>
+#ats{--bg:#FFFFFF;--text:#808080;--highlight:#0C8791;--line:#000000;--tint:#F2F9F9;background:var(--bg);color:var(--text);font-family:Helvetica,Arial,sans-serif;padding:12px 0 8px;width:100%;box-sizing:border-box}
+#ats *{box-sizing:border-box}
+#ats .a-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#ats .a-disclaimer{font-size:12px;line-height:1.5;color:var(--text);font-style:italic;text-align:center;max-width:1200px;margin:0 auto 6px;padding:0 20px}
+#ats .a-scroll-hint{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.4;letter-spacing:0;color:var(--line);text-align:center;max-width:900px;margin:28px auto 4px;padding:0 24px}
+#ats .a-framework-preview{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.4px;color:var(--line);text-align:center;max-width:900px;margin:0 auto 16px;padding:0 20px}
+#ats .a-framework-preview .a-highlight{color:var(--highlight)}
+#ats .a-closing{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.4;color:var(--line);text-align:center;max-width:900px;margin:28px auto 4px;padding:0 24px}
+#ats .a-closing .a-highlight{color:var(--highlight)}
+#ats .a-copyright{font-size:12px;line-height:1.5;color:var(--text);text-align:center;margin:28px auto 8px;padding:16px 20px 0;max-width:1000px;border-top:1px solid #dddddd}
+#ats .a-gov{max-width:1000px;margin:24px auto 8px;padding:0 20px}
+#ats .a-gov-title{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--line);text-align:center;margin-bottom:4px}
+#ats .a-gov-sub{font-size:12px;font-style:italic;line-height:1.4;color:var(--text);text-align:center;max-width:700px;margin:0 auto 18px}
+#ats .a-gov-steps{display:flex;align-items:flex-start;justify-content:center;gap:10px}
+#ats .a-gov-step{flex:1 1 0;max-width:260px;text-align:center;padding:0 6px}
+#ats .a-gov-year{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:800;font-size:15px;color:var(--highlight);margin-bottom:4px}
+#ats .a-gov-label{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.6px;text-transform:uppercase;color:var(--line);margin-bottom:6px}
+#ats .a-gov-desc{font-size:12px;line-height:1.4;color:var(--text)}
+#ats .a-gov-arrow{flex:0 0 auto;color:var(--line);font-size:18px;font-weight:bold;padding-top:2px}
+#ats .a-scroll{overflow-x:auto;overflow-y:hidden;padding:24px 20px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--highlight) #eeeeee}
+#ats .a-scroll:focus{outline:2px solid var(--highlight);outline-offset:2px}
+#ats .a-scroll::-webkit-scrollbar{height:8px}
+#ats .a-scroll::-webkit-scrollbar-track{background:#eeeeee}
+#ats .a-scroll::-webkit-scrollbar-thumb{background:var(--highlight);border-radius:4px}
+#ats .a-track{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;grid-template-rows:auto 1fr;align-items:stretch;position:relative;min-width:max-content}
+#ats .a-era{display:grid;grid-template-columns:auto;grid-template-rows:subgrid;grid-row:1 / span 2}
+@supports not (grid-template-rows:subgrid){#ats .a-era{align-content:start}#ats .a-era-head{min-height:175px}}
+#ats .a-era:nth-child(even){background:var(--tint)}
+#ats .a-era-head{width:0;min-width:calc(100% - 16px);margin:0 8px;padding:12px 0 10px;border-bottom:2px solid var(--highlight);position:relative}
+#ats .a-era-head::before,#ats .a-era-head::after{content:"";position:absolute;bottom:0;width:2px;height:10px;background:var(--highlight)}
+#ats .a-era-head::before{left:0}
+#ats .a-era-head::after{right:0}
+#ats .a-era-label{position:sticky;left:20px;display:block;width:420px;max-width:calc(100% - 20px);padding-left:10px}
+#ats .a-era-name{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;letter-spacing:1.5px;text-transform:uppercase;color:var(--highlight);line-height:1.1}
+#ats .a-era-dates{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.8px;color:var(--text);margin:3px 0 5px}
+#ats .a-era-desc{font-size:12px;font-style:italic;line-height:1.4;color:var(--text)}
+#ats .a-era-cards{display:flex;align-items:flex-start;position:relative;padding-top:10px}
+#ats .a-era-cards::before{content:"";position:absolute;left:0;right:0;top:59px;height:2px;background:var(--line);z-index:0}
+#ats .a-era:first-child .a-era-cards::before{left:43px}
+#ats .a-era:last-child .a-era-cards::before{right:9px}
+#ats .a-era:last-child .a-era-cards::after{content:"";position:absolute;right:0;top:54px;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:9px solid var(--highlight)}
+#ats .a-item{position:relative;z-index:1;width:270px;flex:0 0 270px;padding:0 18px;text-align:left}
+#ats .a-node{width:14px;height:14px;border-radius:50%;background:var(--highlight);border:2px solid var(--bg);outline:2px solid var(--line);margin:43px auto 18px 18px;position:relative}
+#ats .a-arrow{position:absolute;top:44px;right:-5px;width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:9px solid var(--highlight););z-index:2}
+#ats .a-era:last-child .a-item:last-child .a-arrow{display:none}
+#ats .a-year{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:800;font-size:26px;color:var(--highlight);line-height:1;margin-bottom:6px;letter-spacing:0.5px}
+#ats .a-title{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:600;font-size:26px;color:var(--highlight);text-align:center;margin:26px auto 12px;max-width:1200px}
+#ats .a-pillar{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--highlight);margin-bottom:3px}
+#ats .a-pillar-secondary{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:500;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text);margin-bottom:6px}
+#ats .a-tagline{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:500;font-style:italic;font-size:11.5px;letter-spacing:0.2px;color:var(--highlight);margin-bottom:3px}
+#ats .a-label{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.1px;color:var(--line);text-transform:uppercase;margin-bottom:8px;text-wrap:balance}
+#ats .a-body p{margin:0 0 6px;font-size:13px;line-height:1.45;color:var(--text)}
+#ats .a-body p.a-strong{color:var(--line);font-weight:bold}
+#ats .a-final{width:270px;flex:0 0 270px}
+#ats .a-final .a-flow{margin-top:12px}
+#ats .a-final .a-flow div{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;color:var(--line);padding:5px 0}
+#ats .a-final .a-flow .a-down{color:var(--highlight);font-size:16px;text-align:center}
+
+@media (max-width:640px){
+#ats .a-item{width:220px;flex:0 0 220px}
+#ats .a-final{width:220px;flex:0 0 220px}
+#ats .a-final .a-flow div{font-size:13px}
+#ats .a-scroll-hint{font-size:16px;padding:0 16px}
+#ats .a-pillar-secondary{font-size:9px}
+#ats .a-framework-preview{font-size:12px;padding:0 16px}
+#ats .a-closing{font-size:16px;padding:0 16px}
+#ats .a-era-label{width:260px}
+#ats .a-era-name{font-size:17px}
+#ats .a-era-desc{font-size:11.5px}
+#ats .a-gov-steps{flex-direction:column;align-items:center;gap:4px}
+#ats .a-gov-step{max-width:100%}
+#ats .a-gov-arrow{transform:rotate(90deg);padding:4px 0}
+}
+</style>
+
+<section id="ats" aria-labelledby="att">
+<h2 id="att" class="a-sr-only">The Origins of a Discipline 1989-2026</h2>
+
+<p class="a-disclaimer"><strong>Historical Capability Lineage.</strong> This timeline summarizes documented and corroborated work associated with AESIT, predecessor entities, affiliated organizations, personnel, and project partners. It is not a representation of uninterrupted operation by a single legal entity. Current AESIT terminology is used only to describe capability lineage and was not necessarily used during the referenced projects. Each entry is limited to AESIT&rsquo;s documented role and scope. References to agencies, institutions, clients, and other organizations are for factual identification only and do not imply endorsement, sponsorship, certification, affiliation, or direct contracting unless expressly stated and authorized.
+</p>
+
+<div style="height:24px" aria-hidden="true"></div>
+
+<h1 class="a-title">The Origins of a Discipline 1989-2026</h1>
+
+<p class="a-scroll-hint">Tracing the evolution of experience, infrastructure, technology, and strategic insight that culminated in the development of Lifecycle Intelligence™.</p>
+
+<p class="a-framework-preview">
+Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding Intelligence&trade;</span> &rarr; Governance &rarr; <span class="a-highlight">Asset Sovereignty&trade;</span></p>
+
+<div class="a-scroll" tabindex="0" role="region" aria-label="AESIT history timeline, 1989 through 2026, organized in six eras">
+
+<div class="a-track">
+
+<div class="a-era" role="group" aria-label="Foundation era, 1989 to 1999">
+<div class="a-era-head">
+<div class="a-era-label">
+<div class="a-era-name">Foundation</div>
+<div class="a-era-dates">1989&ndash;1999</div>
+<div class="a-era-desc">Building operational, technical, and infrastructure expertise. Learning to create, organize, connect, and govern the information systems that support design, delivery, and operations.</div>
+</div>
+</div>
+
+<div class="a-era-cards">
+
+<article class="a-item" aria-label="1989: The Origin of CRELI, Entity Founded, AESIT, Tysons Corner, Virginia">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1989</div>
+<div class="a-pillar">Form &bull; Flow &bull; Fortitude</div>
+<div class="a-tagline">The Origin of CRELI&trade;</div>
+<div class="a-label">Entity Founded</div>
+<div class="a-body">
+<p class="a-strong">AESIT &mdash; Tysons Corner, Virginia</p>
+<p>AESIT emerged at the hinge between eras &mdash; when coordination shifted from hand&#8209;aligned overlays to the first digital twin environments. Born in that metamorphosis, AESIT preserved the integrative discipline of manual craft and carried it forward into digital precision, operational clarity, and the earliest expressions of environmental intelligence. Its founding principle: environments must learn, evolve, and preserve asset value over time.</p>
+<p>A practice built to bridge eras, technologies, and the cultures that shaped them &mdash; carrying each memory forward into more intelligent, more responsive futures.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="1989 to 1991: Foundations of Trust, High-Consequence Federal Infrastructure, Classified Federal Environment">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1989&ndash;1991</div>
+<div class="a-pillar">Form &bull; Flow &bull; Fortitude</div>
+<div class="a-tagline">Foundations of Trust</div>
+<div class="a-label">High-Consequence Federal Infrastructure</div>
+<div class="a-body">
+<p class="a-strong">Classified Federal Environment &mdash; United States</p>
+<p>Multi-disciplinary architecture and engineering support for a high-consequence federal environment &mdash; structural hardening, complex telecommunications pathways, and early cyber security safeguards.</p>
+<p>Proved that physical design, operational continuity, and secure protection must be co-engineered as one unified system.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="1991 to 1993: The Lifecycle Intelligence Seed, Critical Infrastructure Hardening, Federal Partner Agency">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1991&ndash;1993</div>
+<div class="a-pillar">Form &bull; Flow &bull; Fortitude</div>
+<div class="a-tagline">The Lifecycle Intelligence Seed</div>
+<div class="a-label">Critical Infrastructure Hardening</div>
+<div class="a-body">
+<p class="a-strong">Federal Partner Agency &mdash; United States</p>
+<p>Multi-disciplinary architecture and engineering support integrating physical hardening, complex MEP infrastructure, telecommunications, and early cyber-physical security controls.</p>
+<p>Laid the organic foundation for lifecycle intelligence &mdash; encoding resilience, operational continuity, and secure environment design into mission-critical federal assets from inception.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="1993: National Landmark Reimagined, Biophilic Concourse Architecture, Ronald Reagan Washington National Airport">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1993</div>
+<div class="a-pillar">Form &amp; Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Fortitude</div>
+<div class="a-tagline">National Landmark, Reimagined</div>
+<div class="a-label">Biophilic Concourse Architecture</div>
+<div class="a-body">
+<p class="a-strong">Ronald Reagan Washington National Airport &mdash; Washington, D.C.</p>
+<p>AESIT provided architectural engineering and design support for this national infrastructure project, designed around seamless connections to the Metrorail network.</p>
+<p>Vaulted steel arches, domed oculi, and expansive glass sightlines bring natural light and views of the Potomac deep into the concourses &mdash; biophilic design that reduces stress and cognitive fatigue.</p>
+<p>The design team received multiple national awards.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="1994: Premier Hong Kong Skyscraper, Smart Building + Fiber-Optic Facade, Cheung Kong Centre">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1994</div>
+<div class="a-pillar">Form Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Flow &bull; Fortitude</div>
+<div class="a-tagline">Premier Hong Kong Skyscraper</div>
+<div class="a-label">Smart Building + Fiber-Optic Facade</div>
+<div class="a-body">
+<p class="a-strong">Cheung Kong Centre &mdash; Hong Kong, China</p>
+<p>AESIT provided specialized engineering analysis in support of the project&rsquo;s world-class design team, applying engineered floor criteria to harmonize strict contractual requirements with high-performance design.</p>
+<p>An early application of Form Intelligence &mdash; encoding structural harmony and performance into the asset&rsquo;s foundation to establish a baseline of compounding lifecycle value.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="1995: Initial Formation, Entity Incorporated, AESCT Corp.">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1995</div>
+<div class="a-pillar">Form &bull; Flow &bull; Fortitude</div>
+<div class="a-tagline">Initial Formation</div>
+<div class="a-label">Entity Incorporated</div>
+<div class="a-body">
+<p class="a-strong">AESCT Corp. &mdash; Columbia, Maryland</p>
+<p>AESIT expanded into full&#8209;system deployment, user training, and CAD interface optimization &mdash; turning design environments into digitally accelerated production ecosystems. By bridging digitizing boards with early workstations, AESIT built macros and simplified menus that collapsed multi&#8209;step commands into single actions, boosting speed and reducing cognitive load.</p>
+<p>Began the shift from bridging eras to shaping the workflows that would define the ones ahead.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="1995 to 1996: Technical Standards Publication, Architectural Practice Standardization, AIA / John Wiley &amp; Sons">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1995&ndash;1996</div>
+<div class="a-pillar">Form &amp; Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Fortitude</div>
+<div class="a-tagline">Technical Standards Publication</div>
+<div class="a-label">Architectural Practice Standardization</div>
+<div class="a-body">
+<p class="a-strong">AIA / John Wiley &amp; Sons &mdash; Washington, D.C.</p>
+<p>AESIT served as one of two Technical Editor consultants on the five-person team behind the 9th Edition Supplement of Architectural Graphic Standards (AGS), focusing on standards illustration and technical writing for a document trusted across the AEC industry.</p>
+<p>AESIT leads with Form by defining AGS; drives Flow by optimizing structures for design workflows; and reinforces Fortitude through enduring stewardship and high-integrity standards.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="1996 to 1999: Monolithic Sustainable Engineering, High-Performance Building Envelope, Atlanta, Georgia">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">1996&ndash;1999</div>
+<div class="a-pillar">Form &bull; Flow &bull; Fortitude</div>
+<div class="a-tagline">Monolithic Sustainable Engineering</div>
+<div class="a-label">High-Performance Building Envelope</div>
+<div class="a-body">
+<p class="a-strong">Private Residential and Commercial Clients &mdash; Atlanta, Georgia</p>
+<p>Engineered a lightweight, proprietary Autoclaved Aerated Concrete (AAC) Envelope System over steel and wood framing for residential and commercial structures.</p>
+<p>An early example of operationalizing Form through passive, weight-reducing envelope design; Flow by curbing thermal bridging to cut energy consumption; and Fortitude through severe-climate defense and structural resilience.</p>
+</div>
+</article>
+
+</div>
+</div>
+
+<div class="a-era" role="group" aria-label="Convergence era, 2000 to 2012">
+<div class="a-era-head">
+<div class="a-era-label">
+<div class="a-era-name">Convergence</div>
+<div class="a-era-dates">2000&ndash;2012</div>
+<div class="a-era-desc">Increasingly building datasets, integrating systems, information, protection, and enterprise transformation. Coordinating programs that connected design, operations, security, and asset management into more unified environments.</div>
+</div>
+</div>
+
+<div class="a-era-cards">
+
+<article class="a-item" aria-label="2000 to 2001: Higher Education Facilities Overhaul, High-Occupancy Athletic Structural Engineering, University of Maryland">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2000&ndash;2001</div>
+<div class="a-pillar">Form &amp; Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Fortitude</div>
+<div class="a-tagline">Higher Education Facilities Overhaul</div>
+<div class="a-label">High-Occupancy Athletic Structural Engineering</div>
+<div class="a-body">
+<p class="a-strong">University of Maryland &mdash; College Park, Maryland</p>
+<p>AESIT provided structural engineering, in collaboration with a local engineering firm, for a multi-facility overhaul of the university&rsquo;s flagship athletic and recreational infrastructure &mdash; with AESIT&rsquo;s scope focused on the Comcast Center.</p>
+<p>Navigating strict procurement guidelines under the Maryland Department of General Services and Board of Public Works.</p>
+<p>Strengthened Form through structural ceiling engineering and tailored athletic space fit-outs; Flow through precision climate control and microclimate HVAC distribution; and Fortitude through rigorous life-safety engineering and strict state compliance.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2001 to 2003: Resilience Beyond Borders, Humanitarian Housing Upgrading, The World Bank">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2001&ndash;2003</div>
+<div class="a-pillar">Form &bull; Flow &bull; Fortitude</div>
+<div class="a-tagline">Resilience Beyond Borders</div>
+<div class="a-label">Humanitarian Housing Upgrading</div>
+<div class="a-body">
+<p class="a-strong">The World Bank &mdash; International</p>
+<p>AESIT executed human-centered design and rehabilitation for public housing and informal settlements across international development sectors &mdash; including work in Azerbaijan, Burkina Faso, and Addis Ababa, Ethiopia.</p>
+<p>Climate-adaptive residential upgrades ranging from IDP collective-housing insulation to post-conflict structural repairs.</p>
+<p>Advanced Form through localized retrofits and thermal envelope upgrades; Flow through communal sanitation, utilities, and drainage integration; and Fortitude by relocating residents from high-risk floodplains to secure long-term resilience.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2002: Custom Residential Portfolio, Bespoke Luxury Architecture + Integrated Delivery, Washington Metropolitan Area">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2002</div>
+<div class="a-pillar">Form Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Flow &bull; Fortitude</div>
+<div class="a-tagline">Custom Residential Portfolio</div>
+<div class="a-label">Bespoke Luxury Architecture + Integrated Delivery</div>
+<div class="a-body">
+<p class="a-strong">Private Residential Clients &mdash; Washington Metropolitan Area</p>
+<p>AESIT served as Design Architect for luxury custom homes across the DC, Maryland &amp; Virginia region &mdash; in partnership with a civil/structural engineering collaborator &mdash; with additional work in neighborhood planning.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2002 to 2003: Transit-Oriented Development, Integrated Digital Delivery, Dulles Corridor Metrorail">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2002&ndash;2003</div>
+<div class="a-pillar">Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div>
+<div class="a-tagline">Transit-Oriented Development</div>
+<div class="a-label">Integrated Digital Delivery (IDD)</div>
+<div class="a-body">
+<p class="a-strong">Dulles Corridor Metrorail &mdash; Washington Metropolitan Area</p>
+<p>Directed operational cadence across a multi-firm prime consultant team &mdash; managing GIS and CAD systems, AEC engineering applications, and mission-critical communications.</p>
+<p>Unified cross-disciplinary digital operations, safeguarding data integrity and enabling delivery of the Draft Environmental Impact Statement (DEIS) ahead of schedule and under budget.</p>
+<p>Received a Leadership Award for exceptional project impact and performance.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2003 to 2005: Defense in Every Dimension, Converged Physical-Cyber Security, Department of Defense">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2003&ndash;2005</div>
+<div class="a-pillar">Fortitude Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Flow</div>
+<div class="a-tagline">Defense in Every Dimension</div>
+<div class="a-label">Converged Physical-Cyber Security</div>
+<div class="a-body">
+<p class="a-strong">Department of Defense &mdash; International</p>
+<p>AESIT delivered multi-disciplinary subcontracting support for high-consequence DoD and federal environments &mdash; military installations and embassies &mdash; coordinating physical security, perimeter intrusion detection, critical-infrastructure hardening, and Sarbanes-Oxley (SOX) compliance.</p>
+<p>Strengthened Fortitude through perimeter defense and hardened facility envelopes; and Flow through cross-entity governance and multi-system coordination.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2005 to 2009: The First of Its Kind, Integrated Digital Delivery and Physical Security, Department of Treasury">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2005&ndash;2009</div>
+<div class="a-pillar">Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div>
+<div class="a-tagline">The First of Its Kind</div>
+<div class="a-label">Integrated Digital Delivery (IDD) + Physical Security</div>
+<div class="a-body">
+<p class="a-strong">Department of Treasury &mdash; Washington, D.C.</p>
+<p>AESIT modernized the Bureau of Engraving and Printing&rsquo;s Configuration Management System, migrating legacy desktop tools into a centralized, server-based Oracle CAFM platform &mdash; the agency&rsquo;s first system to achieve FISMA high-baseline compliance.</p>
+<p>Unified physical-security assets, spatial management, inventory tracking, and work-order workflows across high-security facilities.</p>
+<p>Strengthened Flow through unified digital workflows; Fortitude through high-baseline cyber security and disaster-recovery readiness; and Form through precise spatial standardization.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2009 to 2012: The Architecture of Continuity, Smart Building and Integrated Facility Architecture, Department of Treasury">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2009&ndash;2012</div>
+<div class="a-pillar">Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div>
+<div class="a-tagline">The Architecture of Continuity</div>
+<div class="a-label">Smart Building + Integrated Facility Architecture</div>
+<div class="a-body">
+<p class="a-strong">Department of Treasury &mdash; Washington, D.C.</p>
+<p>AESIT served as Technical Project Lead modernizing facility management, physical security, and IT operations across the Bureau of Engraving and Printing&rsquo;s high-security facilities, spearheading the integration of an Integrated Workplace Management System (IWMS) with an Enterprise Asset Management (EAM) platform into one unified enterprise system.</p>
+<p>Strengthened Flow through data-driven operational alignment; Form through standardized spatial parameters and asset positioning; and Fortitude through secure physical and cyber continuity across currency-production sites.</p>
+</div>
+</article>
+
+</div>
+</div>
+
+<div class="a-era" role="group" aria-label="Transformation era, 2013 to 2019">
+<div class="a-era-head">
+<div class="a-era-label">
+<div class="a-era-name">Transformation</div>
+<div class="a-era-dates">2013&ndash;2019</div>
+<div class="a-era-desc">Advancing digital modernization, intelligent infrastructure, and performance-driven outcomes. Integrating business and technology environments, connecting client development, project delivery, workplace and asset management, communications, and inventory.</div>
+</div>
+</div>
+
+<div class="a-era-cards">
+
+<article class="a-item" aria-label="2013 to 2015: Enterprise Modernization, Sustainable Resource Optimization, Public Service Organization">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2013&ndash;2015</div>
+<div class="a-pillar">Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Form &bull; Fortitude</div>
+<div class="a-tagline">Enterprise Modernization</div>
+<div class="a-label">Sustainable Resource Optimization</div>
+<div class="a-body">
+<p class="a-strong">Public Service Organization &mdash; Manassas, Virginia</p>
+<p>AESIT delivered enterprise administration across CRM, EAM, network, website, and warehouse systems &mdash; streamlining constituent-service workflows, digitizing inventory processes, and bolstering infrastructure stability.</p>
+<p>Strengthened Flow by unifying constituent data pipelines; Fortitude through network stabilization and mission-critical system reliability; and Form through structured digital inventory schemas.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2016 to 2018: Zero-Trust Cyber Resilience and Cloud, Digital Transformation + Sustainable Optimization, Public Service Organization">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2016&ndash;2018</div>
+<div class="a-pillar">Flow &amp; Fortitude Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Form</div>
+<div class="a-tagline">Zero-Trust Cyber Resilience + Cloud</div>
+<div class="a-label">Digital Transformation + Sustainable Optimization</div>
+<div class="a-body">
+<p class="a-strong">Public Service Organization &mdash; United States</p>
+<p>AESIT delivered enterprise cybersecurity and cloud administration across a global enterprise and a national public service organization &mdash; executing a zero-downtime, overnight Microsoft 365 migration with Defense-in-Depth strategies, OSI-layer protections, and hardware lifecycle controls to protect mission-critical assets against ransomware and breaches.</p>
+<p>Strengthened Fortitude through multi-layered cybersecurity and infrastructure defense; Flow through seamless cloud migration and unified data ecosystems; and Form through standardized cloud architectures and enterprise licensing structures.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2017: Where Brand Becomes Experience, Generative Dynamic Ambient Design, Lamborghini">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2017</div>
+<div class="a-pillar">Form Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Flow</div>
+<div class="a-tagline">Where Brand Becomes Experience</div>
+<div class="a-label">Generative Dynamic Ambient Design</div>
+<div class="a-body">
+<p class="a-strong">Lamborghini &mdash; Italy</p>
+<p>AESIT delivered experiential design and build services for the official reveal of the Lamborghini Urus, constructing a multi-sensory immersion exhibit with leading design partners.</p>
+<p>Furnished an illuminated raised platform integrated with fabric, vinyl, synchronized motion graphics, dynamic lighting, and acoustics to create a high-impact brand environment.</p>
+<p>Strengthened Form through precision spatial geometry, staging, and custom fabrication; and Flow through synchronized multimedia orchestration and seamless cross-partner execution.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2017 to 2018: One Roof, Every Climate, Multi-Venue Microclimate MEP Engineering, The St. James">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2017&ndash;2018</div>
+<div class="a-pillar">Form &amp; Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Fortitude</div>
+<div class="a-tagline">One Roof, Every Climate</div>
+<div class="a-label">Multi-Venue Microclimate MEP Engineering</div>
+<div class="a-body">
+<p class="a-strong">The St. James &mdash; Springfield, Virginia</p>
+<p>AESIT provided specialized MEP/HVAC engineering, assembly, and commissioning support for a 450,000 SF sports and entertainment complex with NHL ice rinks, an Olympic pool, water park, fieldhouse, and health club.</p>
+<p>Strengthened Flow through multi-zone thermal and humidity orchestration; Form through integration of heavy mechanical systems into generative architecture; and Fortitude through rigorous commissioning under extreme environmental loads.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2018 to 2020: History in Active Service, Historic Industrial Adaptation, Fort Belvoir">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2018&ndash;2020</div>
+<div class="a-pillar">Flow &amp; Fortitude Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Form</div>
+<div class="a-tagline">History in Active Service</div>
+<div class="a-label">Historic Industrial Adaptation</div>
+<div class="a-body">
+<p class="a-strong">Department of Defense &mdash; Fort Belvoir, Virginia</p>
+<p>AESIT delivered design-build rehabilitation of the installation&rsquo;s primary industrial maintenance and vehicle-repair warehouse, supporting the Army Field Support Brigade&rsquo;s heavy mobile equipment and tactical fleet divisions. A U.S. Army Corps of Engineers (USACE) project.</p>
+<p>Strengthened Fortitude through force-protection security and life-safety upgrades; Form through preservation of historic masonry and re-engineering of structural frames; and Flow through zero-disruption construction logistics.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2019: Old Walls, New Life, Regenerative Design and Adaptive Reuse, Old Town Alexandria">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2019</div>
+<div class="a-pillar">Form Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Flow &bull; Fortitude</div>
+<div class="a-tagline">Old Walls, New Life</div>
+<div class="a-label">Regenerative Design + Adaptive Reuse</div>
+<div class="a-body">
+<p class="a-strong">Old Town Alexandria, Virginia</p>
+<p>AESIT collaborated on the full remodel of a townhome within the National Historic Landmark District &mdash; removing a 1960s addition to expand the first- and second-level footprints into an open, modernized plan.</p>
+<p>Balanced 18th- and 19th-century architectural integrity with modern construction standards under strict historic preservation mandates.</p>
+<p>Strengthened Form through precision spatial reconstruction and custom architectural geometry; Flow through constrained urban logistics and permitting workflows; and Fortitude through regulatory compliance and structural preservation.</p>
+</div>
+</article>
+
+</div>
+</div>
+
+<div class="a-era" role="group" aria-label="Discovery era, 2020 to 2024">
+<div class="a-era-head">
+<div class="a-era-label">
+<div class="a-era-name">Discovery</div>
+<div class="a-era-dates">2020&ndash;2024</div>
+<div class="a-era-desc">Periodic reviews of past work and organizational trajectory revealed gaps across the lifecycle in assets, information, and decision-making. Improving data quality and integration enabled more reliable analytics, organizational learning, and forward planning.</div>
+</div>
+</div>
+
+<div class="a-era-cards">
+
+<article class="a-item" aria-label="2020 to 2025: Brands Built to Travel, Modular A/E Design, Trade Show Exhibits">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2020&ndash;2025</div>
+<div class="a-pillar">Form &amp; Flow Intelligence</div>
+<div class="a-pillar-secondary">Secondary: Fortitude</div>
+<div class="a-tagline">Brands Built to Travel</div>
+<div class="a-label">Modular A/E Design + Sustainable Event Logistics</div>
+<div class="a-body">
+<p class="a-strong">Trade Show Exhibits &mdash; United States</p>
+<p>AESIT provided turnkey design, build, and take-down services for nationwide trade-show exhibits &mdash; from portable promotional assets to fully immersive, custom-built exhibition environments with integrated video displays for clients across diverse industries.</p>
+<p>Strengthened Form through precision exhibit design and custom fabrication; Flow through seamless operational workflows and nationwide logistics; and Fortitude through structural safety compliance in high-consequence venues.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="2021 to 2024: Learning From the Record, Periodic Retrospective Review, AESIT Business Plan">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2021&ndash;2024</div>
+<div class="a-pillar">Compounding Intelligence&trade;</div>
+<div class="a-tagline">Learning From the Record</div>
+<div class="a-label">Periodic Retrospective Review</div>
+<div class="a-body">
+<p class="a-strong">AESIT Business Plan &mdash; Organizational Practice</p>
+<p>Periodic assessments of prior work and organizational trajectory revealed recurring patterns across projects, assets, and information systems that were not apparent at the individual project level.</p>
+<p>These reviews revealed a recurring pattern across decades of projects: assets, information, and decisions were governed independently, while lifecycle performance emerged from their interaction. The gap was not technological. It was architectural.</p>
+</div>
+</article>
+
+<article class="a-item" aria-label="Pattern: Recognition of the Pattern, the thesis of Lifecycle Intelligence">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">&#128161; PATTERN</div>
+<div class="a-tagline">The Principle That Kept Emerging</div>
+<div class="a-label">Recognition of the Pattern</div>
+<div class="a-body">
+<p class="a-strong">Across decades of projects, technologies, and asset types, the same principle repeatedly emerged: long-term value was determined not by a single system, but by the quality of intelligence connecting form, flow, fortitude, and governance throughout the lifecycle.</p>
+</div>
+</article>
+
+</div>
+</div>
+
+<div class="a-era" role="group" aria-label="Framework Synthesis era, 2025 to 2026">
+<div class="a-era-head">
+<div class="a-era-label">
+<div class="a-era-name">Framework Synthesis</div>
+<div class="a-era-dates">2025&ndash;2026</div>
+<div class="a-era-desc">Formalizing Lifecycle Intelligence&trade; by synthesizing decades of experience into a unified framework to understand, measure, and optimize lifecycle performance.</div>
+</div>
+</div>
+
+<div class="a-era-cards">
+
+<article class="a-item" aria-label="2025 to 2026: Definition of the Framework">
+<div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
+<div class="a-year">2025&ndash;2026</div>
+<div class="a-pillar">Form &bull; Flow &bull; Fortitude</div>
+<div class="a-label">Definition of the Framework</div>
+<div class="a-body">
+<p class="a-strong">Form &rarr; Flow &rarr; Fortitude</p>
+<p>Regenerative Design &bull; Adaptive Operations &bull; Resilient Protection</p>
+<p>Decades of design, operations, protection, and governance practice formalized into one Lifecycle Intelligence architecture.</p>
+</div>
+</article>
+
+</div>
+</div>
+
+<div class="a-era" role="group" aria-label="Leadership era, 2026 and beyond">
+<div class="a-era-head">
+<div class="a-era-label">
+<div class="a-era-name">Leadership</div>
+<div class="a-era-dates">2026 and Beyond</div>
+<div class="a-era-desc">Building the standards, methodologies, and certification ecosystem for Lifecycle Intelligence&trade;.</div>
+</div>
+</div>
+
+<div class="a-era-cards">
+
+<article class="a-item a-final" aria-label="2026: CRELI, CRE Lifecycle Intelligence">
+<div class="a-node"></div>
+<div class="a-year">2026</div>
+<div class="a-label">CRELI&trade;</div>
+<div class="a-body">
+<p class="a-strong">CRE Lifecycle Intelligence&trade;</p>
+<p>The sovereign intelligence governance discipline for the built environment.</p>
+
+<div class="a-flow">
+<div>Form &rarr; Flow &rarr; Fortitude</div>
+<div class="a-down">&darr;</div>
+<div>Compounding Intelligence&trade;</div>
+<div class="a-down">&darr;</div>
+<div>Governance</div>
+<div class="a-down">&darr;</div>
+<div>Asset Sovereignty&trade;</div>
+</div>
+
+</div>
+</article>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<p class="a-closing" style="font-weight: 400;">
   <span class="a-highlight">Lifecycle Intelligence&trade;</span> was not invented in 2026. It was observed, refined, and ultimately formalized after decades of experience spanning infrastructure, operations, security, digital transformation, and governance. Through project delivery and periodic reviews, we identified recurring gaps in how assets, information, and decisions were managed across their lifecycles. These insights shaped <span class="a-highlight">CRELI&trade;</span> — the language, structure, and measurement architecture for what had been emerging since 1989.
 </p>
-</p><div class="a-gov"><div class="a-gov-title">Governance, Then &amp; Now</div><p class="a-gov-sub">A separate lens from the eras above: how project governance itself has evolved across the industry.</p><div class="a-gov-steps"><div class="a-gov-step"><div class="a-gov-year">Pre-1989</div><div class="a-gov-label">Manual Reconciliation</div><div class="a-gov-desc">Documentation, blueprints, schedules, and specifications reconciled by hand &mdash; governance through human effort.</div></div><div class="a-gov-arrow">&rarr;</div><div class="a-gov-step"><div class="a-gov-year">1989&ndash;2020s</div><div class="a-gov-label">Digital Reconciliation</div><div class="a-gov-desc">Governance extended into databases, CAD environments, and digital documentation &mdash; the era of networked digital systems.</div></div><div class="a-gov-arrow">&rarr;</div><div class="a-gov-step"><div class="a-gov-year">2026</div><div class="a-gov-label">Continuous Governance</div><div class="a-gov-desc">AI/ML analytical models continuously validate, reconcile, and enforce project intelligence &mdash; the emergence of BIM and Digital Twin.</div></div></div></div><p class="a-copyright">&copy; 2026 AESIT Global Solutions Group. All rights reserved.</p></section>
+
+</p><div class="a-gov">
+<div class="a-gov-title">Governance, Then &amp; Now</div>
+<p class="a-gov-sub">A separate lens from the eras above: how project governance itself has evolved across the industry.</p>
+
+<div class="a-gov-steps">
+
+<div class="a-gov-step">
+<div class="a-gov-year">Pre-1989</div>
+<div class="a-gov-label">Manual Reconciliation</div>
+<div class="a-gov-desc">Documentation, blueprints, schedules, and specifications reconciled by hand &mdash; governance through human effort.</div>
+</div>
+
+<div class="a-gov-arrow">&rarr;</div>
+
+<div class="a-gov-step">
+<div class="a-gov-year">1989&ndash;2020s</div>
+<div class="a-gov-label">Digital Reconciliation</div>
+<div class="a-gov-desc">Governance extended into databases, CAD environments, and digital documentation &mdash; the era of networked digital systems.</div>
+</div>
+
+<div class="a-gov-arrow">&rarr;</div>
+
+<div class="a-gov-step">
+<div class="a-gov-year">2026</div>
+<div class="a-gov-label">Continuous Governance</div>
+<div class="a-gov-desc">AI/ML analytical models continuously validate, reconcile, and enforce project intelligence &mdash; the emergence of BIM and Digital Twin.</div>
+</div>
+
+</div>
+</div>
+
+<p class="a-copyright">&copy; 2026 AESIT Global Solutions Group. All rights reserved.</p>
+
+</section>
