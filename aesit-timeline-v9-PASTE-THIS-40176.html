@@ -30,7 +30,7 @@
 #ats .a-track{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;grid-template-rows:auto 1fr;align-items:stretch;position:relative;min-width:max-content}
 #ats .a-era{display:grid;grid-template-columns:auto;grid-template-rows:subgrid;grid-row:1 / span 2}
 @supports not (grid-template-rows:subgrid){#ats .a-era{align-content:start}#ats .a-era-head{min-height:175px}}
-#ats .a-era:nth-child(even){background:var(--tint)}
+#ats .a-t{background:var(--tint)}#ats .a-bare .a-era-head{border:0}#ats .a-bare .a-era-head::before,#ats .a-bare .a-era-head::after{display:none}
 #ats .a-era-head{width:0;min-width:calc(100% - 16px);margin:0 8px;padding:12px 0 10px;border-bottom:2px solid var(--highlight);position:relative}
 #ats .a-era-head::before,#ats .a-era-head::after{content:"";position:absolute;bottom:0;width:2px;height:10px;background:var(--highlight)}
 #ats .a-era-head::before{left:0}
@@ -59,7 +59,7 @@
 #ats .a-final{width:270px;flex:0 0 270px}
 #ats .a-final .a-flow{margin-top:12px}
 #ats .a-final .a-flow div{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;color:var(--line);padding:5px 0}
-#ats .a-final .a-flow .a-down{color:var(--highlight);font-size:16px;text-align:center}
+#ats .a-final .a-flow small{display:block;font-weight:400;font-size:11.5px;letter-spacing:0;line-height:1.35;color:var(--text);margin-top:2px}#ats .a-final .a-flow .a-down{color:var(--highlight);font-size:16px;text-align:center}
 
 @media (max-width:640px){
 #ats .a-item{width:220px;flex:0 0 220px}
@@ -93,7 +93,7 @@
 </p>
 
 <p class="a-framework-preview">
-Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding Intelligence&trade;</span> &rarr; Governance &rarr; <span class="a-highlight">Asset Sovereignty&trade;</span></p>
+Assessment &rarr; Intelligence &rarr; Stewardship &rarr; Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding Intelligence&trade;</span> &rarr; <span class="a-highlight">Asset Sovereignty&trade;</span></p>
 
 <div class="a-scroll" tabindex="0" role="region" aria-label="AESIT history timeline, 1989 through 2026, organized in six eras">
 
@@ -221,7 +221,7 @@ Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding I
 </div>
 </div>
 
-<div class="a-era" role="group" aria-label="Convergence era, 2000 to 2012">
+<div class="a-era a-t" role="group" aria-label="Convergence era, 2000 to 2012">
 <div class="a-era-head">
 <div class="a-era-label">
 <div class="a-era-name">Convergence <span aria-hidden="true">&#x1F500;</span></div>
@@ -435,15 +435,8 @@ Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding I
 </div>
 </div>
 
-<div class="a-era" role="group" aria-label="Discovery era, 2020 to 2024">
-<div class="a-era-head">
-<div class="a-era-label">
-<div class="a-era-name">• Discovery <span aria-hidden="true">&#128161;</span></div>
-<div class="a-era-dates">2020&ndash;2024</div>
-<div class="a-tagline">The Pattern Emerged.</div>
-<div class="a-era-desc">Periodic reviews of past work and organizational trajectory revealed gaps across the lifecycle in assets, information, and decision-making. Improving data quality and integration enabled more reliable analytics, organizational learning, and forward planning.</div>
-</div>
-</div>
+<div class="a-era a-bare">
+<div class="a-era-head" aria-hidden="true"></div>
 
 <div class="a-era-cards">
 
@@ -461,26 +454,45 @@ Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding I
 </div>
 </article>
 
-<article class="a-item" aria-label="2021 to 2024: Learning From the Record, Periodic Retrospective Review, AESIT Business Plan">
+</div>
+</div>
+
+<div class="a-era a-t" role="group" aria-label="Discovery era, 2021 to 2024">
+<div class="a-era-head">
+<div class="a-era-label">
+<div class="a-era-name">&bull; Discovery <span aria-hidden="true">&#128161;</span></div>
+<div class="a-era-dates">2021&ndash;2024</div>
+<div class="a-tagline">The Origin of the Architecture.</div>
+<div class="a-era-desc">S&sup3; Labs&trade;&mdash;AESIT&rsquo;s Spatial, Systemic, and Strategic intelligence nucleus&mdash;periodically audits technical milestones and performance to safeguard quality across projects. These reviews revealed a persistent pattern: assets, information, and decisions were governed in isolation, even though their interactions dictated lifecycle performance. The gap was not technological &mdash; it was architectural.</div>
+</div>
+</div>
+
+<div class="a-era-cards">
+
+<article class="a-item" aria-label="2021 to 2024: S&sup3; Labs, The Nucleus of AESIT, Periodic Retrospective Review">
 <div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
 <div class="a-year">2021&ndash;2024</div>
-<div class="a-pillar">Compounding Intelligence&trade;</div>
-<div class="a-tagline">Learning From the Record</div>
+<div class="a-pillar">Spatial &rarr; Systemic &rarr; Strategic</div>
+<div class="a-tagline">S&sup3; Labs&trade; &mdash; The Nucleus of AESIT</div>
 <div class="a-label">Periodic Retrospective Review</div>
 <div class="a-body">
 <p class="a-strong">AESIT Business Plan &mdash; Organizational Practice</p>
-<p>Periodic assessments of prior work and organizational trajectory revealed recurring patterns across projects, assets, and information systems that were not apparent at the individual project level.</p>
-<p>These reviews revealed a recurring pattern across decades of projects: assets, information, and decisions were governed independently, while lifecycle performance emerged from their interaction. The gap was not technological. It was architectural.</p>
+<p>To bridge this gap, the S&sup3; Labs&trade; engine united spatial design, systems thinking, and strategic foresight to evaluate the built environment as a single, compounding system. Analyzing historical project data exposed cross-cutting patterns invisible at the single-project level, proving that long-term performance requires harmonizing physical form, operational flow, and defensive fortitude.</p>
+<p>S&sup3; Labs&trade; encoded these findings into three core intelligence dimensions&mdash;Spatial, Systemic, and Strategic&mdash;seeding Form Intelligence&trade;, Flow Intelligence&trade;, and Fortitude Intelligence&trade;. These pillars established the foundation for the IDLF&trade; and authored the overarching architecture behind AESIT&rsquo;s ecosystem.</p>
+<p><a href="https://articles.aesit.net/eps005_s3labsmanifesto.html" target="_blank" rel="noopener">Read The Source &rarr;</a></p>
 </div>
 </article>
 
-<article class="a-item" aria-label="THE Pattern: Recognition of the Pattern, the thesis of Lifecycle Intelligence">
+<article class="a-item" aria-label="The Pattern: Recognition of the Pattern, the Intelligence Continuum">
 <div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
 <div class="a-year">THE PATTERN</div>
-<div class="a-tagline">The Principle That Kept Emerging</div>
+<div class="a-pillar">Design &bull; Operations &bull; Protection</div>
+<div class="a-tagline">The Intelligence Continuum</div>
 <div class="a-label">Recognition of the Pattern</div>
 <div class="a-body">
-<p class="a-strong">Across decades of projects, technologies, and asset types, the same principle repeatedly emerged: long-term value was determined not by a single system, but by the quality of intelligence connecting form, flow, fortitude, and governance throughout the lifecycle.</p>
+<p>AESIT structured its multidisciplinary reach across three specialized divisions: Design, Operations, and Protection. Across decades of projects, technologies, and asset types, a singular principle emerged: long-term performance is determined not by isolated systems, but by the intelligence connecting Form, Flow, and Fortitude throughout the lifecycle. To codify this insight into AESIT&rsquo;s core business model, S&sup3; Labs&trade; authored The Intelligence Continuum&mdash;establishing how three engineered inputs continuously compound into Intelligence, Value, Trust, and Resilience.</p>
+<p class="a-strong">Three Engineered Inputs. Four Compounding Outcomes. One Loop.</p>
+<p><a href="https://articles.aesit.net/eps001_theintelligencecontinuum.html" target="_blank" rel="noopener">Read The Axis &rarr;</a></p>
 </div>
 </article>
 
@@ -490,26 +502,28 @@ Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding I
 <div class="a-era" role="group" aria-label="Synthesis era, 2025 to 2026">
 <div class="a-era-head">
 <div class="a-era-label">
-<div class="a-era-name">• Synthesis <span aria-hidden="true">&#129516;</span></div>
+<div class="a-era-name">&bull; Synthesis <span aria-hidden="true">&#129516;</span></div>
 <div class="a-era-dates">2025&ndash;2026</div>
-<div class="a-tagline">The Connections Became Clear.</div>
-<div class="a-era-desc">Formalizing Lifecycle Intelligence&trade; by synthesizing decades of experience into a unified framework to understand, measure, and optimize lifecycle performance.</div>
+<div class="a-tagline">One Lifecycle. One Digital Thread.</div>
+<div class="a-era-desc">The emerging architecture was synthesized into one lifecycle methodology. The Intelligence Continuum connects Form, Flow, and Fortitude; the IDLF&trade; carries that intelligence through every phase.</div>
 </div>
 </div>
 
 <div class="a-era-cards">
 
-<article class="a-item" aria-label="2025 to 2026: Definition of the Framework">
+<article class="a-item" aria-label="2025 to 2026: Synthesis of the Methodology, Intelligent Design Lifecycle Framework">
 <div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
 <div class="a-year">2025&ndash;2026</div>
-<div class="a-tagline">Intelligence Development Lifecycle Framework&trade;</div>
-<div class="a-label">Definition of the Framework</div>
+<div class="a-pillar">Compounding Intelligence&trade;</div>
+<div class="a-tagline">Intelligent Design Lifecycle Framework&trade;</div>
+<div class="a-label">Synthesis of the Methodology</div>
 <div class="a-body">
-<p class="a-strong">The foundational architecture of Lifecycle Intelligence&trade;</p>
+<p>Decades of experience across design, operations, protection, information management, and governance were synthesized into a single measurable lifecycle framework: the Intelligent Design Lifecycle Framework&trade; (IDLF&trade;).</p>
+<p>The IDLF&trade; replaces fragmented, sequential delivery with one integrated, systems-driven methodology. A single Digital Thread connects Discovery through perpetual Optimization, preserving intelligence across phases rather than allowing it to be lost at traditional handoffs. Form, Flow, and Fortitude operate as interconnected inputs driving a continuous loop of compounding Intelligence, Value, Trust, and Resilience.</p>
 <p>Regenerative Design &bull; Adaptive Operations &bull; Resilient Protection</p>
-<p>Synthesizing decades of experience across design, operations, protection, information management, and governance into one measurable lifecycle framework.</p>
-<p>Documented in the AESIT Executive Publications (EPS) Series and <em>Compounding Intelligence: A New Standard for CRE Performance Engineering</em>, posted on SSRN.</p>
-<p><a href="https://articles.aesit.net/eps000_thefoundation.html" target="_blank" rel="noopener">Read the EPS Series &rarr;</a></p>
+<p>Documented in the AESIT Executive Publications (EPS) Series and posted on SSRN: <em>Compounding Intelligence: A New Standard for CRE Performance Engineering</em>.</p>
+<p><a href="https://articles.aesit.net/eps001_theintelligencecontinuum.html" target="_blank" rel="noopener">Read The Axis &rarr;</a></p>
+<p><a href="https://articles.aesit.net/eps003_idlfwhitepaper.html" target="_blank" rel="noopener">Read The Blueprint &rarr;</a></p>
 <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6514518" target="_blank" rel="noopener">Read the White Paper &rarr;</a></p>
 </div>
 </article>
@@ -517,37 +531,42 @@ Form &rarr; Flow &rarr; Fortitude &rarr; <span class="a-highlight">Compounding I
 </div>
 </div>
 
-<div class="a-era" role="group" aria-label="Leadership era, 2026 and beyond">
+<div class="a-era a-t" role="group" aria-label="Leadership era, 2026 and beyond">
 <div class="a-era-head">
 <div class="a-era-label">
-<div class="a-era-name">• Leadership <span aria-hidden="true">&#129504;</span></div>
+<div class="a-era-name">&bull; Leadership <span aria-hidden="true">&#129504;</span></div>
 <div class="a-era-dates">2026 and Beyond</div>
-<div class="a-tagline">The Discipline Advances.</div>
-<div class="a-era-desc">Building the standards, methodologies, and certification ecosystem for Lifecycle Intelligence&trade;.</div>
+<div class="a-tagline">A Discipline Is Defined.</div>
+<div class="a-era-desc">CRE Lifecycle Intelligence&trade; formalizes AESIT&rsquo;s intelligence architecture as a discipline&mdash;the foundation for governance, benchmarking, certification, and future standardization.</div>
 </div>
 </div>
 
 <div class="a-era-cards">
 
-<article class="a-item a-final" aria-label="2026: A Discipline Is Born, CRELI, CRE Lifecycle Intelligence">
+<article class="a-item a-final" aria-label="2026: The Discipline Behind the Architecture, CRELI, CRE Lifecycle Intelligence">
 <div class="a-node"></div>
 <div class="a-year">2026</div>
-<div class="a-tagline">Lifecycle Intelligence&trade;</div>
-<div class="a-label">A Discipline Is Born</div>
+<div class="a-pillar">Assessment &rarr; Intelligence &rarr; Stewardship</div>
+<div class="a-tagline">CRE Lifecycle Intelligence&trade;</div>
+<div class="a-label">The Discipline Behind the Architecture</div>
 <div class="a-body">
-<p class="a-strong">CRELI&trade;</p>
-<p>The sovereign intelligence governance discipline for the built environment.</p>
+<p>CRELI&trade; is not a tool, a service, or another technology layer. It is the intelligence architecture that connects the full lifecycle of the built environment. Assessment establishes the baseline; Intelligence generates insights and governance signals; Stewardship turns those insights into continuous improvement, protection, and value preservation.</p>
+<p class="a-strong">The CRELI&trade; Architecture</p>
+<p>S&sup3; Labs&trade; governs intelligence development.</p>
 
 <div class="a-flow">
+<div>Assessment &rarr; Intelligence &rarr; Stewardship&infin;</div>
+<div class="a-down">&darr;</div>
 <div>Form &rarr; Flow &rarr; Fortitude</div>
 <div class="a-down">&darr;</div>
-<div>Compounding Intelligence&trade;</div>
+<div>Compounding Intelligence&trade;<small>(Intelligence &bull; Value &bull; Trust &bull; Resilience)</small></div>
 <div class="a-down">&darr;</div>
-<div>Governance</div>
-<div class="a-down">&darr;</div>
-<div>Asset Sovereignty&trade;</div>
+<div>Asset Sovereignty&trade;<small>Owner-retained intelligence, authority, and asset control.</small></div>
 </div>
 
+<p style="margin-top:10px">Documented in the AESIT Executive Publications (EPS) Series as the foundational architecture of CRE Lifecycle Intelligence&trade;.</p>
+<p><a href="https://articles.aesit.net/eps000_thefoundation.html" target="_blank" rel="noopener">Read The Anchor &rarr;</a></p>
+<p><a href="https://articles.aesit.net/eps004_executivebrief.html" target="_blank" rel="noopener">Read The Mandate &rarr;</a></p>
 </div>
 </article>
 
