@@ -118,7 +118,7 @@
 
   /* ---- section shell ---- */
   section{ padding:72px 0; }
-  #lenses, #performance, #evidence, #impact{ scroll-margin-top:96px; }
+  #lenses, #performance, #evidence, #impact, #paths{ scroll-margin-top:96px; }
   .section-head{ max-width:680px; margin-bottom:44px; }
   .section-head .eyebrow{ margin-bottom:16px; }
   .section-head h2{ font-size:clamp(26px,3.2vw,36px); line-height:1.15; margin-bottom:14px; }
@@ -152,7 +152,8 @@
 
   /* ---- lenses ---- */
   .lens-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  @media (max-width:900px){ .lens-grid{ grid-template-columns:1fr; } }
+  .path-grid{ grid-template-columns:repeat(2,1fr); }
+  @media (max-width:900px){ .lens-grid, .path-grid{ grid-template-columns:1fr; } }
   .lens{
     border:1px solid var(--line-strong); background:var(--paper);
     padding:32px 28px; display:flex; flex-direction:column;
@@ -166,6 +167,11 @@
     color:var(--bronze-deep); text-decoration:none; border-bottom:1px solid var(--bronze);
     padding-bottom:2px; align-self:flex-start;
   }
+
+  /* ---- paths (investors + foundation) ---- */
+  .paths{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .paths .lens{ background:var(--cream); }
+  .paths .lens .btn{ align-self:flex-start; }
 
   /* ---- evidence / proof ---- */
   .proof{ background:var(--slate); color:var(--cream); }
@@ -218,8 +224,9 @@
       <a href="#performance">Performance</a>
       <a href="#evidence">Evidence</a>
       <a href="#impact">Impact</a>
+      <a href="#paths">Investors</a>
     </nav>
-    <a href="https://aesit.net/home#e36d3dfe-e3ff-4dfe-be57-f87f71aefce2" class="btn btn-primary nav-cta">Begin the Record →</a>
+    <a href="https://articles.aesit.net/AESIT_Investor_Outreach.html" class="btn btn-primary nav-cta">For Investors →</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
   </div>
   <div class="wrap mobile-menu" id="mobileMenu">
@@ -227,7 +234,8 @@
     <a href="#performance">Performance</a>
     <a href="#evidence">Evidence</a>
     <a href="#impact">Impact</a>
-    <a href="https://aesit.net/home#e36d3dfe-e3ff-4dfe-be57-f87f71aefce2">Begin the Record →</a>
+    <a href="#paths">Investors &amp; Foundation</a>
+    <a href="https://articles.aesit.net/AESIT_Investor_Outreach.html">For Investors →</a>
   </div>
 </header>
 
@@ -390,6 +398,33 @@
       </ul>
       <div class="pull-quote">
         <p>Executives understand how AESIT works, why it is defensible, and how it becomes a long-term strategic advantage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TWO PATHS: INVESTORS + FOUNDATION ============ -->
+  <section class="paths" id="paths">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Two Ways Deeper</div>
+        <h2>Back the platform, or start at the foundation.</h2>
+        <p>Whether your role is to allocate capital or to set strategy, there is a direct entry point built for the decision in front of you.</p>
+      </div>
+      <div class="lens-grid path-grid">
+        <div class="lens">
+          <span class="lens-index">For Investors</span>
+          <h3>The Investment Case</h3>
+          <p class="lens-tag">Capital, positioning, and opportunity</p>
+          <p class="lens-body">For investors and board members evaluating AESIT as a position: the market opportunity, the compounding-intelligence model, and the defensibility that supports long-term value creation — presented in the terms your investment committee will use.</p>
+          <a class="btn btn-primary" href="https://articles.aesit.net/AESIT_Investor_Outreach.html">Explore the Investor Brief →</a>
+        </div>
+        <div class="lens">
+          <span class="lens-index">The Anchor — EPS Series</span>
+          <h3>The Foundation</h3>
+          <p class="lens-tag">Where the evidence record begins</p>
+          <p class="lens-body">For executives who want the logic before the proof: the anchor of the EPS series establishes the principles on which every later study, metric, and outcome in this brief is built. Read it first, and the rest of the record reads as one argument.</p>
+          <a class="btn btn-ghost" href="https://articles.aesit.net/eps000_thefoundation.html">Read the Foundation →</a>
+        </div>
       </div>
     </div>
   </section>
