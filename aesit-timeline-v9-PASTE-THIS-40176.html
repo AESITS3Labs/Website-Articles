@@ -33,7 +33,7 @@
 #ats .a-track{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;grid-template-rows:auto 1fr;align-items:stretch;position:relative;min-width:max-content}
 #ats .a-era{display:grid;grid-template-columns:auto;grid-template-rows:subgrid;grid-row:1 / span 2}
 @supports not (grid-template-rows:subgrid){#ats .a-era{align-content:start}#ats .a-era-head{min-height:175px}}
-#ats .a-t{background:var(--tint)}
+#ats .a-t{background:var(--tint)}#ats .a-ar{position:relative}#ats .a-ar::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;border:0 solid var(--highlight);border-width:1px 0;pointer-events:none;z-index:3}#ats .a-ar1::before{border-left-width:1px}#ats .a-ar3::before{border-right-width:1px}
 #ats .a-era-head{width:0;min-width:calc(100% - 16px);margin:0 8px;padding:12px 0 10px;border-bottom:2px solid var(--highlight);position:relative}
 #ats .a-era-head::before,#ats .a-era-head::after{content:"";position:absolute;bottom:0;width:2px;height:10px;background:var(--highlight)}
 #ats .a-era-head::before{left:0}
@@ -450,7 +450,7 @@ Assessment &rarr; Intelligence &rarr; Stewardship<br>Form &rarr; Flow &rarr; For
 </div>
 </div>
 
-<div class="a-era a-t" role="group" aria-label="Discovery era, 2021 to 2024">
+<div class="a-era a-t a-ar a-ar1" role="group" aria-label="Discovery era, 2021 to 2024">
 <div class="a-era-head">
 <div class="a-era-label">
 <div class="a-era-name">&bull; Discovery <span aria-hidden="true">&#128161;</span></div>
@@ -491,7 +491,7 @@ Assessment &rarr; Intelligence &rarr; Stewardship<br>Form &rarr; Flow &rarr; For
 </div>
 </div>
 
-<div class="a-era" role="group" aria-label="Synthesis era, 2025 to 2026">
+<div class="a-era a-ar" role="group" aria-label="Synthesis era, 2025 to 2026">
 <div class="a-era-head">
 <div class="a-era-label">
 <div class="a-era-name">&bull; Synthesis <span aria-hidden="true">&#129516;</span></div>
@@ -523,7 +523,7 @@ Assessment &rarr; Intelligence &rarr; Stewardship<br>Form &rarr; Flow &rarr; For
 </div>
 </div>
 
-<div class="a-era a-t" role="group" aria-label="Leadership era, 2026 and beyond">
+<div class="a-era a-t a-ar a-ar3" role="group" aria-label="Leadership era, 2026 and beyond">
 <div class="a-era-head">
 <div class="a-era-label">
 <div class="a-era-name">&bull; Leadership <span aria-hidden="true">&#129504;</span></div>
