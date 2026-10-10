@@ -13,15 +13,18 @@
 #ats .a-closing{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:20px;line-height:1.4;color:var(--line);text-align:center;max-width:900px;margin:28px auto 4px;padding:0 24px}
 #ats .a-closing .a-highlight{color:var(--highlight)}
 #ats .a-copyright{font-size:12px;line-height:1.5;color:var(--text);text-align:center;margin:28px auto 8px;padding:16px 20px 0;max-width:1000px;border-top:1px solid #dddddd}
-#ats .a-gov{max-width:1000px;margin:24px auto 8px;padding:0 20px}
-#ats .a-gov-title{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--line);text-align:center;margin-bottom:4px}
-#ats .a-gov-sub{font-size:12px;font-style:italic;line-height:1.4;color:var(--text);text-align:center;max-width:700px;margin:0 auto 18px}
-#ats .a-gov-steps{display:flex;align-items:flex-start;justify-content:center;gap:10px}
-#ats .a-gov-step{flex:1 1 0;max-width:260px;text-align:center;padding:0 6px}
-#ats .a-gov-year{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:800;font-size:15px;color:var(--highlight);margin-bottom:4px}
-#ats .a-gov-label{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.6px;text-transform:uppercase;color:var(--line);margin-bottom:6px}
-#ats .a-gov-desc{font-size:12px;line-height:1.4;color:var(--text)}
-#ats .a-gov-arrow{flex:0 0 auto;color:var(--line);font-size:18px;font-weight:bold;padding-top:2px}
+#ats .a-gov{max-width:1000px;margin:28px auto 8px;padding:28px 24px 24px;background:var(--tint);text-align:center}
+#ats .a-gov-title{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:600;font-size:26px;color:var(--highlight);margin-bottom:6px}
+#ats .a-gov-sub{font-size:14px;line-height:1.45;color:var(--text);max-width:640px;margin:0 auto 20px}
+#ats .a-gov-cols{display:flex;gap:20px;justify-content:center;align-items:stretch;text-align:left}
+#ats .a-gov-col{flex:1 1 0;max-width:420px;padding:14px 18px 16px;background:var(--bg);border-top:3px solid #cccccc}
+#ats .a-gov-on{border-top-color:var(--highlight)}
+#ats .a-gov-label{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:1.1px;text-transform:uppercase;color:var(--line);margin-bottom:6px}
+#ats .a-gov-on .a-gov-label{color:var(--highlight)}
+#ats .a-gov-desc{font-size:13px;line-height:1.45;color:var(--text)}
+#ats .a-gov-loop{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:14px;letter-spacing:0.3px;color:var(--line);margin:0 auto;max-width:760px}
+#ats .a-gov-inf{font-size:40px;line-height:1;color:var(--highlight);margin:20px 0 4px}#ats .a-gov-loopd{font-size:13px;line-height:1.45;color:var(--text);max-width:640px;margin:4px auto 0}
+#ats .a-gov-close{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:500;font-style:italic;font-size:14px;line-height:1.45;color:var(--text);max-width:700px;margin:14px auto 0}
 #ats .a-scroll{overflow-x:auto;overflow-y:hidden;padding:24px 20px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--highlight) #eeeeee}
 #ats .a-scroll:focus{outline:2px solid var(--highlight);outline-offset:2px}
 #ats .a-scroll::-webkit-scrollbar{height:8px}
@@ -30,7 +33,7 @@
 #ats .a-track{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;grid-template-rows:auto 1fr;align-items:stretch;position:relative;min-width:max-content}
 #ats .a-era{display:grid;grid-template-columns:auto;grid-template-rows:subgrid;grid-row:1 / span 2}
 @supports not (grid-template-rows:subgrid){#ats .a-era{align-content:start}#ats .a-era-head{min-height:175px}}
-#ats .a-t{background:var(--tint)}#ats .a-bare .a-era-head{border:0}#ats .a-bare .a-era-head::before,#ats .a-bare .a-era-head::after{display:none}
+#ats .a-t{background:var(--tint)}
 #ats .a-era-head{width:0;min-width:calc(100% - 16px);margin:0 8px;padding:12px 0 10px;border-bottom:2px solid var(--highlight);position:relative}
 #ats .a-era-head::before,#ats .a-era-head::after{content:"";position:absolute;bottom:0;width:2px;height:10px;background:var(--highlight)}
 #ats .a-era-head::before{left:0}
@@ -72,9 +75,7 @@
 #ats .a-era-label{width:260px}
 #ats .a-era-name{font-size:17px}
 #ats .a-era-desc{font-size:11.5px}
-#ats .a-gov-steps{flex-direction:column;align-items:center;gap:4px}
-#ats .a-gov-step{max-width:100%}
-#ats .a-gov-arrow{transform:rotate(90deg);padding:4px 0}
+#ats .a-gov{padding:22px 16px 18px}#ats .a-gov-title{font-size:22px}#ats .a-gov-cols{flex-direction:column}#ats .a-gov-col{max-width:100%}
 }
 </style>
 
@@ -335,11 +336,11 @@ Assessment &rarr; Intelligence &rarr; Stewardship<br>Form &rarr; Flow &rarr; For
 </div>
 </div>
 
-<div class="a-era" role="group" aria-label="Transformation era, 2013 to 2019">
+<div class="a-era" role="group" aria-label="Transformation era, 2013 to 2020">
 <div class="a-era-head">
 <div class="a-era-label">
 <div class="a-era-name">Transformation <span aria-hidden="true">&#x1F680;</span></div>
-<div class="a-era-dates">2013&ndash;2019</div>
+<div class="a-era-dates">2013&ndash;2020</div>
 <div class="a-era-desc">Advancing digital modernization, intelligent infrastructure, and performance-driven outcomes. Integrating business and technology environments, connecting client development, project delivery, workplace and asset management, communications, and inventory.</div>
 </div>
 </div>
@@ -431,14 +432,6 @@ Assessment &rarr; Intelligence &rarr; Stewardship<br>Form &rarr; Flow &rarr; For
 <p>Strengthened Form through precision spatial reconstruction and custom architectural geometry; Flow through constrained urban logistics and permitting workflows; and Fortitude through regulatory compliance and structural preservation.</p>
 </div>
 </article>
-
-</div>
-</div>
-
-<div class="a-era a-bare">
-<div class="a-era-head" aria-hidden="true"></div>
-
-<div class="a-era-cards">
 
 <article class="a-item" aria-label="2020 to 2025: Brands Built to Travel, Modular A/E Design, Trade Show Exhibits">
 <div class="a-node"></div><div class="a-arrow" aria-hidden="true"></div>
@@ -578,35 +571,25 @@ Assessment &rarr; Intelligence &rarr; Stewardship<br>Form &rarr; Flow &rarr; For
 <p class="a-closing" style="font-weight: 400;">
   <span class="a-highlight">Lifecycle Intelligence&trade;</span> was not invented in 2026. It was observed, refined, and ultimately formalized as a <span class="a-highlight">CRE Lifecycle Intelligence&trade;</span> discipline after decades of experience spanning infrastructure, operations, security, digital transformation, and governance. Through project delivery and periodic reviews, we identified recurring gaps in how assets, information, and decisions were managed across their lifecycles. These insights shaped <span class="a-highlight">CRELI&trade;</span> — the language, structure, and measurement architecture for what had been emerging since 1989.
 </p>
-<div class="a-gov">
-<div class="a-gov-title">Governance, Then &amp; Now</div>
-<p class="a-gov-sub">A separate lens from the eras above: how project governance itself has evolved across the industry.</p>
+<div class="a-gov" role="group" aria-labelledby="atg">
+<div class="a-gov-title" id="atg">Governance in Practice</div>
+<p class="a-gov-sub">The timeline traces the emergence of CRE Lifecycle Intelligence&trade;. This section shows how AESIT&rsquo;s Continuous Governance model applies that architecture across the asset lifecycle.</p>
 
-<div class="a-gov-steps">
-
-<div class="a-gov-step">
-<div class="a-gov-year">Pre-1989</div>
-<div class="a-gov-label">Manual Reconciliation</div>
-<div class="a-gov-desc">Documentation, blueprints, schedules, and specifications reconciled by hand &mdash; governance through human effort.</div>
+<div class="a-gov-cols">
+<div class="a-gov-col">
+<div class="a-gov-label">Governance as Oversight</div>
+<div class="a-gov-desc">Policies, controls, reviews, and compliance activities help establish whether defined requirements have been met. These mechanisms remain essential, but reviews may occur periodically or within individual functions.</div>
+</div>
+<div class="a-gov-col a-gov-on">
+<div class="a-gov-label">Governance as a Lifecycle Capability</div>
+<div class="a-gov-desc">AESIT connects asset context to lifecycle decisions and governance. Assessment establishes the baseline; Intelligence generates the adaptive insights, predictions, and governance signals that guide lifecycle decisions; Stewardship applies that intelligence through continuous improvement, protection, and value preservation.</div>
+</div>
 </div>
 
-<div class="a-gov-arrow">&rarr;</div>
-
-<div class="a-gov-step">
-<div class="a-gov-year">1989&ndash;2020s</div>
-<div class="a-gov-label">Digital Reconciliation</div>
-<div class="a-gov-desc">Governance extended into databases, CAD environments, and digital documentation &mdash; the era of networked digital systems.</div>
-</div>
-
-<div class="a-gov-arrow">&rarr;</div>
-
-<div class="a-gov-step">
-<div class="a-gov-year">2026</div>
-<div class="a-gov-label">Continuous Governance</div>
-<div class="a-gov-desc">AI/ML analytical models continuously validate, reconcile, and enforce project intelligence &mdash; the emergence of BIM and Digital Twin.</div>
-</div>
-
-</div>
+<div class="a-gov-inf" aria-hidden="true">&infin;</div>
+<div class="a-gov-loop">Governance shapes lifecycle decisions. Lifecycle learning informs governance.</div>
+<p class="a-gov-loopd">Each operational cycle generates new understanding that informs future decisions and governance.</p>
+<p class="a-gov-close">Governance isn&rsquo;t new. What changes in AESIT&rsquo;s model is how it is informed, connected, and applied throughout the asset lifecycle.</p>
 </div>
 
 <p class="a-copyright">&copy; 2026 AESIT Global Solutions Group. All rights reserved.</p>
