@@ -65,11 +65,9 @@
 #ats .a-final .a-flow div{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;color:var(--line);padding:5px 0}
 #ats .a-final .a-flow small{display:block;font-weight:400;font-size:11.5px;letter-spacing:0;line-height:1.35;color:var(--text);margin-top:2px}#ats .a-final .a-flow .a-down{color:var(--highlight);font-size:16px;text-align:center}
 
-#ats .a-stack{grid-row:3;grid-column:4 / span 3;width:0;min-width:calc(100% - 16px);margin:14px 8px 0;padding:14px 18px 16px;background:var(--tint);border-top:2px solid var(--highlight)}
-#ats .a-stack-title{font-family:'League Spartan',Helvetica,Arial,sans-serif;font-weight:700;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;color:var(--highlight);line-height:1.4;margin:0 0 12px}
-#ats .a-stack-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
-#ats .a-stack-item .a-label{margin-bottom:3px}
-#ats .a-stack-def{margin:0;font-size:13px;line-height:1.45;color:var(--text)}
+#ats .a-stack{grid-row:3;grid-column:4 / span 3;width:0;min-width:calc(100% - 16px);margin:14px 8px 0;padding:14px 18px 16px;background:var(--tint);border-top:2px solid var(--highlight);text-align:center}
+#ats .a-stack .a-label{margin-bottom:3px}
+#ats .a-stack-def{margin:0 auto;max-width:640px;font-size:13px;line-height:1.45;color:var(--text)}
 
 @media (max-width:640px){
 #ats .a-item{width:220px;flex:0 0 220px}
@@ -82,7 +80,7 @@
 #ats .a-era-label{width:260px}
 #ats .a-era-name{font-size:17px}
 #ats .a-era-desc{font-size:11.5px}
-#ats .a-stack{padding:12px 14px 14px}#ats .a-stack-grid{gap:12px 18px}
+#ats .a-stack{padding:12px 14px 14px}
 #ats .a-gov{padding:22px 16px 18px}#ats .a-gov-title{font-size:22px}#ats .a-gov-cols{flex-direction:column}#ats .a-gov-col{max-width:100%}
 }
 </style>
@@ -579,29 +577,9 @@ Assessment &rarr; Intelligence &rarr; Stewardship<br>Form &rarr; Flow &rarr; For
 </div>
 
 <section class="a-stack" aria-labelledby="ats-stack">
-<h3 class="a-stack-title" id="ats-stack">The Lifecycle Intelligence Stack</h3>
-<div class="a-stack-grid">
-<div class="a-stack-item">
-<div class="a-pillar">Practice</div>
+<div class="a-pillar" id="ats-stack">Practice</div>
 <div class="a-label">Environmental Cognition&trade;</div>
 <p class="a-stack-def">The science of how environments learn, adapt, retain knowledge, and improve over time.</p>
-</div>
-<div class="a-stack-item">
-<div class="a-pillar">Discipline</div>
-<div class="a-label">Lifecycle Intelligence&trade;</div>
-<p class="a-stack-def">How intelligence is preserved, transferred, and applied across time.</p>
-</div>
-<div class="a-stack-item">
-<div class="a-pillar">Application Architecture</div>
-<div class="a-label">CRELI&trade;</div>
-<p class="a-stack-def">Operationalizes Lifecycle Intelligence&trade; through a governance architecture stewarded by S&sup3; Labs&trade;.</p>
-</div>
-<div class="a-stack-item">
-<div class="a-pillar">Governance Steward</div>
-<div class="a-label">S&sup3; Labs&trade;</div>
-<p class="a-stack-def">The Source. Research, Discovery, Pattern, Synthesis, and Leadership.</p>
-</div>
-</div>
 </section>
 
 </div>
