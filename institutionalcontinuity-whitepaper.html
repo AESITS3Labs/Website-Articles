@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="AESIT® Institutional Continuity Concept Brief — the formal definition of preserving and transferring usable knowledge, context, responsibilities, and decision history across change."/>
+<meta name="author" content="AESIT Global Solutions Group"/>
+<meta name="keywords" content="Institutional Continuity™, Compounding Intelligence™, Asset Sovereignty™, Environmental Cognition™, CRE Lifecycle Intelligence™, AESIT"/>
+<meta property="og:title" content="Institutional Continuity™: Knowledge That Endures Every Change — AESIT®"/>
+<meta property="og:description" content="AESIT® defines Institutional Continuity — the outcome that keeps knowledge, context, responsibilities, and decision history usable across personnel, provider, system, and ownership change."/>
+<title>Institutional Continuity™: Knowledge That Endures Every Change | AESIT®</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --carbon:       #000000;
+  --titanium:     #888888;
+  --brushed:      #A8A8A8;
+  --chrome:       #C8C8C8;
+  --grid-white:   #E8E8E8;
+  --race-red:     #CC0000;
+  --gold:         #D4AF37;
+  --col-design:   #C48F1D;
+  --col-ops:      #1C98A6;
+  --col-protect:  #4070B8;
+
+  --grad-chrome:     linear-gradient(135deg,#6A6A6A 0%,#D8D8D8 40%,#F0F0F0 55%,#A0A0A0 100%);
+  --grad-chrome-bar: linear-gradient(135deg,#6A6A6A 0%,#888888 15%,#D8D8D8 32%,#F0F0F0 44%,#CACACA 56%,#909090 70%,#707070 83%,#A0A0A0 100%);
+  --grad-steel:      linear-gradient(180deg,#232323 0%,#191919 50%,#202020 100%);
+  --grad-red-h:      linear-gradient(90deg,#CC0000 0%,#FF2020 50%,#991000 100%);
+  --grad-gold:       linear-gradient(135deg,#B8922A 0%,#D4AF37 40%,#F0CC55 60%,#B8922A 100%);
+
+  --border:        rgba(200,200,200,0.10);
+  --border-mid:    rgba(200,200,200,0.20);
+  --border-bright: rgba(200,200,200,0.35);
+  --text-body:     #C0B8B0;
+  --text-muted:    #888888;
+
+  --title-font: 'League Spartan', sans-serif;
+  --body-font:  'Barlow', sans-serif;
+  --content-width: 820px;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--carbon);
+  color: var(--text-body);
+  font-family: var(--body-font);
+  font-size: 15.5px;
+  line-height: 1.78;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 960px; margin: 0 auto; padding: 0 5%; }
+.content-wrap { max-width: var(--content-width); margin: 0 auto; }
+
+/* ═══ COVER ═══ */
+.cover {
+  background: var(--carbon);
+  border-bottom: 1px solid var(--border-mid);
+  padding: 60px 5% 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--grad-red-h);
+}
+.cover-inner { max-width: var(--content-width); margin: 0 auto; }
+.cover-eyebrow {
+  font-family: var(--title-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cover-eyebrow::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200,200,200,0.35), transparent);
+}
+.cover-title {
+  font-family: var(--title-font);
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  margin-bottom: 10px;
+}
+.cover-title .t1 {
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.cover-title .t2 {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.cover-subtitle {
+  font-family: var(--title-font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.65;
+  margin-bottom: 28px;
+}
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-mid);
+  border-bottom: 1px solid var(--border-mid);
+  margin-bottom: 24px;
+}
+.meta-item { display: flex; flex-direction: column; gap: 3px; }
+.meta-label {
+  font-family: var(--title-font);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--titanium);
+}
+.meta-value {
+  font-family: var(--title-font);
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ip-declaration {
+  padding: 12px 16px;
+  background: rgba(212,175,55,0.05);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 5px 5px 0;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+.ip-declaration strong {
+  color: var(--brushed);
+  font-weight: 500;
+  -webkit-text-fill-color: var(--brushed);
+}
+
+/* ═══ TOC ═══ */
+.toc-section { background: var(--grad-steel); border-bottom: 1px solid var(--border-mid); padding: 36px 5%; }
+.toc-inner { max-width: var(--content-width); margin: 0 auto; }
+.toc-title {
+  font-family: var(--title-font);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--grad-chrome);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.toc-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-mid), transparent); }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.toc-item {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 13px; font-weight: 300; color: var(--text-muted);
+  padding: 5px 0; border-bottom: 1px solid var(--border);
+  text-decoration: none; transition: color 0.15s;
+}
+.toc-item:hover { color: var(--chrome); }
+.toc-item:last-child { border-bottom: none; }
+.toc-num {
+  font-family: var(--title-font); font-size: 10px; font-weight: 800;
+  background: var(--grad-red-h); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; flex-shrink: 0; width: 24px;
+}
+.toc-dots { flex: 1; border-bottom: 1px dotted rgba(200,200,200,0.15); margin-bottom: 3px; }
+.toc-pg {
+  font-family: var(--title-font); font-size: 10px; font-weight: 700;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; flex-shrink: 0;
+}
+
+/* ═══ SECTIONS ═══ */
+.wp-section { padding: 52px 5%; border-bottom: 1px solid var(--border); }
+.wp-section:nth-child(even) { background: linear-gradient(180deg, #0d0d0d 0%, #080808 100%); }
+.wp-section:nth-child(odd)  { background: var(--carbon); }
+.section-inner { max-width: var(--content-width); margin: 0 auto; }
+.section-heading { margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border-mid); position: relative; }
+.section-heading::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 2px; background: var(--grad-red-h); }
+.section-num {
+  font-family: var(--title-font); font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+  background: var(--grad-red-h); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 6px; display: block;
+}
+.section-title {
+  font-family: var(--title-font); font-size: clamp(20px, 3vw, 28px); font-weight: 800; letter-spacing: -0.01em;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1.1;
+}
+.subsection-title {
+  font-family: var(--title-font); font-size: 16px; font-weight: 700; letter-spacing: 0.02em;
+  margin: 28px 0 12px; padding-left: 12px; border-left: 2px solid var(--race-red);
+}
+.subsection-title.gold { border-left-color: var(--gold); color: var(--gold); -webkit-text-fill-color: var(--gold); }
+.subsection-title.ops  { border-left-color: var(--col-ops); color: var(--col-ops); -webkit-text-fill-color: var(--col-ops); }
+
+.wp-p { margin-bottom: 18px; font-size: 15px; font-weight: 300; line-height: 1.82; color: var(--text-body); }
+.wp-p:last-child { margin-bottom: 0; }
+.wp-p strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); }
+.wp-p em { color: var(--brushed); font-style: italic; }
+
+.definition-box {
+  margin: 24px 0; padding: 18px 20px;
+  background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.18); border-left: 3px solid var(--gold);
+  border-radius: 0 7px 7px 0;
+}
+.def-term {
+  font-family: var(--title-font); font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--grad-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 8px; display: block;
+}
+.def-text { font-size: 14px; font-weight: 400; color: var(--text-body); line-height: 1.75; font-style: italic; }
+.def-text strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); font-style: normal; }
+
+.pull-quote { margin: 28px 0; padding: 20px 24px; border-left: 3px solid var(--race-red); background: rgba(204,0,0,0.04); border-radius: 0 7px 7px 0; }
+.pull-quote p {
+  font-family: var(--title-font); font-size: 17px; font-weight: 700; letter-spacing: -0.01em;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1.4;
+}
+
+.phase-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+.phase-table th {
+  font-family: var(--title-font); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 9px 12px; background: var(--grad-chrome-bar); color: #0A0A0A; text-align: left;
+}
+.phase-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-body); font-weight: 300; line-height: 1.5; vertical-align: top; }
+.phase-table tr:last-child td { border-bottom: none; }
+.phase-table .td-phase-name { font-family: var(--title-font); font-size: 11px; font-weight: 700; color: var(--gold); -webkit-text-fill-color: var(--gold); white-space: nowrap; }
+
+.wp-list { list-style: none; margin: 14px 0 18px 0; display: flex; flex-direction: column; gap: 8px; }
+.wp-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; font-weight: 300; color: var(--text-body); line-height: 1.7; padding-left: 4px; }
+.wp-list li::before { content: '▸'; color: var(--race-red); font-size: 9px; flex-shrink: 0; margin-top: 6px; }
+.wp-list li strong { color: var(--chrome); font-weight: 500; -webkit-text-fill-color: var(--chrome); }
+
+.citation { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 6px; padding-left: 14px; border-left: 1px solid var(--border-mid); }
+
+/* ═══ APPENDIX ═══ */
+.appendix-section { padding: 48px 5%; border-bottom: 1px solid var(--border); }
+.appendix-section:nth-child(even) { background: linear-gradient(180deg,#0d0d0d 0%,#080808 100%); }
+.appendix-section:nth-child(odd)  { background: var(--carbon); }
+.glossary-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.glossary-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.glossary-term {
+  font-family: var(--title-font); font-size: 13px; font-weight: 800;
+  background: var(--grad-chrome); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 5px;
+}
+.glossary-def { font-size: 13.5px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+.glossary-def strong { color: var(--brushed); font-weight: 500; -webkit-text-fill-color: var(--brushed); }
+
+/* ═══ FOOTER ═══ */
+.wp-footer {
+  padding: 28px 5%; background: var(--grad-chrome-bar);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  position: relative;
+}
+.wp-footer::before { content: ''; position: absolute; top: 0; left: 0; width: 80px; height: 2px; background: var(--grad-red-h); }
+.footer-brand { font-family: var(--title-font); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #1a1a1a; text-shadow: 0 1px 1px rgba(255,255,255,0.4); }
+.footer-copy { font-family: var(--title-font); font-size: 10px; font-weight: 600; letter-spacing: 0.06em; color: #3a3a3a; }
+.footer-inf { font-family: var(--title-font); font-size: 18px; font-weight: 800; color: #2a2a2a; }
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-eyebrow">AESIT Global Solutions Group — S³ Labs® · Concept Brief</div>
+    <h1 class="cover-title">
+      <span class="t1">Institutional Continuity:</span>
+      <span class="t2">Knowledge That Endures Every Change</span>
+    </h1>
+    <p class="cover-subtitle">Preserving Usable Knowledge Across Personnel, Provider, System, and Ownership Change</p>
+    <div class="cover-meta">
+      <div class="meta-item"><span class="meta-label">Author</span><span class="meta-value">AESIT Global Solutions Group</span></div>
+      <div class="meta-item"><span class="meta-label">Division</span><span class="meta-value">S³ Labs® — Spatial · Systemic · Strategic Intelligence</span></div>
+      <div class="meta-item"><span class="meta-label">Version</span><span class="meta-value">1.0</span></div>
+      <div class="meta-item"><span class="meta-label">Publication Date</span><span class="meta-value">2026</span></div>
+      <div class="meta-item"><span class="meta-label">Classification</span><span class="meta-value">Public — For Distribution</span></div>
+      <div class="meta-item"><span class="meta-label">Headquarters</span><span class="meta-value">Lorton, Virginia, USA · Est. 1989</span></div>
+    </div>
+    <div class="ip-declaration">
+      <strong>Intellectual Property Notice:</strong> Institutional Continuity™ and its formal definition, together with the related terms Compounding Intelligence™, Asset Sovereignty™, and Environmental Cognition™ as used herein, are the original work of AESIT Global Solutions Group. First publication: 2026. All rights reserved. © 2026 AESIT Global Solutions Group. Unauthorized reproduction of proprietary terminology without written attribution is prohibited.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOC ═══ -->
+<div class="toc-section">
+  <div class="toc-inner">
+    <div class="toc-title">Table of Contents</div>
+    <ul class="toc-list">
+      <li><a class="toc-item" href="#abstract"><span class="toc-num">—</span><span>Abstract</span><span class="toc-dots"></span><span class="toc-pg">Abstract</span></a></li>
+      <li><a class="toc-item" href="#s1"><span class="toc-num">01</span><span>The Problem: Knowledge Lost at Every Handoff</span><span class="toc-dots"></span><span class="toc-pg">§1</span></a></li>
+      <li><a class="toc-item" href="#s2"><span class="toc-num">02</span><span>Defining Institutional Continuity</span><span class="toc-dots"></span><span class="toc-pg">§2</span></a></li>
+      <li><a class="toc-item" href="#s3"><span class="toc-num">03</span><span>The Five Transitions</span><span class="toc-dots"></span><span class="toc-pg">§3</span></a></li>
+      <li><a class="toc-item" href="#s4"><span class="toc-num">04</span><span>What Continuity Preserves</span><span class="toc-dots"></span><span class="toc-pg">§4</span></a></li>
+      <li><a class="toc-item" href="#s5"><span class="toc-num">05</span><span>Where Continuity Sits in the Compounding Chain</span><span class="toc-dots"></span><span class="toc-pg">§5</span></a></li>
+      <li><a class="toc-item" href="#s6"><span class="toc-num">06</span><span>What Institutional Continuity Is Not</span><span class="toc-dots"></span><span class="toc-pg">§6</span></a></li>
+      <li><a class="toc-item" href="#s7"><span class="toc-num">07</span><span>Lineage: How the Idea Emerged</span><span class="toc-dots"></span><span class="toc-pg">§7</span></a></li>
+      <li><a class="toc-item" href="#conclusion"><span class="toc-num">—</span><span>Conclusion</span><span class="toc-dots"></span><span class="toc-pg">Conc.</span></a></li>
+      <li><a class="toc-item" href="#appendix-a"><span class="toc-num">A</span><span>Glossary of Related Terms</span><span class="toc-dots"></span><span class="toc-pg">App. A</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ ABSTRACT ═══ -->
+<div class="wp-section" id="abstract">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Abstract</span>
+      <h2 class="section-title">The Outcome That Keeps Knowledge Alive</h2>
+    </div>
+    <p class="wp-p">Every organization that manages a built asset eventually changes. People move on, teams are reorganized, providers rotate, systems are replaced, and assets are sold. In most organizations, each of those changes quietly takes something with it: the reasons behind a decision, the context around a system, the unwritten understanding of who is responsible for what. The asset keeps running. The knowledge of <em>why</em> it runs the way it does does not always survive.</p>
+    <p class="wp-p"><strong>Institutional Continuity</strong> is AESIT Global Solutions Group's name for the outcome that closes that gap. It is the ability to preserve and transfer usable knowledge, context, responsibilities, and decision history across personnel, organizational, provider, system, and ownership changes. It is not a product or a service. It is what organizations <em>develop</em> as intelligence compounds.</p>
+    <p class="wp-p">AESIT Global Solutions Group asserts origination of the Institutional Continuity™ outcome and its formal definition as set out herein. First publication date: 2026.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 1 ═══ -->
+<div class="wp-section" id="s1">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 01</span>
+      <h2 class="section-title">The Problem: Knowledge Lost at Every Handoff</h2>
+    </div>
+    <p class="wp-p">Across a built asset's lifecycle, the people and systems that hold its knowledge are rarely the same ones that will need it. Design teams hand off to builders. Builders hand off to operators. Operators change vendors, platforms, and leadership. Each handoff is a point where understanding can be thinned out: documents transfer, but the context that made them meaningful stays behind with the people who wrote them.</p>
+    <p class="wp-p">The usual response is oversight. Policies, controls, reviews, and compliance activities help establish that defined requirements have been met, and they remain essential. But oversight alone is periodic, and it often sits inside individual functions. It confirms that a process was followed. It does not guarantee that the next person inheriting the asset can understand what was decided, by whom, and on what basis.</p>
+
+    <div class="pull-quote">
+      <p>"The asset keeps running. The understanding of why it runs the way it does is what gets lost."</p>
+    </div>
+
+    <p class="wp-p">The result is a familiar pattern: organizations relearn what they already knew, repeat decisions that were once settled, and lose time every time a person, provider, or system changes. That recurring loss is the structural gap Institutional Continuity is defined to close.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 2 ═══ -->
+<div class="wp-section" id="s2">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 02</span>
+      <h2 class="section-title">Defining Institutional Continuity</h2>
+    </div>
+
+    <div class="definition-box">
+      <span class="def-term">Formal Definition — AESIT® Origination · 2026</span>
+      <p class="def-text"><strong>Institutional Continuity</strong> (n.): the ability to preserve and transfer usable knowledge, context, responsibilities, and decision history across personnel, organizational, provider, system, and ownership changes. As intelligence compounds, organizations develop Institutional Continuity. © 2026 AESIT Global Solutions Group. All rights reserved.</p>
+    </div>
+
+    <p class="wp-p">Three phrases in that definition carry most of its meaning. <strong>Usable</strong> means the preserved knowledge can be acted on by someone who was not in the room when it was created; an archive nobody can interpret does not count. <strong>Transfer</strong> means the knowledge moves to a successor, whether a new employee, a new provider, a new platform, or a new owner, rather than staying with the party that produced it. And <strong>across changes</strong> names the test: continuity is measured at the moment something changes, not while everything is stable.</p>
+
+    <h3 class="subsection-title gold">An Outcome, Not an Activity</h3>
+    <p class="wp-p">Institutional Continuity is defined as an <em>outcome</em>. It is not a task an organization completes once. It is the result of intelligence being captured, retained, and reinvested through every operational cycle. Each cycle adds to what the environment knows, and that retained knowledge informs the owner's next decision. Where that loop operates, continuity develops. Where it does not, every change starts from a lower baseline than the last.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 3 ═══ -->
+<div class="wp-section" id="s3">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 03</span>
+      <h2 class="section-title">The Five Transitions</h2>
+    </div>
+    <p class="wp-p">The definition names five kinds of change. Each puts a different kind of knowledge at risk, and each calls for continuity in a different form.</p>
+
+    <div style="overflow-x:auto;">
+    <table class="phase-table">
+      <thead>
+        <tr>
+          <th>Transition</th>
+          <th>What Is at Risk</th>
+          <th>What Continuity Preserves</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="td-phase-name">Personnel</span></td>
+          <td>Tacit knowledge, working relationships, and informal responsibilities held by individuals</td>
+          <td>Knowledge and responsibilities recorded in the environment's own record rather than in one person's memory</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">Organizational</span></td>
+          <td>Mandates, reporting lines, and priorities reshaped by reorganization, merger, or change of mission</td>
+          <td>Context and accountability that remain clear to the new structure</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">Provider</span></td>
+          <td>Operating history, configurations, and rationale held by an outgoing vendor or contractor</td>
+          <td>Handover in usable form, so the successor continues the work instead of relearning it</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">System</span></td>
+          <td>Data models and decision records stranded when platforms are replaced or migrated</td>
+          <td>History that travels with the data into the new platform</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">Ownership</span></td>
+          <td>Operating history and decision rationale a buyer, lender, or successor owner cannot see</td>
+          <td>A documented record of how the asset was run that transfers with the asset itself</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 4 ═══ -->
+<div class="wp-section" id="s4">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 04</span>
+      <h2 class="section-title">What Continuity Preserves</h2>
+    </div>
+    <p class="wp-p">The definition identifies four things that must survive a transition in usable form.</p>
+    <ul class="wp-list">
+      <li><strong>Knowledge</strong> — What the environment has learned about itself: how its systems behave, what has been tried, and what the evidence showed.</li>
+      <li><strong>Context</strong> — The conditions around that knowledge: why a configuration exists, which constraints shaped it, and what it depends on.</li>
+      <li><strong>Responsibilities</strong> — Who owns which decisions, controls, and obligations, and how that ownership is meant to pass to a successor.</li>
+      <li><strong>Decision history</strong> — The record of what was decided, by whom, on what information, and with what result, so settled questions are not reopened by default.</li>
+    </ul>
+    <p class="wp-p">Knowledge without context is hard to apply. Responsibilities without decision history are hard to defend. It is the combination that lets a successor pick up the work where it was left, rather than where the paperwork happens to end.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 5 ═══ -->
+<div class="wp-section" id="s5">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 05</span>
+      <h2 class="section-title">Where Continuity Sits in the Compounding Chain</h2>
+    </div>
+    <p class="wp-p">Within AESIT's CRE Lifecycle Intelligence™ architecture, Institutional Continuity is the middle link of a three-part chain of outcomes. Each outcome answers a different question about the intelligence an asset accumulates.</p>
+
+    <div style="overflow-x:auto;">
+    <table class="phase-table">
+      <thead>
+        <tr>
+          <th>Outcome</th>
+          <th>Principle</th>
+          <th>The Question It Answers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="td-phase-name">Compounding Intelligence™</span></td>
+          <td>Decisions improve.</td>
+          <td>Does what we learn at each stage make the next decision better?</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">Institutional Continuity™</span></td>
+          <td>Knowledge endures.</td>
+          <td>Does that learning survive when people, providers, systems, or owners change?</td>
+        </tr>
+        <tr>
+          <td><span class="td-phase-name">Asset Sovereignty™</span></td>
+          <td>Owners decide.</td>
+          <td>Does the owner hold title to, and control over, what has been retained?</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Decisions improve. Knowledge endures. Owners decide."</p>
+    </div>
+
+    <p class="wp-p">The order matters. Compounding Intelligence produces the learning. Institutional Continuity keeps that learning usable through change. Asset Sovereignty then ensures the retained intelligence belongs to the owner and can move with the asset. Together they are expressed as the four outcomes of the Intelligence Continuum: <strong>Intelligence, Value, Trust, and Resilience</strong>.</p>
+    <p class="wp-p">The distinction from Asset Sovereignty is worth stating plainly. Sovereignty settles <em>who owns</em> the intelligence. Continuity settles whether it <em>survives</em> and <em>stays usable</em> when the people around it change. An owner can hold clear title to records that no one can interpret; Institutional Continuity is what prevents that.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 6 ═══ -->
+<div class="wp-section" id="s6">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 06</span>
+      <h2 class="section-title">What Institutional Continuity Is Not</h2>
+    </div>
+    <p class="wp-p">Precision about a concept requires equal precision about its edges. Institutional Continuity is often confused with adjacent ideas that address a related, but different, problem. It is not:</p>
+    <ul class="wp-list">
+      <li><strong>A document archive</strong> — Storing files is not continuity. Continuity requires that the stored knowledge stay usable, with the context to interpret it.</li>
+      <li><strong>A knowledge-management tool</strong> — A wiki or repository can support continuity, but the outcome is measured by what survives a real transition, not by what was uploaded.</li>
+      <li><strong>Succession planning alone</strong> — Personnel change is one of five transitions. Continuity also has to hold through provider, system, organizational, and ownership change.</li>
+      <li><strong>Business continuity or disaster recovery</strong> — Those protect operations through disruption. Institutional Continuity protects the understanding behind operations through change. The two are related, and both draw on Fortitude, but they answer different questions.</li>
+      <li><strong>A one-time handover</strong> — A thorough handover at project close is valuable, but continuity has to hold at every later change, not only the first.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ SECTION 7 ═══ -->
+<div class="wp-section" id="s7">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Section 07</span>
+      <h2 class="section-title">Lineage: How the Idea Emerged</h2>
+    </div>
+    <p class="wp-p">Institutional Continuity was named in 2026, but the observation behind it is much older. AESIT's published timeline traces the emergence of the Lifecycle Intelligence™ discipline from 1989, and recurring reviews of past project data surfaced a consistent pattern: assets, information, and decisions were governed in isolation, even though their interactions determined lifecycle performance. The gap was architectural rather than technological.</p>
+
+    <h3 class="subsection-title gold">Environmental Cognition™</h3>
+    <p class="wp-p">The idea is rooted in what AESIT calls <strong>Environmental Cognition</strong>: the science of how built environments learn, adapt, and preserve institutional knowledge over time. Institutional Continuity is the observable result of that science working in practice. An environment that learns, and keeps what it learns, produces organizations that can change without starting over.</p>
+
+    <h3 class="subsection-title gold">The Digital Thread</h3>
+    <p class="wp-p">The mechanism is carried by the Intelligent Design Lifecycle Framework™ (IDLF™). A single Digital Thread connects Discovery through perpetual Optimization, preserving intelligence across phases rather than letting it be lost at the traditional handoffs between them. Where that thread is unbroken, the lifecycle itself becomes a continuity mechanism.</p>
+
+    <h3 class="subsection-title gold">Governance as a Lifecycle Capability</h3>
+    <p class="wp-p">AESIT's Continuous Governance model treats governance as more than oversight. Assessment establishes the baseline, Intelligence generates insights and governance signals, and Stewardship turns those insights into continuous improvement, protection, and value preservation. Governance shapes lifecycle decisions, and lifecycle learning informs governance. Institutional Continuity is what makes that loop durable across change.</p>
+
+    <h3 class="subsection-title gold">An Early Expression</h3>
+    <p class="wp-p">One documented entry in the timeline, dated 2009–2012 and titled <em>The Architecture of Continuity</em>, describes AESIT serving as Technical Project Lead on a Department of Treasury engagement at the Bureau of Engraving and Printing. The work integrated an Integrated Workplace Management System (IWMS) with an Enterprise Asset Management (EAM) platform into one unified enterprise system across high-security facilities. In hindsight, it is an early example of the principle: unified records and standardized asset data that outlast the individuals and tools around them.</p>
+
+    <div class="ip-declaration">
+      <strong>Historical Capability Lineage:</strong> The timeline summarizes documented and corroborated work associated with AESIT, predecessor entities, affiliated organizations, personnel, and project partners. It is not a representation of uninterrupted operation by a single legal entity. Current AESIT terminology, including Institutional Continuity™, describes capability lineage and was not necessarily used during the referenced projects. References to agencies, institutions, and clients are for factual identification only and do not imply endorsement, sponsorship, certification, affiliation, or direct contracting unless expressly stated and authorized.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONCLUSION ═══ -->
+<div class="wp-section" id="conclusion">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Conclusion</span>
+      <h2 class="section-title">What Endures</h2>
+    </div>
+    <p class="wp-p">Buildings outlast the people, providers, and systems that manage them. An organization that depends on any one of those to hold its understanding of an asset will lose some of that understanding every time one of them changes. Institutional Continuity is the outcome in which it does not.</p>
+    <p class="wp-p"><strong>Institutional Continuity</strong> develops as intelligence compounds. It is the link between a decision that improves and an owner who decides: the assurance that what was learned is still there, and still usable, when it is needed next.</p>
+
+    <div class="pull-quote">
+      <p>"Decisions improve. Knowledge endures. Owners decide." — AESIT Global Solutions Group ∞</p>
+    </div>
+
+    <p class="wp-p" style="font-size:13px;color:var(--text-muted);margin-top:24px;">© 2026 AESIT Global Solutions Group. Institutional Continuity™ and its formal definition are the original work of AESIT Global Solutions Group. Version 1.0. For permissions, citations, and licensing inquiries, contact AESIT Global Solutions Group, Lorton, Virginia, USA.</p>
+  </div>
+</div>
+
+<!-- ═══ APPENDIX A ═══ -->
+<div class="appendix-section" id="appendix-a">
+  <div class="section-inner">
+    <div class="section-heading">
+      <span class="section-num">Appendix A</span>
+      <h2 class="section-title">Glossary of Related Terms</h2>
+    </div>
+    <p class="wp-p" style="margin-bottom:24px;">The following terms are the original intellectual property of AESIT Global Solutions Group unless otherwise noted. All definitions are formally asserted as of first publication date: 2026. © 2026 AESIT Global Solutions Group. All rights reserved.</p>
+
+    <div class="glossary-item">
+      <div class="glossary-term">Institutional Continuity™</div>
+      <div class="glossary-def">The ability to preserve and transfer usable knowledge, context, responsibilities, and decision history across personnel, organizational, provider, system, and ownership changes. As intelligence compounds, organizations develop Institutional Continuity. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Compounding Intelligence™</div>
+      <div class="glossary-def">A framework in which intelligence generated at each stage of a built asset's lifecycle is captured, retained, and reinvested as an input into every subsequent stage, so that decisions improve over time. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Asset Sovereignty™</div>
+      <div class="glossary-def">The principle that all intelligence generated by a built asset is the exclusive, transferable property of the asset owner, independent of any single service provider or platform relationship. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Environmental Cognition™</div>
+      <div class="glossary-def">The science of how built environments learn, adapt, and preserve institutional knowledge over time. <strong>Originator: AESIT Global Solutions Group.</strong></div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Intelligent Design Lifecycle Framework™ (IDLF™)</div>
+      <div class="glossary-def">AESIT's delivery methodology for Compounding Intelligence, in which a single Digital Thread connects every lifecycle phase from Discovery through perpetual Optimization. <strong>Originator: AESIT Global Solutions Group, 2026.</strong></div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Digital Thread</div>
+      <div class="glossary-def">A continuous, connected record of an asset's data and decisions across lifecycle phases, which keeps intelligence from being lost at traditional handoffs.</div>
+    </div>
+    <p class="citation">© 2026 AESIT Global Solutions Group. Reproduction for citation purposes permitted with attribution: "AESIT Global Solutions Group. (2026). Institutional Continuity: Knowledge That Endures Every Change. Lorton, VA: AESIT Global Solutions Group."</p>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="wp-footer">
+  <div class="footer-brand">AESIT Global Solutions Group · S³ Labs® · Institutional Continuity Concept Brief · Version 1.0 · © 2026</div>
+  <div class="footer-copy">Lorton, Virginia, USA · aesit.net · All proprietary framework terminology protected. Est. 1989.</div>
+  <div class="footer-inf">∞</div>
+</div>
+
+</body>
+</html>
