@@ -193,6 +193,16 @@
   .next-steps li{ list-style:none; padding:14px 2px; border-bottom:1px solid rgba(246,241,230,0.2); font-size:14.5px; color:rgba(246,241,230,0.85); display:flex; gap:14px; }
   .next-steps li::before{ content:"→"; font-family:var(--mono); color:var(--bronze-light); flex-shrink:0; }
 
+  button.btn{ font-family:var(--mono); }
+  .btn:focus-visible{ outline:2px solid var(--bronze-light); outline-offset:3px; }
+  .req-panel{ margin-top:26px; max-width:640px; padding:22px 24px; border:1px solid rgba(246,241,230,0.3); background:rgba(246,241,230,0.06); }
+  .req-panel[hidden]{ display:none; }
+  .req-title{ font-family:var(--serif); font-size:20px; color:var(--cream); margin-bottom:8px; }
+  .req-line{ font-size:15px; color:rgba(246,241,230,0.85); }
+  .req-line strong{ color:var(--cream); font-weight:600; user-select:all; }
+  .req-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+  .req-status{ font-family:var(--mono); font-size:12.5px; color:var(--bronze-light); margin-top:12px; min-height:1.2em; }
+
   footer{ background:var(--ink); border-top:1px solid rgba(246,241,230,0.15); color:rgba(246,241,230,0.75); padding:40px 0 28px; }
   .footer-inner{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; align-items:flex-end; }
   .footer-brand h3{ color:var(--cream); font-size:19px; margin-bottom:8px; }
@@ -226,7 +236,7 @@
       <h1>Commercial Real Estate's Lifecycle Intelligence Layer</h1>
       <p class="lede">AESIT's capability lineage spans more than 37 years inside the real‑estate and built‑environment ecosystem — across operations, technology, infrastructure, and lifecycle management. <strong>Across every discipline and every organization, the same pattern repeats.</strong></p>
       <div class="hero-actions">
-        <a href="mailto:info@aesit.net?subject=AESIT%20Investor%20Brief%20Request" class="btn btn-primary">Request the Full Brief →</a>
+        <button type="button" class="btn btn-primary" data-req="brief">Request the Full Brief →</button>
         <a href="#capital" class="btn btn-ghost">Capital Strategy</a>
       </div>
     </div>
@@ -432,8 +442,17 @@
         <p>Choose your next step, or write in and we'll route it directly. Business-model, financial, and platform details are provided only after a signed NDA.</p>
       </div>
       <div class="submit-actions">
-        <a href="mailto:info@aesit.net?subject=AESIT%20Investor%20Brief%20Request" class="btn btn-primary">Request the Investor Brief →</a>
-        <a href="mailto:info@aesit.net?subject=AESIT%20Investor%20Deck%20Request" class="btn btn-ghost">Request the Full Deck →</a>
+        <button type="button" class="btn btn-primary" data-req="brief">Request the Investor Brief →</button>
+        <button type="button" class="btn btn-ghost" data-req="deck">Request the Full Deck →</button>
+      </div>
+      <div class="req-panel" id="reqPanel" role="status" aria-live="polite" hidden>
+        <p class="req-title" id="reqTitle"></p>
+        <p class="req-line">Send your request to <strong id="reqAddr">info@aesit.net</strong> with the subject <em id="reqSubj"></em>.</p>
+        <div class="req-actions">
+          <button type="button" class="btn btn-primary" id="reqCopy">Copy address</button>
+          <button type="button" class="btn btn-ghost" id="reqOpen">Open in my mail app</button>
+        </div>
+        <p class="req-status" id="reqStatus" aria-live="polite"></p>
       </div>
       <p class="submit-fineprint">This brief is prepared for prospective strategic, technology, PropTech, family‑office, and institutional investors. It is provided for discussion purposes only and does not constitute an offer to sell, or a solicitation of an offer to buy, any security. Figures and forward‑looking statements reflect AESIT's current thesis and are subject to change. Capability lineage reflects documented work associated with AESIT, predecessor entities, affiliated organizations, and personnel; it is not a representation of uninterrupted operation by a single legal entity. Bentley Systems, MicroStation, Autodesk, AutoCAD, and other third-party names are trademarks of their respective owners and are used for identification only.</p>
     </div>
@@ -507,6 +526,49 @@
       el.classList.toggle('open', !isOpen);
       toggle.setAttribute('aria-expanded', String(!isOpen));
     });
+  });
+
+  /* ---- investor request: never auto-launches a mail client ----
+     Clicking a Request button reveals the address and subject. Opening the
+     mail app is a separate, explicit, one-shot click. Set CONTACT_URL to a
+     contact-form address to send the main buttons there instead. */
+  const CONTACT_URL = "";
+  const REQ = {
+    brief: { title: "Request the Investor Brief", subject: "AESIT Investor Brief Request" },
+    deck:  { title: "Request the Full Deck",      subject: "AESIT Investor Deck Request" }
+  };
+  const ADDR = "info@aesit.net";
+  const panel = document.getElementById('reqPanel');
+  const statusEl = document.getElementById('reqStatus');
+  let current = REQ.brief, mailLock = false;
+
+  function openRequest(kind){
+    if (CONTACT_URL) { window.location.href = CONTACT_URL; return; }
+    current = REQ[kind] || REQ.brief;
+    document.getElementById('reqTitle').textContent = current.title;
+    document.getElementById('reqSubj').textContent = '\u201C' + current.subject + '\u201D';
+    statusEl.textContent = '';
+    panel.hidden = false;
+    document.getElementById('request').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  document.querySelectorAll('[data-req]').forEach(b => b.addEventListener('click', () => openRequest(b.dataset.req)));
+
+  document.getElementById('reqCopy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(ADDR);
+      statusEl.textContent = 'Address copied.';
+    } catch (e) {
+      const r = document.createRange(); r.selectNodeContents(document.getElementById('reqAddr'));
+      const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      statusEl.textContent = 'Address selected \u2014 press \u2318C (or Ctrl+C) to copy.';
+    }
+  });
+  document.getElementById('reqOpen').addEventListener('click', () => {
+    if (mailLock) return;               /* one launch per click, ignore repeats */
+    mailLock = true;
+    statusEl.textContent = 'Opening your mail app\u2026 if nothing opens, copy the address instead.';
+    window.location.href = 'mailto:' + ADDR + '?subject=' + encodeURIComponent(current.subject);
+    setTimeout(() => { mailLock = false; }, 4000);
   });
 </script>
 
