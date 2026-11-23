@@ -153,6 +153,20 @@ body{background:var(--carbon);font-family:var(--body-font);min-height:100vh;disp
 
 .case-source{margin-top:12px;padding-top:9px;border-top:1px solid var(--border);font-size:10px;color:var(--text-muted);font-family:var(--title-font);letter-spacing:.05em;line-height:1.5}
 
+/* CTA band */
+.cta-band{background:var(--grad-steel);border-top:1px solid var(--border-mid);padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
+.cta-band::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad-red)}
+@media (max-width:480px){ .cta-band{ padding:18px 16px; } }
+.cta-copy{flex:1 1 240px;min-width:0}
+.cta-eyebrow{font-family:var(--title-font);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--grad-chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px;padding-left:6px}
+.cta-text{font-size:13px;font-weight:300;line-height:1.6;color:var(--text-secondary);padding-left:6px}
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--title-font);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#fff;background:var(--grad-red);padding:13px 22px;border-radius:4px;border:1px solid rgba(255,255,255,.12);box-shadow:0 2px 12px rgba(204,0,0,.35);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;flex-shrink:0}
+.cta-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,32,32,.45);filter:brightness(1.08)}
+.cta-btn:focus-visible{outline:2px solid var(--chrome);outline-offset:3px}
+.cta-btn .arrow{transition:transform .18s ease}
+.cta-btn:hover .arrow{transform:translateX(3px)}
+@media (max-width:480px){ .cta-btn{ width:100%; } }
+  
 /* Footer — wraps instead of overflowing next to the ∞ mark */
 .card-footer{padding:11px 20px;background:var(--grad-chrome-bar);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;position:relative}
 .card-footer::before{content:'';position:absolute;top:0;left:0;width:60px;height:2px;background:var(--grad-red-h)}
@@ -603,6 +617,17 @@ body{background:var(--carbon);font-family:var(--body-font);min-height:100vh;disp
     </div>
   </div>
 
+  <!-- CTA -->
+<div class="cta-band">
+  <div class="cta-copy">
+    <div class="cta-eyebrow">Go Deeper</div>
+    <p class="cta-text">See the full framework behind the record: how AESIT compounds intelligence across every phase of the lifecycle.</p>
+  </div>
+  <a class="cta-btn" href="https://articles.aesit.net/aesitwhitepaper_ci.html" target="_blank" rel="noopener noreferrer">
+    Read the Whitepaper <span class="arrow">→</span>
+  </a>
+</div>
+  
   <!-- Footer -->
   <div class="card-footer">
     <div class="footer-mark">AESIT Global Solutions Group © 2026 — The Compounding Record · S³ Labs™</div>
